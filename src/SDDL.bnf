@@ -1,0 +1,20 @@
+/* Shrinken Data Description Language */
+
+/* lexical elements: */
+
+!whitespace: ' ' | '\t' | '\n' | '\r';
+!comment: _lineComment | _blockComment;
+
+_lineComment: '/' '/' {.} '\n';
+_blockComment: '/' '*' {. | '*'} '*' '/';
+
+// _digit: '0'-'9';
+// integer: '1'-'9' {_digit};
+
+string: '"' {.} '"';
+
+/* syntax definition: */
+
+<< import "ast" >>
+
+PackageDef: "package" string        << ast.NewPackageDef($1), nil >> ;

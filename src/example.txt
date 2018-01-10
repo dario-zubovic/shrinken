@@ -1,0 +1,54 @@
+
+%C#: @exportAs: "OtherName.Messages"
+package "Networking.P2PMessages"
+
+use "Networking.Messages"
+
+%C#: use "Unity3d"
+%go: use "UtilMsgs"
+
+@exportAs: "ActionMsg"
+class Action : CustomMessage {
+	
+	@ {
+		range: [0-100]
+	}
+	int number
+
+	Slot targetSlot
+
+	@ {
+		precision: 1/60
+		range: <0.5, 1]
+	}
+	@ das
+	@ dsa
+	float time
+
+	@ {
+		condition: targetSlot == Slot.First,
+		atb2,
+		%C#: CSharpOnlyAttribute,
+		%go: {
+			firstGoOnlyAttribute: 42,
+			secondGoOnlyAttribute
+		}
+	}
+	Color championColor
+}
+
+enum Slot {
+	First,
+	Second,
+	Third
+}
+
+%go: struct Color {
+	@ range: [0-1]
+	float r, g, b
+}
+
+%go: {
+
+}
+
