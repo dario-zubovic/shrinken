@@ -39,7 +39,7 @@ class Action : CustomMessage {
 enum Slot {
 	First,
 	Second,
-	Third
+	Third,
 }
 
 // we're importing Unity3d package for C# which includes def for Color,

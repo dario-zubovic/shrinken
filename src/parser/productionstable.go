@@ -31,43 +31,43 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Package : "package" str PackageBody	<< ast.NewPackage(X[1], X[2]), nil >>`,
+		String: `Package : "package" str PackageBody	<< ast.NewPackageDef(X[1], X[2]), nil >>`,
 		Id:         "Package",
 		NTType:     1,
 		Index:      1,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewPackage(X[1], X[2]), nil
+			return ast.NewPackageDef(X[1], X[2]), nil
 		},
 	},
 	ProdTabEntry{
-		String: `PackageBody : empty	<< ast.NewPackageBody(nil), nil >>`,
+		String: `PackageBody : empty	<< ast.NewPackageBody(), nil >>`,
 		Id:         "PackageBody",
 		NTType:     2,
 		Index:      2,
 		NumSymbols: 0,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewPackageBody(nil), nil
+			return ast.NewPackageBody(), nil
+		},
+	},
+	ProdTabEntry{
+		String: `PackageBody : PackageBody Import	<< ast.ImportToPackageBody(X[0], X[1]) >>`,
+		Id:         "PackageBody",
+		NTType:     2,
+		Index:      3,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.ImportToPackageBody(X[0], X[1])
 		},
 	},
 	ProdTabEntry{
 		String: `PackageBody : PackageBody PackageElement	<< ast.AddToPackageBody(X[0], X[1]), nil >>`,
 		Id:         "PackageBody",
 		NTType:     2,
-		Index:      3,
+		Index:      4,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return ast.AddToPackageBody(X[0], X[1]), nil
-		},
-	},
-	ProdTabEntry{
-		String: `PackageElement : Import	<< X[0], nil >>`,
-		Id:         "PackageElement",
-		NTType:     3,
-		Index:      4,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
 		},
 	},
 	ProdTabEntry{
@@ -91,293 +91,323 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Import : "use" str	<< ast.NewImport(X[1]), nil >>`,
-		Id:         "Import",
-		NTType:     4,
+		String: `PackageElement : EnumDef	<< X[0], nil >>`,
+		Id:         "PackageElement",
+		NTType:     3,
 		Index:      7,
-		NumSymbols: 2,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewImport(X[1]), nil
-		},
-	},
-	ProdTabEntry{
-		String: `ClassDef : "class" letters "{" Body "}"	<< ast.NewClasDef(X[1], nil, X[3]), nil >>`,
-		Id:         "ClassDef",
-		NTType:     5,
-		Index:      8,
-		NumSymbols: 5,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewClasDef(X[1], nil, X[3]), nil
-		},
-	},
-	ProdTabEntry{
-		String: `ClassDef : "class" letters ":" letters "{" Body "}"	<< ast.NewClassDef(X[1], X[3], X[5]), nil >>`,
-		Id:         "ClassDef",
-		NTType:     5,
-		Index:      9,
-		NumSymbols: 7,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewClassDef(X[1], X[3], X[5]), nil
-		},
-	},
-	ProdTabEntry{
-		String: `StructDef : "struct" letters "{" Body "}"	<< ast.NewStructDef(X[1], nil, X[3]), nil >>`,
-		Id:         "StructDef",
-		NTType:     6,
-		Index:      10,
-		NumSymbols: 5,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewStructDef(X[1], nil, X[3]), nil
-		},
-	},
-	ProdTabEntry{
-		String: `StructDef : "struct" letters ":" letters "{" Body "}"	<< ast.NewStructDef(X[1], X[3], X[5]), nil >>`,
-		Id:         "StructDef",
-		NTType:     6,
-		Index:      11,
-		NumSymbols: 7,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewStructDef(X[1], X[3], X[5]), nil
-		},
-	},
-	ProdTabEntry{
-		String: `GenericType : "int"	<< ast.GenericType(X[0]), nil >>`,
-		Id:         "GenericType",
-		NTType:     7,
-		Index:      12,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.GenericType(X[0]), nil
-		},
-	},
-	ProdTabEntry{
-		String: `GenericType : "int32"	<< ast.GenericType(X[0]), nil >>`,
-		Id:         "GenericType",
-		NTType:     7,
-		Index:      13,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.GenericType(X[0]), nil
-		},
-	},
-	ProdTabEntry{
-		String: `GenericType : "int64"	<< ast.GenericType(X[0]), nil >>`,
-		Id:         "GenericType",
-		NTType:     7,
-		Index:      14,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.GenericType(X[0]), nil
-		},
-	},
-	ProdTabEntry{
-		String: `GenericType : "long"	<< ast.GenericType(X[0]), nil >>`,
-		Id:         "GenericType",
-		NTType:     7,
-		Index:      15,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.GenericType(X[0]), nil
-		},
-	},
-	ProdTabEntry{
-		String: `GenericType : "bool"	<< ast.GenericType(X[0]), nil >>`,
-		Id:         "GenericType",
-		NTType:     7,
-		Index:      16,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.GenericType(X[0]), nil
-		},
-	},
-	ProdTabEntry{
-		String: `GenericType : "short"	<< ast.GenericType(X[0]), nil >>`,
-		Id:         "GenericType",
-		NTType:     7,
-		Index:      17,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.GenericType(X[0]), nil
-		},
-	},
-	ProdTabEntry{
-		String: `GenericType : "uint"	<< ast.GenericType(X[0]), nil >>`,
-		Id:         "GenericType",
-		NTType:     7,
-		Index:      18,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.GenericType(X[0]), nil
-		},
-	},
-	ProdTabEntry{
-		String: `GenericType : "uint32"	<< ast.GenericType(X[0]), nil >>`,
-		Id:         "GenericType",
-		NTType:     7,
-		Index:      19,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.GenericType(X[0]), nil
-		},
-	},
-	ProdTabEntry{
-		String: `GenericType : "uint64"	<< ast.GenericType(X[0]), nil >>`,
-		Id:         "GenericType",
-		NTType:     7,
-		Index:      20,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.GenericType(X[0]), nil
-		},
-	},
-	ProdTabEntry{
-		String: `GenericType : "ulong"	<< ast.GenericType(X[0]), nil >>`,
-		Id:         "GenericType",
-		NTType:     7,
-		Index:      21,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.GenericType(X[0]), nil
-		},
-	},
-	ProdTabEntry{
-		String: `GenericType : "ubool"	<< ast.GenericType(X[0]), nil >>`,
-		Id:         "GenericType",
-		NTType:     7,
-		Index:      22,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.GenericType(X[0]), nil
-		},
-	},
-	ProdTabEntry{
-		String: `GenericType : "ushort"	<< ast.GenericType(X[0]), nil >>`,
-		Id:         "GenericType",
-		NTType:     7,
-		Index:      23,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.GenericType(X[0]), nil
-		},
-	},
-	ProdTabEntry{
-		String: `GenericType : "byte"	<< ast.GenericType(X[0]), nil >>`,
-		Id:         "GenericType",
-		NTType:     7,
-		Index:      24,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.GenericType(X[0]), nil
-		},
-	},
-	ProdTabEntry{
-		String: `GenericType : "string"	<< ast.GenericType(X[0]), nil >>`,
-		Id:         "GenericType",
-		NTType:     7,
-		Index:      25,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.GenericType(X[0]), nil
-		},
-	},
-	ProdTabEntry{
-		String: `GenericType : "char"	<< ast.GenericType(X[0]), nil >>`,
-		Id:         "GenericType",
-		NTType:     7,
-		Index:      26,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.GenericType(X[0]), nil
-		},
-	},
-	ProdTabEntry{
-		String: `GenericType : "float"	<< ast.GenericType(X[0]), nil >>`,
-		Id:         "GenericType",
-		NTType:     7,
-		Index:      27,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.GenericType(X[0]), nil
-		},
-	},
-	ProdTabEntry{
-		String: `GenericType : "double"	<< ast.GenericType(X[0]), nil >>`,
-		Id:         "GenericType",
-		NTType:     7,
-		Index:      28,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.GenericType(X[0]), nil
-		},
-	},
-	ProdTabEntry{
-		String: `Type : GenericType	<< X[0], nil >>`,
-		Id:         "Type",
-		NTType:     8,
-		Index:      29,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
-		String: `Type : letters	<< ast.Type(X[0]), nil >>`,
-		Id:         "Type",
+		String: `Import : "use" str	<< ast.NewImport(X[1]), nil >>`,
+		Id:         "Import",
+		NTType:     4,
+		Index:      8,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewImport(X[1]), nil
+		},
+	},
+	ProdTabEntry{
+		String: `ClassDef : "class" letters "{" StructBody "}"	<< ast.NewClasDef(X[1], "", X[3]), nil >>`,
+		Id:         "ClassDef",
+		NTType:     5,
+		Index:      9,
+		NumSymbols: 5,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewClasDef(X[1], "", X[3]), nil
+		},
+	},
+	ProdTabEntry{
+		String: `ClassDef : "class" letters ":" letters "{" StructBody "}"	<< ast.NewClassDef(X[1], X[3], X[5]), nil >>`,
+		Id:         "ClassDef",
+		NTType:     5,
+		Index:      10,
+		NumSymbols: 7,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewClassDef(X[1], X[3], X[5]), nil
+		},
+	},
+	ProdTabEntry{
+		String: `StructDef : "struct" letters "{" StructBody "}"	<< ast.NewStructDef(X[1], "", X[3]), nil >>`,
+		Id:         "StructDef",
+		NTType:     6,
+		Index:      11,
+		NumSymbols: 5,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewStructDef(X[1], "", X[3]), nil
+		},
+	},
+	ProdTabEntry{
+		String: `StructDef : "struct" letters ":" letters "{" StructBody "}"	<< ast.NewStructDef(X[1], X[3], X[5]), nil >>`,
+		Id:         "StructDef",
+		NTType:     6,
+		Index:      12,
+		NumSymbols: 7,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewStructDef(X[1], X[3], X[5]), nil
+		},
+	},
+	ProdTabEntry{
+		String: `EnumDef : "enum" letters "{" EnumBody "}"	<< ast.NewEnumDef(X[1], X[3]), nil >>`,
+		Id:         "EnumDef",
+		NTType:     7,
+		Index:      13,
+		NumSymbols: 5,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewEnumDef(X[1], X[3]), nil
+		},
+	},
+	ProdTabEntry{
+		String: `GenericType : "int"	<< ast.NewGenericType(ast.Integer32), nil >>`,
+		Id:         "GenericType",
 		NTType:     8,
+		Index:      14,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewGenericType(ast.Integer32), nil
+		},
+	},
+	ProdTabEntry{
+		String: `GenericType : "int32"	<< ast.NewGenericType(ast.Integer32), nil >>`,
+		Id:         "GenericType",
+		NTType:     8,
+		Index:      15,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewGenericType(ast.Integer32), nil
+		},
+	},
+	ProdTabEntry{
+		String: `GenericType : "int64"	<< ast.NewGenericType(ast.Integer64), nil >>`,
+		Id:         "GenericType",
+		NTType:     8,
+		Index:      16,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewGenericType(ast.Integer64), nil
+		},
+	},
+	ProdTabEntry{
+		String: `GenericType : "long"	<< ast.NewGenericType(ast.Integer64), nil >>`,
+		Id:         "GenericType",
+		NTType:     8,
+		Index:      17,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewGenericType(ast.Integer64), nil
+		},
+	},
+	ProdTabEntry{
+		String: `GenericType : "short"	<< ast.NewGenericType(ast.Short), nil >>`,
+		Id:         "GenericType",
+		NTType:     8,
+		Index:      18,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewGenericType(ast.Short), nil
+		},
+	},
+	ProdTabEntry{
+		String: `GenericType : "uint"	<< ast.NewGenericType(ast.UnsignedInteger32), nil >>`,
+		Id:         "GenericType",
+		NTType:     8,
+		Index:      19,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewGenericType(ast.UnsignedInteger32), nil
+		},
+	},
+	ProdTabEntry{
+		String: `GenericType : "uint32"	<< ast.NewGenericType(ast.UnsignedInteger32), nil >>`,
+		Id:         "GenericType",
+		NTType:     8,
+		Index:      20,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewGenericType(ast.UnsignedInteger32), nil
+		},
+	},
+	ProdTabEntry{
+		String: `GenericType : "uint64"	<< ast.NewGenericType(ast.UnsignedInteger64), nil >>`,
+		Id:         "GenericType",
+		NTType:     8,
+		Index:      21,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewGenericType(ast.UnsignedInteger64), nil
+		},
+	},
+	ProdTabEntry{
+		String: `GenericType : "ulong"	<< ast.NewGenericType(ast.UnsignedInteger64), nil >>`,
+		Id:         "GenericType",
+		NTType:     8,
+		Index:      22,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewGenericType(ast.UnsignedInteger64), nil
+		},
+	},
+	ProdTabEntry{
+		String: `GenericType : "ushort"	<< ast.NewGenericType(ast.UnsignedShort), nil >>`,
+		Id:         "GenericType",
+		NTType:     8,
+		Index:      23,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewGenericType(ast.UnsignedShort), nil
+		},
+	},
+	ProdTabEntry{
+		String: `GenericType : "byte"	<< ast.NewGenericType(ast.Byte), nil >>`,
+		Id:         "GenericType",
+		NTType:     8,
+		Index:      24,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewGenericType(ast.Byte), nil
+		},
+	},
+	ProdTabEntry{
+		String: `GenericType : "bool"	<< ast.NewGenericType(ast.Bool), nil >>`,
+		Id:         "GenericType",
+		NTType:     8,
+		Index:      25,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewGenericType(ast.Bool), nil
+		},
+	},
+	ProdTabEntry{
+		String: `GenericType : "string"	<< ast.NewGenericType(ast.String), nil >>`,
+		Id:         "GenericType",
+		NTType:     8,
+		Index:      26,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewGenericType(ast.String), nil
+		},
+	},
+	ProdTabEntry{
+		String: `GenericType : "char"	<< ast.NewGenericType(ast.Char), nil >>`,
+		Id:         "GenericType",
+		NTType:     8,
+		Index:      27,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewGenericType(ast.Char), nil
+		},
+	},
+	ProdTabEntry{
+		String: `GenericType : "float"	<< ast.NewGenericType(ast.Float), nil >>`,
+		Id:         "GenericType",
+		NTType:     8,
+		Index:      28,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewGenericType(ast.Float), nil
+		},
+	},
+	ProdTabEntry{
+		String: `GenericType : "double"	<< ast.NewGenericType(ast.Double), nil >>`,
+		Id:         "GenericType",
+		NTType:     8,
+		Index:      29,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewGenericType(ast.Double), nil
+		},
+	},
+	ProdTabEntry{
+		String: `Type : GenericType	<< X[0], nil >>`,
+		Id:         "Type",
+		NTType:     9,
 		Index:      30,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.Type(X[0]), nil
+			return X[0], nil
 		},
 	},
 	ProdTabEntry{
-		String: `Type : Type "[]"	<< ast.ArrayOfType(X[0]), nil >>`,
+		String: `Type : letters	<< ast.NewType(X[0]), nil >>`,
 		Id:         "Type",
-		NTType:     8,
+		NTType:     9,
 		Index:      31,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewType(X[0]), nil
+		},
+	},
+	ProdTabEntry{
+		String: `Type : Type "[]"	<< ast.NewArrayOfType(X[0]), nil >>`,
+		Id:         "Type",
+		NTType:     9,
+		Index:      32,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.ArrayOfType(X[0]), nil
+			return ast.NewArrayOfType(X[0]), nil
 		},
 	},
 	ProdTabEntry{
-		String: `Type : Type "[" integer "]"	<< ast.ArrayOfTypeWithSize(X[0], X[2]), nil >>`,
+		String: `Type : Type "[" integer "]"	<< ast.NewArrayOfTypeWithSize(X[0], X[2]), nil >>`,
 		Id:         "Type",
-		NTType:     8,
-		Index:      32,
-		NumSymbols: 4,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.ArrayOfTypeWithSize(X[0], X[2]), nil
-		},
-	},
-	ProdTabEntry{
-		String: `VarDecl : Type letters	<< ast.Variable(X[0], X[1]), nil >>`,
-		Id:         "VarDecl",
 		NTType:     9,
 		Index:      33,
-		NumSymbols: 2,
+		NumSymbols: 4,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.Variable(X[0], X[1]), nil
+			return ast.NewArrayOfTypeWithSize(X[0], X[2]), nil
 		},
 	},
 	ProdTabEntry{
-		String: `Body : empty	<< ast.NewBody(nil), nil >>`,
-		Id:         "Body",
+		String: `VarDecl : Type letters	<< ast.NewVariable(X[0], X[1]), nil >>`,
+		Id:         "VarDecl",
 		NTType:     10,
 		Index:      34,
-		NumSymbols: 0,
+		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewBody(nil), nil
+			return ast.NewVariable(X[0], X[1]), nil
 		},
 	},
 	ProdTabEntry{
-		String: `Body : Body VarDecl	<< ast.AddToBody(X[0], X[1]) >>`,
-		Id:         "Body",
-		NTType:     10,
+		String: `StructBody : empty	<< ast.NewStructBody(), nil >>`,
+		Id:         "StructBody",
+		NTType:     11,
 		Index:      35,
+		NumSymbols: 0,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewStructBody(), nil
+		},
+	},
+	ProdTabEntry{
+		String: `StructBody : StructBody VarDecl	<< ast.AddToStructBody(X[0], X[1]) >>`,
+		Id:         "StructBody",
+		NTType:     11,
+		Index:      36,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.AddToBody(X[0], X[1])
+			return ast.AddToStructBody(X[0], X[1])
+		},
+	},
+	ProdTabEntry{
+		String: `EnumBody : empty	<< ast.NewEnumBody(), nil >>`,
+		Id:         "EnumBody",
+		NTType:     12,
+		Index:      37,
+		NumSymbols: 0,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewEnumBody(), nil
+		},
+	},
+	ProdTabEntry{
+		String: `EnumBody : EnumBody letters ","	<< ast.AddToEnumBody(X[0], X[1]), nil >>`,
+		Id:         "EnumBody",
+		NTType:     12,
+		Index:      38,
+		NumSymbols: 3,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.AddToEnumBody(X[0], X[1]), nil
 		},
 	},
 }

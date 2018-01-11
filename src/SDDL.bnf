@@ -20,49 +20,52 @@ letters: _letter {_letter | _digit};
 
 << import "ast" >>
 
-Package: "package" str PackageBody                              << ast.NewPackage($1, $2), nil >> ;
+Package: "package" str PackageBody                              << ast.NewPackageDef($1, $2), nil >> ;
 
-PackageBody: empty                                              << ast.NewPackageBody(nil), nil >>
+PackageBody: empty                                              << ast.NewPackageBody(), nil >>
+           | PackageBody Import                                 << ast.ImportToPackageBody($0, $1) >>
            | PackageBody PackageElement                         << ast.AddToPackageBody($0, $1), nil >> ;
 
-PackageElement: Import                                          << $0, nil >>
-              | ClassDef                                        << $0, nil >>
-              | StructDef                                       << $0, nil >> ;
-//              | ClassDef                                        << $0, nil >>
-//              | ClassDef                                        << $0, nil >>
+PackageElement: ClassDef                                        << $0, nil >>
+              | StructDef                                       << $0, nil >>
+              | EnumDef                                         << $0, nil >> ;
 
 Import: "use" str                                               << ast.NewImport($1), nil >> ;
 
-ClassDef: "class" letters "{" Body "}"                          << ast.NewClasDef($1, nil, $3), nil >>
-        | "class" letters ":" letters "{" Body "}"              << ast.NewClassDef($1, $3, $5), nil >> ;
+ClassDef: "class" letters "{" StructBody "}"                    << ast.NewClasDef($1, "", $3), nil >>
+        | "class" letters ":" letters "{" StructBody "}"        << ast.NewClassDef($1, $3, $5), nil >> ;
 
-StructDef: "struct" letters "{" Body "}"                        << ast.NewStructDef($1, nil, $3), nil >>
-         | "struct" letters ":" letters "{" Body "}"            << ast.NewStructDef($1, $3, $5), nil >> ;
+StructDef: "struct" letters "{" StructBody "}"                  << ast.NewStructDef($1, "", $3), nil >>
+         | "struct" letters ":" letters "{" StructBody "}"      << ast.NewStructDef($1, $3, $5), nil >> ;
 
-GenericType: "int"                                              << ast.GenericType($0), nil >>
-           | "int32"                                            << ast.GenericType($0), nil >> 
-           | "int64"                                            << ast.GenericType($0), nil >> 
-           | "long"                                             << ast.GenericType($0), nil >> 
-           | "bool"                                             << ast.GenericType($0), nil >> 
-           | "short"                                            << ast.GenericType($0), nil >>
-           | "uint"                                             << ast.GenericType($0), nil >>
-           | "uint32"                                           << ast.GenericType($0), nil >> 
-           | "uint64"                                           << ast.GenericType($0), nil >> 
-           | "ulong"                                            << ast.GenericType($0), nil >> 
-           | "ubool"                                            << ast.GenericType($0), nil >> 
-           | "ushort"                                           << ast.GenericType($0), nil >>
-           | "byte"                                             << ast.GenericType($0), nil >>
-           | "string"                                           << ast.GenericType($0), nil >>
-           | "char"                                             << ast.GenericType($0), nil >>
-           | "float"                                            << ast.GenericType($0), nil >>
-           | "double"                                           << ast.GenericType($0), nil >> ;
+EnumDef: "enum" letters "{" EnumBody "}"                        << ast.NewEnumDef($1, $3), nil >> ;
+
+GenericType: "int"                                              << ast.NewGenericType(ast.Integer32), nil >>
+           | "int32"                                            << ast.NewGenericType(ast.Integer32), nil >>
+           | "int64"                                            << ast.NewGenericType(ast.Integer64), nil >>
+           | "long"                                             << ast.NewGenericType(ast.Integer64), nil >>
+           | "short"                                            << ast.NewGenericType(ast.Short), nil >>
+           | "uint"                                             << ast.NewGenericType(ast.UnsignedInteger32), nil >>
+           | "uint32"                                           << ast.NewGenericType(ast.UnsignedInteger32), nil >>
+           | "uint64"                                           << ast.NewGenericType(ast.UnsignedInteger64), nil >>
+           | "ulong"                                            << ast.NewGenericType(ast.UnsignedInteger64), nil >>
+           | "ushort"                                           << ast.NewGenericType(ast.UnsignedShort), nil >>
+           | "byte"                                             << ast.NewGenericType(ast.Byte), nil >>
+           | "bool"                                             << ast.NewGenericType(ast.Bool), nil >>
+           | "string"                                           << ast.NewGenericType(ast.String), nil >>
+           | "char"                                             << ast.NewGenericType(ast.Char), nil >>
+           | "float"                                            << ast.NewGenericType(ast.Float), nil >>
+           | "double"                                           << ast.NewGenericType(ast.Double), nil >> ;
 
 Type: GenericType                                               << $0, nil >>
-    | letters                                                   << ast.Type($0), nil >>
-    | Type "[]"                                                 << ast.ArrayOfType($0), nil >>
-    | Type "[" integer "]"                                      << ast.ArrayOfTypeWithSize($0, $2), nil >> ;
+    | letters                                                   << ast.NewType($0), nil >>
+    | Type "[]"                                                 << ast.NewArrayOfType($0), nil >>
+    | Type "[" integer "]"                                      << ast.NewArrayOfTypeWithSize($0, $2), nil >> ;
 
-VarDecl: Type letters                                           << ast.Variable($0, $1), nil >> ;
+VarDecl: Type letters                                           << ast.NewVariable($0, $1), nil >> ;
 
-Body: empty                                                     << ast.NewBody(nil), nil >>
-    | Body VarDecl                                              << ast.AddToBody($0, $1) >> ;
+StructBody: empty                                               << ast.NewStructBody(), nil >>
+          | StructBody VarDecl                                  << ast.AddToStructBody($0, $1) >> ;
+
+EnumBody: empty                                                 << ast.NewEnumBody(), nil >>
+        | EnumBody letters ","                                  << ast.AddToEnumBody($0, $1), nil >> ;
