@@ -6,7 +6,7 @@ import (
 	"bytes"
 	"fmt"
 
-	"token"
+	"SDDL/token"
 )
 
 type ErrorSymbol interface {

@@ -6,8 +6,8 @@ import (
 	"bytes"
 	"fmt"
 
-	parseError "errors"
-	"token"
+	parseError "SDDL/errors"
+	"SDDL/token"
 )
 
 const (

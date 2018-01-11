@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"unicode/utf8"
 
-	"token"
+	"SDDL/token"
 )
 
 const (

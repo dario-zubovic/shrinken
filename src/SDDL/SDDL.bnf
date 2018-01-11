@@ -24,7 +24,7 @@ anything: {.};
 **    syntax definitions:    **
 ******************************/
 
-<< import "ast" >>
+<< import "SDDL/ast" >>
 
 Package: "package" str PackageBody                              << ast.NewPackageDef($1, $2), nil >> ;
 

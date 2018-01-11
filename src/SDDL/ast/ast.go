@@ -102,7 +102,7 @@ type Attributable struct {
 
 func NewPackageDef(packageName interface{}, packageBody interface{}) *PackageDef {
 	return &PackageDef{
-		Name: packageName.(string),
+		Name: toStr(packageName),
 		Body: packageBody.(*PackageBody),
 	}
 }
@@ -128,7 +128,7 @@ func AddToPackageBody(body interface{}, element interface{}) *PackageBody {
 
 func NewImport(importName interface{}, attributesList interface{}) *ImportDef {
 	def := &ImportDef{
-		ImportedName: importName.(string),
+		ImportedName: toStr(importName),
 	}
 	def.AttributesList = attributesList.([]*Attribute)
 	return def
@@ -137,8 +137,8 @@ func NewImport(importName interface{}, attributesList interface{}) *ImportDef {
 func NewClassDef(name interface{}, overrides interface{}, body interface{}, attributesList interface{}) *StructDef {
 	def := &StructDef{
 		IsClass:   true,
-		Overrides: overrides.(string),
-		Name:      name.(string),
+		Overrides: toStr(overrides),
+		Name:      toStr(name),
 		Body:      body.(*StructBody),
 	}
 	def.AttributesList = attributesList.([]*Attribute)
@@ -148,8 +148,8 @@ func NewClassDef(name interface{}, overrides interface{}, body interface{}, attr
 func NewStructDef(name interface{}, overrides interface{}, body interface{}, attributesList interface{}) *StructDef {
 	def := &StructDef{
 		IsClass:   false,
-		Overrides: overrides.(string),
-		Name:      name.(string),
+		Overrides: toStr(overrides),
+		Name:      toStr(name),
 		Body:      body.(*StructBody),
 	}
 	def.AttributesList = attributesList.([]*Attribute)
@@ -158,7 +158,7 @@ func NewStructDef(name interface{}, overrides interface{}, body interface{}, att
 
 func NewEnumDef(name interface{}, body interface{}, attributesList interface{}) *EnumDef {
 	def := &EnumDef{
-		Name: name.(string),
+		Name: toStr(name),
 		Body: body.(*EnumBody),
 	}
 	def.AttributesList = attributesList.([]*Attribute)
@@ -175,7 +175,7 @@ func NewGenericType(generic interface{}) *Type {
 func NewType(typeName interface{}) *Type {
 	return &Type{
 		IsGeneric: false,
-		Name:      typeName.(string),
+		Name:      toStr(typeName),
 	}
 }
 
@@ -196,7 +196,7 @@ func NewArrayOfTypeWithSize(typeDef interface{}, size interface{}) *ArrayType {
 func NewVariable(typeDef interface{}, name interface{}, attributesList interface{}) *Variable {
 	variable := &Variable{
 		Type: typeDef.(*Type),
-		Name: name.(string),
+		Name: toStr(name),
 	}
 	variable.AttributesList = attributesList.([]*Attribute)
 	return variable
@@ -223,14 +223,14 @@ func NewEnumBody() *EnumBody {
 func AddToEnumBody(body interface{}, enumeralName interface{}) *EnumBody {
 	b := body.(*EnumBody)
 	b.Enumerals = append(b.Enumerals, &Enumeral{
-		Name: enumeralName.(string),
+		Name: toStr(enumeralName),
 	})
 	return b
 }
 
 func NewKeyOnlyAttribute(key interface{}) *Attribute {
 	return &Attribute{
-		Key:     key.(string),
+		Key:     toStr(key),
 		Value:   "",
 		IsGroup: false,
 	}
@@ -238,8 +238,8 @@ func NewKeyOnlyAttribute(key interface{}) *Attribute {
 
 func NewAttribute(key, value interface{}) *Attribute {
 	return &Attribute{
-		Key:     key.(string),
-		Value:   value.(string),
+		Key:     toStr(key),
+		Value:   toStr(value),
 		IsGroup: false,
 	}
 }
