@@ -111,43 +111,43 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `ClassDef : Attributes "class" letters "{" StructBody "}"	<< ast.NewClassDef(X[2], "", X[4], X[0]), nil >>`,
+		String: `ClassDef : Attributes "class" letters "{" StructBody "}"	<< ast.NewClassDef(X[2], X[4], X[0]), nil >>`,
 		Id:         "ClassDef",
 		NTType:     5,
 		Index:      9,
 		NumSymbols: 6,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewClassDef(X[2], "", X[4], X[0]), nil
+			return ast.NewClassDef(X[2], X[4], X[0]), nil
 		},
 	},
 	ProdTabEntry{
-		String: `ClassDef : Attributes "class" letters ":" letters "{" StructBody "}"	<< ast.NewClassDef(X[2], X[4], X[6], X[0]), nil >>`,
+		String: `ClassDef : Attributes "class" letters ":" letters "{" StructBody "}"	<< ast.NewDerivedClassDef(X[2], X[4], X[6], X[0]), nil >>`,
 		Id:         "ClassDef",
 		NTType:     5,
 		Index:      10,
 		NumSymbols: 8,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewClassDef(X[2], X[4], X[6], X[0]), nil
+			return ast.NewDerivedClassDef(X[2], X[4], X[6], X[0]), nil
 		},
 	},
 	ProdTabEntry{
-		String: `StructDef : Attributes "struct" letters "{" StructBody "}"	<< ast.NewStructDef(X[2], "", X[4], X[0]), nil >>`,
+		String: `StructDef : Attributes "struct" letters "{" StructBody "}"	<< ast.NewStructDef(X[2], X[4], X[0]), nil >>`,
 		Id:         "StructDef",
 		NTType:     6,
 		Index:      11,
 		NumSymbols: 6,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewStructDef(X[2], "", X[4], X[0]), nil
+			return ast.NewStructDef(X[2], X[4], X[0]), nil
 		},
 	},
 	ProdTabEntry{
-		String: `StructDef : Attributes "struct" letters ":" letters "{" StructBody "}"	<< ast.NewStructDef(X[2], X[4], X[6], X[0]), nil >>`,
+		String: `StructDef : Attributes "struct" letters ":" letters "{" StructBody "}"	<< ast.NewDerivedStructDef(X[2], X[4], X[6], X[0]), nil >>`,
 		Id:         "StructDef",
 		NTType:     6,
 		Index:      12,
 		NumSymbols: 8,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewStructDef(X[2], X[4], X[6], X[0]), nil
+			return ast.NewDerivedStructDef(X[2], X[4], X[6], X[0]), nil
 		},
 	},
 	ProdTabEntry{

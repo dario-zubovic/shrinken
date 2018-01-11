@@ -21,7 +21,7 @@ func testForParserErrors(t *testing.T, SDDL string, valid bool) {
 }
 
 func TestPackageDecl1(t *testing.T) {
-	testForParserErrors(t, `package "Test.Namespace"`, false)
+	testForParserErrors(t, `package "Test.Namespace"`, true)
 }
 
 func TestPackageDecl2(t *testing.T) {
@@ -41,4 +41,21 @@ func TestPackageDecl4(t *testing.T) {
 
 func TestPackageDecl5(t *testing.T) {
 	testForParserErrors(t, `package "TestNamespace`, false)
+}
+
+func TestFullSnippet(t *testing.T) {
+	testForParserErrors(t, `
+package "com.github.namespace"
+
+use "com.github.other_namespace"
+
+class Entity {
+	Vector3 position
+	Vector3 rotation
+}
+
+struct Vector3 {
+	float x
+}
+`, true)
 }

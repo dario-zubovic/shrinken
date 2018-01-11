@@ -11,24 +11,24 @@ type PackageDef struct {
 
 type PackageBody struct {
 	Imports  []*ImportDef
-	Elements []*PackageElement
+	Elements []PackageElement
 }
 
 type ImportDef struct {
-	Attributable
-	ImportedName string
+	ImportedName   string
+	AttributesList []*Attribute
 }
 
-type PackageElement struct {
-	Attributable
+type PackageElement interface {
 }
 
 type StructDef struct {
 	PackageElement
-	IsClass   bool
-	Overrides string // == "" if not overriding anything
-	Name      string
-	Body      *StructBody
+	IsClass        bool
+	Overrides      string // == "" if not overriding anything
+	Name           string
+	Body           *StructBody
+	AttributesList []*Attribute
 }
 
 type StructBody struct {
@@ -37,8 +37,9 @@ type StructBody struct {
 
 type EnumDef struct {
 	PackageElement
-	Name string
-	Body *EnumBody
+	Name           string
+	Body           *EnumBody
+	AttributesList []*Attribute
 }
 
 type EnumBody struct {
@@ -76,9 +77,9 @@ type ArrayType struct {
 }
 
 type Variable struct {
-	Attributable
-	Type *Type
-	Name string
+	Type           *Type
+	Name           string
+	AttributesList []*Attribute
 }
 
 type Enumeral struct {
@@ -96,10 +97,6 @@ type AttributeGroupBody struct {
 	Attributes []*Attribute
 }
 
-type Attributable struct {
-	AttributesList []*Attribute
-}
-
 func NewPackageDef(packageName interface{}, packageBody interface{}) *PackageDef {
 	return &PackageDef{
 		Name: toStr(packageName),
@@ -110,7 +107,7 @@ func NewPackageDef(packageName interface{}, packageBody interface{}) *PackageDef
 func NewPackageBody() *PackageBody {
 	return &PackageBody{
 		Imports:  make([]*ImportDef, 0),
-		Elements: make([]*PackageElement, 0),
+		Elements: make([]PackageElement, 0),
 	}
 }
 
@@ -122,7 +119,7 @@ func ImportToPackageBody(body interface{}, importDef interface{}) *PackageBody {
 
 func AddToPackageBody(body interface{}, element interface{}) *PackageBody {
 	b := body.(*PackageBody)
-	b.Elements = append(b.Elements, element.(*PackageElement))
+	b.Elements = append(b.Elements, element.(PackageElement))
 	return b
 }
 
@@ -134,7 +131,18 @@ func NewImport(importName interface{}, attributesList interface{}) *ImportDef {
 	return def
 }
 
-func NewClassDef(name interface{}, overrides interface{}, body interface{}, attributesList interface{}) *StructDef {
+func NewClassDef(name interface{}, body interface{}, attributesList interface{}) *StructDef {
+	def := &StructDef{
+		IsClass:   true,
+		Overrides: "",
+		Name:      toStr(name),
+		Body:      body.(*StructBody),
+	}
+	def.AttributesList = attributesList.([]*Attribute)
+	return def
+}
+
+func NewDerivedClassDef(name interface{}, overrides interface{}, body interface{}, attributesList interface{}) *StructDef {
 	def := &StructDef{
 		IsClass:   true,
 		Overrides: toStr(overrides),
@@ -145,7 +153,18 @@ func NewClassDef(name interface{}, overrides interface{}, body interface{}, attr
 	return def
 }
 
-func NewStructDef(name interface{}, overrides interface{}, body interface{}, attributesList interface{}) *StructDef {
+func NewStructDef(name interface{}, body interface{}, attributesList interface{}) *StructDef {
+	def := &StructDef{
+		IsClass:   false,
+		Overrides: "",
+		Name:      toStr(name),
+		Body:      body.(*StructBody),
+	}
+	def.AttributesList = attributesList.([]*Attribute)
+	return def
+}
+
+func NewDerivedStructDef(name interface{}, overrides interface{}, body interface{}, attributesList interface{}) *StructDef {
 	def := &StructDef{
 		IsClass:   false,
 		Overrides: toStr(overrides),

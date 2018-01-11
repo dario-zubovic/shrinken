@@ -26,6 +26,7 @@ anything: {.};
 
 << import "SDDL/ast" >>
 
+// TODO: package can also have attributes
 Package: "package" str PackageBody                              << ast.NewPackageDef($1, $2), nil >> ;
 
 PackageBody: empty                                              << ast.NewPackageBody(), nil >>
@@ -38,11 +39,11 @@ PackageElement: ClassDef                                        << $0, nil >>
 
 Import: Attributes "use" str                                    << ast.NewImport($2, $0), nil >> ;
 
-ClassDef: Attributes "class" letters "{" StructBody "}"                    << ast.NewClassDef($2, "", $4, $0), nil >>
-        | Attributes "class" letters ":" letters "{" StructBody "}"        << ast.NewClassDef($2, $4, $6, $0), nil >> ;
+ClassDef: Attributes "class" letters "{" StructBody "}"                    << ast.NewClassDef($2, $4, $0), nil >>
+        | Attributes "class" letters ":" letters "{" StructBody "}"        << ast.NewDerivedClassDef($2, $4, $6, $0), nil >> ;
 
-StructDef: Attributes "struct" letters "{" StructBody "}"                  << ast.NewStructDef($2, "", $4, $0), nil >>
-         | Attributes "struct" letters ":" letters "{" StructBody "}"      << ast.NewStructDef($2, $4, $6, $0), nil >> ;
+StructDef: Attributes "struct" letters "{" StructBody "}"                  << ast.NewStructDef($2, $4, $0), nil >>
+         | Attributes "struct" letters ":" letters "{" StructBody "}"      << ast.NewDerivedStructDef($2, $4, $6, $0), nil >> ;
 
 EnumDef: Attributes "enum" letters "{" EnumBody "}"             << ast.NewEnumDef($2, $4, $0), nil >> ;
 
@@ -68,7 +69,13 @@ Type: GenericType                                               << $0, nil >>
     | Type "[]"                                                 << ast.NewArrayOfType($0), nil >>
     | Type "[" integer "]"                                      << ast.NewArrayOfTypeWithSize($0, $2), nil >> ;
 
-VarDecl: Attributes Type letters                                << ast.NewVariable($1, $2, $0), nil >> ;
+
+// TODO: add ast for multivars
+VarDecl: Attributes Type letters                                << ast.NewVariable($1, $2, $0), nil >>
+       | Attributes Type MultiVarDecl                           << ast.NewMultiVariable($1, $2, $0), nil >> ;
+
+MultiVarDecl: letters                                           << ast.NewVariableList($0), nil >>
+            | MultiVarDecl "," letters                          << ast.AddToVariableList($0, $2), nil >> ;
 
 StructBody: empty                                               << ast.NewStructBody(), nil >>
           | StructBody VarDecl                                  << ast.AddToStructBody($0, $1), nil >> ;
