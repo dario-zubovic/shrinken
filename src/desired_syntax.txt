@@ -17,21 +17,21 @@ class Action : CustomMessage {
 	Slot targetSlot
 
 	@ {
-		precision: 1/60
-		range: <0.5, 1]
+		precision: 1/60,
+		range: <0.5, 1],
 	}
 	@ das
 	@ dsa
 	float time
 
 	@ {
-		condition: targetSlot == Slot.First,
+		onlyIf: targetSlot == Slot.First,
 		atb2,
 		%C#: CSharpOnlyAttribute,
 		%go: {
 			firstGoOnlyAttribute: 42,
-			secondGoOnlyAttribute
-		}
+			secondGoOnlyAttribute,
+		},
 	}
 	Color championColor
 }
@@ -46,6 +46,7 @@ enum Slot {
 // this is definition for all other target langs:
 %!C#: struct Color {
 	@ range: [0-1]
+	@precision: 1/(2^16)
 	float r, g, b
 }
 

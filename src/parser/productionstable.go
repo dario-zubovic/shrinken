@@ -51,13 +51,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `PackageBody : PackageBody Import	<< ast.ImportToPackageBody(X[0], X[1]) >>`,
+		String: `PackageBody : PackageBody Import	<< ast.ImportToPackageBody(X[0], X[1]), nil >>`,
 		Id:         "PackageBody",
 		NTType:     2,
 		Index:      3,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.ImportToPackageBody(X[0], X[1])
+			return ast.ImportToPackageBody(X[0], X[1]), nil
 		},
 	},
 	ProdTabEntry{
@@ -111,13 +111,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `ClassDef : "class" letters "{" StructBody "}"	<< ast.NewClasDef(X[1], "", X[3]), nil >>`,
+		String: `ClassDef : "class" letters "{" StructBody "}"	<< ast.NewClassDef(X[1], "", X[3]), nil >>`,
 		Id:         "ClassDef",
 		NTType:     5,
 		Index:      9,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewClasDef(X[1], "", X[3]), nil
+			return ast.NewClassDef(X[1], "", X[3]), nil
 		},
 	},
 	ProdTabEntry{
@@ -381,13 +381,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `StructBody : StructBody VarDecl	<< ast.AddToStructBody(X[0], X[1]) >>`,
+		String: `StructBody : StructBody VarDecl	<< ast.AddToStructBody(X[0], X[1]), nil >>`,
 		Id:         "StructBody",
 		NTType:     11,
 		Index:      36,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.AddToStructBody(X[0], X[1])
+			return ast.AddToStructBody(X[0], X[1]), nil
 		},
 	},
 	ProdTabEntry{

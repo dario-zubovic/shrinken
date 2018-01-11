@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"unicode/utf8"
 
-	"home/dario/repos/shrinken/src/token"
+	"token"
 )
 
 const (

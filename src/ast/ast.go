@@ -76,10 +76,10 @@ type Enumeral struct {
 	Name string
 }
 
-func NewPackageDef(packageName string, packageBody *PackageBody) *PackageDef {
+func NewPackageDef(packageName interface{}, packageBody interface{}) *PackageDef {
 	return &PackageDef{
-		Name: packageName,
-		Body: packageBody,
+		Name: packageName.(string),
+		Body: packageBody.(*PackageBody),
 	}
 }
 
@@ -90,77 +90,79 @@ func NewPackageBody() *PackageBody {
 	}
 }
 
-func ImportToPackageBody(body *PackageBody, importDef ImportDef) *PackageBody {
-	body.Imports = append(body.Imports, importDef)
-	return body
+func ImportToPackageBody(body interface{}, importDef interface{}) *PackageBody {
+	b := body.(*PackageBody)
+	b.Imports = append(b.Imports, importDef.(ImportDef))
+	return b
 }
 
-func AddToPackageBody(body *PackageBody, element *PackageElement) *PackageBody {
-	body.Elements = append(body.Elements, element)
-	return body
+func AddToPackageBody(body interface{}, element interface{}) *PackageBody {
+	b := body.(*PackageBody)
+	b.Elements = append(b.Elements, element.(*PackageElement))
+	return b
 }
 
-func NewImport(importName string) ImportDef {
-	return ImportDef(importName)
+func NewImport(importName interface{}) ImportDef {
+	return ImportDef(importName.(string))
 }
 
-func NewClassDef(name string, overrides string, body *StructBody) *StructDef {
+func NewClassDef(name interface{}, overrides interface{}, body interface{}) *StructDef {
 	return &StructDef{
 		IsClass:   true,
-		Overrides: overrides,
-		Name:      name,
-		Body:      body,
+		Overrides: overrides.(string),
+		Name:      name.(string),
+		Body:      body.(*StructBody),
 	}
 }
 
-func NewStructDef(name string, overrides string, body *StructBody) *StructDef {
+func NewStructDef(name interface{}, overrides interface{}, body interface{}) *StructDef {
 	return &StructDef{
 		IsClass:   false,
-		Overrides: overrides,
-		Name:      name,
-		Body:      body,
+		Overrides: overrides.(string),
+		Name:      name.(string),
+		Body:      body.(*StructBody),
 	}
 }
 
-func NewEnumDef(name string, body *EnumBody) *EnumDef {
+func NewEnumDef(name interface{}, body interface{}) *EnumDef {
 	return &EnumDef{
-		Name: name,
-		Body: body,
+		Name: name.(string),
+		Body: body.(*EnumBody),
 	}
 }
 
-func NewGenericType(generic GenericType) *Type {
+func NewGenericType(generic interface{}) *Type {
 	return &Type{
 		IsGeneric:   true,
-		GenericType: generic,
+		GenericType: generic.(GenericType),
 	}
 }
 
-func NewType(typeName string) *Type {
+func NewType(typeName interface{}) *Type {
 	return &Type{
 		IsGeneric: false,
-		Name:      typeName,
+		Name:      typeName.(string),
 	}
 }
 
-func NewArrayOfType(typeDef *Type) *ArrayType {
+func NewArrayOfType(typeDef interface{}) *ArrayType {
 	return &ArrayType{
-		ChildType: typeDef,
+		ChildType: typeDef.(*Type),
 		Size:      -1,
 	}
 }
 
-func NewArrayOfTypeWithSize(typeDef *Type, size int) *ArrayType {
+func NewArrayOfTypeWithSize(typeDef interface{}, size interface{}) *ArrayType {
 	return &ArrayType{
-		ChildType: typeDef,
-		Size:      size,
+		ChildType: typeDef.(*Type),
+		Size:      size.(int),
 	}
 }
 
-func NewVariable(typeDef *Type, name string) *Variable {
+func NewVariable(typeDef interface{}, name interface{}) *Variable {
 	return &Variable{
-		Type: typeDef,
-		Name: name,
+		Type: typeDef.(*Type),
+		Name: name.(string),
 	}
 }
 
@@ -170,9 +172,10 @@ func NewStructBody() *StructBody {
 	}
 }
 
-func AddToStructBody(body *StructBody, variable *Variable) *StructBody {
-	body.Variables = append(body.Variables, variable)
-	return body
+func AddToStructBody(body interface{}, variable interface{}) *StructBody {
+	b := body.(*StructBody)
+	b.Variables = append(b.Variables, variable.(*Variable))
+	return b
 }
 
 func NewEnumBody() *EnumBody {
@@ -181,9 +184,10 @@ func NewEnumBody() *EnumBody {
 	}
 }
 
-func AddToEnumBody(body *EnumBody, enumeralName string) *EnumBody {
-	body.Enumerals = append(body.Enumerals, &Enumeral{
-		Name: enumeralName,
+func AddToEnumBody(body interface{}, enumeralName interface{}) *EnumBody {
+	b := body.(*EnumBody)
+	b.Enumerals = append(b.Enumerals, &Enumeral{
+		Name: enumeralName.(string),
 	})
-	return body
+	return b
 }

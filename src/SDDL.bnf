@@ -1,6 +1,8 @@
-/* Shrinken Data Description Language */
+// Shrinken Data Description Language
 
-/* lexical elements: */
+/******************************
+**     lexical elements:     **
+******************************/
 
 !whitespace: ' ' | '\t' | '\n' | '\r';
 !comment: _lineComment | _blockComment;
@@ -16,14 +18,16 @@ str: '"' {.} '"';
 _letter: 'a'-'z' | 'A'-'Z' | '_';
 letters: _letter {_letter | _digit};
 
-/* syntax definition: */
+/******************************
+**    syntax definitions:    **
+******************************/
 
 << import "ast" >>
 
 Package: "package" str PackageBody                              << ast.NewPackageDef($1, $2), nil >> ;
 
 PackageBody: empty                                              << ast.NewPackageBody(), nil >>
-           | PackageBody Import                                 << ast.ImportToPackageBody($0, $1) >>
+           | PackageBody Import                                 << ast.ImportToPackageBody($0, $1), nil >>
            | PackageBody PackageElement                         << ast.AddToPackageBody($0, $1), nil >> ;
 
 PackageElement: ClassDef                                        << $0, nil >>
@@ -32,7 +36,7 @@ PackageElement: ClassDef                                        << $0, nil >>
 
 Import: "use" str                                               << ast.NewImport($1), nil >> ;
 
-ClassDef: "class" letters "{" StructBody "}"                    << ast.NewClasDef($1, "", $3), nil >>
+ClassDef: "class" letters "{" StructBody "}"                    << ast.NewClassDef($1, "", $3), nil >>
         | "class" letters ":" letters "{" StructBody "}"        << ast.NewClassDef($1, $3, $5), nil >> ;
 
 StructDef: "struct" letters "{" StructBody "}"                  << ast.NewStructDef($1, "", $3), nil >>
@@ -65,7 +69,7 @@ Type: GenericType                                               << $0, nil >>
 VarDecl: Type letters                                           << ast.NewVariable($0, $1), nil >> ;
 
 StructBody: empty                                               << ast.NewStructBody(), nil >>
-          | StructBody VarDecl                                  << ast.AddToStructBody($0, $1) >> ;
+          | StructBody VarDecl                                  << ast.AddToStructBody($0, $1), nil >> ;
 
 EnumBody: empty                                                 << ast.NewEnumBody(), nil >>
         | EnumBody letters ","                                  << ast.AddToEnumBody($0, $1), nil >> ;

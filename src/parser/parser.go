@@ -6,8 +6,8 @@ import (
 	"bytes"
 	"fmt"
 
-	parseError "home/dario/repos/shrinken/src/errors"
-	"home/dario/repos/shrinken/src/token"
+	parseError "errors"
+	"token"
 )
 
 const (

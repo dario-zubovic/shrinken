@@ -5,7 +5,7 @@ package lexer
 import (
 	"fmt"
 
-	"home/dario/repos/shrinken/src/token"
+	"token"
 )
 
 type ActionTable [NumStates]ActionRow
