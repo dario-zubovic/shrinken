@@ -1,24 +1,32 @@
 package ast
 
+import (
+	"fmt"
+)
+
 type PackageDef struct {
 	Name string
 	Body *PackageBody
 }
 
 type PackageBody struct {
-	Imports  []ImportDef
+	Imports  []*ImportDef
 	Elements []*PackageElement
 }
 
-type ImportDef string
+type ImportDef struct {
+	Attributable
+	ImportedName string
+}
 
 type PackageElement struct {
+	Attributable
 }
 
 type StructDef struct {
 	PackageElement
 	IsClass   bool
-	Overrides string
+	Overrides string // == "" if not overriding anything
 	Name      string
 	Body      *StructBody
 }
@@ -68,12 +76,28 @@ type ArrayType struct {
 }
 
 type Variable struct {
+	Attributable
 	Type *Type
 	Name string
 }
 
 type Enumeral struct {
 	Name string
+}
+
+type Attribute struct {
+	Key       string
+	Value     string
+	IsGroup   bool
+	GroupBody *AttributeGroupBody
+}
+
+type AttributeGroupBody struct {
+	Attributes []*Attribute
+}
+
+type Attributable struct {
+	AttributesList []*Attribute
 }
 
 func NewPackageDef(packageName interface{}, packageBody interface{}) *PackageDef {
@@ -85,14 +109,14 @@ func NewPackageDef(packageName interface{}, packageBody interface{}) *PackageDef
 
 func NewPackageBody() *PackageBody {
 	return &PackageBody{
-		Imports:  make([]ImportDef, 0),
+		Imports:  make([]*ImportDef, 0),
 		Elements: make([]*PackageElement, 0),
 	}
 }
 
 func ImportToPackageBody(body interface{}, importDef interface{}) *PackageBody {
 	b := body.(*PackageBody)
-	b.Imports = append(b.Imports, importDef.(ImportDef))
+	b.Imports = append(b.Imports, importDef.(*ImportDef))
 	return b
 }
 
@@ -102,33 +126,43 @@ func AddToPackageBody(body interface{}, element interface{}) *PackageBody {
 	return b
 }
 
-func NewImport(importName interface{}) ImportDef {
-	return ImportDef(importName.(string))
+func NewImport(importName interface{}, attributesList interface{}) *ImportDef {
+	def := &ImportDef{
+		ImportedName: importName.(string),
+	}
+	def.AttributesList = attributesList.([]*Attribute)
+	return def
 }
 
-func NewClassDef(name interface{}, overrides interface{}, body interface{}) *StructDef {
-	return &StructDef{
+func NewClassDef(name interface{}, overrides interface{}, body interface{}, attributesList interface{}) *StructDef {
+	def := &StructDef{
 		IsClass:   true,
 		Overrides: overrides.(string),
 		Name:      name.(string),
 		Body:      body.(*StructBody),
 	}
+	def.AttributesList = attributesList.([]*Attribute)
+	return def
 }
 
-func NewStructDef(name interface{}, overrides interface{}, body interface{}) *StructDef {
-	return &StructDef{
+func NewStructDef(name interface{}, overrides interface{}, body interface{}, attributesList interface{}) *StructDef {
+	def := &StructDef{
 		IsClass:   false,
 		Overrides: overrides.(string),
 		Name:      name.(string),
 		Body:      body.(*StructBody),
 	}
+	def.AttributesList = attributesList.([]*Attribute)
+	return def
 }
 
-func NewEnumDef(name interface{}, body interface{}) *EnumDef {
-	return &EnumDef{
+func NewEnumDef(name interface{}, body interface{}, attributesList interface{}) *EnumDef {
+	def := &EnumDef{
 		Name: name.(string),
 		Body: body.(*EnumBody),
 	}
+	def.AttributesList = attributesList.([]*Attribute)
+	return def
 }
 
 func NewGenericType(generic interface{}) *Type {
@@ -159,11 +193,13 @@ func NewArrayOfTypeWithSize(typeDef interface{}, size interface{}) *ArrayType {
 	}
 }
 
-func NewVariable(typeDef interface{}, name interface{}) *Variable {
-	return &Variable{
+func NewVariable(typeDef interface{}, name interface{}, attributesList interface{}) *Variable {
+	variable := &Variable{
 		Type: typeDef.(*Type),
 		Name: name.(string),
 	}
+	variable.AttributesList = attributesList.([]*Attribute)
+	return variable
 }
 
 func NewStructBody() *StructBody {
@@ -190,4 +226,68 @@ func AddToEnumBody(body interface{}, enumeralName interface{}) *EnumBody {
 		Name: enumeralName.(string),
 	})
 	return b
+}
+
+func NewKeyOnlyAttribute(key interface{}) *Attribute {
+	return &Attribute{
+		Key:     key.(string),
+		Value:   "",
+		IsGroup: false,
+	}
+}
+
+func NewAttribute(key, value interface{}) *Attribute {
+	return &Attribute{
+		Key:     key.(string),
+		Value:   value.(string),
+		IsGroup: false,
+	}
+}
+
+func NewAttributeGroup(body interface{}) *Attribute {
+	return &Attribute{
+		IsGroup:   true,
+		GroupBody: body.(*AttributeGroupBody),
+	}
+}
+
+func NewAttributeGroupBody() *AttributeGroupBody {
+	return &AttributeGroupBody{
+		Attributes: make([]*Attribute, 0),
+	}
+}
+
+func AddToAttributeGroupBody(body interface{}, attribute interface{}) (*AttributeGroupBody, error) {
+	b := body.(*AttributeGroupBody)
+	atrb := attribute.(*Attribute)
+	if atrb.IsGroup {
+		return nil, fmt.Errorf("didn't expect group")
+	}
+
+	b.Attributes = append(b.Attributes, atrb)
+	return b, nil
+}
+
+func NewAttributesList() []*Attribute {
+	return make([]*Attribute, 0)
+}
+
+func AddToAttributesList(list interface{}, attribute interface{}) []*Attribute {
+	arr := list.([]*Attribute)
+	arr = append(arr, attribute.(*Attribute))
+	return arr
+}
+
+func AddGroupToAttributesList(list interface{}, group interface{}) ([]*Attribute, error) {
+	arr := list.([]*Attribute)
+	gr := group.(*Attribute)
+	if !gr.IsGroup {
+		return nil, fmt.Errorf("expected group")
+	}
+
+	for _, atrb := range gr.GroupBody.Attributes {
+		arr = append(arr, atrb)
+	}
+
+	return arr, nil
 }

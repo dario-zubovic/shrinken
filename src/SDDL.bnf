@@ -18,6 +18,8 @@ str: '"' {.} '"';
 _letter: 'a'-'z' | 'A'-'Z' | '_';
 letters: _letter {_letter | _digit};
 
+anything: {.};
+
 /******************************
 **    syntax definitions:    **
 ******************************/
@@ -34,15 +36,15 @@ PackageElement: ClassDef                                        << $0, nil >>
               | StructDef                                       << $0, nil >>
               | EnumDef                                         << $0, nil >> ;
 
-Import: "use" str                                               << ast.NewImport($1), nil >> ;
+Import: Attributes "use" str                                    << ast.NewImport($2, $0), nil >> ;
 
-ClassDef: "class" letters "{" StructBody "}"                    << ast.NewClassDef($1, "", $3), nil >>
-        | "class" letters ":" letters "{" StructBody "}"        << ast.NewClassDef($1, $3, $5), nil >> ;
+ClassDef: Attributes "class" letters "{" StructBody "}"                    << ast.NewClassDef($2, "", $4, $0), nil >>
+        | Attributes "class" letters ":" letters "{" StructBody "}"        << ast.NewClassDef($2, $4, $6, $0), nil >> ;
 
-StructDef: "struct" letters "{" StructBody "}"                  << ast.NewStructDef($1, "", $3), nil >>
-         | "struct" letters ":" letters "{" StructBody "}"      << ast.NewStructDef($1, $3, $5), nil >> ;
+StructDef: Attributes "struct" letters "{" StructBody "}"                  << ast.NewStructDef($2, "", $4, $0), nil >>
+         | Attributes "struct" letters ":" letters "{" StructBody "}"      << ast.NewStructDef($2, $4, $6, $0), nil >> ;
 
-EnumDef: "enum" letters "{" EnumBody "}"                        << ast.NewEnumDef($1, $3), nil >> ;
+EnumDef: Attributes "enum" letters "{" EnumBody "}"             << ast.NewEnumDef($2, $4, $0), nil >> ;
 
 GenericType: "int"                                              << ast.NewGenericType(ast.Integer32), nil >>
            | "int32"                                            << ast.NewGenericType(ast.Integer32), nil >>
@@ -66,10 +68,29 @@ Type: GenericType                                               << $0, nil >>
     | Type "[]"                                                 << ast.NewArrayOfType($0), nil >>
     | Type "[" integer "]"                                      << ast.NewArrayOfTypeWithSize($0, $2), nil >> ;
 
-VarDecl: Type letters                                           << ast.NewVariable($0, $1), nil >> ;
+VarDecl: Attributes Type letters                                << ast.NewVariable($1, $2, $0), nil >> ;
 
 StructBody: empty                                               << ast.NewStructBody(), nil >>
           | StructBody VarDecl                                  << ast.AddToStructBody($0, $1), nil >> ;
 
 EnumBody: empty                                                 << ast.NewEnumBody(), nil >>
         | EnumBody letters ","                                  << ast.AddToEnumBody($0, $1), nil >> ;
+
+KeyOnlyAttribute: "@" letters                                   << ast.NewKeyOnlyAttribute($1), nil >> ;
+
+OneLineAttribute: "@" letters ":" anything "\n"                 << ast.NewAttribute($1, $3), nil >> ;
+
+AttributeGroup: "@" "{" AttributeGroupBody "}"                  << ast.NewAttributeGroup($2), nil >> ;
+
+AttributeGroupBody: empty                                       << ast.NewAttributeGroupBody(), nil >> 
+                  | AttributeGroupBody AttributeGroupElement    << ast.AddToAttributeGroupBody($0, $1) >> ;
+
+AttributeGroupElement: letters ","                              << ast.NewKeyOnlyAttribute($0), nil >>
+                     | letters ":" anything ","                 << ast.NewAttribute($0, $2), nil >> ;
+
+SingleAttribute: KeyOnlyAttribute                               << $0, nil >>
+               | OneLineAttribute                               << $0, nil >> ;
+
+Attributes: empty                                               << ast.NewAttributesList(), nil >>
+          | Attributes SingleAttribute                          << ast.AddToAttributesList($0, $1), nil >>
+          | Attributes AttributeGroup                           << ast.AddGroupToAttributesList($0, $1) >> ;

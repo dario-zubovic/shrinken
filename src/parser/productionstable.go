@@ -101,63 +101,63 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Import : "use" str	<< ast.NewImport(X[1]), nil >>`,
+		String: `Import : Attributes "use" str	<< ast.NewImport(X[2], X[0]), nil >>`,
 		Id:         "Import",
 		NTType:     4,
 		Index:      8,
-		NumSymbols: 2,
+		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewImport(X[1]), nil
+			return ast.NewImport(X[2], X[0]), nil
 		},
 	},
 	ProdTabEntry{
-		String: `ClassDef : "class" letters "{" StructBody "}"	<< ast.NewClassDef(X[1], "", X[3]), nil >>`,
+		String: `ClassDef : Attributes "class" letters "{" StructBody "}"	<< ast.NewClassDef(X[2], "", X[4], X[0]), nil >>`,
 		Id:         "ClassDef",
 		NTType:     5,
 		Index:      9,
-		NumSymbols: 5,
+		NumSymbols: 6,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewClassDef(X[1], "", X[3]), nil
+			return ast.NewClassDef(X[2], "", X[4], X[0]), nil
 		},
 	},
 	ProdTabEntry{
-		String: `ClassDef : "class" letters ":" letters "{" StructBody "}"	<< ast.NewClassDef(X[1], X[3], X[5]), nil >>`,
+		String: `ClassDef : Attributes "class" letters ":" letters "{" StructBody "}"	<< ast.NewClassDef(X[2], X[4], X[6], X[0]), nil >>`,
 		Id:         "ClassDef",
 		NTType:     5,
 		Index:      10,
-		NumSymbols: 7,
+		NumSymbols: 8,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewClassDef(X[1], X[3], X[5]), nil
+			return ast.NewClassDef(X[2], X[4], X[6], X[0]), nil
 		},
 	},
 	ProdTabEntry{
-		String: `StructDef : "struct" letters "{" StructBody "}"	<< ast.NewStructDef(X[1], "", X[3]), nil >>`,
+		String: `StructDef : Attributes "struct" letters "{" StructBody "}"	<< ast.NewStructDef(X[2], "", X[4], X[0]), nil >>`,
 		Id:         "StructDef",
 		NTType:     6,
 		Index:      11,
-		NumSymbols: 5,
+		NumSymbols: 6,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewStructDef(X[1], "", X[3]), nil
+			return ast.NewStructDef(X[2], "", X[4], X[0]), nil
 		},
 	},
 	ProdTabEntry{
-		String: `StructDef : "struct" letters ":" letters "{" StructBody "}"	<< ast.NewStructDef(X[1], X[3], X[5]), nil >>`,
+		String: `StructDef : Attributes "struct" letters ":" letters "{" StructBody "}"	<< ast.NewStructDef(X[2], X[4], X[6], X[0]), nil >>`,
 		Id:         "StructDef",
 		NTType:     6,
 		Index:      12,
-		NumSymbols: 7,
+		NumSymbols: 8,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewStructDef(X[1], X[3], X[5]), nil
+			return ast.NewStructDef(X[2], X[4], X[6], X[0]), nil
 		},
 	},
 	ProdTabEntry{
-		String: `EnumDef : "enum" letters "{" EnumBody "}"	<< ast.NewEnumDef(X[1], X[3]), nil >>`,
+		String: `EnumDef : Attributes "enum" letters "{" EnumBody "}"	<< ast.NewEnumDef(X[2], X[4], X[0]), nil >>`,
 		Id:         "EnumDef",
 		NTType:     7,
 		Index:      13,
-		NumSymbols: 5,
+		NumSymbols: 6,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewEnumDef(X[1], X[3]), nil
+			return ast.NewEnumDef(X[2], X[4], X[0]), nil
 		},
 	},
 	ProdTabEntry{
@@ -361,13 +361,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `VarDecl : Type letters	<< ast.NewVariable(X[0], X[1]), nil >>`,
+		String: `VarDecl : Attributes Type letters	<< ast.NewVariable(X[1], X[2], X[0]), nil >>`,
 		Id:         "VarDecl",
 		NTType:     10,
 		Index:      34,
-		NumSymbols: 2,
+		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewVariable(X[0], X[1]), nil
+			return ast.NewVariable(X[1], X[2], X[0]), nil
 		},
 	},
 	ProdTabEntry{
@@ -408,6 +408,126 @@ var productionsTable = ProdTab{
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return ast.AddToEnumBody(X[0], X[1]), nil
+		},
+	},
+	ProdTabEntry{
+		String: `KeyOnlyAttribute : "@" letters	<< ast.NewKeyOnlyAttribute(X[1]), nil >>`,
+		Id:         "KeyOnlyAttribute",
+		NTType:     13,
+		Index:      39,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewKeyOnlyAttribute(X[1]), nil
+		},
+	},
+	ProdTabEntry{
+		String: `OneLineAttribute : "@" letters ":" anything "\n"	<< ast.NewAttribute(X[1], X[3]), nil >>`,
+		Id:         "OneLineAttribute",
+		NTType:     14,
+		Index:      40,
+		NumSymbols: 5,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewAttribute(X[1], X[3]), nil
+		},
+	},
+	ProdTabEntry{
+		String: `AttributeGroup : "@" "{" AttributeGroupBody "}"	<< ast.NewAttributeGroup(X[2]), nil >>`,
+		Id:         "AttributeGroup",
+		NTType:     15,
+		Index:      41,
+		NumSymbols: 4,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewAttributeGroup(X[2]), nil
+		},
+	},
+	ProdTabEntry{
+		String: `AttributeGroupBody : empty	<< ast.NewAttributeGroupBody(), nil >>`,
+		Id:         "AttributeGroupBody",
+		NTType:     16,
+		Index:      42,
+		NumSymbols: 0,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewAttributeGroupBody(), nil
+		},
+	},
+	ProdTabEntry{
+		String: `AttributeGroupBody : AttributeGroupBody AttributeGroupElement	<< ast.AddToAttributeGroupBody(X[0], X[1]) >>`,
+		Id:         "AttributeGroupBody",
+		NTType:     16,
+		Index:      43,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.AddToAttributeGroupBody(X[0], X[1])
+		},
+	},
+	ProdTabEntry{
+		String: `AttributeGroupElement : letters ","	<< ast.NewKeyOnlyAttribute(X[0]), nil >>`,
+		Id:         "AttributeGroupElement",
+		NTType:     17,
+		Index:      44,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewKeyOnlyAttribute(X[0]), nil
+		},
+	},
+	ProdTabEntry{
+		String: `AttributeGroupElement : letters ":" anything ","	<< ast.NewAttribute(X[0], X[2]), nil >>`,
+		Id:         "AttributeGroupElement",
+		NTType:     17,
+		Index:      45,
+		NumSymbols: 4,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewAttribute(X[0], X[2]), nil
+		},
+	},
+	ProdTabEntry{
+		String: `SingleAttribute : KeyOnlyAttribute	<< X[0], nil >>`,
+		Id:         "SingleAttribute",
+		NTType:     18,
+		Index:      46,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `SingleAttribute : OneLineAttribute	<< X[0], nil >>`,
+		Id:         "SingleAttribute",
+		NTType:     18,
+		Index:      47,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `Attributes : empty	<< ast.NewAttributesList(), nil >>`,
+		Id:         "Attributes",
+		NTType:     19,
+		Index:      48,
+		NumSymbols: 0,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewAttributesList(), nil
+		},
+	},
+	ProdTabEntry{
+		String: `Attributes : Attributes SingleAttribute	<< ast.AddToAttributesList(X[0], X[1]), nil >>`,
+		Id:         "Attributes",
+		NTType:     19,
+		Index:      49,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.AddToAttributesList(X[0], X[1]), nil
+		},
+	},
+	ProdTabEntry{
+		String: `Attributes : Attributes AttributeGroup	<< ast.AddGroupToAttributesList(X[0], X[1]) >>`,
+		Id:         "Attributes",
+		NTType:     19,
+		Index:      50,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.AddGroupToAttributesList(X[0], X[1])
 		},
 	},
 }
