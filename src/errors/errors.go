@@ -6,7 +6,7 @@ import (
 	"bytes"
 	"fmt"
 
-	"token"
+	"home/dario/repos/shrinken/src/token"
 )
 
 type ErrorSymbol interface {

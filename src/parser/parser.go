@@ -6,14 +6,14 @@ import (
 	"bytes"
 	"fmt"
 
-	parseError "errors"
-	"token"
+	parseError "home/dario/repos/shrinken/src/errors"
+	"home/dario/repos/shrinken/src/token"
 )
 
 const (
-	numProductions = 2
-	numStates      = 4
-	numSymbols     = 6
+	numProductions = 36
+	numStates      = 57
+	numSymbols     = 44
 )
 
 // Stack

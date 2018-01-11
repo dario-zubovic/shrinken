@@ -11,7 +11,7 @@ _blockComment: '/' '*' {. | '*'} '*' '/';
 _digit: '0'-'9';
 integer: '1'-'9' {_digit};
 
-string: '"' {.} '"';
+str: '"' {.} '"';
 
 _letter: 'a'-'z' | 'A'-'Z' | '_';
 letters: _letter {_letter | _digit};
@@ -20,10 +20,9 @@ letters: _letter {_letter | _digit};
 
 << import "ast" >>
 
-Package: "package" string PackageBody                           << ast.NewPackage($1, $2), nil >> ;
+Package: "package" str PackageBody                              << ast.NewPackage($1, $2), nil >> ;
 
 PackageBody: empty                                              << ast.NewPackageBody(nil), nil >>
-           | PackageElement                                     << ast.NewPackageBody($0), nil >>
            | PackageBody PackageElement                         << ast.AddToPackageBody($0, $1), nil >> ;
 
 PackageElement: Import                                          << $0, nil >>
@@ -32,13 +31,13 @@ PackageElement: Import                                          << $0, nil >>
 //              | ClassDef                                        << $0, nil >>
 //              | ClassDef                                        << $0, nil >>
 
-Import: "use" string                                            << ast.NewImport($1), nil >> ;
+Import: "use" str                                               << ast.NewImport($1), nil >> ;
 
 ClassDef: "class" letters "{" Body "}"                          << ast.NewClasDef($1, nil, $3), nil >>
         | "class" letters ":" letters "{" Body "}"              << ast.NewClassDef($1, $3, $5), nil >> ;
 
-StructDef: "struct" letters "{" Body "}"                 << ast.NewStructDef($1, nil, $3), nil >>
-         | "struct" letters ":" letters "{" Body "}"     << ast.NewStructDef($1, $3, $5), nil >> ;
+StructDef: "struct" letters "{" Body "}"                        << ast.NewStructDef($1, nil, $3), nil >>
+         | "struct" letters ":" letters "{" Body "}"            << ast.NewStructDef($1, $3, $5), nil >> ;
 
 GenericType: "int"                                              << ast.GenericType($0), nil >>
            | "int32"                                            << ast.GenericType($0), nil >> 
@@ -66,5 +65,4 @@ Type: GenericType                                               << $0, nil >>
 VarDecl: Type letters                                           << ast.Variable($0, $1), nil >> ;
 
 Body: empty                                                     << ast.NewBody(nil), nil >>
-    | VarDecl                                                   << ast.NewBody($0), nil >>
     | Body VarDecl                                              << ast.AddToBody($0, $1) >> ;

@@ -5,9 +5,8 @@ package "Networking.P2PMessages"
 use "Networking.Messages"
 
 %C#: use "Unity3d"
-%go: use "UtilMsgs"
 
-@exportAs: "ActionMsg"
+@ exportAs: "ActionMsg"
 class Action : CustomMessage {
 	
 	@ {
@@ -43,7 +42,9 @@ enum Slot {
 	Third
 }
 
-%go: struct Color {
+// we're importing Unity3d package for C# which includes def for Color,
+// this is definition for all other target langs:
+%!C#: struct Color {
 	@ range: [0-1]
 	float r, g, b
 }
@@ -51,4 +52,3 @@ enum Slot {
 %go: {
 
 }
-
