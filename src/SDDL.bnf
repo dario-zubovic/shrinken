@@ -8,13 +8,63 @@
 _lineComment: '/' '/' {.} '\n';
 _blockComment: '/' '*' {. | '*'} '*' '/';
 
-// _digit: '0'-'9';
-// integer: '1'-'9' {_digit};
+_digit: '0'-'9';
+integer: '1'-'9' {_digit};
 
 string: '"' {.} '"';
+
+_letter: 'a'-'z' | 'A'-'Z' | '_';
+letters: _letter {_letter | _digit};
 
 /* syntax definition: */
 
 << import "ast" >>
 
-PackageDef: "package" string        << ast.NewPackageDef($1), nil >> ;
+Package: "package" string PackageBody                           << ast.NewPackage($1, $2), nil >> ;
+
+PackageBody: empty                                              << ast.NewPackageBody(nil), nil >>
+           | PackageElement                                     << ast.NewPackageBody($0), nil >>
+           | PackageBody PackageElement                         << ast.AddToPackageBody($0, $1), nil >> ;
+
+PackageElement: Import                                          << $0, nil >>
+              | ClassDef                                        << $0, nil >>
+              | StructDef                                       << $0, nil >> ;
+//              | ClassDef                                        << $0, nil >>
+//              | ClassDef                                        << $0, nil >>
+
+Import: "use" string                                            << ast.NewImport($1), nil >> ;
+
+ClassDef: "class" letters "{" Body "}"                          << ast.NewClasDef($1, nil, $3), nil >>
+        | "class" letters ":" letters "{" Body "}"              << ast.NewClassDef($1, $3, $5), nil >> ;
+
+StructDef: "struct" letters "{" Body "}"                 << ast.NewStructDef($1, nil, $3), nil >>
+         | "struct" letters ":" letters "{" Body "}"     << ast.NewStructDef($1, $3, $5), nil >> ;
+
+GenericType: "int"                                              << ast.GenericType($0), nil >>
+           | "int32"                                            << ast.GenericType($0), nil >> 
+           | "int64"                                            << ast.GenericType($0), nil >> 
+           | "long"                                             << ast.GenericType($0), nil >> 
+           | "bool"                                             << ast.GenericType($0), nil >> 
+           | "short"                                            << ast.GenericType($0), nil >>
+           | "uint"                                             << ast.GenericType($0), nil >>
+           | "uint32"                                           << ast.GenericType($0), nil >> 
+           | "uint64"                                           << ast.GenericType($0), nil >> 
+           | "ulong"                                            << ast.GenericType($0), nil >> 
+           | "ubool"                                            << ast.GenericType($0), nil >> 
+           | "ushort"                                           << ast.GenericType($0), nil >>
+           | "byte"                                             << ast.GenericType($0), nil >>
+           | "string"                                           << ast.GenericType($0), nil >>
+           | "char"                                             << ast.GenericType($0), nil >>
+           | "float"                                            << ast.GenericType($0), nil >>
+           | "double"                                           << ast.GenericType($0), nil >> ;
+
+Type: GenericType                                               << $0, nil >>
+    | letters                                                   << ast.Type($0), nil >>
+    | Type "[]"                                                 << ast.ArrayOfType($0), nil >>
+    | Type "[" integer "]"                                      << ast.ArrayOfTypeWithSize($0, $2), nil >> ;
+
+VarDecl: Type letters                                           << ast.Variable($0, $1), nil >> ;
+
+Body: empty                                                     << ast.NewBody(nil), nil >>
+    | VarDecl                                                   << ast.NewBody($0), nil >>
+    | Body VarDecl                                              << ast.AddToBody($0, $1) >> ;
