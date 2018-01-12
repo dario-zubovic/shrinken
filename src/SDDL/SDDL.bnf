@@ -20,6 +20,10 @@ letters: _letter {_letter | _digit};
 
 anything: {.};
 
+// extended letters are used for pre-generator flags (for target language names)
+// _extendedLetter: _letter | '.' | '#';
+// extendedLetters: _letter { _extendedLetter | _digit }
+
 /******************************
 **    syntax definitions:    **
 ******************************/
@@ -70,15 +74,14 @@ Type: GenericType                                               << $0, nil >>
     | Type "[" integer "]"                                      << ast.NewArrayOfTypeWithSize($0, $2), nil >> ;
 
 
-// TODO: add ast for multivars
-VarDecl: Attributes Type letters                                << ast.NewVariable($1, $2, $0), nil >>
-       | Attributes Type MultiVarDecl                           << ast.NewMultiVariable($1, $2, $0), nil >> ;
+VarDecl: Attributes Type letters                                << ast.NewVariable($1, $2, $0), nil >> ;
 
-MultiVarDecl: letters                                           << ast.NewVariableList($0), nil >>
-            | MultiVarDecl "," letters                          << ast.AddToVariableList($0, $2), nil >> ;
+MultiVarDecl: Attributes Type letters "," letters               << ast.NewMultiVariable($1, $2, $4, $0), nil >>
+            | MultiVarDecl "," letters                          << ast.AddToMultiVariable($0, $2), nil >> ;
 
 StructBody: empty                                               << ast.NewStructBody(), nil >>
-          | StructBody VarDecl                                  << ast.AddToStructBody($0, $1), nil >> ;
+          | StructBody VarDecl                                  << ast.AddToStructBody($0, $1), nil >>
+          | StructBody MultiVarDecl                             << ast.AddMultiVariableToStructBody($0, $1), nil >> ;
 
 EnumBody: empty                                                 << ast.NewEnumBody(), nil >>
         | EnumBody letters ","                                  << ast.AddToEnumBody($0, $1), nil >> ;
@@ -101,3 +104,5 @@ SingleAttribute: KeyOnlyAttribute                               << $0, nil >>
 Attributes: empty                                               << ast.NewAttributesList(), nil >>
           | Attributes SingleAttribute                          << ast.AddToAttributesList($0, $1), nil >>
           | Attributes AttributeGroup                           << ast.AddGroupToAttributesList($0, $1) >> ;
+
+// TODO: pre-generator flags (language-specifics)

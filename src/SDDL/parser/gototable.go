@@ -2,7 +2,7 @@
 
 package parser
 
-const numNTSymbols = 20
+const numNTSymbols = 21
 
 type (
 	gotoTable [numStates]gotoRow
@@ -22,6 +22,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -44,6 +45,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -66,6 +68,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -88,6 +91,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -110,6 +114,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -132,6 +137,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -154,6 +160,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -176,6 +183,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -198,6 +206,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -220,6 +229,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -242,6 +252,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		15, // KeyOnlyAttribute
@@ -264,6 +275,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -286,6 +298,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -308,6 +321,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -330,6 +344,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -352,6 +367,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -374,6 +390,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -396,6 +413,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -418,6 +436,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -440,6 +459,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -462,6 +482,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -484,6 +505,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -506,6 +528,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -528,6 +551,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -550,6 +574,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -572,6 +597,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -594,6 +620,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		33, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -616,6 +643,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -638,6 +666,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		35, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -660,6 +689,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -682,6 +712,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		37, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -704,6 +735,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -726,6 +758,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -748,6 +781,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		44, // VarDecl
+		45, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -770,6 +804,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -792,6 +827,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		44, // VarDecl
+		45, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -814,6 +850,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -836,6 +873,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -858,6 +896,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -880,6 +919,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -902,6 +942,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -924,6 +965,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -943,17 +985,18 @@ var gotoTab = gotoTable{
 		-1, // ClassDef
 		-1, // StructDef
 		-1, // EnumDef
-		54, // GenericType
-		71, // Type
+		55, // GenericType
+		72, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		72, // KeyOnlyAttribute
-		74, // OneLineAttribute
-		75, // AttributeGroup
+		73, // KeyOnlyAttribute
+		75, // OneLineAttribute
+		76, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
-		76, // SingleAttribute
+		77, // SingleAttribute
 		-1, // Attributes
 	},
 	gotoRow{ // S43
@@ -968,6 +1011,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -990,6 +1034,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1012,7 +1057,8 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
-		77, // StructBody
+		-1, // MultiVarDecl
+		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
 		-1, // OneLineAttribute
@@ -1034,7 +1080,8 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
-		-1, // StructBody
+		-1, // MultiVarDecl
+		79, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
 		-1, // OneLineAttribute
@@ -1056,7 +1103,8 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
-		78, // StructBody
+		-1, // MultiVarDecl
+		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
 		-1, // OneLineAttribute
@@ -1078,7 +1126,8 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
-		-1, // StructBody
+		-1, // MultiVarDecl
+		80, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
 		-1, // OneLineAttribute
@@ -1100,6 +1149,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1122,6 +1172,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1144,6 +1195,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1166,6 +1218,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1188,6 +1241,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1210,6 +1264,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1232,6 +1287,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1254,6 +1310,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1276,6 +1333,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1298,6 +1356,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1320,6 +1379,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1342,6 +1402,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1364,6 +1425,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1386,6 +1448,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1408,6 +1471,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1430,6 +1494,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1452,6 +1517,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1474,6 +1540,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1496,6 +1563,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1518,6 +1586,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1540,6 +1609,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1562,6 +1632,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1584,6 +1655,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1606,6 +1678,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1628,6 +1701,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1650,6 +1724,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1672,6 +1747,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1694,6 +1770,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1715,7 +1792,8 @@ var gotoTab = gotoTable{
 		-1, // EnumDef
 		-1, // GenericType
 		-1, // Type
-		44, // VarDecl
+		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1724,7 +1802,7 @@ var gotoTab = gotoTable{
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
-		42, // Attributes
+		-1, // Attributes
 	},
 	gotoRow{ // S78
 		-1, // S'
@@ -1737,7 +1815,8 @@ var gotoTab = gotoTable{
 		-1, // EnumDef
 		-1, // GenericType
 		-1, // Type
-		44, // VarDecl
+		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1746,7 +1825,7 @@ var gotoTab = gotoTable{
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
-		42, // Attributes
+		-1, // Attributes
 	},
 	gotoRow{ // S79
 		-1, // S'
@@ -1759,7 +1838,8 @@ var gotoTab = gotoTable{
 		-1, // EnumDef
 		-1, // GenericType
 		-1, // Type
-		-1, // VarDecl
+		44, // VarDecl
+		45, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1768,7 +1848,7 @@ var gotoTab = gotoTable{
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
-		-1, // Attributes
+		42, // Attributes
 	},
 	gotoRow{ // S80
 		-1, // S'
@@ -1781,7 +1861,8 @@ var gotoTab = gotoTable{
 		-1, // EnumDef
 		-1, // GenericType
 		-1, // Type
-		-1, // VarDecl
+		44, // VarDecl
+		45, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1790,7 +1871,7 @@ var gotoTab = gotoTable{
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
-		-1, // Attributes
+		42, // Attributes
 	},
 	gotoRow{ // S81
 		-1, // S'
@@ -1804,6 +1885,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1826,6 +1908,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1848,6 +1931,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1870,6 +1954,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1892,12 +1977,13 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
 		-1, // OneLineAttribute
 		-1, // AttributeGroup
-		91, // AttributeGroupBody
+		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
@@ -1914,6 +2000,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1936,12 +2023,13 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
 		-1, // OneLineAttribute
 		-1, // AttributeGroup
-		-1, // AttributeGroupBody
+		95, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
@@ -1958,6 +2046,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -1980,6 +2069,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -2002,6 +2092,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -2024,13 +2115,14 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
 		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
-		41, // AttributeGroupElement
+		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
 	},
@@ -2046,6 +2138,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -2068,6 +2161,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -2090,6 +2184,7 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute
@@ -2112,6 +2207,122 @@ var gotoTab = gotoTable{
 		-1, // GenericType
 		-1, // Type
 		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // KeyOnlyAttribute
+		-1, // OneLineAttribute
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		41, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+	},
+	gotoRow{ // S96
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // KeyOnlyAttribute
+		-1, // OneLineAttribute
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+	},
+	gotoRow{ // S97
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // KeyOnlyAttribute
+		-1, // OneLineAttribute
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+	},
+	gotoRow{ // S98
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // KeyOnlyAttribute
+		-1, // OneLineAttribute
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+	},
+	gotoRow{ // S99
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // KeyOnlyAttribute
+		-1, // OneLineAttribute
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+	},
+	gotoRow{ // S100
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
 		-1, // KeyOnlyAttribute

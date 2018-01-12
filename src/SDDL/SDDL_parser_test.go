@@ -55,7 +55,7 @@ class Entity {
 }
 
 struct Vector3 {
-	float x
+	float x, y, z
 }
 `, true)
 }

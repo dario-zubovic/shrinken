@@ -82,6 +82,12 @@ type Variable struct {
 	AttributesList []*Attribute
 }
 
+type MultiVariable struct {
+	Type           *Type
+	Names          []string
+	AttributesList []*Attribute
+}
+
 type Enumeral struct {
 	Name string
 }
@@ -221,6 +227,23 @@ func NewVariable(typeDef interface{}, name interface{}, attributesList interface
 	return variable
 }
 
+func NewMultiVariable(typeDef interface{}, firstName interface{}, secondName interface{}, attributesList interface{}) *MultiVariable {
+	variable := &MultiVariable{
+		Type:  typeDef.(*Type),
+		Names: make([]string, 2),
+	}
+	variable.Names[0] = toStr(firstName)
+	variable.Names[1] = toStr(secondName)
+	variable.AttributesList = attributesList.([]*Attribute)
+	return variable
+}
+
+func AddToMultiVariable(multiVariable interface{}, newName interface{}) *MultiVariable {
+	multiVar := multiVariable.(*MultiVariable)
+	multiVar.Names = append(multiVar.Names, toStr(newName))
+	return multiVar
+}
+
 func NewStructBody() *StructBody {
 	return &StructBody{
 		Variables: make([]*Variable, 0),
@@ -230,6 +253,19 @@ func NewStructBody() *StructBody {
 func AddToStructBody(body interface{}, variable interface{}) *StructBody {
 	b := body.(*StructBody)
 	b.Variables = append(b.Variables, variable.(*Variable))
+	return b
+}
+
+func AddMultiVariableToStructBody(body interface{}, multiVariable interface{}) *StructBody {
+	b := body.(*StructBody)
+	multiVar := multiVariable.(*MultiVariable)
+	for _, varName := range multiVar.Names {
+		b.Variables = append(b.Variables, &Variable{
+			Type:           multiVar.Type,
+			AttributesList: multiVar.AttributesList,
+			Name:           varName,
+		})
+	}
 	return b
 }
 

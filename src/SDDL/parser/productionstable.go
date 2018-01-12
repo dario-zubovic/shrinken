@@ -371,10 +371,30 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `StructBody : empty	<< ast.NewStructBody(), nil >>`,
-		Id:         "StructBody",
+		String: `MultiVarDecl : Attributes Type letters "," letters	<< ast.NewMultiVariable(X[1], X[2], X[4], X[0]), nil >>`,
+		Id:         "MultiVarDecl",
 		NTType:     11,
 		Index:      35,
+		NumSymbols: 5,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewMultiVariable(X[1], X[2], X[4], X[0]), nil
+		},
+	},
+	ProdTabEntry{
+		String: `MultiVarDecl : MultiVarDecl "," letters	<< ast.AddToMultiVariable(X[0], X[2]), nil >>`,
+		Id:         "MultiVarDecl",
+		NTType:     11,
+		Index:      36,
+		NumSymbols: 3,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.AddToMultiVariable(X[0], X[2]), nil
+		},
+	},
+	ProdTabEntry{
+		String: `StructBody : empty	<< ast.NewStructBody(), nil >>`,
+		Id:         "StructBody",
+		NTType:     12,
+		Index:      37,
 		NumSymbols: 0,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return ast.NewStructBody(), nil
@@ -383,18 +403,28 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `StructBody : StructBody VarDecl	<< ast.AddToStructBody(X[0], X[1]), nil >>`,
 		Id:         "StructBody",
-		NTType:     11,
-		Index:      36,
+		NTType:     12,
+		Index:      38,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return ast.AddToStructBody(X[0], X[1]), nil
 		},
 	},
 	ProdTabEntry{
+		String: `StructBody : StructBody MultiVarDecl	<< ast.AddMultiVariableToStructBody(X[0], X[1]), nil >>`,
+		Id:         "StructBody",
+		NTType:     12,
+		Index:      39,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.AddMultiVariableToStructBody(X[0], X[1]), nil
+		},
+	},
+	ProdTabEntry{
 		String: `EnumBody : empty	<< ast.NewEnumBody(), nil >>`,
 		Id:         "EnumBody",
-		NTType:     12,
-		Index:      37,
+		NTType:     13,
+		Index:      40,
 		NumSymbols: 0,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return ast.NewEnumBody(), nil
@@ -403,8 +433,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `EnumBody : EnumBody letters ","	<< ast.AddToEnumBody(X[0], X[1]), nil >>`,
 		Id:         "EnumBody",
-		NTType:     12,
-		Index:      38,
+		NTType:     13,
+		Index:      41,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return ast.AddToEnumBody(X[0], X[1]), nil
@@ -413,8 +443,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `KeyOnlyAttribute : "@" letters	<< ast.NewKeyOnlyAttribute(X[1]), nil >>`,
 		Id:         "KeyOnlyAttribute",
-		NTType:     13,
-		Index:      39,
+		NTType:     14,
+		Index:      42,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return ast.NewKeyOnlyAttribute(X[1]), nil
@@ -423,8 +453,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `OneLineAttribute : "@" letters ":" anything "\n"	<< ast.NewAttribute(X[1], X[3]), nil >>`,
 		Id:         "OneLineAttribute",
-		NTType:     14,
-		Index:      40,
+		NTType:     15,
+		Index:      43,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return ast.NewAttribute(X[1], X[3]), nil
@@ -433,8 +463,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `AttributeGroup : "@" "{" AttributeGroupBody "}"	<< ast.NewAttributeGroup(X[2]), nil >>`,
 		Id:         "AttributeGroup",
-		NTType:     15,
-		Index:      41,
+		NTType:     16,
+		Index:      44,
 		NumSymbols: 4,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return ast.NewAttributeGroup(X[2]), nil
@@ -443,8 +473,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `AttributeGroupBody : empty	<< ast.NewAttributeGroupBody(), nil >>`,
 		Id:         "AttributeGroupBody",
-		NTType:     16,
-		Index:      42,
+		NTType:     17,
+		Index:      45,
 		NumSymbols: 0,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return ast.NewAttributeGroupBody(), nil
@@ -453,8 +483,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `AttributeGroupBody : AttributeGroupBody AttributeGroupElement	<< ast.AddToAttributeGroupBody(X[0], X[1]) >>`,
 		Id:         "AttributeGroupBody",
-		NTType:     16,
-		Index:      43,
+		NTType:     17,
+		Index:      46,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return ast.AddToAttributeGroupBody(X[0], X[1])
@@ -463,8 +493,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `AttributeGroupElement : letters ","	<< ast.NewKeyOnlyAttribute(X[0]), nil >>`,
 		Id:         "AttributeGroupElement",
-		NTType:     17,
-		Index:      44,
+		NTType:     18,
+		Index:      47,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return ast.NewKeyOnlyAttribute(X[0]), nil
@@ -473,8 +503,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `AttributeGroupElement : letters ":" anything ","	<< ast.NewAttribute(X[0], X[2]), nil >>`,
 		Id:         "AttributeGroupElement",
-		NTType:     17,
-		Index:      45,
+		NTType:     18,
+		Index:      48,
 		NumSymbols: 4,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return ast.NewAttribute(X[0], X[2]), nil
@@ -483,8 +513,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `SingleAttribute : KeyOnlyAttribute	<< X[0], nil >>`,
 		Id:         "SingleAttribute",
-		NTType:     18,
-		Index:      46,
+		NTType:     19,
+		Index:      49,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -493,8 +523,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `SingleAttribute : OneLineAttribute	<< X[0], nil >>`,
 		Id:         "SingleAttribute",
-		NTType:     18,
-		Index:      47,
+		NTType:     19,
+		Index:      50,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -503,8 +533,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Attributes : empty	<< ast.NewAttributesList(), nil >>`,
 		Id:         "Attributes",
-		NTType:     19,
-		Index:      48,
+		NTType:     20,
+		Index:      51,
 		NumSymbols: 0,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return ast.NewAttributesList(), nil
@@ -513,8 +543,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Attributes : Attributes SingleAttribute	<< ast.AddToAttributesList(X[0], X[1]), nil >>`,
 		Id:         "Attributes",
-		NTType:     19,
-		Index:      49,
+		NTType:     20,
+		Index:      52,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return ast.AddToAttributesList(X[0], X[1]), nil
@@ -523,8 +553,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Attributes : Attributes AttributeGroup	<< ast.AddGroupToAttributesList(X[0], X[1]) >>`,
 		Id:         "Attributes",
-		NTType:     19,
-		Index:      50,
+		NTType:     20,
+		Index:      53,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return ast.AddGroupToAttributesList(X[0], X[1])
