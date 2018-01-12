@@ -1,22 +1,30 @@
 package ast
 
+type ASTNode interface {
+	Accept(visitor Visitor)
+}
+
 type PackageDef struct {
+	ASTNode
 	Name           string
 	Body           *PackageBody
 	AttributesList []Attribute
 }
 
 type PackageBody struct {
+	ASTNode
 	Imports  []*ImportDef
 	Elements []PackageElement
 }
 
 type ImportDef struct {
+	ASTNode
 	ImportedName   string
 	AttributesList []Attribute
 }
 
 type PackageElement interface {
+	ASTNode
 }
 
 type StructDef struct {
@@ -29,6 +37,7 @@ type StructDef struct {
 }
 
 type StructBody struct {
+	ASTNode
 	Variables []*Variable
 }
 
@@ -40,12 +49,19 @@ type EnumDef struct {
 }
 
 type EnumBody struct {
+	ASTNode
 	Enumerals []*Enumeral
 }
 
 type Type struct {
+	ASTNode
+
 	IsGeneric   bool
 	GenericType GenericType
+
+	IsArray        bool
+	ArrayChildType *Type
+	ArraySize      int // -1 to indicate that no size was specified
 
 	Name string
 }
@@ -67,13 +83,8 @@ const (
 	Double
 )
 
-type ArrayType struct {
-	Type
-	ChildType *Type
-	Size      int // -1 to indicate that no size was specified
-}
-
 type Variable struct {
+	ASTNode
 	Type           *Type
 	Name           string
 	AttributesList []Attribute
@@ -86,6 +97,7 @@ type MultiVariable struct {
 }
 
 type Enumeral struct {
+	ASTNode
 	Name string
 }
 
@@ -205,17 +217,19 @@ func NewType(typeName interface{}) *Type {
 	}
 }
 
-func NewArrayOfType(typeDef interface{}) *ArrayType {
-	return &ArrayType{
-		ChildType: typeDef.(*Type),
-		Size:      -1,
+func NewArrayOfType(typeDef interface{}) *Type {
+	return &Type{
+		IsArray:        true,
+		ArrayChildType: typeDef.(*Type),
+		ArraySize:      -1,
 	}
 }
 
-func NewArrayOfTypeWithSize(typeDef interface{}, size interface{}) *ArrayType {
-	return &ArrayType{
-		ChildType: typeDef.(*Type),
-		Size:      size.(int),
+func NewArrayOfTypeWithSize(typeDef interface{}, size interface{}) *Type {
+	return &Type{
+		IsArray:        true,
+		ArrayChildType: typeDef.(*Type),
+		ArraySize:      size.(int),
 	}
 }
 

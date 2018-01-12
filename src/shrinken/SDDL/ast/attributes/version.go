@@ -17,6 +17,10 @@ func NewVersionAttribute(version interface{}) *VersionAttribute {
 	}
 }
 
+func (attb *VersionAttribute) Accept(visitor ast.Visitor) {
+	visitor.VisitAttribute(attb)
+}
+
 func (attb *VersionAttribute) IsApplicable(t reflect.Type, node interface{}) (bool, error) {
 	if t == reflect.TypeOf(&ast.PackageDef{}) {
 		return true, nil

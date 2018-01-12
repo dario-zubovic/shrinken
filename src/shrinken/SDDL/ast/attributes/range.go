@@ -17,6 +17,10 @@ func NewRangeAttribute(r interface{}) *RangeAttribute {
 	}
 }
 
+func (attb *RangeAttribute) Accept(visitor ast.Visitor) {
+	visitor.VisitAttribute(attb)
+}
+
 func (attb *RangeAttribute) IsApplicable(t reflect.Type, node interface{}) (bool, error) {
 	if t == reflect.TypeOf(&ast.Variable{}) {
 		if node.(*ast.Variable).Type.IsGeneric {
