@@ -1,8 +1,9 @@
 package ast
 
 type PackageDef struct {
-	Name string
-	Body *PackageBody
+	Name           string
+	Body           *PackageBody
+	AttributesList []Attribute
 }
 
 type PackageBody struct {
@@ -101,11 +102,13 @@ type Range struct {
 	LowerInclusive, UpperInclusive bool
 }
 
-func NewPackageDef(packageName interface{}, packageBody interface{}) *PackageDef {
-	return &PackageDef{
+func NewPackageDef(packageName interface{}, packageBody interface{}, attributesList interface{}) *PackageDef {
+	def := &PackageDef{
 		Name: toStrUnquote(packageName),
 		Body: packageBody.(*PackageBody),
 	}
+	def.AttributesList = attributesList.([]Attribute)
+	return def
 }
 
 func NewPackageBody() *PackageBody {

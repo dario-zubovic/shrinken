@@ -30,14 +30,14 @@ letters: _letter {_letter | _digit};
 **    syntax definitions:    **
 ******************************/
 
-<< import "shrinken/SDDL/ast" >>
+<< import "shrinken/SDDL/ast" 
+   import "math" >>
 
 /**************************************
 **    generic syntax definitions:    **
 ***************************************/
 
-// TODO: package can also have attributes
-Package: "package" str PackageBody                              << ast.NewPackageDef($1, $2), nil >> ;
+Package: Attributes "package" str PackageBody                   << ast.NewPackageDef($2, $3, $0), nil >> ;
 
 PackageBody: empty                                              << ast.NewPackageBody(), nil >>
            | PackageBody Import                                 << ast.ImportToPackageBody($0, $1), nil >>
@@ -109,23 +109,44 @@ Attributes: empty                                               << ast.NewAttrib
           | Attributes AttributeGroup                           << ast.AddGroupToAttributesList($0, $1), nil >> ;
 
 Attribute: RangeAttribute                                       << $0, nil >>
-         | ExportAsAttribute                                    << $0, nil >> ;
+         | ExportAsAttribute                                    << $0, nil >>
+         | PrecisionAttribute                                   << $0, nil >>
+         | VersionAttribute                                     << $0, nil >> ;
 
 RangeAttribute: "range" ":" Range                               << ast.NewRangeAttribute($2), nil >> ;
 
 ExportAsAttribute: "exportAs" ":" str                           << ast.NewExportAsAttribute($2), nil >> ;
 
-// PrecisionAttribute: "precision" ":" MathExpr                    << ast.NewPrecisionAttribute($2), nil >> ;
+PrecisionAttribute: "precision" ":" MathExpr                    << ast.NewPrecisionAttribute($2), nil >> ;
+
+VersionAttribute: "version" ":" integer                         << ast.NewVersionAttribute($2), nil >> ;
+
+Range: "[" MathExpr "," MathExpr "]"                            << ast.NewRange($1, true, $3, true), nil >>
+     | "[" MathExpr "," MathExpr ">"                            << ast.NewRange($1, true, $3, false), nil >>
+     | "<" MathExpr "," MathExpr "]"                            << ast.NewRange($1, false, $3, true), nil >>
+     | "<" MathExpr "," MathExpr ">"                            << ast.NewRange($1, false, $3, false), nil >> ;
 
 Number: integer                                                 << ast.ToFloat64($0), nil >>
-      | realNumber                                              << ast.ToFloat64($0), nil >> ;
+      | realNumber                                              << ast.ToFloat64($0), nil >>
+      | "pi"                                                    << math.Pi, nil >>
+      | "e"                                                     << math.E, nil >> ;
 
-Range: "[" Number "," Number "]"                              << ast.NewRange($1, true, $3, true), nil >>
-     | "[" Number "," Number ">"                              << ast.NewRange($1, true, $3, false), nil >>
-     | "<" Number "," Number "]"                              << ast.NewRange($1, false, $3, true), nil >>
-     | "<" Number "," Number ">"                              << ast.NewRange($1, false, $3, false), nil >> ;
+MathExpr: AddSub;
 
+AddSub: AddSub "+" MulDiv                                       << $0.(float64) + $2.(float64), nil >>
+      | AddSub "-" MulDiv                                       << $0.(float64) - $2.(float64), nil >>
+      | MulDiv                                                  << $0, nil >> ;
 
-// MathExpr: 
+MulDiv: MulDiv "*" Pot                                          << $0.(float64) * $2.(float64), nil >>
+      | MulDiv "/" Pot                                          << $0.(float64) / $2.(float64), nil >>
+      | Pot                                                     << $0, nil >> ;
+
+Pot: Pot "^" Factor                                             << math.Pow($0.(float64), $2.(float64)), nil >>
+   | Factor                                                     << $0, nil >> ;
+
+Factor: "sqrt(" AddSub ")"                                      << math.Sqrt($1.(float64)), nil >>
+      | "(" AddSub ")"                                          << $1, nil >>
+      | AddSub                                                  << $0, nil >>
+      | Number                                                  << $0, nil >> ;
 
 // TODO: pre-generator flags (language-specifics)

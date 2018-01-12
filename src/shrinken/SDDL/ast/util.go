@@ -6,11 +6,11 @@ import (
 )
 
 func toStr(str interface{}) string {
-	return str.(*token.Token).String()
+	return string(str.(*token.Token).Lit)
 }
 
 func toStrUnquote(str interface{}) string {
-	s := str.(*token.Token).String()
+	s := toStr(str)
 	return s[1 : len(s)-2]
 }
 
