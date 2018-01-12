@@ -1,8 +1,8 @@
 package SDDL
 
 import (
-	"SDDL/lexer"
-	"SDDL/parser"
+	"shrinken/SDDL/lexer"
+	"shrinken/SDDL/parser"
 	"testing"
 )
 

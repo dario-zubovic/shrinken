@@ -2,7 +2,7 @@
 
 package parser
 
-import "SDDL/ast"
+import "shrinken/SDDL/ast"
 
 type (
 	//TODO: change type and variable names to be consistent with other tables

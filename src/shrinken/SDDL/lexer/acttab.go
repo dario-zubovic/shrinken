@@ -5,7 +5,7 @@ package lexer
 import (
 	"fmt"
 
-	"SDDL/token"
+	"shrinken/SDDL/token"
 )
 
 type ActionTable [NumStates]ActionRow

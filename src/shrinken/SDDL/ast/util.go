@@ -1,6 +1,8 @@
 package ast
 
-import "SDDL/token"
+import (
+	"shrinken/SDDL/token"
+)
 
 func toStr(str interface{}) string {
 	return str.(*token.Token).String()

@@ -28,7 +28,7 @@ anything: {.};
 **    syntax definitions:    **
 ******************************/
 
-<< import "SDDL/ast" >>
+<< import "shrinken/SDDL/ast" >>
 
 // TODO: package can also have attributes
 Package: "package" str PackageBody                              << ast.NewPackageDef($1, $2), nil >> ;
