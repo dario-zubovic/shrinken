@@ -2,7 +2,8 @@
 
 package parser
 
-import "shrinken/SDDL/ast" 
+import "shrinken/SDDL/ast"
+   import "shrinken/SDDL/ast/attributes" 
    import "math"
 
 type (
@@ -562,43 +563,43 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `RangeAttribute : "range" ":" Range	<< ast.NewRangeAttribute(X[2]), nil >>`,
+		String: `RangeAttribute : "range" ":" Range	<< attributes.NewRangeAttribute(X[2]), nil >>`,
 		Id:         "RangeAttribute",
 		NTType:     20,
 		Index:      54,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewRangeAttribute(X[2]), nil
+			return attributes.NewRangeAttribute(X[2]), nil
 		},
 	},
 	ProdTabEntry{
-		String: `ExportAsAttribute : "exportAs" ":" str	<< ast.NewExportAsAttribute(X[2]), nil >>`,
+		String: `ExportAsAttribute : "exportAs" ":" str	<< attributes.NewExportAsAttribute(X[2]), nil >>`,
 		Id:         "ExportAsAttribute",
 		NTType:     21,
 		Index:      55,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewExportAsAttribute(X[2]), nil
+			return attributes.NewExportAsAttribute(X[2]), nil
 		},
 	},
 	ProdTabEntry{
-		String: `PrecisionAttribute : "precision" ":" MathExpr	<< ast.NewPrecisionAttribute(X[2]), nil >>`,
+		String: `PrecisionAttribute : "precision" ":" MathExpr	<< attributes.NewPrecisionAttribute(X[2]), nil >>`,
 		Id:         "PrecisionAttribute",
 		NTType:     22,
 		Index:      56,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewPrecisionAttribute(X[2]), nil
+			return attributes.NewPrecisionAttribute(X[2]), nil
 		},
 	},
 	ProdTabEntry{
-		String: `VersionAttribute : "version" ":" integer	<< ast.NewVersionAttribute(X[2]), nil >>`,
+		String: `VersionAttribute : "version" ":" integer	<< attributes.NewVersionAttribute(X[2]), nil >>`,
 		Id:         "VersionAttribute",
 		NTType:     23,
 		Index:      57,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewVersionAttribute(X[2]), nil
+			return attributes.NewVersionAttribute(X[2]), nil
 		},
 	},
 	ProdTabEntry{

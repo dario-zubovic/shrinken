@@ -104,7 +104,7 @@ type Range struct {
 
 func NewPackageDef(packageName interface{}, packageBody interface{}, attributesList interface{}) *PackageDef {
 	def := &PackageDef{
-		Name: toStrUnquote(packageName),
+		Name: ToStrUnquote(packageName),
 		Body: packageBody.(*PackageBody),
 	}
 	def.AttributesList = attributesList.([]Attribute)
@@ -132,7 +132,7 @@ func AddToPackageBody(body interface{}, element interface{}) *PackageBody {
 
 func NewImport(importName interface{}, attributesList interface{}) *ImportDef {
 	def := &ImportDef{
-		ImportedName: toStrUnquote(importName),
+		ImportedName: ToStrUnquote(importName),
 	}
 	def.AttributesList = attributesList.([]Attribute)
 	return def

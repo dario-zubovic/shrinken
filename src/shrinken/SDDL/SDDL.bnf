@@ -30,7 +30,8 @@ letters: _letter {_letter | _digit};
 **    syntax definitions:    **
 ******************************/
 
-<< import "shrinken/SDDL/ast" 
+<< import "shrinken/SDDL/ast"
+   import "shrinken/SDDL/ast/attributes" 
    import "math" >>
 
 /**************************************
@@ -113,13 +114,13 @@ Attribute: RangeAttribute                                       << $0, nil >>
          | PrecisionAttribute                                   << $0, nil >>
          | VersionAttribute                                     << $0, nil >> ;
 
-RangeAttribute: "range" ":" Range                               << ast.NewRangeAttribute($2), nil >> ;
+RangeAttribute: "range" ":" Range                               << attributes.NewRangeAttribute($2), nil >> ;
 
-ExportAsAttribute: "exportAs" ":" str                           << ast.NewExportAsAttribute($2), nil >> ;
+ExportAsAttribute: "exportAs" ":" str                           << attributes.NewExportAsAttribute($2), nil >> ;
 
-PrecisionAttribute: "precision" ":" MathExpr                    << ast.NewPrecisionAttribute($2), nil >> ;
+PrecisionAttribute: "precision" ":" MathExpr                    << attributes.NewPrecisionAttribute($2), nil >> ;
 
-VersionAttribute: "version" ":" integer                         << ast.NewVersionAttribute($2), nil >> ;
+VersionAttribute: "version" ":" integer                         << attributes.NewVersionAttribute($2), nil >> ;
 
 Range: "[" MathExpr "," MathExpr "]"                            << ast.NewRange($1, true, $3, true), nil >>
      | "[" MathExpr "," MathExpr ">"                            << ast.NewRange($1, true, $3, false), nil >>

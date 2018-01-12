@@ -3,6 +3,7 @@ package SDDL
 import (
 	"fmt"
 	"shrinken/SDDL/ast"
+	"shrinken/SDDL/ast/attributes"
 	"shrinken/SDDL/lexer"
 	"shrinken/SDDL/parser"
 	"testing"
@@ -37,7 +38,7 @@ class DummyClass {
 	}
 
 	pkg := r.(*ast.PackageDef)
-	result := pkg.Body.Elements[0].(*ast.StructDef).AttributesList[0].(*ast.PrecisionAttribute).Precision
+	result := pkg.Body.Elements[0].(*ast.StructDef).AttributesList[0].(*attributes.PrecisionAttribute).Precision
 
 	if result != expectedResult {
 		t.Fatalf("Wrong result; expected %v, got %v", expectedResult, result)
@@ -120,7 +121,7 @@ func TestMath3(t *testing.T) {
 }
 
 func TestMath4(t *testing.T) {
-	testForParserMathEvalErrors(t, "5*(3^2)+3", 48)
+	testForParserMathEvalErrors(t, "2^2-sqrt(8/(1+1))+5*(3^2)+3", 50)
 }
 
 func TestMath5(t *testing.T) {

@@ -1,0 +1,1 @@
+../../../bin/gocc -v -a SDDL.bnf
