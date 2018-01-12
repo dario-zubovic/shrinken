@@ -2,7 +2,7 @@
 
 package parser
 
-const numNTSymbols = 21
+const numNTSymbols = 23
 
 type (
 	gotoTable [numStates]gotoRow
@@ -25,13 +25,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S1
 		-1, // S'
@@ -48,13 +50,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S2
 		-1, // S'
@@ -71,13 +75,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S3
 		-1, // S'
@@ -94,13 +100,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S4
 		-1, // S'
@@ -117,13 +125,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		10, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S5
 		-1, // S'
@@ -140,13 +150,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S6
 		-1, // S'
@@ -163,13 +175,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S7
 		-1, // S'
@@ -186,13 +200,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S8
 		-1, // S'
@@ -209,13 +225,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S9
 		-1, // S'
@@ -232,13 +250,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S10
 		-1, // S'
@@ -255,13 +275,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		15, // KeyOnlyAttribute
-		17, // OneLineAttribute
-		18, // AttributeGroup
+		15, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
-		19, // SingleAttribute
+		17, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S11
 		-1, // S'
@@ -278,13 +300,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S12
 		-1, // S'
@@ -301,13 +325,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S13
 		-1, // S'
@@ -324,13 +350,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S14
 		-1, // S'
@@ -347,13 +375,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S15
 		-1, // S'
@@ -370,13 +400,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S16
 		-1, // S'
@@ -393,13 +425,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		23, // Attribute
+		24, // RangeAttribute
+		25, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S17
 		-1, // S'
@@ -416,13 +450,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S18
 		-1, // S'
@@ -439,13 +475,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S19
 		-1, // S'
@@ -462,13 +500,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S20
 		-1, // S'
@@ -485,13 +525,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S21
 		-1, // S'
@@ -508,13 +550,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S22
 		-1, // S'
@@ -531,13 +575,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
-		-1, // AttributeGroupBody
+		33, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S23
 		-1, // S'
@@ -554,13 +600,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S24
 		-1, // S'
@@ -577,13 +625,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S25
 		-1, // S'
@@ -600,13 +650,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
-		32, // AttributeGroupBody
+		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S26
 		-1, // S'
@@ -621,15 +673,17 @@ var gotoTab = gotoTable{
 		-1, // Type
 		-1, // VarDecl
 		-1, // MultiVarDecl
-		33, // StructBody
+		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S27
 		-1, // S'
@@ -646,13 +700,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S28
 		-1, // S'
@@ -667,15 +723,17 @@ var gotoTab = gotoTable{
 		-1, // Type
 		-1, // VarDecl
 		-1, // MultiVarDecl
-		35, // StructBody
+		36, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S29
 		-1, // S'
@@ -692,13 +750,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S30
 		-1, // S'
@@ -713,15 +773,17 @@ var gotoTab = gotoTable{
 		-1, // Type
 		-1, // VarDecl
 		-1, // MultiVarDecl
-		-1, // StructBody
-		37, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
+		38, // StructBody
+		-1, // EnumBody
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S31
 		-1, // S'
@@ -738,13 +800,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S32
 		-1, // S'
@@ -760,14 +824,16 @@ var gotoTab = gotoTable{
 		-1, // VarDecl
 		-1, // MultiVarDecl
 		-1, // StructBody
-		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
+		40, // EnumBody
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
-		41, // AttributeGroupElement
+		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S33
 		-1, // S'
@@ -780,17 +846,19 @@ var gotoTab = gotoTable{
 		-1, // EnumDef
 		-1, // GenericType
 		-1, // Type
-		44, // VarDecl
-		45, // MultiVarDecl
+		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
-		-1, // AttributeGroupElement
+		42, // AttributeGroupElement
 		-1, // SingleAttribute
-		42, // Attributes
+		-1, // Attributes
+		43, // Attribute
+		44, // RangeAttribute
+		45, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S34
 		-1, // S'
@@ -807,38 +875,17 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		49, // Range
 	},
 	gotoRow{ // S35
-		-1, // S'
-		-1, // Package
-		-1, // PackageBody
-		-1, // PackageElement
-		-1, // Import
-		-1, // ClassDef
-		-1, // StructDef
-		-1, // EnumDef
-		-1, // GenericType
-		-1, // Type
-		44, // VarDecl
-		45, // MultiVarDecl
-		-1, // StructBody
-		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
-		-1, // AttributeGroup
-		-1, // AttributeGroupBody
-		-1, // AttributeGroupElement
-		-1, // SingleAttribute
-		42, // Attributes
-	},
-	gotoRow{ // S36
 		-1, // S'
 		-1, // Package
 		-1, // PackageBody
@@ -853,13 +900,40 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S36
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		54, // VarDecl
+		55, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		52, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S37
 		-1, // S'
@@ -876,13 +950,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S38
 		-1, // S'
@@ -895,17 +971,19 @@ var gotoTab = gotoTable{
 		-1, // EnumDef
 		-1, // GenericType
 		-1, // Type
-		-1, // VarDecl
-		-1, // MultiVarDecl
+		54, // VarDecl
+		55, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
-		-1, // Attributes
+		52, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S39
 		-1, // S'
@@ -922,13 +1000,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S40
 		-1, // S'
@@ -945,13 +1025,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S41
 		-1, // S'
@@ -968,13 +1050,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S42
 		-1, // S'
@@ -985,19 +1069,21 @@ var gotoTab = gotoTable{
 		-1, // ClassDef
 		-1, // StructDef
 		-1, // EnumDef
-		55, // GenericType
-		72, // Type
+		-1, // GenericType
+		-1, // Type
 		-1, // VarDecl
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		73, // KeyOnlyAttribute
-		75, // OneLineAttribute
-		76, // AttributeGroup
+		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
-		77, // SingleAttribute
+		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S43
 		-1, // S'
@@ -1014,13 +1100,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S44
 		-1, // S'
@@ -1037,13 +1125,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S45
 		-1, // S'
@@ -1060,13 +1150,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S46
 		-1, // S'
@@ -1081,15 +1173,17 @@ var gotoTab = gotoTable{
 		-1, // Type
 		-1, // VarDecl
 		-1, // MultiVarDecl
-		79, // StructBody
+		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S47
 		-1, // S'
@@ -1106,13 +1200,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S48
 		-1, // S'
@@ -1127,15 +1223,17 @@ var gotoTab = gotoTable{
 		-1, // Type
 		-1, // VarDecl
 		-1, // MultiVarDecl
-		80, // StructBody
+		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S49
 		-1, // S'
@@ -1152,13 +1250,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S50
 		-1, // S'
@@ -1175,13 +1275,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S51
 		-1, // S'
@@ -1198,13 +1300,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S52
 		-1, // S'
@@ -1215,19 +1319,21 @@ var gotoTab = gotoTable{
 		-1, // ClassDef
 		-1, // StructDef
 		-1, // EnumDef
-		-1, // GenericType
-		-1, // Type
+		69, // GenericType
+		86, // Type
 		-1, // VarDecl
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
-		-1, // AttributeGroup
+		87, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
-		-1, // SingleAttribute
+		89, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S53
 		-1, // S'
@@ -1244,13 +1350,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S54
 		-1, // S'
@@ -1267,13 +1375,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S55
 		-1, // S'
@@ -1290,13 +1400,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S56
 		-1, // S'
@@ -1311,15 +1423,17 @@ var gotoTab = gotoTable{
 		-1, // Type
 		-1, // VarDecl
 		-1, // MultiVarDecl
-		-1, // StructBody
+		91, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S57
 		-1, // S'
@@ -1336,13 +1450,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S58
 		-1, // S'
@@ -1357,15 +1473,17 @@ var gotoTab = gotoTable{
 		-1, // Type
 		-1, // VarDecl
 		-1, // MultiVarDecl
-		-1, // StructBody
+		92, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S59
 		-1, // S'
@@ -1382,13 +1500,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S60
 		-1, // S'
@@ -1405,13 +1525,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S61
 		-1, // S'
@@ -1428,13 +1550,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S62
 		-1, // S'
@@ -1451,13 +1575,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		95, // Range
 	},
 	gotoRow{ // S63
 		-1, // S'
@@ -1474,13 +1600,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S64
 		-1, // S'
@@ -1497,13 +1625,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S65
 		-1, // S'
@@ -1520,13 +1650,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S66
 		-1, // S'
@@ -1543,13 +1675,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S67
 		-1, // S'
@@ -1566,13 +1700,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S68
 		-1, // S'
@@ -1589,13 +1725,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S69
 		-1, // S'
@@ -1612,13 +1750,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S70
 		-1, // S'
@@ -1635,13 +1775,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S71
 		-1, // S'
@@ -1658,13 +1800,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S72
 		-1, // S'
@@ -1681,13 +1825,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S73
 		-1, // S'
@@ -1704,13 +1850,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S74
 		-1, // S'
@@ -1727,13 +1875,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S75
 		-1, // S'
@@ -1750,13 +1900,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S76
 		-1, // S'
@@ -1773,13 +1925,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S77
 		-1, // S'
@@ -1796,13 +1950,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S78
 		-1, // S'
@@ -1819,13 +1975,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S79
 		-1, // S'
@@ -1838,17 +1996,19 @@ var gotoTab = gotoTable{
 		-1, // EnumDef
 		-1, // GenericType
 		-1, // Type
-		44, // VarDecl
-		45, // MultiVarDecl
+		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
-		42, // Attributes
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S80
 		-1, // S'
@@ -1861,17 +2021,19 @@ var gotoTab = gotoTable{
 		-1, // EnumDef
 		-1, // GenericType
 		-1, // Type
-		44, // VarDecl
-		45, // MultiVarDecl
+		-1, // VarDecl
+		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
-		42, // Attributes
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S81
 		-1, // S'
@@ -1888,13 +2050,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S82
 		-1, // S'
@@ -1911,13 +2075,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S83
 		-1, // S'
@@ -1934,13 +2100,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S84
 		-1, // S'
@@ -1957,13 +2125,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S85
 		-1, // S'
@@ -1980,13 +2150,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S86
 		-1, // S'
@@ -2003,13 +2175,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S87
 		-1, // S'
@@ -2026,36 +2200,40 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
-		-1, // AttributeGroup
-		95, // AttributeGroupBody
-		-1, // AttributeGroupElement
-		-1, // SingleAttribute
-		-1, // Attributes
-	},
-	gotoRow{ // S88
-		-1, // S'
-		-1, // Package
-		-1, // PackageBody
-		-1, // PackageElement
-		-1, // Import
-		-1, // ClassDef
-		-1, // StructDef
-		-1, // EnumDef
-		-1, // GenericType
-		-1, // Type
-		-1, // VarDecl
-		-1, // MultiVarDecl
-		-1, // StructBody
-		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S88
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		106, // Attribute
+		107, // RangeAttribute
+		108, // ExportAsAttribute
+		-1,  // Range
 	},
 	gotoRow{ // S89
 		-1, // S'
@@ -2072,13 +2250,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S90
 		-1, // S'
@@ -2095,13 +2275,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S91
 		-1, // S'
@@ -2114,17 +2296,19 @@ var gotoTab = gotoTable{
 		-1, // EnumDef
 		-1, // GenericType
 		-1, // Type
-		-1, // VarDecl
-		-1, // MultiVarDecl
+		54, // VarDecl
+		55, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
-		-1, // Attributes
+		52, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S92
 		-1, // S'
@@ -2137,17 +2321,19 @@ var gotoTab = gotoTable{
 		-1, // EnumDef
 		-1, // GenericType
 		-1, // Type
-		-1, // VarDecl
-		-1, // MultiVarDecl
+		54, // VarDecl
+		55, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
-		-1, // Attributes
+		52, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S93
 		-1, // S'
@@ -2164,13 +2350,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S94
 		-1, // S'
@@ -2187,13 +2375,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S95
 		-1, // S'
@@ -2210,13 +2400,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
-		41, // AttributeGroupElement
+		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S96
 		-1, // S'
@@ -2233,13 +2425,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S97
 		-1, // S'
@@ -2256,13 +2450,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S98
 		-1, // S'
@@ -2279,13 +2475,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S99
 		-1, // S'
@@ -2302,13 +2500,15 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 	gotoRow{ // S100
 		-1, // S'
@@ -2325,12 +2525,2839 @@ var gotoTab = gotoTable{
 		-1, // MultiVarDecl
 		-1, // StructBody
 		-1, // EnumBody
-		-1, // KeyOnlyAttribute
-		-1, // OneLineAttribute
 		-1, // AttributeGroup
 		-1, // AttributeGroupBody
 		-1, // AttributeGroupElement
 		-1, // SingleAttribute
 		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S101
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S102
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S103
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S104
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S105
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		128, // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // Range
+	},
+	gotoRow{ // S106
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S107
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S108
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S109
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S110
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S111
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S112
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S113
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S114
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S115
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S116
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S117
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S118
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S119
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S120
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S121
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S122
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S123
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S124
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S125
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S126
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S127
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S128
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		42, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		43, // Attribute
+		44, // RangeAttribute
+		45, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S129
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		155, // Range
+	},
+	gotoRow{ // S130
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S131
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S132
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S133
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S134
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S135
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S136
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S137
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S138
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S139
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S140
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S141
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S142
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S143
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S144
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S145
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S146
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S147
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S148
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S149
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S150
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S151
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S152
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S153
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S154
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S155
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S156
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S157
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S158
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S159
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S160
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S161
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S162
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S163
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S164
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S165
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S166
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S167
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S168
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S169
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S170
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S171
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S172
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S173
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S174
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S175
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S176
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S177
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S178
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S179
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S180
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S181
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S182
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S183
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S184
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S185
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S186
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S187
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S188
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S189
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S190
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S191
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S192
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S193
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S194
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S195
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S196
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S197
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S198
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S199
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S200
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S201
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S202
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S203
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S204
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S205
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S206
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S207
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S208
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S209
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S210
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S211
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S212
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
+	},
+	gotoRow{ // S213
+		-1, // S'
+		-1, // Package
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // Range
 	},
 }

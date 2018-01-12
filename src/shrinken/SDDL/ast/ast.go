@@ -1,9 +1,5 @@
 package ast
 
-import (
-	"fmt"
-)
-
 type PackageDef struct {
 	Name string
 	Body *PackageBody
@@ -16,7 +12,7 @@ type PackageBody struct {
 
 type ImportDef struct {
 	ImportedName   string
-	AttributesList []*Attribute
+	AttributesList []Attribute
 }
 
 type PackageElement interface {
@@ -28,7 +24,7 @@ type StructDef struct {
 	Overrides      string // == "" if not overriding anything
 	Name           string
 	Body           *StructBody
-	AttributesList []*Attribute
+	AttributesList []Attribute
 }
 
 type StructBody struct {
@@ -39,7 +35,7 @@ type EnumDef struct {
 	PackageElement
 	Name           string
 	Body           *EnumBody
-	AttributesList []*Attribute
+	AttributesList []Attribute
 }
 
 type EnumBody struct {
@@ -79,33 +75,45 @@ type ArrayType struct {
 type Variable struct {
 	Type           *Type
 	Name           string
-	AttributesList []*Attribute
+	AttributesList []Attribute
 }
 
 type MultiVariable struct {
 	Type           *Type
 	Names          []string
-	AttributesList []*Attribute
+	AttributesList []Attribute
 }
 
 type Enumeral struct {
 	Name string
 }
 
-type Attribute struct {
-	Key       string
-	Value     string
-	IsGroup   bool
-	GroupBody *AttributeGroupBody
+type AttributeGroup struct {
+	Body *AttributeGroupBody
 }
 
 type AttributeGroupBody struct {
-	Attributes []*Attribute
+	Attributes []Attribute
+}
+
+type Range interface {
+}
+
+type IntegerRange struct {
+	Range
+	LowerBound, UpperBound         int64
+	LowerInclusive, UpperInclusive bool
+}
+
+type FloatRange struct {
+	Range
+	LowerBound, UpperBound         float64
+	LowerInclusive, UpperInclusive bool
 }
 
 func NewPackageDef(packageName interface{}, packageBody interface{}) *PackageDef {
 	return &PackageDef{
-		Name: toStr(packageName),
+		Name: toStrUnquote(packageName),
 		Body: packageBody.(*PackageBody),
 	}
 }
@@ -131,9 +139,9 @@ func AddToPackageBody(body interface{}, element interface{}) *PackageBody {
 
 func NewImport(importName interface{}, attributesList interface{}) *ImportDef {
 	def := &ImportDef{
-		ImportedName: toStr(importName),
+		ImportedName: toStrUnquote(importName),
 	}
-	def.AttributesList = attributesList.([]*Attribute)
+	def.AttributesList = attributesList.([]Attribute)
 	return def
 }
 
@@ -144,7 +152,7 @@ func NewClassDef(name interface{}, body interface{}, attributesList interface{})
 		Name:      toStr(name),
 		Body:      body.(*StructBody),
 	}
-	def.AttributesList = attributesList.([]*Attribute)
+	def.AttributesList = attributesList.([]Attribute)
 	return def
 }
 
@@ -155,7 +163,7 @@ func NewDerivedClassDef(name interface{}, overrides interface{}, body interface{
 		Name:      toStr(name),
 		Body:      body.(*StructBody),
 	}
-	def.AttributesList = attributesList.([]*Attribute)
+	def.AttributesList = attributesList.([]Attribute)
 	return def
 }
 
@@ -166,7 +174,7 @@ func NewStructDef(name interface{}, body interface{}, attributesList interface{}
 		Name:      toStr(name),
 		Body:      body.(*StructBody),
 	}
-	def.AttributesList = attributesList.([]*Attribute)
+	def.AttributesList = attributesList.([]Attribute)
 	return def
 }
 
@@ -177,7 +185,7 @@ func NewDerivedStructDef(name interface{}, overrides interface{}, body interface
 		Name:      toStr(name),
 		Body:      body.(*StructBody),
 	}
-	def.AttributesList = attributesList.([]*Attribute)
+	def.AttributesList = attributesList.([]Attribute)
 	return def
 }
 
@@ -186,7 +194,7 @@ func NewEnumDef(name interface{}, body interface{}, attributesList interface{}) 
 		Name: toStr(name),
 		Body: body.(*EnumBody),
 	}
-	def.AttributesList = attributesList.([]*Attribute)
+	def.AttributesList = attributesList.([]Attribute)
 	return def
 }
 
@@ -223,7 +231,7 @@ func NewVariable(typeDef interface{}, name interface{}, attributesList interface
 		Type: typeDef.(*Type),
 		Name: toStr(name),
 	}
-	variable.AttributesList = attributesList.([]*Attribute)
+	variable.AttributesList = attributesList.([]Attribute)
 	return variable
 }
 
@@ -234,7 +242,7 @@ func NewMultiVariable(typeDef interface{}, firstName interface{}, secondName int
 	}
 	variable.Names[0] = toStr(firstName)
 	variable.Names[1] = toStr(secondName)
-	variable.AttributesList = attributesList.([]*Attribute)
+	variable.AttributesList = attributesList.([]Attribute)
 	return variable
 }
 
@@ -283,66 +291,60 @@ func AddToEnumBody(body interface{}, enumeralName interface{}) *EnumBody {
 	return b
 }
 
-func NewKeyOnlyAttribute(key interface{}) *Attribute {
-	return &Attribute{
-		Key:     toStr(key),
-		Value:   "",
-		IsGroup: false,
-	}
-}
-
-func NewAttribute(key, value interface{}) *Attribute {
-	return &Attribute{
-		Key:     toStr(key),
-		Value:   toStr(value),
-		IsGroup: false,
-	}
-}
-
-func NewAttributeGroup(body interface{}) *Attribute {
-	return &Attribute{
-		IsGroup:   true,
-		GroupBody: body.(*AttributeGroupBody),
+func NewAttributeGroup(body interface{}) *AttributeGroup {
+	return &AttributeGroup{
+		Body: body.(*AttributeGroupBody),
 	}
 }
 
 func NewAttributeGroupBody() *AttributeGroupBody {
 	return &AttributeGroupBody{
-		Attributes: make([]*Attribute, 0),
+		Attributes: make([]Attribute, 0),
 	}
 }
 
-func AddToAttributeGroupBody(body interface{}, attribute interface{}) (*AttributeGroupBody, error) {
+func AddToAttributeGroupBody(body interface{}, attribute interface{}) *AttributeGroupBody {
 	b := body.(*AttributeGroupBody)
-	atrb := attribute.(*Attribute)
-	if atrb.IsGroup {
-		return nil, fmt.Errorf("didn't expect group")
-	}
-
+	atrb := attribute.(Attribute)
 	b.Attributes = append(b.Attributes, atrb)
-	return b, nil
+	return b
 }
 
-func NewAttributesList() []*Attribute {
-	return make([]*Attribute, 0)
+func NewAttributesList() []Attribute {
+	return make([]Attribute, 0)
 }
 
-func AddToAttributesList(list interface{}, attribute interface{}) []*Attribute {
-	arr := list.([]*Attribute)
-	arr = append(arr, attribute.(*Attribute))
+func AddToAttributesList(list interface{}, attribute interface{}) []Attribute {
+	arr := list.([]Attribute)
+	arr = append(arr, attribute.(Attribute))
 	return arr
 }
 
-func AddGroupToAttributesList(list interface{}, group interface{}) ([]*Attribute, error) {
-	arr := list.([]*Attribute)
-	gr := group.(*Attribute)
-	if !gr.IsGroup {
-		return nil, fmt.Errorf("expected group")
-	}
+func AddGroupToAttributesList(list interface{}, group interface{}) []Attribute {
+	arr := list.([]Attribute)
+	gr := group.(*AttributeGroup)
 
-	for _, atrb := range gr.GroupBody.Attributes {
+	for _, atrb := range gr.Body.Attributes {
 		arr = append(arr, atrb)
 	}
 
-	return arr, nil
+	return arr
+}
+
+func NewIntegerRange(lowerBound interface{}, lowerInclusive interface{}, upperBound interface{}, upperInclusive interface{}) *IntegerRange {
+	return &IntegerRange{
+		LowerBound:     toInt64(lowerBound),
+		LowerInclusive: lowerInclusive.(bool),
+		UpperBound:     toInt64(upperBound),
+		UpperInclusive: upperInclusive.(bool),
+	}
+}
+
+func NewFloatRange(lowerBound interface{}, lowerInclusive interface{}, upperBound interface{}, upperInclusive interface{}) *FloatRange {
+	return &FloatRange{
+		LowerBound:     toFloat64(lowerBound),
+		LowerInclusive: lowerInclusive.(bool),
+		UpperBound:     toFloat64(upperBound),
+		UpperInclusive: upperInclusive.(bool),
+	}
 }

@@ -49,8 +49,12 @@ var actionTab = actionTable{
 			nil,      /* ] */
 			nil,      /* , */
 			nil,      /* @ */
+			nil,      /* range */
+			nil,      /* exportAs */
+			nil,      /* > */
+			nil,      /* < */
+			nil,      /* realNumber */
 			nil,      /* anything */
-			nil,      /* \n */
 		},
 	},
 	actionRow{ // S1
@@ -91,8 +95,12 @@ var actionTab = actionTable{
 			nil,          /* ] */
 			nil,          /* , */
 			nil,          /* @ */
+			nil,          /* range */
+			nil,          /* exportAs */
+			nil,          /* > */
+			nil,          /* < */
+			nil,          /* realNumber */
 			nil,          /* anything */
-			nil,          /* \n */
 		},
 	},
 	actionRow{ // S2
@@ -133,8 +141,12 @@ var actionTab = actionTable{
 			nil,      /* ] */
 			nil,      /* , */
 			nil,      /* @ */
+			nil,      /* range */
+			nil,      /* exportAs */
+			nil,      /* > */
+			nil,      /* < */
+			nil,      /* realNumber */
 			nil,      /* anything */
-			nil,      /* \n */
 		},
 	},
 	actionRow{ // S3
@@ -175,8 +187,12 @@ var actionTab = actionTable{
 			nil,       /* ] */
 			nil,       /* , */
 			reduce(2), /* @, reduce: PackageBody */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
 			nil,       /* anything */
-			nil,       /* \n */
 		},
 	},
 	actionRow{ // S4
@@ -187,14 +203,14 @@ var actionTab = actionTable{
 			nil,        /* package */
 			nil,        /* str */
 			nil,        /* empty */
-			reduce(51), /* use, reduce: Attributes */
-			reduce(51), /* class, reduce: Attributes */
+			reduce(47), /* use, reduce: Attributes */
+			reduce(47), /* class, reduce: Attributes */
 			nil,        /* letters */
 			nil,        /* { */
 			nil,        /* } */
 			nil,        /* : */
-			reduce(51), /* struct, reduce: Attributes */
-			reduce(51), /* enum, reduce: Attributes */
+			reduce(47), /* struct, reduce: Attributes */
+			reduce(47), /* enum, reduce: Attributes */
 			nil,        /* int */
 			nil,        /* int32 */
 			nil,        /* int64 */
@@ -216,9 +232,13 @@ var actionTab = actionTable{
 			nil,        /* integer */
 			nil,        /* ] */
 			nil,        /* , */
-			reduce(51), /* @, reduce: Attributes */
+			reduce(47), /* @, reduce: Attributes */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
 	actionRow{ // S5
@@ -259,8 +279,12 @@ var actionTab = actionTable{
 			nil,       /* ] */
 			nil,       /* , */
 			reduce(3), /* @, reduce: PackageBody */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
 			nil,       /* anything */
-			nil,       /* \n */
 		},
 	},
 	actionRow{ // S6
@@ -301,8 +325,12 @@ var actionTab = actionTable{
 			nil,       /* ] */
 			nil,       /* , */
 			reduce(4), /* @, reduce: PackageBody */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
 			nil,       /* anything */
-			nil,       /* \n */
 		},
 	},
 	actionRow{ // S7
@@ -343,8 +371,12 @@ var actionTab = actionTable{
 			nil,       /* ] */
 			nil,       /* , */
 			reduce(5), /* @, reduce: PackageElement */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
 			nil,       /* anything */
-			nil,       /* \n */
 		},
 	},
 	actionRow{ // S8
@@ -385,8 +417,12 @@ var actionTab = actionTable{
 			nil,       /* ] */
 			nil,       /* , */
 			reduce(6), /* @, reduce: PackageElement */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
 			nil,       /* anything */
-			nil,       /* \n */
 		},
 	},
 	actionRow{ // S9
@@ -427,8 +463,12 @@ var actionTab = actionTable{
 			nil,       /* ] */
 			nil,       /* , */
 			reduce(7), /* @, reduce: PackageElement */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
 			nil,       /* anything */
-			nil,       /* \n */
 		},
 	},
 	actionRow{ // S10
@@ -469,8 +509,12 @@ var actionTab = actionTable{
 			nil,       /* ] */
 			nil,       /* , */
 			shift(16), /* @ */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
 			nil,       /* anything */
-			nil,       /* \n */
 		},
 	},
 	actionRow{ // S11
@@ -479,7 +523,7 @@ var actionTab = actionTable{
 			nil,       /* INVALID */
 			nil,       /* $ */
 			nil,       /* package */
-			shift(20), /* str */
+			shift(18), /* str */
 			nil,       /* empty */
 			nil,       /* use */
 			nil,       /* class */
@@ -511,11 +555,107 @@ var actionTab = actionTable{
 			nil,       /* ] */
 			nil,       /* , */
 			nil,       /* @ */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
 			nil,       /* anything */
-			nil,       /* \n */
 		},
 	},
 	actionRow{ // S12
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       /* INVALID */
+			nil,       /* $ */
+			nil,       /* package */
+			nil,       /* str */
+			nil,       /* empty */
+			nil,       /* use */
+			nil,       /* class */
+			shift(19), /* letters */
+			nil,       /* { */
+			nil,       /* } */
+			nil,       /* : */
+			nil,       /* struct */
+			nil,       /* enum */
+			nil,       /* int */
+			nil,       /* int32 */
+			nil,       /* int64 */
+			nil,       /* long */
+			nil,       /* short */
+			nil,       /* uint */
+			nil,       /* uint32 */
+			nil,       /* uint64 */
+			nil,       /* ulong */
+			nil,       /* ushort */
+			nil,       /* byte */
+			nil,       /* bool */
+			nil,       /* string */
+			nil,       /* char */
+			nil,       /* float */
+			nil,       /* double */
+			nil,       /* [] */
+			nil,       /* [ */
+			nil,       /* integer */
+			nil,       /* ] */
+			nil,       /* , */
+			nil,       /* @ */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
+			nil,       /* anything */
+		},
+	},
+	actionRow{ // S13
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       /* INVALID */
+			nil,       /* $ */
+			nil,       /* package */
+			nil,       /* str */
+			nil,       /* empty */
+			nil,       /* use */
+			nil,       /* class */
+			shift(20), /* letters */
+			nil,       /* { */
+			nil,       /* } */
+			nil,       /* : */
+			nil,       /* struct */
+			nil,       /* enum */
+			nil,       /* int */
+			nil,       /* int32 */
+			nil,       /* int64 */
+			nil,       /* long */
+			nil,       /* short */
+			nil,       /* uint */
+			nil,       /* uint32 */
+			nil,       /* uint64 */
+			nil,       /* ulong */
+			nil,       /* ushort */
+			nil,       /* byte */
+			nil,       /* bool */
+			nil,       /* string */
+			nil,       /* char */
+			nil,       /* float */
+			nil,       /* double */
+			nil,       /* [] */
+			nil,       /* [ */
+			nil,       /* integer */
+			nil,       /* ] */
+			nil,       /* , */
+			nil,       /* @ */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
+			nil,       /* anything */
+		},
+	},
+	actionRow{ // S14
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,       /* INVALID */
@@ -553,92 +693,12 @@ var actionTab = actionTable{
 			nil,       /* ] */
 			nil,       /* , */
 			nil,       /* @ */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
 			nil,       /* anything */
-			nil,       /* \n */
-		},
-	},
-	actionRow{ // S13
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,       /* INVALID */
-			nil,       /* $ */
-			nil,       /* package */
-			nil,       /* str */
-			nil,       /* empty */
-			nil,       /* use */
-			nil,       /* class */
-			shift(22), /* letters */
-			nil,       /* { */
-			nil,       /* } */
-			nil,       /* : */
-			nil,       /* struct */
-			nil,       /* enum */
-			nil,       /* int */
-			nil,       /* int32 */
-			nil,       /* int64 */
-			nil,       /* long */
-			nil,       /* short */
-			nil,       /* uint */
-			nil,       /* uint32 */
-			nil,       /* uint64 */
-			nil,       /* ulong */
-			nil,       /* ushort */
-			nil,       /* byte */
-			nil,       /* bool */
-			nil,       /* string */
-			nil,       /* char */
-			nil,       /* float */
-			nil,       /* double */
-			nil,       /* [] */
-			nil,       /* [ */
-			nil,       /* integer */
-			nil,       /* ] */
-			nil,       /* , */
-			nil,       /* @ */
-			nil,       /* anything */
-			nil,       /* \n */
-		},
-	},
-	actionRow{ // S14
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,       /* INVALID */
-			nil,       /* $ */
-			nil,       /* package */
-			nil,       /* str */
-			nil,       /* empty */
-			nil,       /* use */
-			nil,       /* class */
-			shift(23), /* letters */
-			nil,       /* { */
-			nil,       /* } */
-			nil,       /* : */
-			nil,       /* struct */
-			nil,       /* enum */
-			nil,       /* int */
-			nil,       /* int32 */
-			nil,       /* int64 */
-			nil,       /* long */
-			nil,       /* short */
-			nil,       /* uint */
-			nil,       /* uint32 */
-			nil,       /* uint64 */
-			nil,       /* ulong */
-			nil,       /* ushort */
-			nil,       /* byte */
-			nil,       /* bool */
-			nil,       /* string */
-			nil,       /* char */
-			nil,       /* float */
-			nil,       /* double */
-			nil,       /* [] */
-			nil,       /* [ */
-			nil,       /* integer */
-			nil,       /* ] */
-			nil,       /* , */
-			nil,       /* @ */
-			nil,       /* anything */
-			nil,       /* \n */
 		},
 	},
 	actionRow{ // S15
@@ -649,14 +709,14 @@ var actionTab = actionTable{
 			nil,        /* package */
 			nil,        /* str */
 			nil,        /* empty */
-			reduce(49), /* use, reduce: SingleAttribute */
-			reduce(49), /* class, reduce: SingleAttribute */
+			reduce(49), /* use, reduce: Attributes */
+			reduce(49), /* class, reduce: Attributes */
 			nil,        /* letters */
 			nil,        /* { */
 			nil,        /* } */
 			nil,        /* : */
-			reduce(49), /* struct, reduce: SingleAttribute */
-			reduce(49), /* enum, reduce: SingleAttribute */
+			reduce(49), /* struct, reduce: Attributes */
+			reduce(49), /* enum, reduce: Attributes */
 			nil,        /* int */
 			nil,        /* int32 */
 			nil,        /* int64 */
@@ -678,9 +738,13 @@ var actionTab = actionTable{
 			nil,        /* integer */
 			nil,        /* ] */
 			nil,        /* , */
-			reduce(49), /* @, reduce: SingleAttribute */
+			reduce(49), /* @, reduce: Attributes */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
 	actionRow{ // S16
@@ -693,8 +757,8 @@ var actionTab = actionTable{
 			nil,       /* empty */
 			nil,       /* use */
 			nil,       /* class */
-			shift(24), /* letters */
-			shift(25), /* { */
+			nil,       /* letters */
+			shift(22), /* { */
 			nil,       /* } */
 			nil,       /* : */
 			nil,       /* struct */
@@ -721,8 +785,12 @@ var actionTab = actionTable{
 			nil,       /* ] */
 			nil,       /* , */
 			nil,       /* @ */
+			shift(26), /* range */
+			shift(27), /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
 			nil,       /* anything */
-			nil,       /* \n */
 		},
 	},
 	actionRow{ // S17
@@ -733,14 +801,14 @@ var actionTab = actionTable{
 			nil,        /* package */
 			nil,        /* str */
 			nil,        /* empty */
-			reduce(50), /* use, reduce: SingleAttribute */
-			reduce(50), /* class, reduce: SingleAttribute */
+			reduce(48), /* use, reduce: Attributes */
+			reduce(48), /* class, reduce: Attributes */
 			nil,        /* letters */
 			nil,        /* { */
 			nil,        /* } */
 			nil,        /* : */
-			reduce(50), /* struct, reduce: SingleAttribute */
-			reduce(50), /* enum, reduce: SingleAttribute */
+			reduce(48), /* struct, reduce: Attributes */
+			reduce(48), /* enum, reduce: Attributes */
 			nil,        /* int */
 			nil,        /* int32 */
 			nil,        /* int64 */
@@ -762,96 +830,16 @@ var actionTab = actionTable{
 			nil,        /* integer */
 			nil,        /* ] */
 			nil,        /* , */
-			reduce(50), /* @, reduce: SingleAttribute */
+			reduce(48), /* @, reduce: Attributes */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
 	actionRow{ // S18
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,        /* INVALID */
-			nil,        /* $ */
-			nil,        /* package */
-			nil,        /* str */
-			nil,        /* empty */
-			reduce(53), /* use, reduce: Attributes */
-			reduce(53), /* class, reduce: Attributes */
-			nil,        /* letters */
-			nil,        /* { */
-			nil,        /* } */
-			nil,        /* : */
-			reduce(53), /* struct, reduce: Attributes */
-			reduce(53), /* enum, reduce: Attributes */
-			nil,        /* int */
-			nil,        /* int32 */
-			nil,        /* int64 */
-			nil,        /* long */
-			nil,        /* short */
-			nil,        /* uint */
-			nil,        /* uint32 */
-			nil,        /* uint64 */
-			nil,        /* ulong */
-			nil,        /* ushort */
-			nil,        /* byte */
-			nil,        /* bool */
-			nil,        /* string */
-			nil,        /* char */
-			nil,        /* float */
-			nil,        /* double */
-			nil,        /* [] */
-			nil,        /* [ */
-			nil,        /* integer */
-			nil,        /* ] */
-			nil,        /* , */
-			reduce(53), /* @, reduce: Attributes */
-			nil,        /* anything */
-			nil,        /* \n */
-		},
-	},
-	actionRow{ // S19
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,        /* INVALID */
-			nil,        /* $ */
-			nil,        /* package */
-			nil,        /* str */
-			nil,        /* empty */
-			reduce(52), /* use, reduce: Attributes */
-			reduce(52), /* class, reduce: Attributes */
-			nil,        /* letters */
-			nil,        /* { */
-			nil,        /* } */
-			nil,        /* : */
-			reduce(52), /* struct, reduce: Attributes */
-			reduce(52), /* enum, reduce: Attributes */
-			nil,        /* int */
-			nil,        /* int32 */
-			nil,        /* int64 */
-			nil,        /* long */
-			nil,        /* short */
-			nil,        /* uint */
-			nil,        /* uint32 */
-			nil,        /* uint64 */
-			nil,        /* ulong */
-			nil,        /* ushort */
-			nil,        /* byte */
-			nil,        /* bool */
-			nil,        /* string */
-			nil,        /* char */
-			nil,        /* float */
-			nil,        /* double */
-			nil,        /* [] */
-			nil,        /* [ */
-			nil,        /* integer */
-			nil,        /* ] */
-			nil,        /* , */
-			reduce(52), /* @, reduce: Attributes */
-			nil,        /* anything */
-			nil,        /* \n */
-		},
-	},
-	actionRow{ // S20
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,       /* INVALID */
@@ -889,53 +877,15 @@ var actionTab = actionTable{
 			nil,       /* ] */
 			nil,       /* , */
 			reduce(8), /* @, reduce: Import */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
 			nil,       /* anything */
-			nil,       /* \n */
 		},
 	},
-	actionRow{ // S21
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,       /* INVALID */
-			nil,       /* $ */
-			nil,       /* package */
-			nil,       /* str */
-			nil,       /* empty */
-			nil,       /* use */
-			nil,       /* class */
-			nil,       /* letters */
-			shift(26), /* { */
-			nil,       /* } */
-			shift(27), /* : */
-			nil,       /* struct */
-			nil,       /* enum */
-			nil,       /* int */
-			nil,       /* int32 */
-			nil,       /* int64 */
-			nil,       /* long */
-			nil,       /* short */
-			nil,       /* uint */
-			nil,       /* uint32 */
-			nil,       /* uint64 */
-			nil,       /* ulong */
-			nil,       /* ushort */
-			nil,       /* byte */
-			nil,       /* bool */
-			nil,       /* string */
-			nil,       /* char */
-			nil,       /* float */
-			nil,       /* double */
-			nil,       /* [] */
-			nil,       /* [ */
-			nil,       /* integer */
-			nil,       /* ] */
-			nil,       /* , */
-			nil,       /* @ */
-			nil,       /* anything */
-			nil,       /* \n */
-		},
-	},
-	actionRow{ // S22
+	actionRow{ // S19
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,       /* INVALID */
@@ -973,11 +923,15 @@ var actionTab = actionTable{
 			nil,       /* ] */
 			nil,       /* , */
 			nil,       /* @ */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
 			nil,       /* anything */
-			nil,       /* \n */
 		},
 	},
-	actionRow{ // S23
+	actionRow{ // S20
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,       /* INVALID */
@@ -989,6 +943,52 @@ var actionTab = actionTable{
 			nil,       /* class */
 			nil,       /* letters */
 			shift(30), /* { */
+			nil,       /* } */
+			shift(31), /* : */
+			nil,       /* struct */
+			nil,       /* enum */
+			nil,       /* int */
+			nil,       /* int32 */
+			nil,       /* int64 */
+			nil,       /* long */
+			nil,       /* short */
+			nil,       /* uint */
+			nil,       /* uint32 */
+			nil,       /* uint64 */
+			nil,       /* ulong */
+			nil,       /* ushort */
+			nil,       /* byte */
+			nil,       /* bool */
+			nil,       /* string */
+			nil,       /* char */
+			nil,       /* float */
+			nil,       /* double */
+			nil,       /* [] */
+			nil,       /* [ */
+			nil,       /* integer */
+			nil,       /* ] */
+			nil,       /* , */
+			nil,       /* @ */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
+			nil,       /* anything */
+		},
+	},
+	actionRow{ // S21
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       /* INVALID */
+			nil,       /* $ */
+			nil,       /* package */
+			nil,       /* str */
+			nil,       /* empty */
+			nil,       /* use */
+			nil,       /* class */
+			nil,       /* letters */
+			shift(32), /* { */
 			nil,       /* } */
 			nil,       /* : */
 			nil,       /* struct */
@@ -1015,53 +1015,15 @@ var actionTab = actionTable{
 			nil,       /* ] */
 			nil,       /* , */
 			nil,       /* @ */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
 			nil,       /* anything */
-			nil,       /* \n */
 		},
 	},
-	actionRow{ // S24
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,        /* INVALID */
-			nil,        /* $ */
-			nil,        /* package */
-			nil,        /* str */
-			nil,        /* empty */
-			reduce(42), /* use, reduce: KeyOnlyAttribute */
-			reduce(42), /* class, reduce: KeyOnlyAttribute */
-			nil,        /* letters */
-			nil,        /* { */
-			nil,        /* } */
-			shift(31),  /* : */
-			reduce(42), /* struct, reduce: KeyOnlyAttribute */
-			reduce(42), /* enum, reduce: KeyOnlyAttribute */
-			nil,        /* int */
-			nil,        /* int32 */
-			nil,        /* int64 */
-			nil,        /* long */
-			nil,        /* short */
-			nil,        /* uint */
-			nil,        /* uint32 */
-			nil,        /* uint64 */
-			nil,        /* ulong */
-			nil,        /* ushort */
-			nil,        /* byte */
-			nil,        /* bool */
-			nil,        /* string */
-			nil,        /* char */
-			nil,        /* float */
-			nil,        /* double */
-			nil,        /* [] */
-			nil,        /* [ */
-			nil,        /* integer */
-			nil,        /* ] */
-			nil,        /* , */
-			reduce(42), /* @, reduce: KeyOnlyAttribute */
-			nil,        /* anything */
-			nil,        /* \n */
-		},
-	},
-	actionRow{ // S25
+	actionRow{ // S22
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -1071,9 +1033,9 @@ var actionTab = actionTable{
 			nil,        /* empty */
 			nil,        /* use */
 			nil,        /* class */
-			reduce(45), /* letters, reduce: AttributeGroupBody */
+			nil,        /* letters */
 			nil,        /* { */
-			reduce(45), /* }, reduce: AttributeGroupBody */
+			reduce(43), /* }, reduce: AttributeGroupBody */
 			nil,        /* : */
 			nil,        /* struct */
 			nil,        /* enum */
@@ -1099,11 +1061,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			nil,        /* @ */
+			reduce(43), /* range, reduce: AttributeGroupBody */
+			reduce(43), /* exportAs, reduce: AttributeGroupBody */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S26
+	actionRow{ // S23
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -1111,41 +1077,137 @@ var actionTab = actionTable{
 			nil,        /* package */
 			nil,        /* str */
 			nil,        /* empty */
-			nil,        /* use */
-			nil,        /* class */
-			reduce(37), /* letters, reduce: StructBody */
+			reduce(46), /* use, reduce: SingleAttribute */
+			reduce(46), /* class, reduce: SingleAttribute */
+			nil,        /* letters */
 			nil,        /* { */
-			reduce(37), /* }, reduce: StructBody */
+			nil,        /* } */
 			nil,        /* : */
-			nil,        /* struct */
-			nil,        /* enum */
-			reduce(37), /* int, reduce: StructBody */
-			reduce(37), /* int32, reduce: StructBody */
-			reduce(37), /* int64, reduce: StructBody */
-			reduce(37), /* long, reduce: StructBody */
-			reduce(37), /* short, reduce: StructBody */
-			reduce(37), /* uint, reduce: StructBody */
-			reduce(37), /* uint32, reduce: StructBody */
-			reduce(37), /* uint64, reduce: StructBody */
-			reduce(37), /* ulong, reduce: StructBody */
-			reduce(37), /* ushort, reduce: StructBody */
-			reduce(37), /* byte, reduce: StructBody */
-			reduce(37), /* bool, reduce: StructBody */
-			reduce(37), /* string, reduce: StructBody */
-			reduce(37), /* char, reduce: StructBody */
-			reduce(37), /* float, reduce: StructBody */
-			reduce(37), /* double, reduce: StructBody */
+			reduce(46), /* struct, reduce: SingleAttribute */
+			reduce(46), /* enum, reduce: SingleAttribute */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
 			nil,        /* [] */
 			nil,        /* [ */
 			nil,        /* integer */
 			nil,        /* ] */
 			nil,        /* , */
-			reduce(37), /* @, reduce: StructBody */
+			reduce(46), /* @, reduce: SingleAttribute */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S27
+	actionRow{ // S24
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			reduce(50), /* use, reduce: Attribute */
+			reduce(50), /* class, reduce: Attribute */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			reduce(50), /* struct, reduce: Attribute */
+			reduce(50), /* enum, reduce: Attribute */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(50), /* @, reduce: Attribute */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S25
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			reduce(51), /* use, reduce: Attribute */
+			reduce(51), /* class, reduce: Attribute */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			reduce(51), /* struct, reduce: Attribute */
+			reduce(51), /* enum, reduce: Attribute */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(51), /* @, reduce: Attribute */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S26
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,       /* INVALID */
@@ -1155,10 +1217,10 @@ var actionTab = actionTable{
 			nil,       /* empty */
 			nil,       /* use */
 			nil,       /* class */
-			shift(34), /* letters */
+			nil,       /* letters */
 			nil,       /* { */
 			nil,       /* } */
-			nil,       /* : */
+			shift(34), /* : */
 			nil,       /* struct */
 			nil,       /* enum */
 			nil,       /* int */
@@ -1183,8 +1245,58 @@ var actionTab = actionTable{
 			nil,       /* ] */
 			nil,       /* , */
 			nil,       /* @ */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
 			nil,       /* anything */
-			nil,       /* \n */
+		},
+	},
+	actionRow{ // S27
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       /* INVALID */
+			nil,       /* $ */
+			nil,       /* package */
+			nil,       /* str */
+			nil,       /* empty */
+			nil,       /* use */
+			nil,       /* class */
+			nil,       /* letters */
+			nil,       /* { */
+			nil,       /* } */
+			shift(35), /* : */
+			nil,       /* struct */
+			nil,       /* enum */
+			nil,       /* int */
+			nil,       /* int32 */
+			nil,       /* int64 */
+			nil,       /* long */
+			nil,       /* short */
+			nil,       /* uint */
+			nil,       /* uint32 */
+			nil,       /* uint64 */
+			nil,       /* ulong */
+			nil,       /* ushort */
+			nil,       /* byte */
+			nil,       /* bool */
+			nil,       /* string */
+			nil,       /* char */
+			nil,       /* float */
+			nil,       /* double */
+			nil,       /* [] */
+			nil,       /* [ */
+			nil,       /* integer */
+			nil,       /* ] */
+			nil,       /* , */
+			nil,       /* @ */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
+			nil,       /* anything */
 		},
 	},
 	actionRow{ // S28
@@ -1225,8 +1337,12 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			reduce(37), /* @, reduce: StructBody */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
 	actionRow{ // S29
@@ -1239,7 +1355,7 @@ var actionTab = actionTable{
 			nil,       /* empty */
 			nil,       /* use */
 			nil,       /* class */
-			shift(36), /* letters */
+			shift(37), /* letters */
 			nil,       /* { */
 			nil,       /* } */
 			nil,       /* : */
@@ -1267,11 +1383,107 @@ var actionTab = actionTable{
 			nil,       /* ] */
 			nil,       /* , */
 			nil,       /* @ */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
 			nil,       /* anything */
-			nil,       /* \n */
 		},
 	},
 	actionRow{ // S30
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			reduce(37), /* letters, reduce: StructBody */
+			nil,        /* { */
+			reduce(37), /* }, reduce: StructBody */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			reduce(37), /* int, reduce: StructBody */
+			reduce(37), /* int32, reduce: StructBody */
+			reduce(37), /* int64, reduce: StructBody */
+			reduce(37), /* long, reduce: StructBody */
+			reduce(37), /* short, reduce: StructBody */
+			reduce(37), /* uint, reduce: StructBody */
+			reduce(37), /* uint32, reduce: StructBody */
+			reduce(37), /* uint64, reduce: StructBody */
+			reduce(37), /* ulong, reduce: StructBody */
+			reduce(37), /* ushort, reduce: StructBody */
+			reduce(37), /* byte, reduce: StructBody */
+			reduce(37), /* bool, reduce: StructBody */
+			reduce(37), /* string, reduce: StructBody */
+			reduce(37), /* char, reduce: StructBody */
+			reduce(37), /* float, reduce: StructBody */
+			reduce(37), /* double, reduce: StructBody */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(37), /* @, reduce: StructBody */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S31
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       /* INVALID */
+			nil,       /* $ */
+			nil,       /* package */
+			nil,       /* str */
+			nil,       /* empty */
+			nil,       /* use */
+			nil,       /* class */
+			shift(39), /* letters */
+			nil,       /* { */
+			nil,       /* } */
+			nil,       /* : */
+			nil,       /* struct */
+			nil,       /* enum */
+			nil,       /* int */
+			nil,       /* int32 */
+			nil,       /* int64 */
+			nil,       /* long */
+			nil,       /* short */
+			nil,       /* uint */
+			nil,       /* uint32 */
+			nil,       /* uint64 */
+			nil,       /* ulong */
+			nil,       /* ushort */
+			nil,       /* byte */
+			nil,       /* bool */
+			nil,       /* string */
+			nil,       /* char */
+			nil,       /* float */
+			nil,       /* double */
+			nil,       /* [] */
+			nil,       /* [ */
+			nil,       /* integer */
+			nil,       /* ] */
+			nil,       /* , */
+			nil,       /* @ */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
+			nil,       /* anything */
+		},
+	},
+	actionRow{ // S32
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -1309,11 +1521,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S31
+	actionRow{ // S33
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,       /* INVALID */
@@ -1325,7 +1541,7 @@ var actionTab = actionTable{
 			nil,       /* class */
 			nil,       /* letters */
 			nil,       /* { */
-			nil,       /* } */
+			shift(41), /* } */
 			nil,       /* : */
 			nil,       /* struct */
 			nil,       /* enum */
@@ -1351,92 +1567,12 @@ var actionTab = actionTable{
 			nil,       /* ] */
 			nil,       /* , */
 			nil,       /* @ */
-			shift(38), /* anything */
-			nil,       /* \n */
-		},
-	},
-	actionRow{ // S32
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,       /* INVALID */
-			nil,       /* $ */
-			nil,       /* package */
-			nil,       /* str */
-			nil,       /* empty */
-			nil,       /* use */
-			nil,       /* class */
-			shift(39), /* letters */
-			nil,       /* { */
-			shift(40), /* } */
-			nil,       /* : */
-			nil,       /* struct */
-			nil,       /* enum */
-			nil,       /* int */
-			nil,       /* int32 */
-			nil,       /* int64 */
-			nil,       /* long */
-			nil,       /* short */
-			nil,       /* uint */
-			nil,       /* uint32 */
-			nil,       /* uint64 */
-			nil,       /* ulong */
-			nil,       /* ushort */
-			nil,       /* byte */
-			nil,       /* bool */
-			nil,       /* string */
-			nil,       /* char */
-			nil,       /* float */
-			nil,       /* double */
-			nil,       /* [] */
-			nil,       /* [ */
-			nil,       /* integer */
-			nil,       /* ] */
-			nil,       /* , */
-			nil,       /* @ */
+			shift(46), /* range */
+			shift(47), /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
 			nil,       /* anything */
-			nil,       /* \n */
-		},
-	},
-	actionRow{ // S33
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,        /* INVALID */
-			nil,        /* $ */
-			nil,        /* package */
-			nil,        /* str */
-			nil,        /* empty */
-			nil,        /* use */
-			nil,        /* class */
-			reduce(51), /* letters, reduce: Attributes */
-			nil,        /* { */
-			shift(43),  /* } */
-			nil,        /* : */
-			nil,        /* struct */
-			nil,        /* enum */
-			reduce(51), /* int, reduce: Attributes */
-			reduce(51), /* int32, reduce: Attributes */
-			reduce(51), /* int64, reduce: Attributes */
-			reduce(51), /* long, reduce: Attributes */
-			reduce(51), /* short, reduce: Attributes */
-			reduce(51), /* uint, reduce: Attributes */
-			reduce(51), /* uint32, reduce: Attributes */
-			reduce(51), /* uint64, reduce: Attributes */
-			reduce(51), /* ulong, reduce: Attributes */
-			reduce(51), /* ushort, reduce: Attributes */
-			reduce(51), /* byte, reduce: Attributes */
-			reduce(51), /* bool, reduce: Attributes */
-			reduce(51), /* string, reduce: Attributes */
-			reduce(51), /* char, reduce: Attributes */
-			reduce(51), /* float, reduce: Attributes */
-			reduce(51), /* double, reduce: Attributes */
-			nil,        /* [] */
-			nil,        /* [ */
-			nil,        /* integer */
-			nil,        /* ] */
-			nil,        /* , */
-			reduce(51), /* @, reduce: Attributes */
-			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
 	actionRow{ // S34
@@ -1450,7 +1586,53 @@ var actionTab = actionTable{
 			nil,       /* use */
 			nil,       /* class */
 			nil,       /* letters */
-			shift(46), /* { */
+			nil,       /* { */
+			nil,       /* } */
+			nil,       /* : */
+			nil,       /* struct */
+			nil,       /* enum */
+			nil,       /* int */
+			nil,       /* int32 */
+			nil,       /* int64 */
+			nil,       /* long */
+			nil,       /* short */
+			nil,       /* uint */
+			nil,       /* uint32 */
+			nil,       /* uint64 */
+			nil,       /* ulong */
+			nil,       /* ushort */
+			nil,       /* byte */
+			nil,       /* bool */
+			nil,       /* string */
+			nil,       /* char */
+			nil,       /* float */
+			nil,       /* double */
+			nil,       /* [] */
+			shift(48), /* [ */
+			nil,       /* integer */
+			nil,       /* ] */
+			nil,       /* , */
+			nil,       /* @ */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			shift(50), /* < */
+			nil,       /* realNumber */
+			nil,       /* anything */
+		},
+	},
+	actionRow{ // S35
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       /* INVALID */
+			nil,       /* $ */
+			nil,       /* package */
+			shift(51), /* str */
+			nil,       /* empty */
+			nil,       /* use */
+			nil,       /* class */
+			nil,       /* letters */
+			nil,       /* { */
 			nil,       /* } */
 			nil,       /* : */
 			nil,       /* struct */
@@ -1477,11 +1659,15 @@ var actionTab = actionTable{
 			nil,       /* ] */
 			nil,       /* , */
 			nil,       /* @ */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
 			nil,       /* anything */
-			nil,       /* \n */
 		},
 	},
-	actionRow{ // S35
+	actionRow{ // S36
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -1491,78 +1677,40 @@ var actionTab = actionTable{
 			nil,        /* empty */
 			nil,        /* use */
 			nil,        /* class */
-			reduce(51), /* letters, reduce: Attributes */
+			reduce(47), /* letters, reduce: Attributes */
 			nil,        /* { */
-			shift(47),  /* } */
+			shift(53),  /* } */
 			nil,        /* : */
 			nil,        /* struct */
 			nil,        /* enum */
-			reduce(51), /* int, reduce: Attributes */
-			reduce(51), /* int32, reduce: Attributes */
-			reduce(51), /* int64, reduce: Attributes */
-			reduce(51), /* long, reduce: Attributes */
-			reduce(51), /* short, reduce: Attributes */
-			reduce(51), /* uint, reduce: Attributes */
-			reduce(51), /* uint32, reduce: Attributes */
-			reduce(51), /* uint64, reduce: Attributes */
-			reduce(51), /* ulong, reduce: Attributes */
-			reduce(51), /* ushort, reduce: Attributes */
-			reduce(51), /* byte, reduce: Attributes */
-			reduce(51), /* bool, reduce: Attributes */
-			reduce(51), /* string, reduce: Attributes */
-			reduce(51), /* char, reduce: Attributes */
-			reduce(51), /* float, reduce: Attributes */
-			reduce(51), /* double, reduce: Attributes */
+			reduce(47), /* int, reduce: Attributes */
+			reduce(47), /* int32, reduce: Attributes */
+			reduce(47), /* int64, reduce: Attributes */
+			reduce(47), /* long, reduce: Attributes */
+			reduce(47), /* short, reduce: Attributes */
+			reduce(47), /* uint, reduce: Attributes */
+			reduce(47), /* uint32, reduce: Attributes */
+			reduce(47), /* uint64, reduce: Attributes */
+			reduce(47), /* ulong, reduce: Attributes */
+			reduce(47), /* ushort, reduce: Attributes */
+			reduce(47), /* byte, reduce: Attributes */
+			reduce(47), /* bool, reduce: Attributes */
+			reduce(47), /* string, reduce: Attributes */
+			reduce(47), /* char, reduce: Attributes */
+			reduce(47), /* float, reduce: Attributes */
+			reduce(47), /* double, reduce: Attributes */
 			nil,        /* [] */
 			nil,        /* [ */
 			nil,        /* integer */
 			nil,        /* ] */
 			nil,        /* , */
-			reduce(51), /* @, reduce: Attributes */
+			reduce(47), /* @, reduce: Attributes */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
-		},
-	},
-	actionRow{ // S36
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,       /* INVALID */
-			nil,       /* $ */
-			nil,       /* package */
-			nil,       /* str */
-			nil,       /* empty */
-			nil,       /* use */
-			nil,       /* class */
-			nil,       /* letters */
-			shift(48), /* { */
-			nil,       /* } */
-			nil,       /* : */
-			nil,       /* struct */
-			nil,       /* enum */
-			nil,       /* int */
-			nil,       /* int32 */
-			nil,       /* int64 */
-			nil,       /* long */
-			nil,       /* short */
-			nil,       /* uint */
-			nil,       /* uint32 */
-			nil,       /* uint64 */
-			nil,       /* ulong */
-			nil,       /* ushort */
-			nil,       /* byte */
-			nil,       /* bool */
-			nil,       /* string */
-			nil,       /* char */
-			nil,       /* float */
-			nil,       /* double */
-			nil,       /* [] */
-			nil,       /* [ */
-			nil,       /* integer */
-			nil,       /* ] */
-			nil,       /* , */
-			nil,       /* @ */
-			nil,       /* anything */
-			nil,       /* \n */
 		},
 	},
 	actionRow{ // S37
@@ -1575,50 +1723,8 @@ var actionTab = actionTable{
 			nil,       /* empty */
 			nil,       /* use */
 			nil,       /* class */
-			shift(49), /* letters */
-			nil,       /* { */
-			shift(50), /* } */
-			nil,       /* : */
-			nil,       /* struct */
-			nil,       /* enum */
-			nil,       /* int */
-			nil,       /* int32 */
-			nil,       /* int64 */
-			nil,       /* long */
-			nil,       /* short */
-			nil,       /* uint */
-			nil,       /* uint32 */
-			nil,       /* uint64 */
-			nil,       /* ulong */
-			nil,       /* ushort */
-			nil,       /* byte */
-			nil,       /* bool */
-			nil,       /* string */
-			nil,       /* char */
-			nil,       /* float */
-			nil,       /* double */
-			nil,       /* [] */
-			nil,       /* [ */
-			nil,       /* integer */
-			nil,       /* ] */
-			nil,       /* , */
-			nil,       /* @ */
-			nil,       /* anything */
-			nil,       /* \n */
-		},
-	},
-	actionRow{ // S38
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,       /* INVALID */
-			nil,       /* $ */
-			nil,       /* package */
-			nil,       /* str */
-			nil,       /* empty */
-			nil,       /* use */
-			nil,       /* class */
 			nil,       /* letters */
-			nil,       /* { */
+			shift(56), /* { */
 			nil,       /* } */
 			nil,       /* : */
 			nil,       /* struct */
@@ -1645,8 +1751,58 @@ var actionTab = actionTable{
 			nil,       /* ] */
 			nil,       /* , */
 			nil,       /* @ */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
 			nil,       /* anything */
-			shift(51), /* \n */
+		},
+	},
+	actionRow{ // S38
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			reduce(47), /* letters, reduce: Attributes */
+			nil,        /* { */
+			shift(57),  /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			reduce(47), /* int, reduce: Attributes */
+			reduce(47), /* int32, reduce: Attributes */
+			reduce(47), /* int64, reduce: Attributes */
+			reduce(47), /* long, reduce: Attributes */
+			reduce(47), /* short, reduce: Attributes */
+			reduce(47), /* uint, reduce: Attributes */
+			reduce(47), /* uint32, reduce: Attributes */
+			reduce(47), /* uint64, reduce: Attributes */
+			reduce(47), /* ulong, reduce: Attributes */
+			reduce(47), /* ushort, reduce: Attributes */
+			reduce(47), /* byte, reduce: Attributes */
+			reduce(47), /* bool, reduce: Attributes */
+			reduce(47), /* string, reduce: Attributes */
+			reduce(47), /* char, reduce: Attributes */
+			reduce(47), /* float, reduce: Attributes */
+			reduce(47), /* double, reduce: Attributes */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(47), /* @, reduce: Attributes */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
 		},
 	},
 	actionRow{ // S39
@@ -1660,9 +1816,9 @@ var actionTab = actionTable{
 			nil,       /* use */
 			nil,       /* class */
 			nil,       /* letters */
-			nil,       /* { */
+			shift(58), /* { */
 			nil,       /* } */
-			shift(52), /* : */
+			nil,       /* : */
 			nil,       /* struct */
 			nil,       /* enum */
 			nil,       /* int */
@@ -1685,13 +1841,63 @@ var actionTab = actionTable{
 			nil,       /* [ */
 			nil,       /* integer */
 			nil,       /* ] */
-			shift(53), /* , */
+			nil,       /* , */
 			nil,       /* @ */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
 			nil,       /* anything */
-			nil,       /* \n */
 		},
 	},
 	actionRow{ // S40
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       /* INVALID */
+			nil,       /* $ */
+			nil,       /* package */
+			nil,       /* str */
+			nil,       /* empty */
+			nil,       /* use */
+			nil,       /* class */
+			shift(59), /* letters */
+			nil,       /* { */
+			shift(60), /* } */
+			nil,       /* : */
+			nil,       /* struct */
+			nil,       /* enum */
+			nil,       /* int */
+			nil,       /* int32 */
+			nil,       /* int64 */
+			nil,       /* long */
+			nil,       /* short */
+			nil,       /* uint */
+			nil,       /* uint32 */
+			nil,       /* uint64 */
+			nil,       /* ulong */
+			nil,       /* ushort */
+			nil,       /* byte */
+			nil,       /* bool */
+			nil,       /* string */
+			nil,       /* char */
+			nil,       /* float */
+			nil,       /* double */
+			nil,       /* [] */
+			nil,       /* [ */
+			nil,       /* integer */
+			nil,       /* ] */
+			nil,       /* , */
+			nil,       /* @ */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
+			nil,       /* anything */
+		},
+	},
+	actionRow{ // S41
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -1699,14 +1905,14 @@ var actionTab = actionTable{
 			nil,        /* package */
 			nil,        /* str */
 			nil,        /* empty */
-			reduce(44), /* use, reduce: AttributeGroup */
-			reduce(44), /* class, reduce: AttributeGroup */
+			reduce(42), /* use, reduce: AttributeGroup */
+			reduce(42), /* class, reduce: AttributeGroup */
 			nil,        /* letters */
 			nil,        /* { */
 			nil,        /* } */
 			nil,        /* : */
-			reduce(44), /* struct, reduce: AttributeGroup */
-			reduce(44), /* enum, reduce: AttributeGroup */
+			reduce(42), /* struct, reduce: AttributeGroup */
+			reduce(42), /* enum, reduce: AttributeGroup */
 			nil,        /* int */
 			nil,        /* int32 */
 			nil,        /* int64 */
@@ -1728,12 +1934,16 @@ var actionTab = actionTable{
 			nil,        /* integer */
 			nil,        /* ] */
 			nil,        /* , */
-			reduce(44), /* @, reduce: AttributeGroup */
+			reduce(42), /* @, reduce: AttributeGroup */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S41
+	actionRow{ // S42
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -1743,9 +1953,9 @@ var actionTab = actionTable{
 			nil,        /* empty */
 			nil,        /* use */
 			nil,        /* class */
-			reduce(46), /* letters, reduce: AttributeGroupBody */
+			nil,        /* letters */
 			nil,        /* { */
-			reduce(46), /* }, reduce: AttributeGroupBody */
+			reduce(44), /* }, reduce: AttributeGroupBody */
 			nil,        /* : */
 			nil,        /* struct */
 			nil,        /* enum */
@@ -1771,11 +1981,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			nil,        /* @ */
+			reduce(44), /* range, reduce: AttributeGroupBody */
+			reduce(44), /* exportAs, reduce: AttributeGroupBody */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S42
+	actionRow{ // S43
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,       /* INVALID */
@@ -1785,39 +1999,457 @@ var actionTab = actionTable{
 			nil,       /* empty */
 			nil,       /* use */
 			nil,       /* class */
-			shift(54), /* letters */
+			nil,       /* letters */
 			nil,       /* { */
 			nil,       /* } */
 			nil,       /* : */
 			nil,       /* struct */
 			nil,       /* enum */
-			shift(56), /* int */
-			shift(57), /* int32 */
-			shift(58), /* int64 */
-			shift(59), /* long */
-			shift(60), /* short */
-			shift(61), /* uint */
-			shift(62), /* uint32 */
-			shift(63), /* uint64 */
-			shift(64), /* ulong */
-			shift(65), /* ushort */
-			shift(66), /* byte */
-			shift(67), /* bool */
-			shift(68), /* string */
-			shift(69), /* char */
-			shift(70), /* float */
-			shift(71), /* double */
+			nil,       /* int */
+			nil,       /* int32 */
+			nil,       /* int64 */
+			nil,       /* long */
+			nil,       /* short */
+			nil,       /* uint */
+			nil,       /* uint32 */
+			nil,       /* uint64 */
+			nil,       /* ulong */
+			nil,       /* ushort */
+			nil,       /* byte */
+			nil,       /* bool */
+			nil,       /* string */
+			nil,       /* char */
+			nil,       /* float */
+			nil,       /* double */
+			nil,       /* [] */
+			nil,       /* [ */
+			nil,       /* integer */
+			nil,       /* ] */
+			shift(61), /* , */
+			nil,       /* @ */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
+			nil,       /* anything */
+		},
+	},
+	actionRow{ // S44
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			reduce(50), /* ,, reduce: Attribute */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S45
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			reduce(51), /* ,, reduce: Attribute */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S46
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       /* INVALID */
+			nil,       /* $ */
+			nil,       /* package */
+			nil,       /* str */
+			nil,       /* empty */
+			nil,       /* use */
+			nil,       /* class */
+			nil,       /* letters */
+			nil,       /* { */
+			nil,       /* } */
+			shift(62), /* : */
+			nil,       /* struct */
+			nil,       /* enum */
+			nil,       /* int */
+			nil,       /* int32 */
+			nil,       /* int64 */
+			nil,       /* long */
+			nil,       /* short */
+			nil,       /* uint */
+			nil,       /* uint32 */
+			nil,       /* uint64 */
+			nil,       /* ulong */
+			nil,       /* ushort */
+			nil,       /* byte */
+			nil,       /* bool */
+			nil,       /* string */
+			nil,       /* char */
+			nil,       /* float */
+			nil,       /* double */
 			nil,       /* [] */
 			nil,       /* [ */
 			nil,       /* integer */
 			nil,       /* ] */
 			nil,       /* , */
-			shift(74), /* @ */
+			nil,       /* @ */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
 			nil,       /* anything */
-			nil,       /* \n */
 		},
 	},
-	actionRow{ // S43
+	actionRow{ // S47
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       /* INVALID */
+			nil,       /* $ */
+			nil,       /* package */
+			nil,       /* str */
+			nil,       /* empty */
+			nil,       /* use */
+			nil,       /* class */
+			nil,       /* letters */
+			nil,       /* { */
+			nil,       /* } */
+			shift(63), /* : */
+			nil,       /* struct */
+			nil,       /* enum */
+			nil,       /* int */
+			nil,       /* int32 */
+			nil,       /* int64 */
+			nil,       /* long */
+			nil,       /* short */
+			nil,       /* uint */
+			nil,       /* uint32 */
+			nil,       /* uint64 */
+			nil,       /* ulong */
+			nil,       /* ushort */
+			nil,       /* byte */
+			nil,       /* bool */
+			nil,       /* string */
+			nil,       /* char */
+			nil,       /* float */
+			nil,       /* double */
+			nil,       /* [] */
+			nil,       /* [ */
+			nil,       /* integer */
+			nil,       /* ] */
+			nil,       /* , */
+			nil,       /* @ */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
+			nil,       /* anything */
+		},
+	},
+	actionRow{ // S48
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       /* INVALID */
+			nil,       /* $ */
+			nil,       /* package */
+			nil,       /* str */
+			nil,       /* empty */
+			nil,       /* use */
+			nil,       /* class */
+			nil,       /* letters */
+			nil,       /* { */
+			nil,       /* } */
+			nil,       /* : */
+			nil,       /* struct */
+			nil,       /* enum */
+			nil,       /* int */
+			nil,       /* int32 */
+			nil,       /* int64 */
+			nil,       /* long */
+			nil,       /* short */
+			nil,       /* uint */
+			nil,       /* uint32 */
+			nil,       /* uint64 */
+			nil,       /* ulong */
+			nil,       /* ushort */
+			nil,       /* byte */
+			nil,       /* bool */
+			nil,       /* string */
+			nil,       /* char */
+			nil,       /* float */
+			nil,       /* double */
+			nil,       /* [] */
+			nil,       /* [ */
+			shift(64), /* integer */
+			nil,       /* ] */
+			nil,       /* , */
+			nil,       /* @ */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			shift(65), /* realNumber */
+			nil,       /* anything */
+		},
+	},
+	actionRow{ // S49
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			reduce(52), /* use, reduce: RangeAttribute */
+			reduce(52), /* class, reduce: RangeAttribute */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			reduce(52), /* struct, reduce: RangeAttribute */
+			reduce(52), /* enum, reduce: RangeAttribute */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(52), /* @, reduce: RangeAttribute */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S50
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       /* INVALID */
+			nil,       /* $ */
+			nil,       /* package */
+			nil,       /* str */
+			nil,       /* empty */
+			nil,       /* use */
+			nil,       /* class */
+			nil,       /* letters */
+			nil,       /* { */
+			nil,       /* } */
+			nil,       /* : */
+			nil,       /* struct */
+			nil,       /* enum */
+			nil,       /* int */
+			nil,       /* int32 */
+			nil,       /* int64 */
+			nil,       /* long */
+			nil,       /* short */
+			nil,       /* uint */
+			nil,       /* uint32 */
+			nil,       /* uint64 */
+			nil,       /* ulong */
+			nil,       /* ushort */
+			nil,       /* byte */
+			nil,       /* bool */
+			nil,       /* string */
+			nil,       /* char */
+			nil,       /* float */
+			nil,       /* double */
+			nil,       /* [] */
+			nil,       /* [ */
+			shift(66), /* integer */
+			nil,       /* ] */
+			nil,       /* , */
+			nil,       /* @ */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			shift(67), /* realNumber */
+			nil,       /* anything */
+		},
+	},
+	actionRow{ // S51
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			reduce(53), /* use, reduce: ExportAsAttribute */
+			reduce(53), /* class, reduce: ExportAsAttribute */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			reduce(53), /* struct, reduce: ExportAsAttribute */
+			reduce(53), /* enum, reduce: ExportAsAttribute */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(53), /* @, reduce: ExportAsAttribute */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S52
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       /* INVALID */
+			nil,       /* $ */
+			nil,       /* package */
+			nil,       /* str */
+			nil,       /* empty */
+			nil,       /* use */
+			nil,       /* class */
+			shift(68), /* letters */
+			nil,       /* { */
+			nil,       /* } */
+			nil,       /* : */
+			nil,       /* struct */
+			nil,       /* enum */
+			shift(70), /* int */
+			shift(71), /* int32 */
+			shift(72), /* int64 */
+			shift(73), /* long */
+			shift(74), /* short */
+			shift(75), /* uint */
+			shift(76), /* uint32 */
+			shift(77), /* uint64 */
+			shift(78), /* ulong */
+			shift(79), /* ushort */
+			shift(80), /* byte */
+			shift(81), /* bool */
+			shift(82), /* string */
+			shift(83), /* char */
+			shift(84), /* float */
+			shift(85), /* double */
+			nil,       /* [] */
+			nil,       /* [ */
+			nil,       /* integer */
+			nil,       /* ] */
+			nil,       /* , */
+			shift(88), /* @ */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
+			nil,       /* anything */
+		},
+	},
+	actionRow{ // S53
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,       /* INVALID */
@@ -1855,11 +2487,15 @@ var actionTab = actionTable{
 			nil,       /* ] */
 			nil,       /* , */
 			reduce(9), /* @, reduce: ClassDef */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
 			nil,       /* anything */
-			nil,       /* \n */
 		},
 	},
-	actionRow{ // S44
+	actionRow{ // S54
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -1897,11 +2533,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			reduce(38), /* @, reduce: StructBody */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S45
+	actionRow{ // S55
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -1937,13 +2577,17 @@ var actionTab = actionTable{
 			nil,        /* [ */
 			nil,        /* integer */
 			nil,        /* ] */
-			shift(78),  /* , */
+			shift(90),  /* , */
 			reduce(39), /* @, reduce: StructBody */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S46
+	actionRow{ // S56
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -1981,11 +2625,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			reduce(37), /* @, reduce: StructBody */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S47
+	actionRow{ // S57
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -2023,11 +2671,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			reduce(11), /* @, reduce: StructDef */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S48
+	actionRow{ // S58
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -2065,11 +2717,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			reduce(37), /* @, reduce: StructBody */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S49
+	actionRow{ // S59
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,       /* INVALID */
@@ -2105,13 +2761,17 @@ var actionTab = actionTable{
 			nil,       /* [ */
 			nil,       /* integer */
 			nil,       /* ] */
-			shift(81), /* , */
+			shift(93), /* , */
 			nil,       /* @ */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
 			nil,       /* anything */
-			nil,       /* \n */
 		},
 	},
-	actionRow{ // S50
+	actionRow{ // S60
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -2149,11 +2809,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			reduce(13), /* @, reduce: EnumDef */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S51
+	actionRow{ // S61
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -2161,14 +2825,14 @@ var actionTab = actionTable{
 			nil,        /* package */
 			nil,        /* str */
 			nil,        /* empty */
-			reduce(43), /* use, reduce: OneLineAttribute */
-			reduce(43), /* class, reduce: OneLineAttribute */
+			nil,        /* use */
+			nil,        /* class */
 			nil,        /* letters */
 			nil,        /* { */
-			nil,        /* } */
+			reduce(45), /* }, reduce: AttributeGroupElement */
 			nil,        /* : */
-			reduce(43), /* struct, reduce: OneLineAttribute */
-			reduce(43), /* enum, reduce: OneLineAttribute */
+			nil,        /* struct */
+			nil,        /* enum */
 			nil,        /* int */
 			nil,        /* int32 */
 			nil,        /* int64 */
@@ -2190,12 +2854,108 @@ var actionTab = actionTable{
 			nil,        /* integer */
 			nil,        /* ] */
 			nil,        /* , */
-			reduce(43), /* @, reduce: OneLineAttribute */
+			nil,        /* @ */
+			reduce(45), /* range, reduce: AttributeGroupElement */
+			reduce(45), /* exportAs, reduce: AttributeGroupElement */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S52
+	actionRow{ // S62
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       /* INVALID */
+			nil,       /* $ */
+			nil,       /* package */
+			nil,       /* str */
+			nil,       /* empty */
+			nil,       /* use */
+			nil,       /* class */
+			nil,       /* letters */
+			nil,       /* { */
+			nil,       /* } */
+			nil,       /* : */
+			nil,       /* struct */
+			nil,       /* enum */
+			nil,       /* int */
+			nil,       /* int32 */
+			nil,       /* int64 */
+			nil,       /* long */
+			nil,       /* short */
+			nil,       /* uint */
+			nil,       /* uint32 */
+			nil,       /* uint64 */
+			nil,       /* ulong */
+			nil,       /* ushort */
+			nil,       /* byte */
+			nil,       /* bool */
+			nil,       /* string */
+			nil,       /* char */
+			nil,       /* float */
+			nil,       /* double */
+			nil,       /* [] */
+			shift(94), /* [ */
+			nil,       /* integer */
+			nil,       /* ] */
+			nil,       /* , */
+			nil,       /* @ */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			shift(96), /* < */
+			nil,       /* realNumber */
+			nil,       /* anything */
+		},
+	},
+	actionRow{ // S63
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       /* INVALID */
+			nil,       /* $ */
+			nil,       /* package */
+			shift(97), /* str */
+			nil,       /* empty */
+			nil,       /* use */
+			nil,       /* class */
+			nil,       /* letters */
+			nil,       /* { */
+			nil,       /* } */
+			nil,       /* : */
+			nil,       /* struct */
+			nil,       /* enum */
+			nil,       /* int */
+			nil,       /* int32 */
+			nil,       /* int64 */
+			nil,       /* long */
+			nil,       /* short */
+			nil,       /* uint */
+			nil,       /* uint32 */
+			nil,       /* uint64 */
+			nil,       /* ulong */
+			nil,       /* ushort */
+			nil,       /* byte */
+			nil,       /* bool */
+			nil,       /* string */
+			nil,       /* char */
+			nil,       /* float */
+			nil,       /* double */
+			nil,       /* [] */
+			nil,       /* [ */
+			nil,       /* integer */
+			nil,       /* ] */
+			nil,       /* , */
+			nil,       /* @ */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
+			nil,       /* anything */
+		},
+	},
+	actionRow{ // S64
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,       /* INVALID */
@@ -2231,13 +2991,63 @@ var actionTab = actionTable{
 			nil,       /* [ */
 			nil,       /* integer */
 			nil,       /* ] */
-			nil,       /* , */
+			shift(98), /* , */
 			nil,       /* @ */
-			shift(82), /* anything */
-			nil,       /* \n */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
+			nil,       /* anything */
 		},
 	},
-	actionRow{ // S53
+	actionRow{ // S65
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       /* INVALID */
+			nil,       /* $ */
+			nil,       /* package */
+			nil,       /* str */
+			nil,       /* empty */
+			nil,       /* use */
+			nil,       /* class */
+			nil,       /* letters */
+			nil,       /* { */
+			nil,       /* } */
+			nil,       /* : */
+			nil,       /* struct */
+			nil,       /* enum */
+			nil,       /* int */
+			nil,       /* int32 */
+			nil,       /* int64 */
+			nil,       /* long */
+			nil,       /* short */
+			nil,       /* uint */
+			nil,       /* uint32 */
+			nil,       /* uint64 */
+			nil,       /* ulong */
+			nil,       /* ushort */
+			nil,       /* byte */
+			nil,       /* bool */
+			nil,       /* string */
+			nil,       /* char */
+			nil,       /* float */
+			nil,       /* double */
+			nil,       /* [] */
+			nil,       /* [ */
+			nil,       /* integer */
+			nil,       /* ] */
+			shift(99), /* , */
+			nil,       /* @ */
+			nil,       /* range */
+			nil,       /* exportAs */
+			nil,       /* > */
+			nil,       /* < */
+			nil,       /* realNumber */
+			nil,       /* anything */
+		},
+	},
+	actionRow{ // S66
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -2247,9 +3057,9 @@ var actionTab = actionTable{
 			nil,        /* empty */
 			nil,        /* use */
 			nil,        /* class */
-			reduce(47), /* letters, reduce: AttributeGroupElement */
+			nil,        /* letters */
 			nil,        /* { */
-			reduce(47), /* }, reduce: AttributeGroupElement */
+			nil,        /* } */
 			nil,        /* : */
 			nil,        /* struct */
 			nil,        /* enum */
@@ -2273,13 +3083,63 @@ var actionTab = actionTable{
 			nil,        /* [ */
 			nil,        /* integer */
 			nil,        /* ] */
-			nil,        /* , */
+			shift(100), /* , */
 			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S54
+	actionRow{ // S67
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			shift(101), /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S68
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -2317,11 +3177,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S55
+	actionRow{ // S69
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -2359,11 +3223,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S56
+	actionRow{ // S70
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -2401,11 +3269,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S57
+	actionRow{ // S71
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -2443,11 +3315,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S58
+	actionRow{ // S72
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -2485,11 +3361,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S59
+	actionRow{ // S73
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -2527,11 +3407,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S60
+	actionRow{ // S74
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -2569,11 +3453,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S61
+	actionRow{ // S75
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -2611,11 +3499,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S62
+	actionRow{ // S76
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -2653,11 +3545,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S63
+	actionRow{ // S77
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -2695,11 +3591,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S64
+	actionRow{ // S78
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -2737,11 +3637,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S65
+	actionRow{ // S79
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -2779,11 +3683,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S66
+	actionRow{ // S80
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -2821,11 +3729,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S67
+	actionRow{ // S81
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -2863,11 +3775,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S68
+	actionRow{ // S82
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -2905,11 +3821,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S69
+	actionRow{ // S83
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -2947,11 +3867,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S70
+	actionRow{ // S84
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -2989,11 +3913,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S71
+	actionRow{ // S85
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -3031,53 +3959,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S72
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,       /* INVALID */
-			nil,       /* $ */
-			nil,       /* package */
-			nil,       /* str */
-			nil,       /* empty */
-			nil,       /* use */
-			nil,       /* class */
-			shift(83), /* letters */
-			nil,       /* { */
-			nil,       /* } */
-			nil,       /* : */
-			nil,       /* struct */
-			nil,       /* enum */
-			nil,       /* int */
-			nil,       /* int32 */
-			nil,       /* int64 */
-			nil,       /* long */
-			nil,       /* short */
-			nil,       /* uint */
-			nil,       /* uint32 */
-			nil,       /* uint64 */
-			nil,       /* ulong */
-			nil,       /* ushort */
-			nil,       /* byte */
-			nil,       /* bool */
-			nil,       /* string */
-			nil,       /* char */
-			nil,       /* float */
-			nil,       /* double */
-			shift(84), /* [] */
-			shift(85), /* [ */
-			nil,       /* integer */
-			nil,       /* ] */
-			nil,       /* , */
-			nil,       /* @ */
-			nil,       /* anything */
-			nil,       /* \n */
-		},
-	},
-	actionRow{ // S73
+	actionRow{ // S86
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -3087,81 +3977,43 @@ var actionTab = actionTable{
 			nil,        /* empty */
 			nil,        /* use */
 			nil,        /* class */
-			reduce(49), /* letters, reduce: SingleAttribute */
+			shift(102), /* letters */
 			nil,        /* { */
 			nil,        /* } */
 			nil,        /* : */
 			nil,        /* struct */
 			nil,        /* enum */
-			reduce(49), /* int, reduce: SingleAttribute */
-			reduce(49), /* int32, reduce: SingleAttribute */
-			reduce(49), /* int64, reduce: SingleAttribute */
-			reduce(49), /* long, reduce: SingleAttribute */
-			reduce(49), /* short, reduce: SingleAttribute */
-			reduce(49), /* uint, reduce: SingleAttribute */
-			reduce(49), /* uint32, reduce: SingleAttribute */
-			reduce(49), /* uint64, reduce: SingleAttribute */
-			reduce(49), /* ulong, reduce: SingleAttribute */
-			reduce(49), /* ushort, reduce: SingleAttribute */
-			reduce(49), /* byte, reduce: SingleAttribute */
-			reduce(49), /* bool, reduce: SingleAttribute */
-			reduce(49), /* string, reduce: SingleAttribute */
-			reduce(49), /* char, reduce: SingleAttribute */
-			reduce(49), /* float, reduce: SingleAttribute */
-			reduce(49), /* double, reduce: SingleAttribute */
-			nil,        /* [] */
-			nil,        /* [ */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			shift(103), /* [] */
+			shift(104), /* [ */
 			nil,        /* integer */
 			nil,        /* ] */
 			nil,        /* , */
-			reduce(49), /* @, reduce: SingleAttribute */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S74
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,       /* INVALID */
-			nil,       /* $ */
-			nil,       /* package */
-			nil,       /* str */
-			nil,       /* empty */
-			nil,       /* use */
-			nil,       /* class */
-			shift(86), /* letters */
-			shift(87), /* { */
-			nil,       /* } */
-			nil,       /* : */
-			nil,       /* struct */
-			nil,       /* enum */
-			nil,       /* int */
-			nil,       /* int32 */
-			nil,       /* int64 */
-			nil,       /* long */
-			nil,       /* short */
-			nil,       /* uint */
-			nil,       /* uint32 */
-			nil,       /* uint64 */
-			nil,       /* ulong */
-			nil,       /* ushort */
-			nil,       /* byte */
-			nil,       /* bool */
-			nil,       /* string */
-			nil,       /* char */
-			nil,       /* float */
-			nil,       /* double */
-			nil,       /* [] */
-			nil,       /* [ */
-			nil,       /* integer */
-			nil,       /* ] */
-			nil,       /* , */
-			nil,       /* @ */
-			nil,       /* anything */
-			nil,       /* \n */
-		},
-	},
-	actionRow{ // S75
+	actionRow{ // S87
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -3171,39 +4023,43 @@ var actionTab = actionTable{
 			nil,        /* empty */
 			nil,        /* use */
 			nil,        /* class */
-			reduce(50), /* letters, reduce: SingleAttribute */
+			reduce(49), /* letters, reduce: Attributes */
 			nil,        /* { */
 			nil,        /* } */
 			nil,        /* : */
 			nil,        /* struct */
 			nil,        /* enum */
-			reduce(50), /* int, reduce: SingleAttribute */
-			reduce(50), /* int32, reduce: SingleAttribute */
-			reduce(50), /* int64, reduce: SingleAttribute */
-			reduce(50), /* long, reduce: SingleAttribute */
-			reduce(50), /* short, reduce: SingleAttribute */
-			reduce(50), /* uint, reduce: SingleAttribute */
-			reduce(50), /* uint32, reduce: SingleAttribute */
-			reduce(50), /* uint64, reduce: SingleAttribute */
-			reduce(50), /* ulong, reduce: SingleAttribute */
-			reduce(50), /* ushort, reduce: SingleAttribute */
-			reduce(50), /* byte, reduce: SingleAttribute */
-			reduce(50), /* bool, reduce: SingleAttribute */
-			reduce(50), /* string, reduce: SingleAttribute */
-			reduce(50), /* char, reduce: SingleAttribute */
-			reduce(50), /* float, reduce: SingleAttribute */
-			reduce(50), /* double, reduce: SingleAttribute */
+			reduce(49), /* int, reduce: Attributes */
+			reduce(49), /* int32, reduce: Attributes */
+			reduce(49), /* int64, reduce: Attributes */
+			reduce(49), /* long, reduce: Attributes */
+			reduce(49), /* short, reduce: Attributes */
+			reduce(49), /* uint, reduce: Attributes */
+			reduce(49), /* uint32, reduce: Attributes */
+			reduce(49), /* uint64, reduce: Attributes */
+			reduce(49), /* ulong, reduce: Attributes */
+			reduce(49), /* ushort, reduce: Attributes */
+			reduce(49), /* byte, reduce: Attributes */
+			reduce(49), /* bool, reduce: Attributes */
+			reduce(49), /* string, reduce: Attributes */
+			reduce(49), /* char, reduce: Attributes */
+			reduce(49), /* float, reduce: Attributes */
+			reduce(49), /* double, reduce: Attributes */
 			nil,        /* [] */
 			nil,        /* [ */
 			nil,        /* integer */
 			nil,        /* ] */
 			nil,        /* , */
-			reduce(50), /* @, reduce: SingleAttribute */
+			reduce(49), /* @, reduce: Attributes */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S76
+	actionRow{ // S88
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -3213,39 +4069,89 @@ var actionTab = actionTable{
 			nil,        /* empty */
 			nil,        /* use */
 			nil,        /* class */
-			reduce(53), /* letters, reduce: Attributes */
+			nil,        /* letters */
+			shift(105), /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			shift(109), /* range */
+			shift(110), /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S89
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			reduce(48), /* letters, reduce: Attributes */
 			nil,        /* { */
 			nil,        /* } */
 			nil,        /* : */
 			nil,        /* struct */
 			nil,        /* enum */
-			reduce(53), /* int, reduce: Attributes */
-			reduce(53), /* int32, reduce: Attributes */
-			reduce(53), /* int64, reduce: Attributes */
-			reduce(53), /* long, reduce: Attributes */
-			reduce(53), /* short, reduce: Attributes */
-			reduce(53), /* uint, reduce: Attributes */
-			reduce(53), /* uint32, reduce: Attributes */
-			reduce(53), /* uint64, reduce: Attributes */
-			reduce(53), /* ulong, reduce: Attributes */
-			reduce(53), /* ushort, reduce: Attributes */
-			reduce(53), /* byte, reduce: Attributes */
-			reduce(53), /* bool, reduce: Attributes */
-			reduce(53), /* string, reduce: Attributes */
-			reduce(53), /* char, reduce: Attributes */
-			reduce(53), /* float, reduce: Attributes */
-			reduce(53), /* double, reduce: Attributes */
+			reduce(48), /* int, reduce: Attributes */
+			reduce(48), /* int32, reduce: Attributes */
+			reduce(48), /* int64, reduce: Attributes */
+			reduce(48), /* long, reduce: Attributes */
+			reduce(48), /* short, reduce: Attributes */
+			reduce(48), /* uint, reduce: Attributes */
+			reduce(48), /* uint32, reduce: Attributes */
+			reduce(48), /* uint64, reduce: Attributes */
+			reduce(48), /* ulong, reduce: Attributes */
+			reduce(48), /* ushort, reduce: Attributes */
+			reduce(48), /* byte, reduce: Attributes */
+			reduce(48), /* bool, reduce: Attributes */
+			reduce(48), /* string, reduce: Attributes */
+			reduce(48), /* char, reduce: Attributes */
+			reduce(48), /* float, reduce: Attributes */
+			reduce(48), /* double, reduce: Attributes */
 			nil,        /* [] */
 			nil,        /* [ */
 			nil,        /* integer */
 			nil,        /* ] */
 			nil,        /* , */
-			reduce(53), /* @, reduce: Attributes */
+			reduce(48), /* @, reduce: Attributes */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S77
+	actionRow{ // S90
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -3255,81 +4161,43 @@ var actionTab = actionTable{
 			nil,        /* empty */
 			nil,        /* use */
 			nil,        /* class */
-			reduce(52), /* letters, reduce: Attributes */
+			shift(111), /* letters */
 			nil,        /* { */
 			nil,        /* } */
 			nil,        /* : */
 			nil,        /* struct */
 			nil,        /* enum */
-			reduce(52), /* int, reduce: Attributes */
-			reduce(52), /* int32, reduce: Attributes */
-			reduce(52), /* int64, reduce: Attributes */
-			reduce(52), /* long, reduce: Attributes */
-			reduce(52), /* short, reduce: Attributes */
-			reduce(52), /* uint, reduce: Attributes */
-			reduce(52), /* uint32, reduce: Attributes */
-			reduce(52), /* uint64, reduce: Attributes */
-			reduce(52), /* ulong, reduce: Attributes */
-			reduce(52), /* ushort, reduce: Attributes */
-			reduce(52), /* byte, reduce: Attributes */
-			reduce(52), /* bool, reduce: Attributes */
-			reduce(52), /* string, reduce: Attributes */
-			reduce(52), /* char, reduce: Attributes */
-			reduce(52), /* float, reduce: Attributes */
-			reduce(52), /* double, reduce: Attributes */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
 			nil,        /* [] */
 			nil,        /* [ */
 			nil,        /* integer */
 			nil,        /* ] */
 			nil,        /* , */
-			reduce(52), /* @, reduce: Attributes */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S78
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,       /* INVALID */
-			nil,       /* $ */
-			nil,       /* package */
-			nil,       /* str */
-			nil,       /* empty */
-			nil,       /* use */
-			nil,       /* class */
-			shift(88), /* letters */
-			nil,       /* { */
-			nil,       /* } */
-			nil,       /* : */
-			nil,       /* struct */
-			nil,       /* enum */
-			nil,       /* int */
-			nil,       /* int32 */
-			nil,       /* int64 */
-			nil,       /* long */
-			nil,       /* short */
-			nil,       /* uint */
-			nil,       /* uint32 */
-			nil,       /* uint64 */
-			nil,       /* ulong */
-			nil,       /* ushort */
-			nil,       /* byte */
-			nil,       /* bool */
-			nil,       /* string */
-			nil,       /* char */
-			nil,       /* float */
-			nil,       /* double */
-			nil,       /* [] */
-			nil,       /* [ */
-			nil,       /* integer */
-			nil,       /* ] */
-			nil,       /* , */
-			nil,       /* @ */
-			nil,       /* anything */
-			nil,       /* \n */
-		},
-	},
-	actionRow{ // S79
+	actionRow{ // S91
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -3339,39 +4207,43 @@ var actionTab = actionTable{
 			nil,        /* empty */
 			nil,        /* use */
 			nil,        /* class */
-			reduce(51), /* letters, reduce: Attributes */
+			reduce(47), /* letters, reduce: Attributes */
 			nil,        /* { */
-			shift(89),  /* } */
+			shift(112), /* } */
 			nil,        /* : */
 			nil,        /* struct */
 			nil,        /* enum */
-			reduce(51), /* int, reduce: Attributes */
-			reduce(51), /* int32, reduce: Attributes */
-			reduce(51), /* int64, reduce: Attributes */
-			reduce(51), /* long, reduce: Attributes */
-			reduce(51), /* short, reduce: Attributes */
-			reduce(51), /* uint, reduce: Attributes */
-			reduce(51), /* uint32, reduce: Attributes */
-			reduce(51), /* uint64, reduce: Attributes */
-			reduce(51), /* ulong, reduce: Attributes */
-			reduce(51), /* ushort, reduce: Attributes */
-			reduce(51), /* byte, reduce: Attributes */
-			reduce(51), /* bool, reduce: Attributes */
-			reduce(51), /* string, reduce: Attributes */
-			reduce(51), /* char, reduce: Attributes */
-			reduce(51), /* float, reduce: Attributes */
-			reduce(51), /* double, reduce: Attributes */
+			reduce(47), /* int, reduce: Attributes */
+			reduce(47), /* int32, reduce: Attributes */
+			reduce(47), /* int64, reduce: Attributes */
+			reduce(47), /* long, reduce: Attributes */
+			reduce(47), /* short, reduce: Attributes */
+			reduce(47), /* uint, reduce: Attributes */
+			reduce(47), /* uint32, reduce: Attributes */
+			reduce(47), /* uint64, reduce: Attributes */
+			reduce(47), /* ulong, reduce: Attributes */
+			reduce(47), /* ushort, reduce: Attributes */
+			reduce(47), /* byte, reduce: Attributes */
+			reduce(47), /* bool, reduce: Attributes */
+			reduce(47), /* string, reduce: Attributes */
+			reduce(47), /* char, reduce: Attributes */
+			reduce(47), /* float, reduce: Attributes */
+			reduce(47), /* double, reduce: Attributes */
 			nil,        /* [] */
 			nil,        /* [ */
 			nil,        /* integer */
 			nil,        /* ] */
 			nil,        /* , */
-			reduce(51), /* @, reduce: Attributes */
+			reduce(47), /* @, reduce: Attributes */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S80
+	actionRow{ // S92
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -3381,39 +4253,43 @@ var actionTab = actionTable{
 			nil,        /* empty */
 			nil,        /* use */
 			nil,        /* class */
-			reduce(51), /* letters, reduce: Attributes */
+			reduce(47), /* letters, reduce: Attributes */
 			nil,        /* { */
-			shift(90),  /* } */
+			shift(113), /* } */
 			nil,        /* : */
 			nil,        /* struct */
 			nil,        /* enum */
-			reduce(51), /* int, reduce: Attributes */
-			reduce(51), /* int32, reduce: Attributes */
-			reduce(51), /* int64, reduce: Attributes */
-			reduce(51), /* long, reduce: Attributes */
-			reduce(51), /* short, reduce: Attributes */
-			reduce(51), /* uint, reduce: Attributes */
-			reduce(51), /* uint32, reduce: Attributes */
-			reduce(51), /* uint64, reduce: Attributes */
-			reduce(51), /* ulong, reduce: Attributes */
-			reduce(51), /* ushort, reduce: Attributes */
-			reduce(51), /* byte, reduce: Attributes */
-			reduce(51), /* bool, reduce: Attributes */
-			reduce(51), /* string, reduce: Attributes */
-			reduce(51), /* char, reduce: Attributes */
-			reduce(51), /* float, reduce: Attributes */
-			reduce(51), /* double, reduce: Attributes */
+			reduce(47), /* int, reduce: Attributes */
+			reduce(47), /* int32, reduce: Attributes */
+			reduce(47), /* int64, reduce: Attributes */
+			reduce(47), /* long, reduce: Attributes */
+			reduce(47), /* short, reduce: Attributes */
+			reduce(47), /* uint, reduce: Attributes */
+			reduce(47), /* uint32, reduce: Attributes */
+			reduce(47), /* uint64, reduce: Attributes */
+			reduce(47), /* ulong, reduce: Attributes */
+			reduce(47), /* ushort, reduce: Attributes */
+			reduce(47), /* byte, reduce: Attributes */
+			reduce(47), /* bool, reduce: Attributes */
+			reduce(47), /* string, reduce: Attributes */
+			reduce(47), /* char, reduce: Attributes */
+			reduce(47), /* float, reduce: Attributes */
+			reduce(47), /* double, reduce: Attributes */
 			nil,        /* [] */
 			nil,        /* [ */
 			nil,        /* integer */
 			nil,        /* ] */
 			nil,        /* , */
-			reduce(51), /* @, reduce: Attributes */
+			reduce(47), /* @, reduce: Attributes */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S81
+	actionRow{ // S93
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -3451,53 +4327,383 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S82
+	actionRow{ // S94
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,       /* INVALID */
-			nil,       /* $ */
-			nil,       /* package */
-			nil,       /* str */
-			nil,       /* empty */
-			nil,       /* use */
-			nil,       /* class */
-			nil,       /* letters */
-			nil,       /* { */
-			nil,       /* } */
-			nil,       /* : */
-			nil,       /* struct */
-			nil,       /* enum */
-			nil,       /* int */
-			nil,       /* int32 */
-			nil,       /* int64 */
-			nil,       /* long */
-			nil,       /* short */
-			nil,       /* uint */
-			nil,       /* uint32 */
-			nil,       /* uint64 */
-			nil,       /* ulong */
-			nil,       /* ushort */
-			nil,       /* byte */
-			nil,       /* bool */
-			nil,       /* string */
-			nil,       /* char */
-			nil,       /* float */
-			nil,       /* double */
-			nil,       /* [] */
-			nil,       /* [ */
-			nil,       /* integer */
-			nil,       /* ] */
-			shift(91), /* , */
-			nil,       /* @ */
-			nil,       /* anything */
-			nil,       /* \n */
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			shift(114), /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			shift(115), /* realNumber */
+			nil,        /* anything */
 		},
 	},
-	actionRow{ // S83
+	actionRow{ // S95
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			reduce(52), /* ,, reduce: RangeAttribute */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S96
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			shift(116), /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			shift(117), /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S97
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			reduce(53), /* ,, reduce: ExportAsAttribute */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S98
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			shift(118), /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			shift(119), /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S99
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			shift(120), /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			shift(121), /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S100
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			shift(122), /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			shift(123), /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S101
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			shift(124), /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			shift(125), /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S102
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -3533,13 +4739,17 @@ var actionTab = actionTable{
 			nil,        /* [ */
 			nil,        /* integer */
 			nil,        /* ] */
-			shift(92),  /* , */
+			shift(126), /* , */
 			reduce(34), /* @, reduce: VarDecl */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S84
+	actionRow{ // S103
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -3577,53 +4787,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S85
-		canRecover: false,
-		actions: [numSymbols]action{
-			nil,       /* INVALID */
-			nil,       /* $ */
-			nil,       /* package */
-			nil,       /* str */
-			nil,       /* empty */
-			nil,       /* use */
-			nil,       /* class */
-			nil,       /* letters */
-			nil,       /* { */
-			nil,       /* } */
-			nil,       /* : */
-			nil,       /* struct */
-			nil,       /* enum */
-			nil,       /* int */
-			nil,       /* int32 */
-			nil,       /* int64 */
-			nil,       /* long */
-			nil,       /* short */
-			nil,       /* uint */
-			nil,       /* uint32 */
-			nil,       /* uint64 */
-			nil,       /* ulong */
-			nil,       /* ushort */
-			nil,       /* byte */
-			nil,       /* bool */
-			nil,       /* string */
-			nil,       /* char */
-			nil,       /* float */
-			nil,       /* double */
-			nil,       /* [] */
-			nil,       /* [ */
-			shift(93), /* integer */
-			nil,       /* ] */
-			nil,       /* , */
-			nil,       /* @ */
-			nil,       /* anything */
-			nil,       /* \n */
-		},
-	},
-	actionRow{ // S86
+	actionRow{ // S104
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -3633,39 +4805,43 @@ var actionTab = actionTable{
 			nil,        /* empty */
 			nil,        /* use */
 			nil,        /* class */
-			reduce(42), /* letters, reduce: KeyOnlyAttribute */
+			nil,        /* letters */
 			nil,        /* { */
 			nil,        /* } */
-			shift(94),  /* : */
+			nil,        /* : */
 			nil,        /* struct */
 			nil,        /* enum */
-			reduce(42), /* int, reduce: KeyOnlyAttribute */
-			reduce(42), /* int32, reduce: KeyOnlyAttribute */
-			reduce(42), /* int64, reduce: KeyOnlyAttribute */
-			reduce(42), /* long, reduce: KeyOnlyAttribute */
-			reduce(42), /* short, reduce: KeyOnlyAttribute */
-			reduce(42), /* uint, reduce: KeyOnlyAttribute */
-			reduce(42), /* uint32, reduce: KeyOnlyAttribute */
-			reduce(42), /* uint64, reduce: KeyOnlyAttribute */
-			reduce(42), /* ulong, reduce: KeyOnlyAttribute */
-			reduce(42), /* ushort, reduce: KeyOnlyAttribute */
-			reduce(42), /* byte, reduce: KeyOnlyAttribute */
-			reduce(42), /* bool, reduce: KeyOnlyAttribute */
-			reduce(42), /* string, reduce: KeyOnlyAttribute */
-			reduce(42), /* char, reduce: KeyOnlyAttribute */
-			reduce(42), /* float, reduce: KeyOnlyAttribute */
-			reduce(42), /* double, reduce: KeyOnlyAttribute */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
 			nil,        /* [] */
 			nil,        /* [ */
-			nil,        /* integer */
+			shift(127), /* integer */
 			nil,        /* ] */
 			nil,        /* , */
-			reduce(42), /* @, reduce: KeyOnlyAttribute */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S87
+	actionRow{ // S105
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -3675,9 +4851,9 @@ var actionTab = actionTable{
 			nil,        /* empty */
 			nil,        /* use */
 			nil,        /* class */
-			reduce(45), /* letters, reduce: AttributeGroupBody */
+			nil,        /* letters */
 			nil,        /* { */
-			reduce(45), /* }, reduce: AttributeGroupBody */
+			reduce(43), /* }, reduce: AttributeGroupBody */
 			nil,        /* : */
 			nil,        /* struct */
 			nil,        /* enum */
@@ -3703,11 +4879,245 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			nil,        /* @ */
+			reduce(43), /* range, reduce: AttributeGroupBody */
+			reduce(43), /* exportAs, reduce: AttributeGroupBody */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S88
+	actionRow{ // S106
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			reduce(46), /* letters, reduce: SingleAttribute */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			reduce(46), /* int, reduce: SingleAttribute */
+			reduce(46), /* int32, reduce: SingleAttribute */
+			reduce(46), /* int64, reduce: SingleAttribute */
+			reduce(46), /* long, reduce: SingleAttribute */
+			reduce(46), /* short, reduce: SingleAttribute */
+			reduce(46), /* uint, reduce: SingleAttribute */
+			reduce(46), /* uint32, reduce: SingleAttribute */
+			reduce(46), /* uint64, reduce: SingleAttribute */
+			reduce(46), /* ulong, reduce: SingleAttribute */
+			reduce(46), /* ushort, reduce: SingleAttribute */
+			reduce(46), /* byte, reduce: SingleAttribute */
+			reduce(46), /* bool, reduce: SingleAttribute */
+			reduce(46), /* string, reduce: SingleAttribute */
+			reduce(46), /* char, reduce: SingleAttribute */
+			reduce(46), /* float, reduce: SingleAttribute */
+			reduce(46), /* double, reduce: SingleAttribute */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(46), /* @, reduce: SingleAttribute */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S107
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			reduce(50), /* letters, reduce: Attribute */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			reduce(50), /* int, reduce: Attribute */
+			reduce(50), /* int32, reduce: Attribute */
+			reduce(50), /* int64, reduce: Attribute */
+			reduce(50), /* long, reduce: Attribute */
+			reduce(50), /* short, reduce: Attribute */
+			reduce(50), /* uint, reduce: Attribute */
+			reduce(50), /* uint32, reduce: Attribute */
+			reduce(50), /* uint64, reduce: Attribute */
+			reduce(50), /* ulong, reduce: Attribute */
+			reduce(50), /* ushort, reduce: Attribute */
+			reduce(50), /* byte, reduce: Attribute */
+			reduce(50), /* bool, reduce: Attribute */
+			reduce(50), /* string, reduce: Attribute */
+			reduce(50), /* char, reduce: Attribute */
+			reduce(50), /* float, reduce: Attribute */
+			reduce(50), /* double, reduce: Attribute */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(50), /* @, reduce: Attribute */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S108
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			reduce(51), /* letters, reduce: Attribute */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			reduce(51), /* int, reduce: Attribute */
+			reduce(51), /* int32, reduce: Attribute */
+			reduce(51), /* int64, reduce: Attribute */
+			reduce(51), /* long, reduce: Attribute */
+			reduce(51), /* short, reduce: Attribute */
+			reduce(51), /* uint, reduce: Attribute */
+			reduce(51), /* uint32, reduce: Attribute */
+			reduce(51), /* uint64, reduce: Attribute */
+			reduce(51), /* ulong, reduce: Attribute */
+			reduce(51), /* ushort, reduce: Attribute */
+			reduce(51), /* byte, reduce: Attribute */
+			reduce(51), /* bool, reduce: Attribute */
+			reduce(51), /* string, reduce: Attribute */
+			reduce(51), /* char, reduce: Attribute */
+			reduce(51), /* float, reduce: Attribute */
+			reduce(51), /* double, reduce: Attribute */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(51), /* @, reduce: Attribute */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S109
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			shift(129), /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S110
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			shift(130), /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S111
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -3745,11 +5155,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			reduce(36), /* ,, reduce: MultiVarDecl */
 			reduce(36), /* @, reduce: MultiVarDecl */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S89
+	actionRow{ // S112
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -3787,11 +5201,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			reduce(10), /* @, reduce: ClassDef */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S90
+	actionRow{ // S113
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -3829,11 +5247,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			reduce(12), /* @, reduce: StructDef */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S91
+	actionRow{ // S114
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -3843,9 +5265,561 @@ var actionTab = actionTable{
 			nil,        /* empty */
 			nil,        /* use */
 			nil,        /* class */
-			reduce(48), /* letters, reduce: AttributeGroupElement */
+			nil,        /* letters */
 			nil,        /* { */
-			reduce(48), /* }, reduce: AttributeGroupElement */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			shift(131), /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S115
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			shift(132), /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S116
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			shift(133), /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S117
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			shift(134), /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S118
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			shift(135), /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			shift(136), /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S119
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			shift(137), /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			shift(138), /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S120
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			shift(139), /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			shift(140), /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S121
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			shift(141), /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			shift(142), /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S122
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			shift(143), /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			shift(144), /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S123
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			shift(145), /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			shift(146), /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S124
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			shift(147), /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			shift(148), /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S125
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			shift(149), /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			shift(150), /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S126
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			shift(151), /* letters */
+			nil,        /* { */
+			nil,        /* } */
 			nil,        /* : */
 			nil,        /* struct */
 			nil,        /* enum */
@@ -3871,179 +5845,1119 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S92
+	actionRow{ // S127
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,       /* INVALID */
-			nil,       /* $ */
-			nil,       /* package */
-			nil,       /* str */
-			nil,       /* empty */
-			nil,       /* use */
-			nil,       /* class */
-			shift(96), /* letters */
-			nil,       /* { */
-			nil,       /* } */
-			nil,       /* : */
-			nil,       /* struct */
-			nil,       /* enum */
-			nil,       /* int */
-			nil,       /* int32 */
-			nil,       /* int64 */
-			nil,       /* long */
-			nil,       /* short */
-			nil,       /* uint */
-			nil,       /* uint32 */
-			nil,       /* uint64 */
-			nil,       /* ulong */
-			nil,       /* ushort */
-			nil,       /* byte */
-			nil,       /* bool */
-			nil,       /* string */
-			nil,       /* char */
-			nil,       /* float */
-			nil,       /* double */
-			nil,       /* [] */
-			nil,       /* [ */
-			nil,       /* integer */
-			nil,       /* ] */
-			nil,       /* , */
-			nil,       /* @ */
-			nil,       /* anything */
-			nil,       /* \n */
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			shift(152), /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
 		},
 	},
-	actionRow{ // S93
+	actionRow{ // S128
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,       /* INVALID */
-			nil,       /* $ */
-			nil,       /* package */
-			nil,       /* str */
-			nil,       /* empty */
-			nil,       /* use */
-			nil,       /* class */
-			nil,       /* letters */
-			nil,       /* { */
-			nil,       /* } */
-			nil,       /* : */
-			nil,       /* struct */
-			nil,       /* enum */
-			nil,       /* int */
-			nil,       /* int32 */
-			nil,       /* int64 */
-			nil,       /* long */
-			nil,       /* short */
-			nil,       /* uint */
-			nil,       /* uint32 */
-			nil,       /* uint64 */
-			nil,       /* ulong */
-			nil,       /* ushort */
-			nil,       /* byte */
-			nil,       /* bool */
-			nil,       /* string */
-			nil,       /* char */
-			nil,       /* float */
-			nil,       /* double */
-			nil,       /* [] */
-			nil,       /* [ */
-			nil,       /* integer */
-			shift(97), /* ] */
-			nil,       /* , */
-			nil,       /* @ */
-			nil,       /* anything */
-			nil,       /* \n */
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			shift(153), /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			shift(46),  /* range */
+			shift(47),  /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
 		},
 	},
-	actionRow{ // S94
+	actionRow{ // S129
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,       /* INVALID */
-			nil,       /* $ */
-			nil,       /* package */
-			nil,       /* str */
-			nil,       /* empty */
-			nil,       /* use */
-			nil,       /* class */
-			nil,       /* letters */
-			nil,       /* { */
-			nil,       /* } */
-			nil,       /* : */
-			nil,       /* struct */
-			nil,       /* enum */
-			nil,       /* int */
-			nil,       /* int32 */
-			nil,       /* int64 */
-			nil,       /* long */
-			nil,       /* short */
-			nil,       /* uint */
-			nil,       /* uint32 */
-			nil,       /* uint64 */
-			nil,       /* ulong */
-			nil,       /* ushort */
-			nil,       /* byte */
-			nil,       /* bool */
-			nil,       /* string */
-			nil,       /* char */
-			nil,       /* float */
-			nil,       /* double */
-			nil,       /* [] */
-			nil,       /* [ */
-			nil,       /* integer */
-			nil,       /* ] */
-			nil,       /* , */
-			nil,       /* @ */
-			shift(98), /* anything */
-			nil,       /* \n */
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			shift(154), /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			shift(156), /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
 		},
 	},
-	actionRow{ // S95
+	actionRow{ // S130
 		canRecover: false,
 		actions: [numSymbols]action{
-			nil,       /* INVALID */
-			nil,       /* $ */
-			nil,       /* package */
-			nil,       /* str */
-			nil,       /* empty */
-			nil,       /* use */
-			nil,       /* class */
-			shift(39), /* letters */
-			nil,       /* { */
-			shift(99), /* } */
-			nil,       /* : */
-			nil,       /* struct */
-			nil,       /* enum */
-			nil,       /* int */
-			nil,       /* int32 */
-			nil,       /* int64 */
-			nil,       /* long */
-			nil,       /* short */
-			nil,       /* uint */
-			nil,       /* uint32 */
-			nil,       /* uint64 */
-			nil,       /* ulong */
-			nil,       /* ushort */
-			nil,       /* byte */
-			nil,       /* bool */
-			nil,       /* string */
-			nil,       /* char */
-			nil,       /* float */
-			nil,       /* double */
-			nil,       /* [] */
-			nil,       /* [ */
-			nil,       /* integer */
-			nil,       /* ] */
-			nil,       /* , */
-			nil,       /* @ */
-			nil,       /* anything */
-			nil,       /* \n */
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			shift(157), /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
 		},
 	},
-	actionRow{ // S96
+	actionRow{ // S131
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			shift(158), /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			shift(159), /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S132
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			shift(160), /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			shift(161), /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S133
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			shift(162), /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			shift(163), /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S134
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			shift(164), /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			shift(165), /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S135
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			reduce(54), /* use, reduce: Range */
+			reduce(54), /* class, reduce: Range */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			reduce(54), /* struct, reduce: Range */
+			reduce(54), /* enum, reduce: Range */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(54), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S136
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			reduce(55), /* use, reduce: Range */
+			reduce(55), /* class, reduce: Range */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			reduce(55), /* struct, reduce: Range */
+			reduce(55), /* enum, reduce: Range */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(55), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S137
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			reduce(62), /* use, reduce: Range */
+			reduce(62), /* class, reduce: Range */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			reduce(62), /* struct, reduce: Range */
+			reduce(62), /* enum, reduce: Range */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(62), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S138
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			reduce(63), /* use, reduce: Range */
+			reduce(63), /* class, reduce: Range */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			reduce(63), /* struct, reduce: Range */
+			reduce(63), /* enum, reduce: Range */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(63), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S139
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			reduce(66), /* use, reduce: Range */
+			reduce(66), /* class, reduce: Range */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			reduce(66), /* struct, reduce: Range */
+			reduce(66), /* enum, reduce: Range */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(66), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S140
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			reduce(67), /* use, reduce: Range */
+			reduce(67), /* class, reduce: Range */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			reduce(67), /* struct, reduce: Range */
+			reduce(67), /* enum, reduce: Range */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(67), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S141
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			reduce(58), /* use, reduce: Range */
+			reduce(58), /* class, reduce: Range */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			reduce(58), /* struct, reduce: Range */
+			reduce(58), /* enum, reduce: Range */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(58), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S142
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			reduce(59), /* use, reduce: Range */
+			reduce(59), /* class, reduce: Range */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			reduce(59), /* struct, reduce: Range */
+			reduce(59), /* enum, reduce: Range */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(59), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S143
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			reduce(56), /* use, reduce: Range */
+			reduce(56), /* class, reduce: Range */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			reduce(56), /* struct, reduce: Range */
+			reduce(56), /* enum, reduce: Range */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(56), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S144
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			reduce(57), /* use, reduce: Range */
+			reduce(57), /* class, reduce: Range */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			reduce(57), /* struct, reduce: Range */
+			reduce(57), /* enum, reduce: Range */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(57), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S145
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			reduce(64), /* use, reduce: Range */
+			reduce(64), /* class, reduce: Range */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			reduce(64), /* struct, reduce: Range */
+			reduce(64), /* enum, reduce: Range */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(64), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S146
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			reduce(65), /* use, reduce: Range */
+			reduce(65), /* class, reduce: Range */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			reduce(65), /* struct, reduce: Range */
+			reduce(65), /* enum, reduce: Range */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(65), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S147
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			reduce(68), /* use, reduce: Range */
+			reduce(68), /* class, reduce: Range */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			reduce(68), /* struct, reduce: Range */
+			reduce(68), /* enum, reduce: Range */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(68), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S148
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			reduce(69), /* use, reduce: Range */
+			reduce(69), /* class, reduce: Range */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			reduce(69), /* struct, reduce: Range */
+			reduce(69), /* enum, reduce: Range */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(69), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S149
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			reduce(60), /* use, reduce: Range */
+			reduce(60), /* class, reduce: Range */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			reduce(60), /* struct, reduce: Range */
+			reduce(60), /* enum, reduce: Range */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(60), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S150
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			reduce(61), /* use, reduce: Range */
+			reduce(61), /* class, reduce: Range */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			reduce(61), /* struct, reduce: Range */
+			reduce(61), /* enum, reduce: Range */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(61), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S151
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -4081,11 +6995,15 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			reduce(35), /* ,, reduce: MultiVarDecl */
 			reduce(35), /* @, reduce: MultiVarDecl */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S97
+	actionRow{ // S152
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -4123,11 +7041,613 @@ var actionTab = actionTable{
 			nil,        /* ] */
 			nil,        /* , */
 			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S98
+	actionRow{ // S153
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			reduce(42), /* letters, reduce: AttributeGroup */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			reduce(42), /* int, reduce: AttributeGroup */
+			reduce(42), /* int32, reduce: AttributeGroup */
+			reduce(42), /* int64, reduce: AttributeGroup */
+			reduce(42), /* long, reduce: AttributeGroup */
+			reduce(42), /* short, reduce: AttributeGroup */
+			reduce(42), /* uint, reduce: AttributeGroup */
+			reduce(42), /* uint32, reduce: AttributeGroup */
+			reduce(42), /* uint64, reduce: AttributeGroup */
+			reduce(42), /* ulong, reduce: AttributeGroup */
+			reduce(42), /* ushort, reduce: AttributeGroup */
+			reduce(42), /* byte, reduce: AttributeGroup */
+			reduce(42), /* bool, reduce: AttributeGroup */
+			reduce(42), /* string, reduce: AttributeGroup */
+			reduce(42), /* char, reduce: AttributeGroup */
+			reduce(42), /* float, reduce: AttributeGroup */
+			reduce(42), /* double, reduce: AttributeGroup */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(42), /* @, reduce: AttributeGroup */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S154
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			shift(166), /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			shift(167), /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S155
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			reduce(52), /* letters, reduce: RangeAttribute */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			reduce(52), /* int, reduce: RangeAttribute */
+			reduce(52), /* int32, reduce: RangeAttribute */
+			reduce(52), /* int64, reduce: RangeAttribute */
+			reduce(52), /* long, reduce: RangeAttribute */
+			reduce(52), /* short, reduce: RangeAttribute */
+			reduce(52), /* uint, reduce: RangeAttribute */
+			reduce(52), /* uint32, reduce: RangeAttribute */
+			reduce(52), /* uint64, reduce: RangeAttribute */
+			reduce(52), /* ulong, reduce: RangeAttribute */
+			reduce(52), /* ushort, reduce: RangeAttribute */
+			reduce(52), /* byte, reduce: RangeAttribute */
+			reduce(52), /* bool, reduce: RangeAttribute */
+			reduce(52), /* string, reduce: RangeAttribute */
+			reduce(52), /* char, reduce: RangeAttribute */
+			reduce(52), /* float, reduce: RangeAttribute */
+			reduce(52), /* double, reduce: RangeAttribute */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(52), /* @, reduce: RangeAttribute */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S156
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			shift(168), /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			shift(169), /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S157
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			reduce(53), /* letters, reduce: ExportAsAttribute */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			reduce(53), /* int, reduce: ExportAsAttribute */
+			reduce(53), /* int32, reduce: ExportAsAttribute */
+			reduce(53), /* int64, reduce: ExportAsAttribute */
+			reduce(53), /* long, reduce: ExportAsAttribute */
+			reduce(53), /* short, reduce: ExportAsAttribute */
+			reduce(53), /* uint, reduce: ExportAsAttribute */
+			reduce(53), /* uint32, reduce: ExportAsAttribute */
+			reduce(53), /* uint64, reduce: ExportAsAttribute */
+			reduce(53), /* ulong, reduce: ExportAsAttribute */
+			reduce(53), /* ushort, reduce: ExportAsAttribute */
+			reduce(53), /* byte, reduce: ExportAsAttribute */
+			reduce(53), /* bool, reduce: ExportAsAttribute */
+			reduce(53), /* string, reduce: ExportAsAttribute */
+			reduce(53), /* char, reduce: ExportAsAttribute */
+			reduce(53), /* float, reduce: ExportAsAttribute */
+			reduce(53), /* double, reduce: ExportAsAttribute */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(53), /* @, reduce: ExportAsAttribute */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S158
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			shift(170), /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			shift(171), /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S159
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			shift(172), /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			shift(173), /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S160
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			shift(174), /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			shift(175), /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S161
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			shift(176), /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			shift(177), /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S162
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			shift(178), /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			shift(179), /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S163
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			shift(180), /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			shift(181), /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S164
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			shift(182), /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			shift(183), /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S165
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			shift(184), /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			shift(185), /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S166
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -4163,13 +7683,937 @@ var actionTab = actionTable{
 			nil,        /* [ */
 			nil,        /* integer */
 			nil,        /* ] */
+			shift(186), /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S167
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			shift(187), /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S168
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			shift(188), /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S169
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			shift(189), /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S170
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			reduce(54), /* ,, reduce: Range */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S171
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			reduce(55), /* ,, reduce: Range */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S172
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			reduce(62), /* ,, reduce: Range */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S173
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			reduce(63), /* ,, reduce: Range */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S174
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			reduce(66), /* ,, reduce: Range */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S175
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			reduce(67), /* ,, reduce: Range */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S176
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			reduce(58), /* ,, reduce: Range */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S177
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			reduce(59), /* ,, reduce: Range */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S178
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			reduce(56), /* ,, reduce: Range */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S179
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			reduce(57), /* ,, reduce: Range */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S180
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			reduce(64), /* ,, reduce: Range */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S181
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			reduce(65), /* ,, reduce: Range */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S182
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			reduce(68), /* ,, reduce: Range */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S183
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			reduce(69), /* ,, reduce: Range */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S184
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			reduce(60), /* ,, reduce: Range */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S185
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			reduce(61), /* ,, reduce: Range */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S186
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			shift(190), /* integer */
+			nil,        /* ] */
 			nil,        /* , */
 			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			shift(191), /* realNumber */
 			nil,        /* anything */
-			shift(100), /* \n */
 		},
 	},
-	actionRow{ // S99
+	actionRow{ // S187
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -4179,39 +8623,43 @@ var actionTab = actionTable{
 			nil,        /* empty */
 			nil,        /* use */
 			nil,        /* class */
-			reduce(44), /* letters, reduce: AttributeGroup */
+			nil,        /* letters */
 			nil,        /* { */
 			nil,        /* } */
 			nil,        /* : */
 			nil,        /* struct */
 			nil,        /* enum */
-			reduce(44), /* int, reduce: AttributeGroup */
-			reduce(44), /* int32, reduce: AttributeGroup */
-			reduce(44), /* int64, reduce: AttributeGroup */
-			reduce(44), /* long, reduce: AttributeGroup */
-			reduce(44), /* short, reduce: AttributeGroup */
-			reduce(44), /* uint, reduce: AttributeGroup */
-			reduce(44), /* uint32, reduce: AttributeGroup */
-			reduce(44), /* uint64, reduce: AttributeGroup */
-			reduce(44), /* ulong, reduce: AttributeGroup */
-			reduce(44), /* ushort, reduce: AttributeGroup */
-			reduce(44), /* byte, reduce: AttributeGroup */
-			reduce(44), /* bool, reduce: AttributeGroup */
-			reduce(44), /* string, reduce: AttributeGroup */
-			reduce(44), /* char, reduce: AttributeGroup */
-			reduce(44), /* float, reduce: AttributeGroup */
-			reduce(44), /* double, reduce: AttributeGroup */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
 			nil,        /* [] */
 			nil,        /* [ */
-			nil,        /* integer */
+			shift(192), /* integer */
 			nil,        /* ] */
 			nil,        /* , */
-			reduce(44), /* @, reduce: AttributeGroup */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			shift(193), /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
 		},
 	},
-	actionRow{ // S100
+	actionRow{ // S188
 		canRecover: false,
 		actions: [numSymbols]action{
 			nil,        /* INVALID */
@@ -4221,36 +8669,1190 @@ var actionTab = actionTable{
 			nil,        /* empty */
 			nil,        /* use */
 			nil,        /* class */
-			reduce(43), /* letters, reduce: OneLineAttribute */
+			nil,        /* letters */
 			nil,        /* { */
 			nil,        /* } */
 			nil,        /* : */
 			nil,        /* struct */
 			nil,        /* enum */
-			reduce(43), /* int, reduce: OneLineAttribute */
-			reduce(43), /* int32, reduce: OneLineAttribute */
-			reduce(43), /* int64, reduce: OneLineAttribute */
-			reduce(43), /* long, reduce: OneLineAttribute */
-			reduce(43), /* short, reduce: OneLineAttribute */
-			reduce(43), /* uint, reduce: OneLineAttribute */
-			reduce(43), /* uint32, reduce: OneLineAttribute */
-			reduce(43), /* uint64, reduce: OneLineAttribute */
-			reduce(43), /* ulong, reduce: OneLineAttribute */
-			reduce(43), /* ushort, reduce: OneLineAttribute */
-			reduce(43), /* byte, reduce: OneLineAttribute */
-			reduce(43), /* bool, reduce: OneLineAttribute */
-			reduce(43), /* string, reduce: OneLineAttribute */
-			reduce(43), /* char, reduce: OneLineAttribute */
-			reduce(43), /* float, reduce: OneLineAttribute */
-			reduce(43), /* double, reduce: OneLineAttribute */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			shift(194), /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			shift(195), /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S189
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			shift(196), /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			shift(197), /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S190
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			shift(198), /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			shift(199), /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S191
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			shift(200), /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			shift(201), /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S192
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			shift(202), /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			shift(203), /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S193
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			shift(204), /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			shift(205), /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S194
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			shift(206), /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			shift(207), /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S195
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			shift(208), /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			shift(209), /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S196
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			shift(210), /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			shift(211), /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S197
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			nil,        /* letters */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			nil,        /* int */
+			nil,        /* int32 */
+			nil,        /* int64 */
+			nil,        /* long */
+			nil,        /* short */
+			nil,        /* uint */
+			nil,        /* uint32 */
+			nil,        /* uint64 */
+			nil,        /* ulong */
+			nil,        /* ushort */
+			nil,        /* byte */
+			nil,        /* bool */
+			nil,        /* string */
+			nil,        /* char */
+			nil,        /* float */
+			nil,        /* double */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			shift(212), /* ] */
+			nil,        /* , */
+			nil,        /* @ */
+			nil,        /* range */
+			nil,        /* exportAs */
+			shift(213), /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S198
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			reduce(54), /* letters, reduce: Range */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			reduce(54), /* int, reduce: Range */
+			reduce(54), /* int32, reduce: Range */
+			reduce(54), /* int64, reduce: Range */
+			reduce(54), /* long, reduce: Range */
+			reduce(54), /* short, reduce: Range */
+			reduce(54), /* uint, reduce: Range */
+			reduce(54), /* uint32, reduce: Range */
+			reduce(54), /* uint64, reduce: Range */
+			reduce(54), /* ulong, reduce: Range */
+			reduce(54), /* ushort, reduce: Range */
+			reduce(54), /* byte, reduce: Range */
+			reduce(54), /* bool, reduce: Range */
+			reduce(54), /* string, reduce: Range */
+			reduce(54), /* char, reduce: Range */
+			reduce(54), /* float, reduce: Range */
+			reduce(54), /* double, reduce: Range */
 			nil,        /* [] */
 			nil,        /* [ */
 			nil,        /* integer */
 			nil,        /* ] */
 			nil,        /* , */
-			reduce(43), /* @, reduce: OneLineAttribute */
+			reduce(54), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
 			nil,        /* anything */
-			nil,        /* \n */
+		},
+	},
+	actionRow{ // S199
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			reduce(55), /* letters, reduce: Range */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			reduce(55), /* int, reduce: Range */
+			reduce(55), /* int32, reduce: Range */
+			reduce(55), /* int64, reduce: Range */
+			reduce(55), /* long, reduce: Range */
+			reduce(55), /* short, reduce: Range */
+			reduce(55), /* uint, reduce: Range */
+			reduce(55), /* uint32, reduce: Range */
+			reduce(55), /* uint64, reduce: Range */
+			reduce(55), /* ulong, reduce: Range */
+			reduce(55), /* ushort, reduce: Range */
+			reduce(55), /* byte, reduce: Range */
+			reduce(55), /* bool, reduce: Range */
+			reduce(55), /* string, reduce: Range */
+			reduce(55), /* char, reduce: Range */
+			reduce(55), /* float, reduce: Range */
+			reduce(55), /* double, reduce: Range */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(55), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S200
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			reduce(62), /* letters, reduce: Range */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			reduce(62), /* int, reduce: Range */
+			reduce(62), /* int32, reduce: Range */
+			reduce(62), /* int64, reduce: Range */
+			reduce(62), /* long, reduce: Range */
+			reduce(62), /* short, reduce: Range */
+			reduce(62), /* uint, reduce: Range */
+			reduce(62), /* uint32, reduce: Range */
+			reduce(62), /* uint64, reduce: Range */
+			reduce(62), /* ulong, reduce: Range */
+			reduce(62), /* ushort, reduce: Range */
+			reduce(62), /* byte, reduce: Range */
+			reduce(62), /* bool, reduce: Range */
+			reduce(62), /* string, reduce: Range */
+			reduce(62), /* char, reduce: Range */
+			reduce(62), /* float, reduce: Range */
+			reduce(62), /* double, reduce: Range */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(62), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S201
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			reduce(63), /* letters, reduce: Range */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			reduce(63), /* int, reduce: Range */
+			reduce(63), /* int32, reduce: Range */
+			reduce(63), /* int64, reduce: Range */
+			reduce(63), /* long, reduce: Range */
+			reduce(63), /* short, reduce: Range */
+			reduce(63), /* uint, reduce: Range */
+			reduce(63), /* uint32, reduce: Range */
+			reduce(63), /* uint64, reduce: Range */
+			reduce(63), /* ulong, reduce: Range */
+			reduce(63), /* ushort, reduce: Range */
+			reduce(63), /* byte, reduce: Range */
+			reduce(63), /* bool, reduce: Range */
+			reduce(63), /* string, reduce: Range */
+			reduce(63), /* char, reduce: Range */
+			reduce(63), /* float, reduce: Range */
+			reduce(63), /* double, reduce: Range */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(63), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S202
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			reduce(66), /* letters, reduce: Range */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			reduce(66), /* int, reduce: Range */
+			reduce(66), /* int32, reduce: Range */
+			reduce(66), /* int64, reduce: Range */
+			reduce(66), /* long, reduce: Range */
+			reduce(66), /* short, reduce: Range */
+			reduce(66), /* uint, reduce: Range */
+			reduce(66), /* uint32, reduce: Range */
+			reduce(66), /* uint64, reduce: Range */
+			reduce(66), /* ulong, reduce: Range */
+			reduce(66), /* ushort, reduce: Range */
+			reduce(66), /* byte, reduce: Range */
+			reduce(66), /* bool, reduce: Range */
+			reduce(66), /* string, reduce: Range */
+			reduce(66), /* char, reduce: Range */
+			reduce(66), /* float, reduce: Range */
+			reduce(66), /* double, reduce: Range */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(66), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S203
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			reduce(67), /* letters, reduce: Range */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			reduce(67), /* int, reduce: Range */
+			reduce(67), /* int32, reduce: Range */
+			reduce(67), /* int64, reduce: Range */
+			reduce(67), /* long, reduce: Range */
+			reduce(67), /* short, reduce: Range */
+			reduce(67), /* uint, reduce: Range */
+			reduce(67), /* uint32, reduce: Range */
+			reduce(67), /* uint64, reduce: Range */
+			reduce(67), /* ulong, reduce: Range */
+			reduce(67), /* ushort, reduce: Range */
+			reduce(67), /* byte, reduce: Range */
+			reduce(67), /* bool, reduce: Range */
+			reduce(67), /* string, reduce: Range */
+			reduce(67), /* char, reduce: Range */
+			reduce(67), /* float, reduce: Range */
+			reduce(67), /* double, reduce: Range */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(67), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S204
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			reduce(58), /* letters, reduce: Range */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			reduce(58), /* int, reduce: Range */
+			reduce(58), /* int32, reduce: Range */
+			reduce(58), /* int64, reduce: Range */
+			reduce(58), /* long, reduce: Range */
+			reduce(58), /* short, reduce: Range */
+			reduce(58), /* uint, reduce: Range */
+			reduce(58), /* uint32, reduce: Range */
+			reduce(58), /* uint64, reduce: Range */
+			reduce(58), /* ulong, reduce: Range */
+			reduce(58), /* ushort, reduce: Range */
+			reduce(58), /* byte, reduce: Range */
+			reduce(58), /* bool, reduce: Range */
+			reduce(58), /* string, reduce: Range */
+			reduce(58), /* char, reduce: Range */
+			reduce(58), /* float, reduce: Range */
+			reduce(58), /* double, reduce: Range */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(58), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S205
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			reduce(59), /* letters, reduce: Range */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			reduce(59), /* int, reduce: Range */
+			reduce(59), /* int32, reduce: Range */
+			reduce(59), /* int64, reduce: Range */
+			reduce(59), /* long, reduce: Range */
+			reduce(59), /* short, reduce: Range */
+			reduce(59), /* uint, reduce: Range */
+			reduce(59), /* uint32, reduce: Range */
+			reduce(59), /* uint64, reduce: Range */
+			reduce(59), /* ulong, reduce: Range */
+			reduce(59), /* ushort, reduce: Range */
+			reduce(59), /* byte, reduce: Range */
+			reduce(59), /* bool, reduce: Range */
+			reduce(59), /* string, reduce: Range */
+			reduce(59), /* char, reduce: Range */
+			reduce(59), /* float, reduce: Range */
+			reduce(59), /* double, reduce: Range */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(59), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S206
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			reduce(56), /* letters, reduce: Range */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			reduce(56), /* int, reduce: Range */
+			reduce(56), /* int32, reduce: Range */
+			reduce(56), /* int64, reduce: Range */
+			reduce(56), /* long, reduce: Range */
+			reduce(56), /* short, reduce: Range */
+			reduce(56), /* uint, reduce: Range */
+			reduce(56), /* uint32, reduce: Range */
+			reduce(56), /* uint64, reduce: Range */
+			reduce(56), /* ulong, reduce: Range */
+			reduce(56), /* ushort, reduce: Range */
+			reduce(56), /* byte, reduce: Range */
+			reduce(56), /* bool, reduce: Range */
+			reduce(56), /* string, reduce: Range */
+			reduce(56), /* char, reduce: Range */
+			reduce(56), /* float, reduce: Range */
+			reduce(56), /* double, reduce: Range */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(56), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S207
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			reduce(57), /* letters, reduce: Range */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			reduce(57), /* int, reduce: Range */
+			reduce(57), /* int32, reduce: Range */
+			reduce(57), /* int64, reduce: Range */
+			reduce(57), /* long, reduce: Range */
+			reduce(57), /* short, reduce: Range */
+			reduce(57), /* uint, reduce: Range */
+			reduce(57), /* uint32, reduce: Range */
+			reduce(57), /* uint64, reduce: Range */
+			reduce(57), /* ulong, reduce: Range */
+			reduce(57), /* ushort, reduce: Range */
+			reduce(57), /* byte, reduce: Range */
+			reduce(57), /* bool, reduce: Range */
+			reduce(57), /* string, reduce: Range */
+			reduce(57), /* char, reduce: Range */
+			reduce(57), /* float, reduce: Range */
+			reduce(57), /* double, reduce: Range */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(57), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S208
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			reduce(64), /* letters, reduce: Range */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			reduce(64), /* int, reduce: Range */
+			reduce(64), /* int32, reduce: Range */
+			reduce(64), /* int64, reduce: Range */
+			reduce(64), /* long, reduce: Range */
+			reduce(64), /* short, reduce: Range */
+			reduce(64), /* uint, reduce: Range */
+			reduce(64), /* uint32, reduce: Range */
+			reduce(64), /* uint64, reduce: Range */
+			reduce(64), /* ulong, reduce: Range */
+			reduce(64), /* ushort, reduce: Range */
+			reduce(64), /* byte, reduce: Range */
+			reduce(64), /* bool, reduce: Range */
+			reduce(64), /* string, reduce: Range */
+			reduce(64), /* char, reduce: Range */
+			reduce(64), /* float, reduce: Range */
+			reduce(64), /* double, reduce: Range */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(64), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S209
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			reduce(65), /* letters, reduce: Range */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			reduce(65), /* int, reduce: Range */
+			reduce(65), /* int32, reduce: Range */
+			reduce(65), /* int64, reduce: Range */
+			reduce(65), /* long, reduce: Range */
+			reduce(65), /* short, reduce: Range */
+			reduce(65), /* uint, reduce: Range */
+			reduce(65), /* uint32, reduce: Range */
+			reduce(65), /* uint64, reduce: Range */
+			reduce(65), /* ulong, reduce: Range */
+			reduce(65), /* ushort, reduce: Range */
+			reduce(65), /* byte, reduce: Range */
+			reduce(65), /* bool, reduce: Range */
+			reduce(65), /* string, reduce: Range */
+			reduce(65), /* char, reduce: Range */
+			reduce(65), /* float, reduce: Range */
+			reduce(65), /* double, reduce: Range */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(65), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S210
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			reduce(68), /* letters, reduce: Range */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			reduce(68), /* int, reduce: Range */
+			reduce(68), /* int32, reduce: Range */
+			reduce(68), /* int64, reduce: Range */
+			reduce(68), /* long, reduce: Range */
+			reduce(68), /* short, reduce: Range */
+			reduce(68), /* uint, reduce: Range */
+			reduce(68), /* uint32, reduce: Range */
+			reduce(68), /* uint64, reduce: Range */
+			reduce(68), /* ulong, reduce: Range */
+			reduce(68), /* ushort, reduce: Range */
+			reduce(68), /* byte, reduce: Range */
+			reduce(68), /* bool, reduce: Range */
+			reduce(68), /* string, reduce: Range */
+			reduce(68), /* char, reduce: Range */
+			reduce(68), /* float, reduce: Range */
+			reduce(68), /* double, reduce: Range */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(68), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S211
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			reduce(69), /* letters, reduce: Range */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			reduce(69), /* int, reduce: Range */
+			reduce(69), /* int32, reduce: Range */
+			reduce(69), /* int64, reduce: Range */
+			reduce(69), /* long, reduce: Range */
+			reduce(69), /* short, reduce: Range */
+			reduce(69), /* uint, reduce: Range */
+			reduce(69), /* uint32, reduce: Range */
+			reduce(69), /* uint64, reduce: Range */
+			reduce(69), /* ulong, reduce: Range */
+			reduce(69), /* ushort, reduce: Range */
+			reduce(69), /* byte, reduce: Range */
+			reduce(69), /* bool, reduce: Range */
+			reduce(69), /* string, reduce: Range */
+			reduce(69), /* char, reduce: Range */
+			reduce(69), /* float, reduce: Range */
+			reduce(69), /* double, reduce: Range */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(69), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S212
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			reduce(60), /* letters, reduce: Range */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			reduce(60), /* int, reduce: Range */
+			reduce(60), /* int32, reduce: Range */
+			reduce(60), /* int64, reduce: Range */
+			reduce(60), /* long, reduce: Range */
+			reduce(60), /* short, reduce: Range */
+			reduce(60), /* uint, reduce: Range */
+			reduce(60), /* uint32, reduce: Range */
+			reduce(60), /* uint64, reduce: Range */
+			reduce(60), /* ulong, reduce: Range */
+			reduce(60), /* ushort, reduce: Range */
+			reduce(60), /* byte, reduce: Range */
+			reduce(60), /* bool, reduce: Range */
+			reduce(60), /* string, reduce: Range */
+			reduce(60), /* char, reduce: Range */
+			reduce(60), /* float, reduce: Range */
+			reduce(60), /* double, reduce: Range */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(60), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
+		},
+	},
+	actionRow{ // S213
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        /* INVALID */
+			nil,        /* $ */
+			nil,        /* package */
+			nil,        /* str */
+			nil,        /* empty */
+			nil,        /* use */
+			nil,        /* class */
+			reduce(61), /* letters, reduce: Range */
+			nil,        /* { */
+			nil,        /* } */
+			nil,        /* : */
+			nil,        /* struct */
+			nil,        /* enum */
+			reduce(61), /* int, reduce: Range */
+			reduce(61), /* int32, reduce: Range */
+			reduce(61), /* int64, reduce: Range */
+			reduce(61), /* long, reduce: Range */
+			reduce(61), /* short, reduce: Range */
+			reduce(61), /* uint, reduce: Range */
+			reduce(61), /* uint32, reduce: Range */
+			reduce(61), /* uint64, reduce: Range */
+			reduce(61), /* ulong, reduce: Range */
+			reduce(61), /* ushort, reduce: Range */
+			reduce(61), /* byte, reduce: Range */
+			reduce(61), /* bool, reduce: Range */
+			reduce(61), /* string, reduce: Range */
+			reduce(61), /* char, reduce: Range */
+			reduce(61), /* float, reduce: Range */
+			reduce(61), /* double, reduce: Range */
+			nil,        /* [] */
+			nil,        /* [ */
+			nil,        /* integer */
+			nil,        /* ] */
+			nil,        /* , */
+			reduce(61), /* @, reduce: Range */
+			nil,        /* range */
+			nil,        /* exportAs */
+			nil,        /* > */
+			nil,        /* < */
+			nil,        /* realNumber */
+			nil,        /* anything */
 		},
 	},
 }

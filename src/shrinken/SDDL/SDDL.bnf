@@ -11,7 +11,9 @@ _lineComment: '/' '/' {.} '\n';
 _blockComment: '/' '*' {. | '*'} '*' '/';
 
 _digit: '0'-'9';
-integer: '1'-'9' {_digit};
+_positiveInteger: '1'-'9' {_digit};
+integer: '-' _positiveInteger | '0' | _positiveInteger;
+realNumber: _digit {_digit} '.' _digit {_digit};
 
 str: '"' {.} '"';
 
@@ -29,6 +31,10 @@ anything: {.};
 ******************************/
 
 << import "shrinken/SDDL/ast" >>
+
+/**************************************
+**    generic syntax definitions:    **
+***************************************/
 
 // TODO: package can also have attributes
 Package: "package" str PackageBody                              << ast.NewPackageDef($1, $2), nil >> ;
@@ -73,7 +79,6 @@ Type: GenericType                                               << $0, nil >>
     | Type "[]"                                                 << ast.NewArrayOfType($0), nil >>
     | Type "[" integer "]"                                      << ast.NewArrayOfTypeWithSize($0, $2), nil >> ;
 
-
 VarDecl: Attributes Type letters                                << ast.NewVariable($1, $2, $0), nil >> ;
 
 MultiVarDecl: Attributes Type letters "," letters               << ast.NewMultiVariable($1, $2, $4, $0), nil >>
@@ -86,23 +91,45 @@ StructBody: empty                                               << ast.NewStruct
 EnumBody: empty                                                 << ast.NewEnumBody(), nil >>
         | EnumBody letters ","                                  << ast.AddToEnumBody($0, $1), nil >> ;
 
-KeyOnlyAttribute: "@" letters                                   << ast.NewKeyOnlyAttribute($1), nil >> ;
-
-OneLineAttribute: "@" letters ":" anything "\n"                 << ast.NewAttribute($1, $3), nil >> ;
+/**************************************
+**   attributes syntax definitions:  **
+***************************************/
 
 AttributeGroup: "@" "{" AttributeGroupBody "}"                  << ast.NewAttributeGroup($2), nil >> ;
 
 AttributeGroupBody: empty                                       << ast.NewAttributeGroupBody(), nil >> 
-                  | AttributeGroupBody AttributeGroupElement    << ast.AddToAttributeGroupBody($0, $1) >> ;
+                  | AttributeGroupBody AttributeGroupElement    << ast.AddToAttributeGroupBody($0, $1), nil >> ;
 
-AttributeGroupElement: letters ","                              << ast.NewKeyOnlyAttribute($0), nil >>
-                     | letters ":" anything ","                 << ast.NewAttribute($0, $2), nil >> ;
+AttributeGroupElement: Attribute ","                            << $0, nil >> ;
 
-SingleAttribute: KeyOnlyAttribute                               << $0, nil >>
-               | OneLineAttribute                               << $0, nil >> ;
+SingleAttribute: "@" Attribute                                  << $1, nil >> ;
 
 Attributes: empty                                               << ast.NewAttributesList(), nil >>
           | Attributes SingleAttribute                          << ast.AddToAttributesList($0, $1), nil >>
-          | Attributes AttributeGroup                           << ast.AddGroupToAttributesList($0, $1) >> ;
+          | Attributes AttributeGroup                           << ast.AddGroupToAttributesList($0, $1), nil >> ;
+
+Attribute: RangeAttribute                                       << $0, nil >>
+         | ExportAsAttribute                                    << $0, nil >> ;
+
+RangeAttribute: "range" ":" Range                               << ast.NewRangeAttribute($2), nil >> ;
+
+ExportAsAttribute: "exportAs" ":" str                           << ast.NewExportAsAttribute($2), nil >> ;
+
+Range: "[" integer "," integer "]"                              << ast.NewIntegerRange($1, true, $3, true), nil >>
+     | "[" integer "," integer ">"                              << ast.NewIntegerRange($1, true, $3, false), nil >>
+     | "<" integer "," integer "]"                              << ast.NewIntegerRange($1, false, $3, true), nil >>
+     | "<" integer "," integer ">"                              << ast.NewIntegerRange($1, false, $3, false), nil >>
+     | "[" realNumber "," realNumber "]"                        << ast.NewFloatRange($1, true, $3, true), nil >>
+     | "[" realNumber "," realNumber ">"                        << ast.NewFloatRange($1, true, $3, false), nil >>
+     | "<" realNumber "," realNumber "]"                        << ast.NewFloatRange($1, false, $3, true), nil >>
+     | "<" realNumber "," realNumber ">"                        << ast.NewFloatRange($1, false, $3, false), nil >>
+     | "[" integer "," realNumber "]"                           << ast.NewFloatRange($1, true, $3, true), nil >>
+     | "[" integer "," realNumber ">"                           << ast.NewFloatRange($1, true, $3, false), nil >>
+     | "<" integer "," realNumber "]"                           << ast.NewFloatRange($1, false, $3, true), nil >>
+     | "<" integer "," realNumber ">"                           << ast.NewFloatRange($1, false, $3, false), nil >> 
+     | "[" realNumber "," integer "]"                           << ast.NewFloatRange($1, true, $3, true), nil >>
+     | "[" realNumber "," integer ">"                           << ast.NewFloatRange($1, true, $3, false), nil >>
+     | "<" realNumber "," integer "]"                           << ast.NewFloatRange($1, false, $3, true), nil >>
+     | "<" realNumber "," integer ">"                           << ast.NewFloatRange($1, false, $3, false), nil >> ;
 
 // TODO: pre-generator flags (language-specifics)

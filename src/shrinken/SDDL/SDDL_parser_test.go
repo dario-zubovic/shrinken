@@ -50,12 +50,26 @@ package "com.github.namespace"
 use "com.github.other_namespace"
 
 class Entity {
+	@ exportAs: "pos"
 	Vector3 position
-	Vector3 rotation
+	
+	@ {
+		exportAs: "rot",
+	}
+	Quaternion rotation
+}
+
+class Player : Entity {
+	@range: [0, 5]
+	int state
 }
 
 struct Vector3 {
 	float x, y, z
+}
+
+struct Quanternion {
+	float i, j, k, w
 }
 `, true)
 }
