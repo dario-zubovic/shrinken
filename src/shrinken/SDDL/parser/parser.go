@@ -13,7 +13,7 @@ import (
 const (
 	numProductions = 70
 	numStates      = 214
-	numSymbols     = 64
+	numSymbols     = 63
 )
 
 // Stack

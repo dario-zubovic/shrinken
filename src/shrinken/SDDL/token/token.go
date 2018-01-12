@@ -99,7 +99,6 @@ var TokMap = TokenMap{
 		">",
 		"<",
 		"realNumber",
-		"anything",
 	},
 
 	idMap: map[string]Type{
@@ -143,6 +142,5 @@ var TokMap = TokenMap{
 		">":          37,
 		"<":          38,
 		"realNumber": 39,
-		"anything":   40,
 	},
 }

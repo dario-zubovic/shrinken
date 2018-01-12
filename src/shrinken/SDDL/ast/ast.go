@@ -96,17 +96,7 @@ type AttributeGroupBody struct {
 	Attributes []Attribute
 }
 
-type Range interface {
-}
-
-type IntegerRange struct {
-	Range
-	LowerBound, UpperBound         int64
-	LowerInclusive, UpperInclusive bool
-}
-
-type FloatRange struct {
-	Range
+type Range struct {
 	LowerBound, UpperBound         float64
 	LowerInclusive, UpperInclusive bool
 }
@@ -331,17 +321,8 @@ func AddGroupToAttributesList(list interface{}, group interface{}) []Attribute {
 	return arr
 }
 
-func NewIntegerRange(lowerBound interface{}, lowerInclusive interface{}, upperBound interface{}, upperInclusive interface{}) *IntegerRange {
-	return &IntegerRange{
-		LowerBound:     toInt64(lowerBound),
-		LowerInclusive: lowerInclusive.(bool),
-		UpperBound:     toInt64(upperBound),
-		UpperInclusive: upperInclusive.(bool),
-	}
-}
-
-func NewFloatRange(lowerBound interface{}, lowerInclusive interface{}, upperBound interface{}, upperInclusive interface{}) *FloatRange {
-	return &FloatRange{
+func NewRange(lowerBound interface{}, lowerInclusive interface{}, upperBound interface{}, upperInclusive interface{}) *Range {
+	return &Range{
 		LowerBound:     toFloat64(lowerBound),
 		LowerInclusive: lowerInclusive.(bool),
 		UpperBound:     toFloat64(upperBound),

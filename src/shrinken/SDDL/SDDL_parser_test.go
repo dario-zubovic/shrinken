@@ -62,6 +62,9 @@ class Entity {
 class Player : Entity {
 	@range: [0, 5]
 	int state
+
+	@range: [-2.333, 1.75>
+	float progress
 }
 
 struct Vector3 {
@@ -69,6 +72,7 @@ struct Vector3 {
 }
 
 struct Quanternion {
+	@range: [0, 1]
 	float i, j, k, w
 }
 `, true)

@@ -13,14 +13,14 @@ _blockComment: '/' '*' {. | '*'} '*' '/';
 _digit: '0'-'9';
 _positiveInteger: '1'-'9' {_digit};
 integer: '-' _positiveInteger | '0' | _positiveInteger;
-realNumber: _digit {_digit} '.' _digit {_digit};
+
+_positiveReal: _digit {_digit} '.' _digit {_digit};
+realNumber: '-' _positiveReal | _positiveReal;
 
 str: '"' {.} '"';
 
 _letter: 'a'-'z' | 'A'-'Z' | '_';
 letters: _letter {_letter | _digit};
-
-anything: {.};
 
 // extended letters are used for pre-generator flags (for target language names)
 // _extendedLetter: _letter | '.' | '#';
@@ -115,21 +115,22 @@ RangeAttribute: "range" ":" Range                               << ast.NewRangeA
 
 ExportAsAttribute: "exportAs" ":" str                           << ast.NewExportAsAttribute($2), nil >> ;
 
-Range: "[" integer "," integer "]"                              << ast.NewIntegerRange($1, true, $3, true), nil >>
-     | "[" integer "," integer ">"                              << ast.NewIntegerRange($1, true, $3, false), nil >>
-     | "<" integer "," integer "]"                              << ast.NewIntegerRange($1, false, $3, true), nil >>
-     | "<" integer "," integer ">"                              << ast.NewIntegerRange($1, false, $3, false), nil >>
-     | "[" realNumber "," realNumber "]"                        << ast.NewFloatRange($1, true, $3, true), nil >>
-     | "[" realNumber "," realNumber ">"                        << ast.NewFloatRange($1, true, $3, false), nil >>
-     | "<" realNumber "," realNumber "]"                        << ast.NewFloatRange($1, false, $3, true), nil >>
-     | "<" realNumber "," realNumber ">"                        << ast.NewFloatRange($1, false, $3, false), nil >>
-     | "[" integer "," realNumber "]"                           << ast.NewFloatRange($1, true, $3, true), nil >>
-     | "[" integer "," realNumber ">"                           << ast.NewFloatRange($1, true, $3, false), nil >>
-     | "<" integer "," realNumber "]"                           << ast.NewFloatRange($1, false, $3, true), nil >>
-     | "<" integer "," realNumber ">"                           << ast.NewFloatRange($1, false, $3, false), nil >> 
-     | "[" realNumber "," integer "]"                           << ast.NewFloatRange($1, true, $3, true), nil >>
-     | "[" realNumber "," integer ">"                           << ast.NewFloatRange($1, true, $3, false), nil >>
-     | "<" realNumber "," integer "]"                           << ast.NewFloatRange($1, false, $3, true), nil >>
-     | "<" realNumber "," integer ">"                           << ast.NewFloatRange($1, false, $3, false), nil >> ;
+Range: "[" integer "," integer "]"                              << ast.NewRange($1, true, $3, true), nil >>
+     | "[" integer "," integer ">"                              << ast.NewRange($1, true, $3, false), nil >>
+     | "<" integer "," integer "]"                              << ast.NewRange($1, false, $3, true), nil >>
+     | "<" integer "," integer ">"                              << ast.NewRange($1, false, $3, false), nil >>
+     | "[" realNumber "," realNumber "]"                        << ast.NewRange($1, true, $3, true), nil >>
+     | "[" realNumber "," realNumber ">"                        << ast.NewRange($1, true, $3, false), nil >>
+     | "<" realNumber "," realNumber "]"                        << ast.NewRange($1, false, $3, true), nil >>
+     | "<" realNumber "," realNumber ">"                        << ast.NewRange($1, false, $3, false), nil >>
+     | "[" integer "," realNumber "]"                           << ast.NewRange($1, true, $3, true), nil >>
+     | "[" integer "," realNumber ">"                           << ast.NewRange($1, true, $3, false), nil >>
+     | "<" integer "," realNumber "]"                           << ast.NewRange($1, false, $3, true), nil >>
+     | "<" integer "," realNumber ">"                           << ast.NewRange($1, false, $3, false), nil >> 
+     | "[" realNumber "," integer "]"                           << ast.NewRange($1, true, $3, true), nil >>
+     | "[" realNumber "," integer ">"                           << ast.NewRange($1, true, $3, false), nil >>
+     | "<" realNumber "," integer "]"                           << ast.NewRange($1, false, $3, true), nil >>
+     | "<" realNumber "," integer ">"                           << ast.NewRange($1, false, $3, false), nil >> ;
+
 
 // TODO: pre-generator flags (language-specifics)

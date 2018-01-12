@@ -561,163 +561,163 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Range : "[" integer "," integer "]"	<< ast.NewIntegerRange(X[1], true, X[3], true), nil >>`,
+		String: `Range : "[" integer "," integer "]"	<< ast.NewRange(X[1], true, X[3], true), nil >>`,
 		Id:         "Range",
 		NTType:     22,
 		Index:      54,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewIntegerRange(X[1], true, X[3], true), nil
+			return ast.NewRange(X[1], true, X[3], true), nil
 		},
 	},
 	ProdTabEntry{
-		String: `Range : "[" integer "," integer ">"	<< ast.NewIntegerRange(X[1], true, X[3], false), nil >>`,
+		String: `Range : "[" integer "," integer ">"	<< ast.NewRange(X[1], true, X[3], false), nil >>`,
 		Id:         "Range",
 		NTType:     22,
 		Index:      55,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewIntegerRange(X[1], true, X[3], false), nil
+			return ast.NewRange(X[1], true, X[3], false), nil
 		},
 	},
 	ProdTabEntry{
-		String: `Range : "<" integer "," integer "]"	<< ast.NewIntegerRange(X[1], false, X[3], true), nil >>`,
+		String: `Range : "<" integer "," integer "]"	<< ast.NewRange(X[1], false, X[3], true), nil >>`,
 		Id:         "Range",
 		NTType:     22,
 		Index:      56,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewIntegerRange(X[1], false, X[3], true), nil
+			return ast.NewRange(X[1], false, X[3], true), nil
 		},
 	},
 	ProdTabEntry{
-		String: `Range : "<" integer "," integer ">"	<< ast.NewIntegerRange(X[1], false, X[3], false), nil >>`,
+		String: `Range : "<" integer "," integer ">"	<< ast.NewRange(X[1], false, X[3], false), nil >>`,
 		Id:         "Range",
 		NTType:     22,
 		Index:      57,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewIntegerRange(X[1], false, X[3], false), nil
+			return ast.NewRange(X[1], false, X[3], false), nil
 		},
 	},
 	ProdTabEntry{
-		String: `Range : "[" realNumber "," realNumber "]"	<< ast.NewFloatRange(X[1], true, X[3], true), nil >>`,
+		String: `Range : "[" realNumber "," realNumber "]"	<< ast.NewRange(X[1], true, X[3], true), nil >>`,
 		Id:         "Range",
 		NTType:     22,
 		Index:      58,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewFloatRange(X[1], true, X[3], true), nil
+			return ast.NewRange(X[1], true, X[3], true), nil
 		},
 	},
 	ProdTabEntry{
-		String: `Range : "[" realNumber "," realNumber ">"	<< ast.NewFloatRange(X[1], true, X[3], false), nil >>`,
+		String: `Range : "[" realNumber "," realNumber ">"	<< ast.NewRange(X[1], true, X[3], false), nil >>`,
 		Id:         "Range",
 		NTType:     22,
 		Index:      59,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewFloatRange(X[1], true, X[3], false), nil
+			return ast.NewRange(X[1], true, X[3], false), nil
 		},
 	},
 	ProdTabEntry{
-		String: `Range : "<" realNumber "," realNumber "]"	<< ast.NewFloatRange(X[1], false, X[3], true), nil >>`,
+		String: `Range : "<" realNumber "," realNumber "]"	<< ast.NewRange(X[1], false, X[3], true), nil >>`,
 		Id:         "Range",
 		NTType:     22,
 		Index:      60,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewFloatRange(X[1], false, X[3], true), nil
+			return ast.NewRange(X[1], false, X[3], true), nil
 		},
 	},
 	ProdTabEntry{
-		String: `Range : "<" realNumber "," realNumber ">"	<< ast.NewFloatRange(X[1], false, X[3], false), nil >>`,
+		String: `Range : "<" realNumber "," realNumber ">"	<< ast.NewRange(X[1], false, X[3], false), nil >>`,
 		Id:         "Range",
 		NTType:     22,
 		Index:      61,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewFloatRange(X[1], false, X[3], false), nil
+			return ast.NewRange(X[1], false, X[3], false), nil
 		},
 	},
 	ProdTabEntry{
-		String: `Range : "[" integer "," realNumber "]"	<< ast.NewFloatRange(X[1], true, X[3], true), nil >>`,
+		String: `Range : "[" integer "," realNumber "]"	<< ast.NewRange(X[1], true, X[3], true), nil >>`,
 		Id:         "Range",
 		NTType:     22,
 		Index:      62,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewFloatRange(X[1], true, X[3], true), nil
+			return ast.NewRange(X[1], true, X[3], true), nil
 		},
 	},
 	ProdTabEntry{
-		String: `Range : "[" integer "," realNumber ">"	<< ast.NewFloatRange(X[1], true, X[3], false), nil >>`,
+		String: `Range : "[" integer "," realNumber ">"	<< ast.NewRange(X[1], true, X[3], false), nil >>`,
 		Id:         "Range",
 		NTType:     22,
 		Index:      63,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewFloatRange(X[1], true, X[3], false), nil
+			return ast.NewRange(X[1], true, X[3], false), nil
 		},
 	},
 	ProdTabEntry{
-		String: `Range : "<" integer "," realNumber "]"	<< ast.NewFloatRange(X[1], false, X[3], true), nil >>`,
+		String: `Range : "<" integer "," realNumber "]"	<< ast.NewRange(X[1], false, X[3], true), nil >>`,
 		Id:         "Range",
 		NTType:     22,
 		Index:      64,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewFloatRange(X[1], false, X[3], true), nil
+			return ast.NewRange(X[1], false, X[3], true), nil
 		},
 	},
 	ProdTabEntry{
-		String: `Range : "<" integer "," realNumber ">"	<< ast.NewFloatRange(X[1], false, X[3], false), nil >>`,
+		String: `Range : "<" integer "," realNumber ">"	<< ast.NewRange(X[1], false, X[3], false), nil >>`,
 		Id:         "Range",
 		NTType:     22,
 		Index:      65,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewFloatRange(X[1], false, X[3], false), nil
+			return ast.NewRange(X[1], false, X[3], false), nil
 		},
 	},
 	ProdTabEntry{
-		String: `Range : "[" realNumber "," integer "]"	<< ast.NewFloatRange(X[1], true, X[3], true), nil >>`,
+		String: `Range : "[" realNumber "," integer "]"	<< ast.NewRange(X[1], true, X[3], true), nil >>`,
 		Id:         "Range",
 		NTType:     22,
 		Index:      66,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewFloatRange(X[1], true, X[3], true), nil
+			return ast.NewRange(X[1], true, X[3], true), nil
 		},
 	},
 	ProdTabEntry{
-		String: `Range : "[" realNumber "," integer ">"	<< ast.NewFloatRange(X[1], true, X[3], false), nil >>`,
+		String: `Range : "[" realNumber "," integer ">"	<< ast.NewRange(X[1], true, X[3], false), nil >>`,
 		Id:         "Range",
 		NTType:     22,
 		Index:      67,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewFloatRange(X[1], true, X[3], false), nil
+			return ast.NewRange(X[1], true, X[3], false), nil
 		},
 	},
 	ProdTabEntry{
-		String: `Range : "<" realNumber "," integer "]"	<< ast.NewFloatRange(X[1], false, X[3], true), nil >>`,
+		String: `Range : "<" realNumber "," integer "]"	<< ast.NewRange(X[1], false, X[3], true), nil >>`,
 		Id:         "Range",
 		NTType:     22,
 		Index:      68,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewFloatRange(X[1], false, X[3], true), nil
+			return ast.NewRange(X[1], false, X[3], true), nil
 		},
 	},
 	ProdTabEntry{
-		String: `Range : "<" realNumber "," integer ">"	<< ast.NewFloatRange(X[1], false, X[3], false), nil >>`,
+		String: `Range : "<" realNumber "," integer ">"	<< ast.NewRange(X[1], false, X[3], false), nil >>`,
 		Id:         "Range",
 		NTType:     22,
 		Index:      69,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewFloatRange(X[1], false, X[3], false), nil
+			return ast.NewRange(X[1], false, X[3], false), nil
 		},
 	},
 }
