@@ -323,9 +323,9 @@ func AddGroupToAttributesList(list interface{}, group interface{}) []Attribute {
 
 func NewRange(lowerBound interface{}, lowerInclusive interface{}, upperBound interface{}, upperInclusive interface{}) *Range {
 	return &Range{
-		LowerBound:     toFloat64(lowerBound),
+		LowerBound:     lowerBound.(float64),
 		LowerInclusive: lowerInclusive.(bool),
-		UpperBound:     toFloat64(upperBound),
+		UpperBound:     upperBound.(float64),
 		UpperInclusive: upperInclusive.(bool),
 	}
 }

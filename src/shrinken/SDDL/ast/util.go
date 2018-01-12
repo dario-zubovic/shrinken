@@ -20,7 +20,7 @@ func toInt64(str interface{}) int64 {
 	return i
 }
 
-func toFloat64(str interface{}) float64 {
+func ToFloat64(str interface{}) float64 {
 	s := toStr(str)
 	f, _ := strconv.ParseFloat(s, 64)
 	return f

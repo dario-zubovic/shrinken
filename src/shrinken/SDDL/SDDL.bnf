@@ -115,22 +115,17 @@ RangeAttribute: "range" ":" Range                               << ast.NewRangeA
 
 ExportAsAttribute: "exportAs" ":" str                           << ast.NewExportAsAttribute($2), nil >> ;
 
-Range: "[" integer "," integer "]"                              << ast.NewRange($1, true, $3, true), nil >>
-     | "[" integer "," integer ">"                              << ast.NewRange($1, true, $3, false), nil >>
-     | "<" integer "," integer "]"                              << ast.NewRange($1, false, $3, true), nil >>
-     | "<" integer "," integer ">"                              << ast.NewRange($1, false, $3, false), nil >>
-     | "[" realNumber "," realNumber "]"                        << ast.NewRange($1, true, $3, true), nil >>
-     | "[" realNumber "," realNumber ">"                        << ast.NewRange($1, true, $3, false), nil >>
-     | "<" realNumber "," realNumber "]"                        << ast.NewRange($1, false, $3, true), nil >>
-     | "<" realNumber "," realNumber ">"                        << ast.NewRange($1, false, $3, false), nil >>
-     | "[" integer "," realNumber "]"                           << ast.NewRange($1, true, $3, true), nil >>
-     | "[" integer "," realNumber ">"                           << ast.NewRange($1, true, $3, false), nil >>
-     | "<" integer "," realNumber "]"                           << ast.NewRange($1, false, $3, true), nil >>
-     | "<" integer "," realNumber ">"                           << ast.NewRange($1, false, $3, false), nil >> 
-     | "[" realNumber "," integer "]"                           << ast.NewRange($1, true, $3, true), nil >>
-     | "[" realNumber "," integer ">"                           << ast.NewRange($1, true, $3, false), nil >>
-     | "<" realNumber "," integer "]"                           << ast.NewRange($1, false, $3, true), nil >>
-     | "<" realNumber "," integer ">"                           << ast.NewRange($1, false, $3, false), nil >> ;
+// PrecisionAttribute: "precision" ":" MathExpr                    << ast.NewPrecisionAttribute($2), nil >> ;
 
+Number: integer                                                 << ast.ToFloat64($0), nil >>
+      | realNumber                                              << ast.ToFloat64($0), nil >> ;
+
+Range: "[" Number "," Number "]"                              << ast.NewRange($1, true, $3, true), nil >>
+     | "[" Number "," Number ">"                              << ast.NewRange($1, true, $3, false), nil >>
+     | "<" Number "," Number "]"                              << ast.NewRange($1, false, $3, true), nil >>
+     | "<" Number "," Number ">"                              << ast.NewRange($1, false, $3, false), nil >> ;
+
+
+// MathExpr: 
 
 // TODO: pre-generator flags (language-specifics)
