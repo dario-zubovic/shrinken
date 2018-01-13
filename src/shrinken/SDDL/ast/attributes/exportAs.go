@@ -25,7 +25,7 @@ func (attb *ExportAsAttribute) String() string {
 	return fmt.Sprint("ExportAs ", attb.ExportedName)
 }
 
-func (attb *ExportAsAttribute) IsApplicable(t reflect.Type, node interface{}) (bool, error) {
+func (attb *ExportAsAttribute) IsApplicable(t reflect.Type, node ast.ASTNode) (bool, error) {
 	if t == reflect.TypeOf(&ast.Variable{}) ||
 		t == reflect.TypeOf(&ast.StructDef{}) ||
 		t == reflect.TypeOf(&ast.EnumDef{}) ||

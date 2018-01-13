@@ -25,7 +25,7 @@ func (attb *VersionAttribute) String() string {
 	return fmt.Sprint("Version ", attb.Version)
 }
 
-func (attb *VersionAttribute) IsApplicable(t reflect.Type, node interface{}) (bool, error) {
+func (attb *VersionAttribute) IsApplicable(t reflect.Type, node ast.ASTNode) (bool, error) {
 	if t == reflect.TypeOf(&ast.PackageDef{}) {
 		return true, nil
 	}

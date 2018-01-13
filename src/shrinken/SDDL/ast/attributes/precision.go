@@ -25,18 +25,10 @@ func (attb *PrecisionAttribute) String() string {
 	return fmt.Sprint("Precision ", attb.Precision)
 }
 
-func (attb *PrecisionAttribute) IsApplicable(t reflect.Type, node interface{}) (bool, error) {
+func (attb *PrecisionAttribute) IsApplicable(t reflect.Type, node ast.ASTNode) (bool, error) {
 	if t == reflect.TypeOf(&ast.Variable{}) {
 		if node.(*ast.Variable).Type.IsGeneric &&
 			node.(*ast.Variable).Type.GenericType == ast.Float {
-
-			return true, nil
-		}
-	}
-
-	if t == reflect.TypeOf(&ast.MultiVariable{}) {
-		if node.(*ast.MultiVariable).Type.IsGeneric &&
-			node.(*ast.MultiVariable).Type.GenericType == ast.Float {
 
 			return true, nil
 		}
