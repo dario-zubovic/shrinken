@@ -21,6 +21,10 @@ func (attb *ExportAsAttribute) Accept(visitor ast.Visitor) {
 	visitor.VisitAttribute(attb)
 }
 
+func (attb *ExportAsAttribute) String() string {
+	return fmt.Sprint("ExportAs ", attb.ExportedName)
+}
+
 func (attb *ExportAsAttribute) IsApplicable(t reflect.Type, node interface{}) (bool, error) {
 	if t == reflect.TypeOf(&ast.Variable{}) ||
 		t == reflect.TypeOf(&ast.StructDef{}) ||

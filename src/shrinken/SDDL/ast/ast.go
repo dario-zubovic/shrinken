@@ -66,6 +66,7 @@ type Type struct {
 	Name string
 }
 
+//go:generate stringer -type=GenericType
 type GenericType int
 
 const (
@@ -212,8 +213,7 @@ func NewGenericType(generic interface{}) *Type {
 
 func NewType(typeName interface{}) *Type {
 	return &Type{
-		IsGeneric: false,
-		Name:      toStr(typeName),
+		Name: toStr(typeName),
 	}
 }
 

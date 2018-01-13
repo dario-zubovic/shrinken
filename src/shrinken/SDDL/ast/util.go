@@ -11,7 +11,7 @@ func toStr(str interface{}) string {
 
 func ToStrUnquote(str interface{}) string {
 	s := toStr(str)
-	return s[1 : len(s)-2]
+	return s[1 : len(s)-1]
 }
 
 func ToInt64(str interface{}) int64 {
@@ -24,4 +24,23 @@ func ToFloat64(str interface{}) float64 {
 	s := toStr(str)
 	f, _ := strconv.ParseFloat(s, 64)
 	return f
+}
+
+func RangeToString(r *Range) string {
+	s := ""
+	if r.LowerInclusive {
+		s += "["
+	} else {
+		s += "<"
+	}
+
+	s += strconv.FormatFloat(r.LowerBound, 'g', -1, 64) + ", " + strconv.FormatFloat(r.UpperBound, 'g', -1, 64)
+
+	if r.UpperInclusive {
+		s += "]"
+	} else {
+		s += ">"
+	}
+
+	return s
 }

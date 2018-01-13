@@ -21,6 +21,10 @@ func (attb *VersionAttribute) Accept(visitor ast.Visitor) {
 	visitor.VisitAttribute(attb)
 }
 
+func (attb *VersionAttribute) String() string {
+	return fmt.Sprint("Version ", attb.Version)
+}
+
 func (attb *VersionAttribute) IsApplicable(t reflect.Type, node interface{}) (bool, error) {
 	if t == reflect.TypeOf(&ast.PackageDef{}) {
 		return true, nil

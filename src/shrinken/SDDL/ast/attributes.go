@@ -11,5 +11,5 @@ type Attribute interface {
 	IsApplicable(t reflect.Type, node interface{}) (bool, error)
 
 	// debug string describing this attribute node
-	String()
+	String() string
 }

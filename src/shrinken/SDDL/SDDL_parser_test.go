@@ -121,7 +121,7 @@ func TestMath3(t *testing.T) {
 }
 
 func TestMath4(t *testing.T) {
-	testForParserMathEvalErrors(t, "2^2-sqrt(8/(1+1))+5*(3^2)+3", 50)
+	testForParserMathEvalErrors(t, "2^2-sqrt(8/(1+1))+5*3^2+3", 50)
 }
 
 func TestMath5(t *testing.T) {

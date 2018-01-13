@@ -1,4 +1,4 @@
-package dbgvisitor
+package main
 
 import (
 	"fmt"
@@ -7,6 +7,7 @@ import (
 	"shrinken/SDDL/ast"
 	"shrinken/SDDL/lexer"
 	"shrinken/SDDL/parser"
+	"strconv"
 )
 
 type Visitor struct {
@@ -16,15 +17,18 @@ type Visitor struct {
 }
 
 func (v *Visitor) print(s ...interface{}) {
-	indent := ""
+	str := ""
 	for i := 0; i < v.level; i++ {
-		indent += " "
+		str += "    "
 	}
-	fmt.Println(indent, s)
+	for _, p := range s {
+		str += " " + fmt.Sprint(p)
+	}
+	fmt.Println(str)
 }
 
 func (v *Visitor) VisitPackageDef(pkg *ast.PackageDef) {
-	print("Package:", pkg.Name)
+	v.print("Package:", pkg.Name)
 	v.level++
 	for _, attb := range pkg.AttributesList {
 		attb.Accept(v)
@@ -59,7 +63,9 @@ func (v *Visitor) VisitImportDef(i *ast.ImportDef) {
 func (v *Visitor) VisitStructDef(s *ast.StructDef) {
 	v.print("Struct:", s.Name)
 	v.level++
-	v.print("Extends:", s.Overrides)
+	if s.Overrides != "" {
+		v.print("Extends:", s.Overrides)
+	}
 	v.print("Class:", s.IsClass)
 	for _, attb := range s.AttributesList {
 		attb.Accept(v)
@@ -114,17 +120,25 @@ func (v *Visitor) VisitEnumeral(e *ast.Enumeral) {
 
 func (v *Visitor) VisitType(t *ast.Type) {
 	if t.IsGeneric {
-		v.print("Type (generic):", t.GenericType)
+		v.print("Type (generic):", t.GenericType.String())
 	} else if t.IsArray {
-		v.print("arr TODO")
-		// TODO
+		size := ""
+		if t.ArraySize == -1 {
+			size = "∞"
+		} else {
+			size = strconv.Itoa(t.ArraySize)
+		}
+		v.print("Array of size", size, ". Child type:")
+		v.level++
+		t.ArrayChildType.Accept(v)
+		v.level--
 	} else {
 		v.print("Type:", t.Name)
 	}
 }
 
 func (v *Visitor) VisitAttribute(attb ast.Attribute) {
-	// TODO
+	v.print("Attribute:", attb.String())
 }
 
 func main() {
