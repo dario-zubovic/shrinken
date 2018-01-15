@@ -47,3 +47,7 @@ func TestBasic(t *testing.T) {
 func TestUnknownType(t *testing.T) {
 	testFileForValidatorErrors(t, "examples/single_file/unknown_type.sddl", false)
 }
+
+func TestDuplicateDefinition(t *testing.T) {
+	testFileForValidatorErrors(t, "examples/single_file/double_definition.sddl", false)
+}

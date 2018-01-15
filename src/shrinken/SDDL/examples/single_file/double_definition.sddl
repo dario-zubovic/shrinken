@@ -1,0 +1,35 @@
+package "com.github.namespace"
+
+use "com.github.other_namespace"
+
+class Entity {
+	@ exportAs: "pos"
+	Vector3 position
+
+	@ {
+		exportAs: "rot",
+	}
+	Quaternion rotation
+}
+
+class Player : Entity {
+	@range: [0, 5]
+	int state
+
+	@range: [-2.333, 2^8>
+	float progress
+}
+
+struct Vector3 {
+	float x, y, z
+}
+
+class Vector3 {
+	float A, B, C
+}
+
+struct Quaternion {
+	@range: [0, sqrt(4)*(7+3)*8/2]
+	@precision: e^pi
+	float i, j, k, w
+}
