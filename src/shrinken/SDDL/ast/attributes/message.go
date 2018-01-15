@@ -29,5 +29,5 @@ func (attb *MessageAttribute) IsApplicable(t reflect.Type, node ast.ASTNode) (bo
 		return true, nil
 	}
 
-	return false, fmt.Errorf("Message attribute is only applicable to classes, structs and enums.")
+	return false, fmt.Errorf("Message attribute is only applicable to classes, structs, and enums.")
 }
