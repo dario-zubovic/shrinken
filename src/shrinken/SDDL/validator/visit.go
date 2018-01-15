@@ -60,6 +60,10 @@ func (v *validatorVisitor) VisitStructDef(s *ast.StructDef) {
 
 	v.addDeclaredType(s.Name)
 
+	if s.Overrides != "" {
+		v.addUsedType(s.Overrides)
+	}
+
 	for _, attb := range s.AttributesList {
 		attb.Accept(v)
 	}
