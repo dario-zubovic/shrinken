@@ -112,7 +112,8 @@ Attributes: empty                                               << ast.NewAttrib
 Attribute: RangeAttribute                                       << $0, nil >>
          | ExportAsAttribute                                    << $0, nil >>
          | PrecisionAttribute                                   << $0, nil >>
-         | VersionAttribute                                     << $0, nil >> ;
+         | VersionAttribute                                     << $0, nil >>
+         | MessageAttribute                                     << $0, nil >> ;
 
 RangeAttribute: "range" ":" Range                               << attributes.NewRangeAttribute($2), nil >> ;
 
@@ -121,6 +122,8 @@ ExportAsAttribute: "exportAs" ":" str                           << attributes.Ne
 PrecisionAttribute: "precision" ":" MathExpr                    << attributes.NewPrecisionAttribute($2), nil >> ;
 
 VersionAttribute: "version" ":" integer                         << attributes.NewVersionAttribute($2), nil >> ;
+
+MessageAttribute: "message"                                     << attributes.NewMessageAttribute(), nil >> ;
 
 Range: "[" MathExpr "," MathExpr "]"                            << ast.NewRange($1, true, $3, true), nil >>
      | "[" MathExpr "," MathExpr ">"                            << ast.NewRange($1, true, $3, false), nil >>

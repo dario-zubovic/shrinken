@@ -1,4 +1,3 @@
-@version: 2317
 package "com.github.namespace"
 
 use "com.github.other_namespace"
@@ -13,8 +12,7 @@ class Entity {
 	Quaternion rotation
 }
 
-@ message
-class Player : Entity {
+class Player : Ent { // this line is wrong since there is no declaration of type Ent
 	@range: [0, 5]
 	int state
 

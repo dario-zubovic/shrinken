@@ -2,6 +2,7 @@ package SDDL
 
 import (
 	"fmt"
+	"io/ioutil"
 	"shrinken/SDDL/ast"
 	"shrinken/SDDL/ast/attributes"
 	"shrinken/SDDL/lexer"
@@ -45,6 +46,16 @@ class DummyClass {
 	}
 }
 
+func testFileForParserErrors(t *testing.T, filename string, valid bool) {
+	b, err := ioutil.ReadFile(filename)
+	if err != nil {
+		t.Error("Couldn't load testing SDDL file!", err)
+		return
+	}
+
+	testForParserErrors(t, string(b), valid)
+}
+
 // package decl tests only check for most basic parser functions... if those fail, something is very wrong
 
 func TestPackageDecl1(t *testing.T) {
@@ -72,40 +83,7 @@ func TestPackageDecl5(t *testing.T) {
 
 // Tests parser with snippet that contains all features supported by SDDL
 func TestFullSnippet(t *testing.T) {
-	testForParserErrors(t, `
-@version: 2317
-package "com.github.namespace"
-
-use "com.github.other_namespace"
-
-class Entity {
-	@ exportAs: "pos"
-	Vector3 position
-
-	@ {
-		exportAs: "rot",
-	}
-	Quaternion rotation
-}
-
-class Player : Entity {
-	@range: [0, 5]
-	int state
-
-	@range: [-2.333, 2^8>
-	float progress
-}
-
-struct Vector3 {
-	float x, y, z
-}
-
-struct Quaternion {
-	@range: [0, sqrt(4)*(7+3)*8/2]
-	@precision: e^pi
-	float i, j, k, w
-}
-`, true)
+	testFileForParserErrors(t, "examples/single_file/basic.sddl", true)
 }
 
 func TestMath1(t *testing.T) {
