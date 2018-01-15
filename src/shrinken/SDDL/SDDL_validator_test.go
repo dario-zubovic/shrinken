@@ -55,3 +55,21 @@ func TestUnknownType2(t *testing.T) {
 func TestDuplicateDefinition(t *testing.T) {
 	testFileForValidatorErrors(t, "examples/single_file/double_definition.sddl", false)
 }
+
+func TestRangeAttribute(t *testing.T) {
+	testForValidatorErrors(t, `package "test"
+
+class Test {
+	@ range: [0.14, 4] 
+	int variable
+}
+`, false)
+
+	testForValidatorErrors(t, `package "test"
+
+class Test {
+@ range: [0.14, 4] 
+float variable
+}
+`, true)
+}

@@ -29,7 +29,15 @@ func (attb *RangeAttribute) IsApplicable(t reflect.Type, node ast.ASTNode) (bool
 	if t == reflect.TypeOf(&ast.Variable{}) {
 		if node.(*ast.Variable).Type.IsGeneric {
 			genericType := node.(*ast.Variable).Type.GenericType
-			if genericType == ast.Integer32 || genericType == ast.Integer64 || genericType == ast.Float {
+			if genericType == ast.Float {
+				return true, nil
+			} else if genericType == ast.Integer32 || genericType == ast.Integer64 {
+				if float64(int64(attb.Range.LowerBound)) != attb.Range.LowerBound ||
+					float64(int64(attb.Range.UpperBound)) != attb.Range.UpperBound {
+
+					return false, fmt.Errorf("Range attribute applied to integer types must be limited by integers")
+				}
+
 				return true, nil
 			}
 		}
