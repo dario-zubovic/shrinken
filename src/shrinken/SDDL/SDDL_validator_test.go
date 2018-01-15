@@ -68,8 +68,8 @@ class Test {
 	testForValidatorErrors(t, `package "test"
 
 class Test {
-@ range: [0.14, 4] 
-float variable
+	@ range: [0.14, 4] 
+	float variable
 }
 `, true)
 }

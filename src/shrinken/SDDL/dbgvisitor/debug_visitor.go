@@ -1,4 +1,4 @@
-package main
+package dbgvisitor
 
 import (
 	"fmt"
@@ -21,8 +21,12 @@ func (v *Visitor) print(s ...interface{}) {
 	for i := 0; i < v.level; i++ {
 		str += "    "
 	}
-	for _, p := range s {
-		str += " " + fmt.Sprint(p)
+	for i, p := range s {
+		if i == 0 {
+			str += fmt.Sprint(p)
+		} else {
+			str += " " + fmt.Sprint(p)
+		}
 	}
 	fmt.Println(str)
 }
@@ -141,13 +145,8 @@ func (v *Visitor) VisitAttribute(attb ast.Attribute) {
 	v.print("Attribute:", attb.String())
 }
 
-func main() {
-	if len(os.Args) == 1 {
-		fmt.Fprintln(os.Stderr, "Please specify target SDDL file in argument!")
-		return
-	}
-
-	file, err := ioutil.ReadFile(os.Args[1])
+func PrintAST(path string) {
+	file, err := ioutil.ReadFile(path)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, "Error reading SDDL file!", err)
 		return
