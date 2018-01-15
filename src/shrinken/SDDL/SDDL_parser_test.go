@@ -100,7 +100,7 @@ struct Vector3 {
 	float x, y, z
 }
 
-struct Quanternion {
+struct Quaternion {
 	@range: [0, sqrt(4)*(7+3)*8/2]
 	@precision: e^pi
 	float i, j, k, w

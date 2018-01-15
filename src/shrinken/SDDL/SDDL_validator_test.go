@@ -30,15 +30,20 @@ func testForValidatorErrors(t *testing.T, SDDL string, expectedToBeValid bool) {
 	}
 }
 
-func testFileForValidatorErrors(t *testing.T, filename string) {
+func testFileForValidatorErrors(t *testing.T, filename string, expectedToBeValid bool) {
 	b, err := ioutil.ReadFile(filename)
 	if err != nil {
 		t.Error("Couldn't load testing SDDL file!", err)
+		return
 	}
 
-	testForValidatorErrors(t, string(b), true)
+	testForValidatorErrors(t, string(b), expectedToBeValid)
 }
 
 func TestBasic(t *testing.T) {
-	testFileForValidatorErrors(t, "examples/single_file/basic.SDDL")
+	testFileForValidatorErrors(t, "examples/single_file/basic.sddl", true)
+}
+
+func TestUnknownType(t *testing.T) {
+	testFileForValidatorErrors(t, "examples/single_file/unknown_type.sddl", false)
 }

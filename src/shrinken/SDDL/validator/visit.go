@@ -1,12 +1,20 @@
 package validator
 
-import "shrinken/SDDL/ast"
+import (
+	"reflect"
+	"shrinken/SDDL/ast"
+)
 
 // this file implements Visitor pattern for AST validator
 
-func (v *Validator) VisitPackageDef(pkg *ast.PackageDef) {
+type validatorVisitor struct {
+	ast.Visitor
+	Validator *Validator
+}
 
-	valid := v.ValidateAttributes(pkg, pkg.AttributesList)
+func (v *validatorVisitor) VisitPackageDef(pkg *ast.PackageDef) {
+
+	valid := v.validateAttributes(pkg, pkg.AttributesList)
 	if !valid {
 		return
 	}
@@ -18,7 +26,7 @@ func (v *Validator) VisitPackageDef(pkg *ast.PackageDef) {
 
 }
 
-func (v *Validator) VisitPackageBody(body *ast.PackageBody) {
+func (v *validatorVisitor) VisitPackageBody(body *ast.PackageBody) {
 
 	for _, importDef := range body.Imports {
 		importDef.Accept(v)
@@ -30,9 +38,9 @@ func (v *Validator) VisitPackageBody(body *ast.PackageBody) {
 
 }
 
-func (v *Validator) VisitImportDef(i *ast.ImportDef) {
+func (v *validatorVisitor) VisitImportDef(i *ast.ImportDef) {
 
-	valid := v.ValidateAttributes(i, i.AttributesList)
+	valid := v.validateAttributes(i, i.AttributesList)
 	if !valid {
 		return
 	}
@@ -43,12 +51,14 @@ func (v *Validator) VisitImportDef(i *ast.ImportDef) {
 
 }
 
-func (v *Validator) VisitStructDef(s *ast.StructDef) {
+func (v *validatorVisitor) VisitStructDef(s *ast.StructDef) {
 
-	valid := v.ValidateAttributes(s, s.AttributesList)
+	valid := v.validateAttributes(s, s.AttributesList)
 	if !valid {
 		return
 	}
+
+	v.addDeclaredType(s.Name)
 
 	for _, attb := range s.AttributesList {
 		attb.Accept(v)
@@ -57,12 +67,14 @@ func (v *Validator) VisitStructDef(s *ast.StructDef) {
 
 }
 
-func (v *Validator) VisitEnumDef(enum *ast.EnumDef) {
+func (v *validatorVisitor) VisitEnumDef(enum *ast.EnumDef) {
 
-	valid := v.ValidateAttributes(enum, enum.AttributesList)
+	valid := v.validateAttributes(enum, enum.AttributesList)
 	if !valid {
 		return
 	}
+
+	v.addDeclaredType(enum.Name)
 
 	for _, attb := range enum.AttributesList {
 		attb.Accept(v)
@@ -71,7 +83,7 @@ func (v *Validator) VisitEnumDef(enum *ast.EnumDef) {
 
 }
 
-func (v *Validator) VisitStructBody(structBody *ast.StructBody) {
+func (v *validatorVisitor) VisitStructBody(structBody *ast.StructBody) {
 
 	for _, variable := range structBody.Variables {
 		variable.Accept(v)
@@ -79,7 +91,7 @@ func (v *Validator) VisitStructBody(structBody *ast.StructBody) {
 
 }
 
-func (v *Validator) VisitEnumBody(enumBody *ast.EnumBody) {
+func (v *validatorVisitor) VisitEnumBody(enumBody *ast.EnumBody) {
 
 	for _, e := range enumBody.Enumerals {
 		e.Accept(v)
@@ -87,8 +99,8 @@ func (v *Validator) VisitEnumBody(enumBody *ast.EnumBody) {
 
 }
 
-func (v *Validator) VisitVariable(variable *ast.Variable) {
-	valid := v.ValidateAttributes(variable, variable.AttributesList)
+func (v *validatorVisitor) VisitVariable(variable *ast.Variable) {
+	valid := v.validateAttributes(variable, variable.AttributesList)
 	if !valid {
 		return
 	}
@@ -100,22 +112,44 @@ func (v *Validator) VisitVariable(variable *ast.Variable) {
 
 }
 
-func (v *Validator) VisitEnumeral(e *ast.Enumeral) {
+func (v *validatorVisitor) VisitEnumeral(e *ast.Enumeral) {
 
 }
 
-func (v *Validator) VisitType(t *ast.Type) {
+func (v *validatorVisitor) VisitType(t *ast.Type) {
 	if t.IsGeneric {
-
-	} else if t.IsArray {
-
-		t.ArrayChildType.Accept(v)
-
-	} else {
-
+		return
 	}
+
+	if t.IsArray {
+		t.ArrayChildType.Accept(v)
+		return
+	}
+
+	v.addUsedType(t.Name)
 }
 
-func (v *Validator) VisitAttribute(attb ast.Attribute) {
+func (v *validatorVisitor) VisitAttribute(attb ast.Attribute) {
 
+}
+
+func (v *validatorVisitor) validateAttributes(node ast.ASTNode, attributes []ast.Attribute) bool {
+	for _, attb := range attributes {
+		valid, err := attb.IsApplicable(reflect.TypeOf(node), node)
+		if !valid {
+			v.Validator.astValid = false
+			v.Validator.astInvalidError = err
+			return false
+		}
+	}
+
+	return true
+}
+
+func (v *validatorVisitor) addDeclaredType(name string) {
+	v.Validator.declaredTypes = append(v.Validator.declaredTypes, name)
+}
+
+func (v *validatorVisitor) addUsedType(name string) {
+	v.Validator.usedTypes = append(v.Validator.usedTypes, name)
 }
