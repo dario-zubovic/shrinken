@@ -6,6 +6,7 @@ import (
 	"shrinken/SDDL/ast"
 )
 
+// PrecisionAttribute sets precision of floating variable
 type PrecisionAttribute struct {
 	ast.Attribute
 	Precision float64

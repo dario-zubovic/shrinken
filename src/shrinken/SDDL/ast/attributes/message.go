@@ -6,6 +6,7 @@ import (
 	"shrinken/SDDL/ast"
 )
 
+// Only classes, structs or enums with this attribute will be exported with Serialize/Deserialize methods
 type MessageAttribute struct {
 	ast.Attribute
 }

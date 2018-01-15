@@ -1,5 +1,10 @@
 package ast
 
+import (
+	"fmt"
+	"math"
+)
+
 type ASTNode interface {
 	Accept(visitor Visitor)
 }
@@ -338,11 +343,23 @@ func AddGroupToAttributesList(list interface{}, group interface{}) []Attribute {
 	return arr
 }
 
-func NewRange(lowerBound interface{}, lowerInclusive interface{}, upperBound interface{}, upperInclusive interface{}) *Range {
-	return &Range{
+func NewRange(lowerBound interface{}, lowerInclusive interface{}, upperBound interface{}, upperInclusive interface{}) (*Range, error) {
+	r := &Range{
 		LowerBound:     lowerBound.(float64),
 		LowerInclusive: lowerInclusive.(bool),
 		UpperBound:     upperBound.(float64),
 		UpperInclusive: upperInclusive.(bool),
 	}
+
+	if r.LowerBound > r.UpperBound {
+		return nil, fmt.Errorf("Lower bound on range is higher than upper bound")
+	}
+
+	if math.IsInf(r.LowerBound, 0) && r.LowerInclusive ||
+		math.IsInf(r.UpperBound, 0) && r.UpperInclusive {
+
+		return nil, fmt.Errorf("Infinity cannot be inclusive in range")
+	}
+
+	return r, nil
 }

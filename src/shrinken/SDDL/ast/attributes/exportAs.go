@@ -6,6 +6,7 @@ import (
 	"shrinken/SDDL/ast"
 )
 
+// ExportAsAttribute changes name of defined type or package in target language
 type ExportAsAttribute struct {
 	ast.Attribute
 	ExportedName string

@@ -125,15 +125,17 @@ VersionAttribute: "version" ":" integer                         << attributes.Ne
 
 MessageAttribute: "message"                                     << attributes.NewMessageAttribute(), nil >> ;
 
-Range: "[" MathExpr "," MathExpr "]"                            << ast.NewRange($1, true, $3, true), nil >>
-     | "[" MathExpr "," MathExpr ">"                            << ast.NewRange($1, true, $3, false), nil >>
-     | "<" MathExpr "," MathExpr "]"                            << ast.NewRange($1, false, $3, true), nil >>
-     | "<" MathExpr "," MathExpr ">"                            << ast.NewRange($1, false, $3, false), nil >> ;
+Range: "[" MathExpr "," MathExpr "]"                            << ast.NewRange($1, true, $3, true) >>
+     | "[" MathExpr "," MathExpr ">"                            << ast.NewRange($1, true, $3, false) >>
+     | "<" MathExpr "," MathExpr "]"                            << ast.NewRange($1, false, $3, true) >>
+     | "<" MathExpr "," MathExpr ">"                            << ast.NewRange($1, false, $3, false) >> ;
 
 Number: integer                                                 << ast.ToFloat64($0), nil >>
       | realNumber                                              << ast.ToFloat64($0), nil >>
       | "pi"                                                    << math.Pi, nil >>
-      | "e"                                                     << math.E, nil >> ;
+      | "e"                                                     << math.E, nil >>
+      | "-" "inf"                                               << math.Inf(-1), nil >>                                                  
+      | "inf"                                                   << math.Inf(1), nil >> ;
 
 MathExpr: AddSub;
 

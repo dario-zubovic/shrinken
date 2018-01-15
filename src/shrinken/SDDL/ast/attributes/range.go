@@ -6,6 +6,7 @@ import (
 	"shrinken/SDDL/ast"
 )
 
+// RangeAttribute defines possible range of values for numeric types
 type RangeAttribute struct {
 	ast.Attribute
 	Range *ast.Range
