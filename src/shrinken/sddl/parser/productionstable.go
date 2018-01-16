@@ -2,8 +2,8 @@
 
 package parser
 
-import "shrinken/SDDL/ast"
-   import "shrinken/SDDL/ast/attributes" 
+import "shrinken/sddl/ast"
+   import "shrinken/sddl/ast/attributes" 
    import "math"
 
 type (

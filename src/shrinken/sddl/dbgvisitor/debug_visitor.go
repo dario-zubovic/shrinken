@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
-	"shrinken/SDDL/ast"
-	"shrinken/SDDL/lexer"
-	"shrinken/SDDL/parser"
+	"shrinken/sddl/ast"
+	"shrinken/sddl/lexer"
+	"shrinken/sddl/parser"
 	"strconv"
 )
 

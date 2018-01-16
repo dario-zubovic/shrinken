@@ -1,12 +1,12 @@
-package SDDL
+package sddl
 
 import (
 	"fmt"
 	"io/ioutil"
-	"shrinken/SDDL/ast"
-	"shrinken/SDDL/ast/attributes"
-	"shrinken/SDDL/lexer"
-	"shrinken/SDDL/parser"
+	"shrinken/sddl/ast"
+	"shrinken/sddl/ast/attributes"
+	"shrinken/sddl/lexer"
+	"shrinken/sddl/parser"
 	"testing"
 )
 

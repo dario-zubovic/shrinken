@@ -3,7 +3,7 @@ package attributes
 import (
 	"fmt"
 	"reflect"
-	"shrinken/SDDL/ast"
+	"shrinken/sddl/ast"
 )
 
 // ExportAsAttribute changes name of defined type or package in target language

@@ -1,6 +1,6 @@
-package SDDL
+package sddl
 
-import "shrinken/SDDL/ast"
+import "shrinken/sddl/ast"
 
 func Merge(parsed *SDDLParsed) {
 	if len(parsed.packages) < 2 {

@@ -30,8 +30,8 @@ letters: _letter {_letter | _digit};
 **    syntax definitions:    **
 ******************************/
 
-<< import "shrinken/SDDL/ast"
-   import "shrinken/SDDL/ast/attributes" 
+<< import "shrinken/sddl/ast"
+   import "shrinken/sddl/ast/attributes" 
    import "math" >>
 
 /**************************************

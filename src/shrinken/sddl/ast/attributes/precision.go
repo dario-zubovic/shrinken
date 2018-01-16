@@ -3,7 +3,7 @@ package attributes
 import (
 	"fmt"
 	"reflect"
-	"shrinken/SDDL/ast"
+	"shrinken/sddl/ast"
 )
 
 // PrecisionAttribute sets precision of floating variable

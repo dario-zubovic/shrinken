@@ -1,7 +1,7 @@
 package ast
 
 import (
-	"shrinken/SDDL/token"
+	"shrinken/sddl/token"
 	"strconv"
 )
 

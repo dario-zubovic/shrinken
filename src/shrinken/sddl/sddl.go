@@ -1,13 +1,13 @@
-package SDDL
+package sddl
 
 import (
 	"fmt"
 	"io/ioutil"
 	"os"
-	"shrinken/SDDL/ast"
-	"shrinken/SDDL/lexer"
-	"shrinken/SDDL/parser"
-	"shrinken/SDDL/validator"
+	"shrinken/sddl/ast"
+	"shrinken/sddl/lexer"
+	"shrinken/sddl/parser"
+	"shrinken/sddl/validator"
 )
 
 //go:generate ../../../bin/gocc -a SDDL.bnf

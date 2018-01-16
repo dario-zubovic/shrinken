@@ -3,7 +3,7 @@ package attributes
 import (
 	"fmt"
 	"reflect"
-	"shrinken/SDDL/ast"
+	"shrinken/sddl/ast"
 )
 
 // Only classes, structs or enums with this attribute will be exported with Serialize/Deserialize methods

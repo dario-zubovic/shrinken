@@ -1,7 +1,7 @@
 package ast
 
 // this file declares Visitor interface and defines accept methods on AST nodes for double dispatching
-// attribute accept methods are in shrinken/SDDL/ast/attributes package
+// attribute accept methods are in shrinken/sddl/ast/attributes package
 
 type Visitor interface {
 	VisitPackageDef(pkg *PackageDef)

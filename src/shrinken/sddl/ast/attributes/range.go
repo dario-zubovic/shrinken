@@ -3,7 +3,7 @@ package attributes
 import (
 	"fmt"
 	"reflect"
-	"shrinken/SDDL/ast"
+	"shrinken/sddl/ast"
 )
 
 // RangeAttribute defines possible range of values for numeric types

@@ -2,7 +2,7 @@ package validator
 
 import (
 	"reflect"
-	"shrinken/SDDL/ast"
+	"shrinken/sddl/ast"
 )
 
 // this file implements Visitor pattern for AST validator

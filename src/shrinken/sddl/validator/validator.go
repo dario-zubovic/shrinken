@@ -2,7 +2,7 @@ package validator
 
 import (
 	"fmt"
-	"shrinken/SDDL/ast"
+	"shrinken/sddl/ast"
 )
 
 type Validator struct {

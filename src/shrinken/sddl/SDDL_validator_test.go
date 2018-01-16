@@ -1,11 +1,11 @@
-package SDDL
+package sddl
 
 import (
 	"io/ioutil"
-	"shrinken/SDDL/ast"
-	"shrinken/SDDL/lexer"
-	"shrinken/SDDL/parser"
-	"shrinken/SDDL/validator"
+	"shrinken/sddl/ast"
+	"shrinken/sddl/lexer"
+	"shrinken/sddl/parser"
+	"shrinken/sddl/validator"
 	"testing"
 )
 
