@@ -2,6 +2,13 @@ package attributes
 
 // TODO: version attribute & it's handling
 
+// I'm not really happy with handling version attribute on package level. Besides being
+// easily missed, it produces unnecessary duplication of sddl files (one for each version,
+// even though perhaps only one field changed in one class).
+// Also, versioning of data is not specified in generation part, so speculating about
+// possible attribute does more harm then help.
+//                                                                 - DZubovic 16.1.2018
+
 // import (
 // 	"fmt"
 // 	"reflect"
