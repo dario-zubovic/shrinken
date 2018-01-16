@@ -553,7 +553,7 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Attribute : VersionAttribute	<< X[0], nil >>`,
+		String: `Attribute : MessageAttribute	<< X[0], nil >>`,
 		Id:         "Attribute",
 		NTType:     19,
 		Index:      53,
@@ -563,20 +563,10 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Attribute : MessageAttribute	<< X[0], nil >>`,
-		Id:         "Attribute",
-		NTType:     19,
-		Index:      54,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
 		String: `RangeAttribute : "range" ":" Range	<< attributes.NewRangeAttribute(X[2]), nil >>`,
 		Id:         "RangeAttribute",
 		NTType:     20,
-		Index:      55,
+		Index:      54,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return attributes.NewRangeAttribute(X[2]), nil
@@ -586,7 +576,7 @@ var productionsTable = ProdTab{
 		String: `ExportAsAttribute : "exportAs" ":" str	<< attributes.NewExportAsAttribute(X[2]), nil >>`,
 		Id:         "ExportAsAttribute",
 		NTType:     21,
-		Index:      56,
+		Index:      55,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return attributes.NewExportAsAttribute(X[2]), nil
@@ -596,27 +586,17 @@ var productionsTable = ProdTab{
 		String: `PrecisionAttribute : "precision" ":" MathExpr	<< attributes.NewPrecisionAttribute(X[2]), nil >>`,
 		Id:         "PrecisionAttribute",
 		NTType:     22,
-		Index:      57,
+		Index:      56,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return attributes.NewPrecisionAttribute(X[2]), nil
 		},
 	},
 	ProdTabEntry{
-		String: `VersionAttribute : "version" ":" integer	<< attributes.NewVersionAttribute(X[2]), nil >>`,
-		Id:         "VersionAttribute",
-		NTType:     23,
-		Index:      58,
-		NumSymbols: 3,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return attributes.NewVersionAttribute(X[2]), nil
-		},
-	},
-	ProdTabEntry{
 		String: `MessageAttribute : "message"	<< attributes.NewMessageAttribute(), nil >>`,
 		Id:         "MessageAttribute",
-		NTType:     24,
-		Index:      59,
+		NTType:     23,
+		Index:      57,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return attributes.NewMessageAttribute(), nil
@@ -625,8 +605,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Range : "[" MathExpr "," MathExpr "]"	<< ast.NewRange(X[1], true, X[3], true) >>`,
 		Id:         "Range",
-		NTType:     25,
-		Index:      60,
+		NTType:     24,
+		Index:      58,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return ast.NewRange(X[1], true, X[3], true)
@@ -635,8 +615,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Range : "[" MathExpr "," MathExpr ">"	<< ast.NewRange(X[1], true, X[3], false) >>`,
 		Id:         "Range",
-		NTType:     25,
-		Index:      61,
+		NTType:     24,
+		Index:      59,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return ast.NewRange(X[1], true, X[3], false)
@@ -645,8 +625,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Range : "<" MathExpr "," MathExpr "]"	<< ast.NewRange(X[1], false, X[3], true) >>`,
 		Id:         "Range",
-		NTType:     25,
-		Index:      62,
+		NTType:     24,
+		Index:      60,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return ast.NewRange(X[1], false, X[3], true)
@@ -655,8 +635,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Range : "<" MathExpr "," MathExpr ">"	<< ast.NewRange(X[1], false, X[3], false) >>`,
 		Id:         "Range",
-		NTType:     25,
-		Index:      63,
+		NTType:     24,
+		Index:      61,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return ast.NewRange(X[1], false, X[3], false)
@@ -665,8 +645,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Number : integer	<< ast.ToFloat64(X[0]), nil >>`,
 		Id:         "Number",
-		NTType:     26,
-		Index:      64,
+		NTType:     25,
+		Index:      62,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return ast.ToFloat64(X[0]), nil
@@ -675,8 +655,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Number : realNumber	<< ast.ToFloat64(X[0]), nil >>`,
 		Id:         "Number",
-		NTType:     26,
-		Index:      65,
+		NTType:     25,
+		Index:      63,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return ast.ToFloat64(X[0]), nil
@@ -685,8 +665,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Number : "pi"	<< math.Pi, nil >>`,
 		Id:         "Number",
-		NTType:     26,
-		Index:      66,
+		NTType:     25,
+		Index:      64,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return math.Pi, nil
@@ -695,8 +675,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Number : "e"	<< math.E, nil >>`,
 		Id:         "Number",
-		NTType:     26,
-		Index:      67,
+		NTType:     25,
+		Index:      65,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return math.E, nil
@@ -705,8 +685,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Number : "-" "inf"	<< math.Inf(-1), nil >>`,
 		Id:         "Number",
-		NTType:     26,
-		Index:      68,
+		NTType:     25,
+		Index:      66,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return math.Inf(-1), nil
@@ -715,8 +695,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Number : "inf"	<< math.Inf(1), nil >>`,
 		Id:         "Number",
-		NTType:     26,
-		Index:      69,
+		NTType:     25,
+		Index:      67,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return math.Inf(1), nil
@@ -725,8 +705,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `MathExpr : AddSub	<<  >>`,
 		Id:         "MathExpr",
-		NTType:     27,
-		Index:      70,
+		NTType:     26,
+		Index:      68,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -735,8 +715,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `AddSub : AddSub "+" MulDiv	<< X[0].(float64) + X[2].(float64), nil >>`,
 		Id:         "AddSub",
-		NTType:     28,
-		Index:      71,
+		NTType:     27,
+		Index:      69,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0].(float64) + X[2].(float64), nil
@@ -745,8 +725,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `AddSub : AddSub "-" MulDiv	<< X[0].(float64) - X[2].(float64), nil >>`,
 		Id:         "AddSub",
-		NTType:     28,
-		Index:      72,
+		NTType:     27,
+		Index:      70,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0].(float64) - X[2].(float64), nil
@@ -755,8 +735,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `AddSub : MulDiv	<< X[0], nil >>`,
 		Id:         "AddSub",
-		NTType:     28,
-		Index:      73,
+		NTType:     27,
+		Index:      71,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -765,8 +745,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `MulDiv : MulDiv "*" Pot	<< X[0].(float64) * X[2].(float64), nil >>`,
 		Id:         "MulDiv",
-		NTType:     29,
-		Index:      74,
+		NTType:     28,
+		Index:      72,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0].(float64) * X[2].(float64), nil
@@ -775,8 +755,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `MulDiv : MulDiv "/" Pot	<< X[0].(float64) / X[2].(float64), nil >>`,
 		Id:         "MulDiv",
-		NTType:     29,
-		Index:      75,
+		NTType:     28,
+		Index:      73,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0].(float64) / X[2].(float64), nil
@@ -785,8 +765,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `MulDiv : Pot	<< X[0], nil >>`,
 		Id:         "MulDiv",
-		NTType:     29,
-		Index:      76,
+		NTType:     28,
+		Index:      74,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -795,8 +775,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Pot : Pot "^" Factor	<< math.Pow(X[0].(float64), X[2].(float64)), nil >>`,
 		Id:         "Pot",
-		NTType:     30,
-		Index:      77,
+		NTType:     29,
+		Index:      75,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return math.Pow(X[0].(float64), X[2].(float64)), nil
@@ -805,8 +785,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Pot : Factor	<< X[0], nil >>`,
 		Id:         "Pot",
-		NTType:     30,
-		Index:      78,
+		NTType:     29,
+		Index:      76,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -815,8 +795,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Factor : "sqrt(" AddSub ")"	<< math.Sqrt(X[1].(float64)), nil >>`,
 		Id:         "Factor",
-		NTType:     31,
-		Index:      79,
+		NTType:     30,
+		Index:      77,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return math.Sqrt(X[1].(float64)), nil
@@ -825,8 +805,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Factor : "(" AddSub ")"	<< X[1], nil >>`,
 		Id:         "Factor",
-		NTType:     31,
-		Index:      80,
+		NTType:     30,
+		Index:      78,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[1], nil
@@ -835,8 +815,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Factor : AddSub	<< X[0], nil >>`,
 		Id:         "Factor",
-		NTType:     31,
-		Index:      81,
+		NTType:     30,
+		Index:      79,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -845,8 +825,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `Factor : Number	<< X[0], nil >>`,
 		Id:         "Factor",
-		NTType:     31,
-		Index:      82,
+		NTType:     30,
+		Index:      80,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil

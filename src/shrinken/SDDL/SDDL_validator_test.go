@@ -2,6 +2,7 @@ package SDDL
 
 import (
 	"io/ioutil"
+	"shrinken/SDDL/ast"
 	"shrinken/SDDL/lexer"
 	"shrinken/SDDL/parser"
 	"shrinken/SDDL/validator"
@@ -19,9 +20,9 @@ func testForValidatorErrors(t *testing.T, SDDL string, expectedToBeValid bool) {
 	}
 
 	v := &validator.Validator{}
-	valid, err := v.ValidateAST(rootNode)
+	_, err = v.ValidateSinglePackage(rootNode.(*ast.PackageDef))
 
-	if valid != expectedToBeValid {
+	if (err == nil) != expectedToBeValid {
 		if expectedToBeValid {
 			t.Fatal("AST is not valid!", err)
 		} else {
@@ -41,19 +42,19 @@ func testFileForValidatorErrors(t *testing.T, filename string, expectedToBeValid
 }
 
 func TestBasic(t *testing.T) {
-	testFileForValidatorErrors(t, "examples/single_file/basic.sddl", true)
+	testFileForValidatorErrors(t, "test_data/single_file/basic.sddl", true)
 }
 
 func TestUnknownType(t *testing.T) {
-	testFileForValidatorErrors(t, "examples/single_file/unknown_type.sddl", false)
+	testFileForValidatorErrors(t, "test_data/single_file/unknown_type.sddl", false)
 }
 
 func TestUnknownType2(t *testing.T) {
-	testFileForValidatorErrors(t, "examples/single_file/unknown_extended_type.sddl", false)
+	testFileForValidatorErrors(t, "test_data/single_file/unknown_extended_type.sddl", false)
 }
 
 func TestDuplicateDefinition(t *testing.T) {
-	testFileForValidatorErrors(t, "examples/single_file/double_definition.sddl", false)
+	testFileForValidatorErrors(t, "test_data/single_file/double_definition.sddl", false)
 }
 
 func TestRangeAttribute(t *testing.T) {

@@ -19,35 +19,52 @@ type Validator struct {
 	warnings []string
 }
 
-// ValidateAST does single-pass AST validation
-func (v *Validator) ValidateAST(rootNode interface{}) (bool, error) {
-	pkg, ok := rootNode.(*ast.PackageDef)
-	if !ok {
-		return false, fmt.Errorf("Specified root node is not package definition")
+func Validate(packages []*ast.PackageDef) ([]string, error) {
+	validator := &Validator{}
+
+	for _, pkg := range packages {
+		validator.traversePackage(pkg)
+		if !validator.astValid {
+			return nil, validator.astInvalidError
+		}
 	}
+
+	err := validator.validateTypes()
+	if err != nil {
+		return nil, err
+	}
+
+	return validator.warnings, nil
+}
+
+// ValidateSinglePackage does single-pass AST validation
+func (v *Validator) ValidateSinglePackage(pkg *ast.PackageDef) ([]string, error) {
+	v.traversePackage(pkg)
+	if !v.astValid {
+		return nil, v.astInvalidError
+	}
+
+	err := v.validateTypes()
+	if err != nil {
+		return nil, err
+	}
+
+	return v.warnings, nil
+}
+
+func (v *Validator) traversePackage(pkg *ast.PackageDef) {
+	v.visitor = &validatorVisitor{}
+	v.visitor.Validator = v
 
 	v.packageName = pkg.Name
 	v.astValid = true
-	v.visitor = &validatorVisitor{}
-	v.visitor.Validator = v
 
 	// visit all nodes in AST, valided what is possible,
 	// and collect information needed for any further validation
 	pkg.Accept(v.visitor)
-
-	if !v.astValid {
-		return false, v.astInvalidError
-	}
-
-	valid, err := v.validateTypes()
-	if !valid {
-		return false, err
-	}
-
-	return true, nil
 }
 
-func (v *Validator) validateTypes() (bool, error) {
+func (v *Validator) validateTypes() error {
 	if len(v.declaredTypes) == 0 {
 		v.addWarning("Nothing declared in package " + v.packageName + ".")
 	} else {
@@ -56,7 +73,7 @@ func (v *Validator) validateTypes() (bool, error) {
 			t := v.declaredTypes[i]
 			for n := i + 1; n < len(v.declaredTypes); n++ {
 				if v.declaredTypes[n] == t {
-					return false, fmt.Errorf("Package %v contains duplicate definition of type %v", v.packageName, t)
+					return fmt.Errorf("Package %v contains duplicate definition of type %v", v.packageName, t)
 				}
 			}
 		}
@@ -71,11 +88,11 @@ func (v *Validator) validateTypes() (bool, error) {
 			}
 		}
 		if !exists {
-			return false, fmt.Errorf("Unknown type %v", t)
+			return fmt.Errorf("Unknown type %v", t)
 		}
 	}
 
-	return true, nil
+	return nil
 }
 
 func (v *Validator) addWarning(warning string) {

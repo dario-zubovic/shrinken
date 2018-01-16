@@ -1,34 +1,36 @@
 package attributes
 
-import (
-	"fmt"
-	"reflect"
-	"shrinken/SDDL/ast"
-)
+// TODO: version attribute & it's handling
 
-type VersionAttribute struct {
-	ast.Attribute
-	Version int64
-}
+// import (
+// 	"fmt"
+// 	"reflect"
+// 	"shrinken/SDDL/ast"
+// )
 
-func NewVersionAttribute(version interface{}) *VersionAttribute {
-	return &VersionAttribute{
-		Version: ast.ToInt64(version),
-	}
-}
+// type VersionAttribute struct {
+// 	ast.Attribute
+// 	Version int64
+// }
 
-func (attb *VersionAttribute) Accept(visitor ast.Visitor) {
-	visitor.VisitAttribute(attb)
-}
+// func NewVersionAttribute(version interface{}) *VersionAttribute {
+// 	return &VersionAttribute{
+// 		Version: ast.ToInt64(version),
+// 	}
+// }
 
-func (attb *VersionAttribute) String() string {
-	return fmt.Sprint("Version ", attb.Version)
-}
+// func (attb *VersionAttribute) Accept(visitor ast.Visitor) {
+// 	visitor.VisitAttribute(attb)
+// }
 
-func (attb *VersionAttribute) IsApplicable(t reflect.Type, node ast.ASTNode) (bool, error) {
-	if t == reflect.TypeOf(&ast.PackageDef{}) {
-		return true, nil
-	}
+// func (attb *VersionAttribute) String() string {
+// 	return fmt.Sprint("Version ", attb.Version)
+// }
 
-	return false, fmt.Errorf("Version attribute can only be applied to package definition")
-}
+// func (attb *VersionAttribute) IsApplicable(t reflect.Type, node ast.ASTNode) (bool, error) {
+// 	if t == reflect.TypeOf(&ast.PackageDef{}) {
+// 		return true, nil
+// 	}
+
+// 	return false, fmt.Errorf("Version attribute can only be applied to package definition")
+// }

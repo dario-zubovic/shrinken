@@ -83,7 +83,7 @@ func TestPackageDecl5(t *testing.T) {
 
 // Tests parser with snippet that contains all features supported by SDDL
 func TestFullSnippet(t *testing.T) {
-	testFileForParserErrors(t, "examples/single_file/basic.sddl", true)
+	testFileForParserErrors(t, "test_data/single_file/basic.sddl", true)
 }
 
 func TestMath1(t *testing.T) {

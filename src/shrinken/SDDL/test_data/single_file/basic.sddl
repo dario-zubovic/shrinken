@@ -1,4 +1,3 @@
-@version: 2317
 package "com.github.namespace"
 
 use "com.github.other_namespace"
