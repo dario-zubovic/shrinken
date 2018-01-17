@@ -3,6 +3,7 @@ package validator
 import (
 	"reflect"
 	"shrinken/sddl/ast"
+	"strings"
 )
 
 // this file implements Visitor pattern for AST validator
@@ -151,9 +152,13 @@ func (v *validatorVisitor) validateAttributes(node ast.ASTNode, attributes []ast
 }
 
 func (v *validatorVisitor) addDeclaredType(name string) {
-	v.Validator.declaredTypes = append(v.Validator.declaredTypes, name)
+	v.Validator.declaredTypes = append(v.Validator.declaredTypes, v.Validator.packageName+"."+name)
 }
 
 func (v *validatorVisitor) addUsedType(name string) {
-	v.Validator.usedTypes = append(v.Validator.usedTypes, name)
+	if strings.Contains(name, ".") {
+		v.Validator.usedTypes = append(v.Validator.usedTypes, name)
+	} else {
+		v.Validator.usedTypes = append(v.Validator.usedTypes, v.Validator.packageName+"."+name)
+	}
 }
