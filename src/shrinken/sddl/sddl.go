@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"path/filepath"
 	"shrinken/sddl/ast"
 	"shrinken/sddl/lexer"
 	"shrinken/sddl/parser"
@@ -124,7 +125,7 @@ func parseDirectory(file *os.File, parsedList *SDDLParsed) error {
 				return err
 			}
 		} else {
-			err = parseFile(info.Name(), parsedList)
+			err = parseFile(filepath.Join(file.Name(), info.Name()), parsedList)
 			if err != nil {
 				return err
 			}

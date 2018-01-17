@@ -41,6 +41,17 @@ func testFileForValidatorErrors(t *testing.T, filename string, expectedToBeValid
 	testForValidatorErrors(t, string(b), expectedToBeValid)
 }
 
+func testFolderForValidatorErrors(t *testing.T, filename string, expectedToBeValid bool) {
+	_, err := ParseMergeAndValidate(filename)
+	if (err == nil) != expectedToBeValid {
+		if expectedToBeValid {
+			t.Fatal("AST is not valid!", err)
+		} else {
+			t.Fatal("AST is valid, but expected it to be invalid!")
+		}
+	}
+}
+
 func TestBasic(t *testing.T) {
 	testFileForValidatorErrors(t, "test_data/single_file/basic.sddl", true)
 }
@@ -58,7 +69,7 @@ func TestDuplicateDefinition(t *testing.T) {
 }
 
 func TestRangeAttribute(t *testing.T) {
-	testForValidatorErrors(t, `package "test"
+	testForValidatorErrors(t, `package test
 
 class Test {
 	@ range: [0.14, 4] 
@@ -66,11 +77,15 @@ class Test {
 }
 `, false)
 
-	testForValidatorErrors(t, `package "test"
+	testForValidatorErrors(t, `package test
 
 class Test {
 	@ range: [0.14, 4] 
 	float variable
 }
 `, true)
+}
+
+func TestSameNameClasses(t *testing.T) {
+	testFolderForValidatorErrors(t, "test_data/multipkg/same_name/", true)
 }

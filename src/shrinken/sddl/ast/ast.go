@@ -89,16 +89,21 @@ const (
 	Double
 )
 
+type VariableName struct {
+	Name    string
+	Package string
+}
+
 type Variable struct {
 	ASTNode
 	Type           *Type
-	Name           string
+	Name           *VariableName
 	AttributesList []Attribute
 }
 
 type MultiVariable struct {
 	Type           *Type
-	Names          []string
+	Names          []*VariableName
 	AttributesList []Attribute
 }
 
@@ -122,7 +127,7 @@ type Range struct {
 
 func NewPackageDef(packageName interface{}, packageBody interface{}, attributesList interface{}) *PackageDef {
 	def := &PackageDef{
-		Name: ToStrUnquote(packageName),
+		Name: toStr(packageName),
 		Body: packageBody.(*PackageBody),
 	}
 	def.AttributesList = attributesList.([]Attribute)
@@ -238,10 +243,21 @@ func NewArrayOfTypeWithSize(typeDef interface{}, size interface{}) *Type {
 	}
 }
 
+func NewVariableName(name interface{}, packageName interface{}) *VariableName {
+	varName := &VariableName{
+		Name: toStr(name),
+	}
+	if packageName != nil {
+		varName.Package = toStr(packageName)
+	}
+
+	return varName
+}
+
 func NewVariable(typeDef interface{}, name interface{}, attributesList interface{}) *Variable {
 	variable := &Variable{
 		Type: typeDef.(*Type),
-		Name: toStr(name),
+		Name: name.(*VariableName),
 	}
 	variable.AttributesList = attributesList.([]Attribute)
 	return variable
@@ -250,17 +266,17 @@ func NewVariable(typeDef interface{}, name interface{}, attributesList interface
 func NewMultiVariable(typeDef interface{}, firstName interface{}, secondName interface{}, attributesList interface{}) *MultiVariable {
 	variable := &MultiVariable{
 		Type:  typeDef.(*Type),
-		Names: make([]string, 2),
+		Names: make([]*VariableName, 2),
 	}
-	variable.Names[0] = toStr(firstName)
-	variable.Names[1] = toStr(secondName)
+	variable.Names[0] = firstName.(*VariableName)
+	variable.Names[1] = secondName.(*VariableName)
 	variable.AttributesList = attributesList.([]Attribute)
 	return variable
 }
 
 func AddToMultiVariable(multiVariable interface{}, newName interface{}) *MultiVariable {
 	multiVar := multiVariable.(*MultiVariable)
-	multiVar.Names = append(multiVar.Names, toStr(newName))
+	multiVar.Names = append(multiVar.Names, newName.(*VariableName))
 	return multiVar
 }
 

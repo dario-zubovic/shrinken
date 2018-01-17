@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"shrinken/gen"
+	"shrinken/sddl"
 	"shrinken/sddl/dbgvisitor"
 
 	"github.com/docopt/docopt-go"
@@ -10,21 +12,20 @@ import (
 var version = "v0.0.1"
 var usage = `shrinken
 Usage:
-  shrinken <path>
-  shrinken print-ast <path>
-  shrinken (-h | --help)
-  shrinken --version
+    shrinken <path> <output-path> <lang>
+    shrinken print-ast <path>
+    shrinken (-h | --help)
+    shrinken --version
 
 Options:
-  -h --help    Show this screen.
-  --version    Show version.
+    -h --help    Show this screen.
+    --version    Show version.
 
 Commands:
-  print-ast    Print parsed AST from specified file. Only for debugging.
+    print-ast    Print parsed AST from specified file. Only for debugging.
 `
 
 func main() {
-
 	opts, err := docopt.ParseArgs(usage, nil, version)
 	if err != nil {
 		fmt.Println("Error parsing arguments:", err)
@@ -35,6 +36,16 @@ func main() {
 		path, _ := opts.String("<path>")
 		dbgvisitor.PrintAST(path)
 	} else {
-		// TODO: main entry
+		path, _ := opts.String("<path>")
+		outputPath, _ := opts.String("<output-path>")
+		lang, _ := opts.String("<lang>")
+
+		r, err := sddl.ParseMergeAndValidate(path)
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+
+		gen.Generate(r, lang, outputPath)
 	}
 }

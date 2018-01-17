@@ -25,7 +25,7 @@ func testForParserErrors(t *testing.T, SDDL string, valid bool) {
 }
 
 func testForParserMathEvalErrors(t *testing.T, expr string, expectedResult float64) {
-	SDDL := `package "dummyPackage"
+	SDDL := `package dummyPackage
 @precision: %v
 class DummyClass {
 }`
@@ -59,22 +59,22 @@ func testFileForParserErrors(t *testing.T, filename string, valid bool) {
 // package decl tests only check for most basic parser functions... if those fail, something is very wrong
 
 func TestPackageDecl1(t *testing.T) {
-	testForParserErrors(t, `package "Test.Namespace"`, true)
+	testForParserErrors(t, `package Test.Very.Long.Name.space`, true)
 }
 
 func TestPackageDecl2(t *testing.T) {
 	testForParserErrors(t, `
-		package   "Test.Namespace"
+		package Test
 
 `, true)
 }
 
 func TestPackageDecl3(t *testing.T) {
-	testForParserErrors(t, `package "Test_Namespace"`, true)
+	testForParserErrors(t, `package Test_Namespace.Test`, true)
 }
 
 func TestPackageDecl4(t *testing.T) {
-	testForParserErrors(t, `package Test.Namespace`, false)
+	testForParserErrors(t, `package "Test.Namespace"`, false)
 }
 
 func TestPackageDecl5(t *testing.T) {

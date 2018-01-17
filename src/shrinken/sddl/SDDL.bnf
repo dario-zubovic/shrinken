@@ -22,6 +22,9 @@ str: '"' {.} '"';
 _letter: 'a'-'z' | 'A'-'Z' | '_';
 letters: _letter {_letter | _digit};
 
+_pkgPart: _letter | _digit;
+packageName: _letter {_letter | _digit | '.'} _pkgPart;
+
 // extended letters are used for pre-generator flags (for target language names)
 // _extendedLetter: _letter | '.' | '#';
 // extendedLetters: _letter { _extendedLetter | _digit }
@@ -38,7 +41,10 @@ letters: _letter {_letter | _digit};
 **    generic syntax definitions:    **
 ***************************************/
 
-Package: Attributes "package" str PackageBody                   << ast.NewPackageDef($2, $3, $0), nil >> ;
+Package: Attributes "package" PackageName PackageBody           << ast.NewPackageDef($2, $3, $0), nil >> ;
+
+PackageName: packageName                                        << $0, nil >>
+           | letters                                            << $0, nil >> ;
 
 PackageBody: empty                                              << ast.NewPackageBody(), nil >>
            | PackageBody Import                                 << ast.ImportToPackageBody($0, $1), nil >>
@@ -80,10 +86,13 @@ Type: GenericType                                               << $0, nil >>
     | Type "[]"                                                 << ast.NewArrayOfType($0), nil >>
     | Type "[" integer "]"                                      << ast.NewArrayOfTypeWithSize($0, $2), nil >> ;
 
-VarDecl: Attributes Type letters                                << ast.NewVariable($1, $2, $0), nil >> ;
+VarName: letters                                                << ast.NewVariableName($0, nil), nil >>
+       | PackageName "." letters                                << ast.NewVariableName($0, $2), nil >> ;
 
-MultiVarDecl: Attributes Type letters "," letters               << ast.NewMultiVariable($1, $2, $4, $0), nil >>
-            | MultiVarDecl "," letters                          << ast.AddToMultiVariable($0, $2), nil >> ;
+VarDecl: Attributes Type VarName                                << ast.NewVariable($1, $2, $0), nil >> ;
+
+MultiVarDecl: Attributes Type VarName "," VarName               << ast.NewMultiVariable($1, $2, $4, $0), nil >>
+            | MultiVarDecl "," VarName                          << ast.AddToMultiVariable($0, $2), nil >> ;
 
 StructBody: empty                                               << ast.NewStructBody(), nil >>
           | StructBody VarDecl                                  << ast.AddToStructBody($0, $1), nil >>

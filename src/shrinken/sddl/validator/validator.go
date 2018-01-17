@@ -73,7 +73,7 @@ func (v *Validator) validateTypes() error {
 			t := v.declaredTypes[i]
 			for n := i + 1; n < len(v.declaredTypes); n++ {
 				if v.declaredTypes[n] == t {
-					return fmt.Errorf("Package %v contains duplicate definition of type %v", v.packageName, t)
+					return fmt.Errorf("Package contains duplicate definition of type %v", t)
 				}
 			}
 		}

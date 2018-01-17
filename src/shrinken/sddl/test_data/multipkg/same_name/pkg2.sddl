@@ -1,0 +1,5 @@
+package test.pkg2
+
+class Class1 {
+    int variable1
+}

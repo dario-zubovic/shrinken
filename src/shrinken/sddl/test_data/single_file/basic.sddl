@@ -1,6 +1,4 @@
-package "com.github.namespace"
-
-use "com.github.other_namespace"
+package com.github.namespace
 
 class Entity {
 	@ exportAs: "pos"

@@ -33,123 +33,123 @@ var ActTab = ActionTable{
 		Ignore: "",
 	},
 	ActionRow{ // S3
-		Accept: 52,
+		Accept: 54,
 		Ignore: "",
 	},
 	ActionRow{ // S4
-		Accept: 51,
+		Accept: 53,
 		Ignore: "",
 	},
 	ActionRow{ // S5
-		Accept: 47,
-		Ignore: "",
-	},
-	ActionRow{ // S6
-		Accept: 46,
-		Ignore: "",
-	},
-	ActionRow{ // S7
-		Accept: 33,
-		Ignore: "",
-	},
-	ActionRow{ // S8
-		Accept: 44,
-		Ignore: "",
-	},
-	ActionRow{ // S9
-		Accept: 48,
-		Ignore: "",
-	},
-	ActionRow{ // S10
-		Accept: 31,
-		Ignore: "",
-	},
-	ActionRow{ // S11
-		Accept: 31,
-		Ignore: "",
-	},
-	ActionRow{ // S12
-		Accept: 10,
-		Ignore: "",
-	},
-	ActionRow{ // S13
-		Accept: 40,
-		Ignore: "",
-	},
-	ActionRow{ // S14
-		Accept: 39,
-		Ignore: "",
-	},
-	ActionRow{ // S15
-		Accept: 34,
-		Ignore: "",
-	},
-	ActionRow{ // S16
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S17
-		Accept: 30,
-		Ignore: "",
-	},
-	ActionRow{ // S18
-		Accept: 32,
-		Ignore: "",
-	},
-	ActionRow{ // S19
 		Accept: 49,
 		Ignore: "",
 	},
+	ActionRow{ // S6
+		Accept: 48,
+		Ignore: "",
+	},
+	ActionRow{ // S7
+		Accept: 35,
+		Ignore: "",
+	},
+	ActionRow{ // S8
+		Accept: 46,
+		Ignore: "",
+	},
+	ActionRow{ // S9
+		Accept: 34,
+		Ignore: "",
+	},
+	ActionRow{ // S10
+		Accept: 50,
+		Ignore: "",
+	},
+	ActionRow{ // S11
+		Accept: 32,
+		Ignore: "",
+	},
+	ActionRow{ // S12
+		Accept: 32,
+		Ignore: "",
+	},
+	ActionRow{ // S13
+		Accept: 11,
+		Ignore: "",
+	},
+	ActionRow{ // S14
+		Accept: 42,
+		Ignore: "",
+	},
+	ActionRow{ // S15
+		Accept: 41,
+		Ignore: "",
+	},
+	ActionRow{ // S16
+		Accept: 36,
+		Ignore: "",
+	},
+	ActionRow{ // S17
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S18
+		Accept: 31,
+		Ignore: "",
+	},
+	ActionRow{ // S19
+		Accept: 33,
+		Ignore: "",
+	},
 	ActionRow{ // S20
-		Accept: 7,
+		Accept: 51,
 		Ignore: "",
 	},
 	ActionRow{ // S21
-		Accept: 7,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S22
-		Accept: 7,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S23
-		Accept: 43,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S24
-		Accept: 7,
+		Accept: 45,
 		Ignore: "",
 	},
 	ActionRow{ // S25
-		Accept: 7,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S26
-		Accept: 7,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S27
-		Accept: 7,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S28
-		Accept: 7,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S29
-		Accept: 7,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S30
-		Accept: 7,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S31
-		Accept: 7,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S32
-		Accept: 8,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S33
@@ -157,19 +157,19 @@ var ActTab = ActionTable{
 		Ignore: "",
 	},
 	ActionRow{ // S34
-		Accept: 3,
+		Accept: 10,
 		Ignore: "",
 	},
 	ActionRow{ // S35
-		Accept: 0,
+		Accept: 7,
 		Ignore: "",
 	},
 	ActionRow{ // S36
-		Accept: 31,
+		Accept: 0,
 		Ignore: "",
 	},
 	ActionRow{ // S37
-		Accept: 0,
+		Accept: 32,
 		Ignore: "",
 	},
 	ActionRow{ // S38
@@ -185,435 +185,455 @@ var ActTab = ActionTable{
 		Ignore: "",
 	},
 	ActionRow{ // S41
-		Accept: 7,
+		Accept: 0,
 		Ignore: "",
 	},
 	ActionRow{ // S42
-		Accept: 29,
+		Accept: 0,
 		Ignore: "",
 	},
 	ActionRow{ // S43
-		Accept: 7,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S44
-		Accept: 7,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S45
-		Accept: 7,
+		Accept: 30,
 		Ignore: "",
 	},
 	ActionRow{ // S46
-		Accept: 7,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S47
-		Accept: 7,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S48
-		Accept: 7,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S49
-		Accept: 7,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S50
-		Accept: 7,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S51
-		Accept: 7,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S52
-		Accept: 7,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S53
-		Accept: 7,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S54
-		Accept: 7,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S55
-		Accept: 42,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S56
-		Accept: 7,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S57
-		Accept: 7,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S58
-		Accept: 7,
+		Accept: 44,
 		Ignore: "",
 	},
 	ActionRow{ // S59
-		Accept: 7,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S60
-		Accept: 7,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S61
-		Accept: 7,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S62
-		Accept: 7,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S63
-		Accept: 7,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S64
-		Accept: 0,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S65
-		Accept: 0,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S66
-		Accept: -1,
-		Ignore: "!comment",
+		Accept: 4,
+		Ignore: "",
 	},
 	ActionRow{ // S67
-		Accept: 41,
+		Accept: 0,
 		Ignore: "",
 	},
 	ActionRow{ // S68
-		Accept: 7,
+		Accept: 0,
 		Ignore: "",
 	},
 	ActionRow{ // S69
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S70
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S71
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S72
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S73
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S74
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S75
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S76
-		Accept: 45,
-		Ignore: "",
-	},
-	ActionRow{ // S77
-		Accept: 13,
-		Ignore: "",
-	},
-	ActionRow{ // S78
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S79
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S80
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S81
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S82
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S83
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S84
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S85
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S86
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S87
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S88
-		Accept: 5,
-		Ignore: "",
-	},
-	ActionRow{ // S89
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S90
-		Accept: 41,
-		Ignore: "",
-	},
-	ActionRow{ // S91
 		Accept: -1,
 		Ignore: "!comment",
 	},
-	ActionRow{ // S92
-		Accept: 24,
+	ActionRow{ // S70
+		Accept: 43,
 		Ignore: "",
 	},
-	ActionRow{ // S93
-		Accept: 23,
+	ActionRow{ // S71
+		Accept: 3,
 		Ignore: "",
 	},
-	ActionRow{ // S94
-		Accept: 26,
+	ActionRow{ // S72
+		Accept: 3,
 		Ignore: "",
 	},
-	ActionRow{ // S95
-		Accept: 7,
+	ActionRow{ // S73
+		Accept: 4,
 		Ignore: "",
 	},
-	ActionRow{ // S96
-		Accept: 7,
+	ActionRow{ // S74
+		Accept: 4,
 		Ignore: "",
 	},
-	ActionRow{ // S97
-		Accept: 12,
+	ActionRow{ // S75
+		Accept: 4,
 		Ignore: "",
 	},
-	ActionRow{ // S98
-		Accept: 7,
+	ActionRow{ // S76
+		Accept: 4,
 		Ignore: "",
 	},
-	ActionRow{ // S99
-		Accept: 7,
+	ActionRow{ // S77
+		Accept: 4,
 		Ignore: "",
 	},
-	ActionRow{ // S100
-		Accept: 7,
+	ActionRow{ // S78
+		Accept: 4,
 		Ignore: "",
 	},
-	ActionRow{ // S101
-		Accept: 7,
+	ActionRow{ // S79
+		Accept: 4,
 		Ignore: "",
 	},
-	ActionRow{ // S102
-		Accept: 16,
+	ActionRow{ // S80
+		Accept: 4,
 		Ignore: "",
 	},
-	ActionRow{ // S103
-		Accept: 7,
+	ActionRow{ // S81
+		Accept: 47,
 		Ignore: "",
 	},
-	ActionRow{ // S104
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S105
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S106
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S107
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S108
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S109
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S110
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S111
-		Accept: 18,
-		Ignore: "",
-	},
-	ActionRow{ // S112
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S113
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S114
-		Accept: 6,
-		Ignore: "",
-	},
-	ActionRow{ // S115
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S116
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S117
-		Accept: 27,
-		Ignore: "",
-	},
-	ActionRow{ // S118
+	ActionRow{ // S82
 		Accept: 14,
 		Ignore: "",
 	},
-	ActionRow{ // S119
-		Accept: 15,
+	ActionRow{ // S83
+		Accept: 4,
 		Ignore: "",
 	},
-	ActionRow{ // S120
-		Accept: 7,
+	ActionRow{ // S84
+		Accept: 4,
 		Ignore: "",
 	},
-	ActionRow{ // S121
-		Accept: 7,
+	ActionRow{ // S85
+		Accept: 4,
 		Ignore: "",
 	},
-	ActionRow{ // S122
-		Accept: 7,
+	ActionRow{ // S86
+		Accept: 4,
 		Ignore: "",
 	},
-	ActionRow{ // S123
-		Accept: 35,
+	ActionRow{ // S87
+		Accept: 4,
 		Ignore: "",
 	},
-	ActionRow{ // S124
-		Accept: 17,
+	ActionRow{ // S88
+		Accept: 4,
 		Ignore: "",
 	},
-	ActionRow{ // S125
-		Accept: 50,
+	ActionRow{ // S89
+		Accept: 4,
 		Ignore: "",
 	},
-	ActionRow{ // S126
-		Accept: 7,
+	ActionRow{ // S90
+		Accept: 4,
 		Ignore: "",
 	},
-	ActionRow{ // S127
-		Accept: 7,
+	ActionRow{ // S91
+		Accept: 4,
 		Ignore: "",
 	},
-	ActionRow{ // S128
-		Accept: 7,
+	ActionRow{ // S92
+		Accept: 4,
 		Ignore: "",
 	},
-	ActionRow{ // S129
-		Accept: 7,
+	ActionRow{ // S93
+		Accept: 6,
 		Ignore: "",
 	},
-	ActionRow{ // S130
-		Accept: 21,
+	ActionRow{ // S94
+		Accept: 4,
 		Ignore: "",
 	},
-	ActionRow{ // S131
-		Accept: 7,
+	ActionRow{ // S95
+		Accept: 43,
 		Ignore: "",
 	},
-	ActionRow{ // S132
-		Accept: 28,
-		Ignore: "",
+	ActionRow{ // S96
+		Accept: -1,
+		Ignore: "!comment",
 	},
-	ActionRow{ // S133
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S134
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S135
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S136
-		Accept: 7,
-		Ignore: "",
-	},
-	ActionRow{ // S137
+	ActionRow{ // S97
 		Accept: 25,
 		Ignore: "",
 	},
-	ActionRow{ // S138
-		Accept: 11,
+	ActionRow{ // S98
+		Accept: 24,
 		Ignore: "",
 	},
-	ActionRow{ // S139
+	ActionRow{ // S99
+		Accept: 27,
+		Ignore: "",
+	},
+	ActionRow{ // S100
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S101
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S102
+		Accept: 13,
+		Ignore: "",
+	},
+	ActionRow{ // S103
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S104
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S105
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S106
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S107
+		Accept: 17,
+		Ignore: "",
+	},
+	ActionRow{ // S108
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S109
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S110
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S111
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S112
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S113
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S114
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S115
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S116
 		Accept: 19,
 		Ignore: "",
 	},
-	ActionRow{ // S140
-		Accept: 20,
+	ActionRow{ // S117
+		Accept: 4,
 		Ignore: "",
 	},
-	ActionRow{ // S141
+	ActionRow{ // S118
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S119
+		Accept: 8,
+		Ignore: "",
+	},
+	ActionRow{ // S120
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S121
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S122
+		Accept: 28,
+		Ignore: "",
+	},
+	ActionRow{ // S123
+		Accept: 15,
+		Ignore: "",
+	},
+	ActionRow{ // S124
+		Accept: 16,
+		Ignore: "",
+	},
+	ActionRow{ // S125
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S126
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S127
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S128
+		Accept: 37,
+		Ignore: "",
+	},
+	ActionRow{ // S129
+		Accept: 18,
+		Ignore: "",
+	},
+	ActionRow{ // S130
+		Accept: 52,
+		Ignore: "",
+	},
+	ActionRow{ // S131
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S132
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S133
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S134
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S135
 		Accept: 22,
 		Ignore: "",
 	},
+	ActionRow{ // S136
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S137
+		Accept: 29,
+		Ignore: "",
+	},
+	ActionRow{ // S138
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S139
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S140
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S141
+		Accept: 4,
+		Ignore: "",
+	},
 	ActionRow{ // S142
-		Accept: 7,
+		Accept: 26,
 		Ignore: "",
 	},
 	ActionRow{ // S143
-		Accept: 38,
+		Accept: 12,
 		Ignore: "",
 	},
 	ActionRow{ // S144
-		Accept: 2,
+		Accept: 20,
 		Ignore: "",
 	},
 	ActionRow{ // S145
-		Accept: 7,
+		Accept: 21,
 		Ignore: "",
 	},
 	ActionRow{ // S146
-		Accept: 36,
+		Accept: 23,
 		Ignore: "",
 	},
 	ActionRow{ // S147
-		Accept: 7,
+		Accept: 4,
 		Ignore: "",
 	},
 	ActionRow{ // S148
-		Accept: 37,
+		Accept: 40,
+		Ignore: "",
+	},
+	ActionRow{ // S149
+		Accept: 2,
+		Ignore: "",
+	},
+	ActionRow{ // S150
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S151
+		Accept: 38,
+		Ignore: "",
+	},
+	ActionRow{ // S152
+		Accept: 4,
+		Ignore: "",
+	},
+	ActionRow{ // S153
+		Accept: 39,
 		Ignore: "",
 	},
 }

@@ -1,6 +1,6 @@
 
 %C#: @exportAs: "OtherName.Messages"
-package "Networking.P2PMessages"
+package Networking.P2PMessages
 
 use "Networking.Messages"
 
