@@ -57,10 +57,10 @@ PackageElement: ClassDef                                        << $0, nil >>
 Import: Attributes "use" str                                    << ast.NewImport($2, $0), nil >> ;
 
 ClassDef: Attributes "class" letters "{" StructBody "}"                    << ast.NewClassDef($2, $4, $0), nil >>
-        | Attributes "class" letters ":" letters "{" StructBody "}"        << ast.NewDerivedClassDef($2, $4, $6, $0), nil >> ;
+        | Attributes "class" letters ":" VarName "{" StructBody "}"        << ast.NewDerivedClassDef($2, $4, $6, $0), nil >> ;
 
 StructDef: Attributes "struct" letters "{" StructBody "}"                  << ast.NewStructDef($2, $4, $0), nil >>
-         | Attributes "struct" letters ":" letters "{" StructBody "}"      << ast.NewDerivedStructDef($2, $4, $6, $0), nil >> ;
+         | Attributes "struct" letters ":" VarName "{" StructBody "}"      << ast.NewDerivedStructDef($2, $4, $6, $0), nil >> ;
 
 EnumDef: Attributes "enum" letters "{" EnumBody "}"             << ast.NewEnumDef($2, $4, $0), nil >> ;
 
@@ -86,8 +86,8 @@ Type: GenericType                                               << $0, nil >>
     | Type "[]"                                                 << ast.NewArrayOfType($0), nil >>
     | Type "[" integer "]"                                      << ast.NewArrayOfTypeWithSize($0, $2), nil >> ;
 
-VarName: letters                                                << ast.NewVariableName($0, nil), nil >>
-       | PackageName "." letters                                << ast.NewVariableName($0, $2), nil >> ;
+VarName: letters                                                << ast.NewVariableName($0), nil >>
+       | PackageName                                            << ast.NewVariableNameFromPkg($0), nil >> ;
 
 VarDecl: Attributes Type VarName                                << ast.NewVariable($1, $2, $0), nil >> ;
 

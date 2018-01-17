@@ -5331,39 +5331,39 @@ var gotoTab = gotoTable{
 		-1,  // Factor
 	},
 	gotoRow{ // S152
-		-1, // S'
-		-1, // Package
-		-1, // PackageName
-		-1, // PackageBody
-		-1, // PackageElement
-		-1, // Import
-		-1, // ClassDef
-		-1, // StructDef
-		-1, // EnumDef
-		-1, // GenericType
-		-1, // Type
-		-1, // VarName
-		-1, // VarDecl
-		-1, // MultiVarDecl
-		-1, // StructBody
-		-1, // EnumBody
-		-1, // AttributeGroup
-		-1, // AttributeGroupBody
-		-1, // AttributeGroupElement
-		-1, // SingleAttribute
-		-1, // Attributes
-		-1, // Attribute
-		-1, // RangeAttribute
-		-1, // ExportAsAttribute
-		-1, // PrecisionAttribute
-		-1, // MessageAttribute
-		-1, // Range
-		-1, // Number
-		-1, // MathExpr
-		-1, // AddSub
-		-1, // MulDiv
-		-1, // Pot
-		-1, // Factor
+		-1,  // S'
+		-1,  // Package
+		194, // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		197, // VarName
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		-1,  // Number
+		-1,  // MathExpr
+		-1,  // AddSub
+		-1,  // MulDiv
+		-1,  // Pot
+		-1,  // Factor
 	},
 	gotoRow{ // S153
 		-1,  // S'
@@ -5380,7 +5380,7 @@ var gotoTab = gotoTable{
 		-1,  // VarName
 		-1,  // VarDecl
 		-1,  // MultiVarDecl
-		195, // StructBody
+		198, // StructBody
 		-1,  // EnumBody
 		-1,  // AttributeGroup
 		-1,  // AttributeGroupBody
@@ -5401,39 +5401,39 @@ var gotoTab = gotoTable{
 		-1,  // Factor
 	},
 	gotoRow{ // S154
-		-1, // S'
-		-1, // Package
-		-1, // PackageName
-		-1, // PackageBody
-		-1, // PackageElement
-		-1, // Import
-		-1, // ClassDef
-		-1, // StructDef
-		-1, // EnumDef
-		-1, // GenericType
-		-1, // Type
-		-1, // VarName
-		-1, // VarDecl
-		-1, // MultiVarDecl
-		-1, // StructBody
-		-1, // EnumBody
-		-1, // AttributeGroup
-		-1, // AttributeGroupBody
-		-1, // AttributeGroupElement
-		-1, // SingleAttribute
-		-1, // Attributes
-		-1, // Attribute
-		-1, // RangeAttribute
-		-1, // ExportAsAttribute
-		-1, // PrecisionAttribute
-		-1, // MessageAttribute
-		-1, // Range
-		-1, // Number
-		-1, // MathExpr
-		-1, // AddSub
-		-1, // MulDiv
-		-1, // Pot
-		-1, // Factor
+		-1,  // S'
+		-1,  // Package
+		194, // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		199, // VarName
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		-1,  // Number
+		-1,  // MathExpr
+		-1,  // AddSub
+		-1,  // MulDiv
+		-1,  // Pot
+		-1,  // Factor
 	},
 	gotoRow{ // S155
 		-1,  // S'
@@ -5451,7 +5451,7 @@ var gotoTab = gotoTable{
 		-1,  // VarDecl
 		-1,  // MultiVarDecl
 		-1,  // StructBody
-		197, // EnumBody
+		200, // EnumBody
 		-1,  // AttributeGroup
 		-1,  // AttributeGroupBody
 		-1,  // AttributeGroupElement
@@ -5532,7 +5532,7 @@ var gotoTab = gotoTable{
 		-1,  // ExportAsAttribute
 		-1,  // PrecisionAttribute
 		-1,  // MessageAttribute
-		200, // Range
+		203, // Range
 		-1,  // Number
 		-1,  // MathExpr
 		-1,  // AddSub
@@ -5603,12 +5603,12 @@ var gotoTab = gotoTable{
 		-1,  // PrecisionAttribute
 		-1,  // MessageAttribute
 		-1,  // Range
-		205, // Number
-		204, // MathExpr
-		211, // AddSub
-		212, // MulDiv
-		213, // Pot
-		214, // Factor
+		208, // Number
+		207, // MathExpr
+		214, // AddSub
+		215, // MulDiv
+		216, // Pot
+		217, // Factor
 	},
 	gotoRow{ // S160
 		-1, // S'
@@ -6130,7 +6130,7 @@ var gotoTab = gotoTable{
 		-1,  // Range
 		93,  // Number
 		-1,  // MathExpr
-		227, // AddSub
+		230, // AddSub
 		100, // MulDiv
 		101, // Pot
 		102, // Factor
@@ -6165,7 +6165,7 @@ var gotoTab = gotoTable{
 		-1,  // Range
 		93,  // Number
 		-1,  // MathExpr
-		228, // AddSub
+		231, // AddSub
 		100, // MulDiv
 		101, // Pot
 		102, // Factor
@@ -6778,15 +6778,15 @@ var gotoTab = gotoTable{
 		-1,  // GenericType
 		-1,  // Type
 		-1,  // VarName
-		233, // VarDecl
-		234, // MultiVarDecl
+		236, // VarDecl
+		237, // MultiVarDecl
 		-1,  // StructBody
 		-1,  // EnumBody
 		-1,  // AttributeGroup
 		-1,  // AttributeGroupBody
 		-1,  // AttributeGroupElement
 		-1,  // SingleAttribute
-		231, // Attributes
+		234, // Attributes
 		-1,  // Attribute
 		-1,  // RangeAttribute
 		-1,  // ExportAsAttribute
@@ -6836,39 +6836,39 @@ var gotoTab = gotoTable{
 		-1, // Factor
 	},
 	gotoRow{ // S195
-		-1,  // S'
-		-1,  // Package
-		-1,  // PackageName
-		-1,  // PackageBody
-		-1,  // PackageElement
-		-1,  // Import
-		-1,  // ClassDef
-		-1,  // StructDef
-		-1,  // EnumDef
-		-1,  // GenericType
-		-1,  // Type
-		-1,  // VarName
-		233, // VarDecl
-		234, // MultiVarDecl
-		-1,  // StructBody
-		-1,  // EnumBody
-		-1,  // AttributeGroup
-		-1,  // AttributeGroupBody
-		-1,  // AttributeGroupElement
-		-1,  // SingleAttribute
-		231, // Attributes
-		-1,  // Attribute
-		-1,  // RangeAttribute
-		-1,  // ExportAsAttribute
-		-1,  // PrecisionAttribute
-		-1,  // MessageAttribute
-		-1,  // Range
-		-1,  // Number
-		-1,  // MathExpr
-		-1,  // AddSub
-		-1,  // MulDiv
-		-1,  // Pot
-		-1,  // Factor
+		-1, // S'
+		-1, // Package
+		-1, // PackageName
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarName
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // PrecisionAttribute
+		-1, // MessageAttribute
+		-1, // Range
+		-1, // Number
+		-1, // MathExpr
+		-1, // AddSub
+		-1, // MulDiv
+		-1, // Pot
+		-1, // Factor
 	},
 	gotoRow{ // S196
 		-1, // S'
@@ -6941,6 +6941,41 @@ var gotoTab = gotoTable{
 		-1, // Factor
 	},
 	gotoRow{ // S198
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarName
+		236, // VarDecl
+		237, // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		234, // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		-1,  // Number
+		-1,  // MathExpr
+		-1,  // AddSub
+		-1,  // MulDiv
+		-1,  // Pot
+		-1,  // Factor
+	},
+	gotoRow{ // S199
 		-1, // S'
 		-1, // Package
 		-1, // PackageName
@@ -6974,41 +7009,6 @@ var gotoTab = gotoTable{
 		-1, // MulDiv
 		-1, // Pot
 		-1, // Factor
-	},
-	gotoRow{ // S199
-		-1,  // S'
-		-1,  // Package
-		-1,  // PackageName
-		-1,  // PackageBody
-		-1,  // PackageElement
-		-1,  // Import
-		-1,  // ClassDef
-		-1,  // StructDef
-		-1,  // EnumDef
-		-1,  // GenericType
-		-1,  // Type
-		-1,  // VarName
-		-1,  // VarDecl
-		-1,  // MultiVarDecl
-		-1,  // StructBody
-		-1,  // EnumBody
-		-1,  // AttributeGroup
-		-1,  // AttributeGroupBody
-		-1,  // AttributeGroupElement
-		-1,  // SingleAttribute
-		-1,  // Attributes
-		-1,  // Attribute
-		-1,  // RangeAttribute
-		-1,  // ExportAsAttribute
-		-1,  // PrecisionAttribute
-		-1,  // MessageAttribute
-		-1,  // Range
-		73,  // Number
-		240, // MathExpr
-		79,  // AddSub
-		80,  // MulDiv
-		81,  // Pot
-		82,  // Factor
 	},
 	gotoRow{ // S200
 		-1, // S'
@@ -7046,41 +7046,6 @@ var gotoTab = gotoTable{
 		-1, // Factor
 	},
 	gotoRow{ // S201
-		-1,  // S'
-		-1,  // Package
-		-1,  // PackageName
-		-1,  // PackageBody
-		-1,  // PackageElement
-		-1,  // Import
-		-1,  // ClassDef
-		-1,  // StructDef
-		-1,  // EnumDef
-		-1,  // GenericType
-		-1,  // Type
-		-1,  // VarName
-		-1,  // VarDecl
-		-1,  // MultiVarDecl
-		-1,  // StructBody
-		-1,  // EnumBody
-		-1,  // AttributeGroup
-		-1,  // AttributeGroupBody
-		-1,  // AttributeGroupElement
-		-1,  // SingleAttribute
-		-1,  // Attributes
-		-1,  // Attribute
-		-1,  // RangeAttribute
-		-1,  // ExportAsAttribute
-		-1,  // PrecisionAttribute
-		-1,  // MessageAttribute
-		-1,  // Range
-		73,  // Number
-		241, // MathExpr
-		79,  // AddSub
-		80,  // MulDiv
-		81,  // Pot
-		82,  // Factor
-	},
-	gotoRow{ // S202
 		-1, // S'
 		-1, // Package
 		-1, // PackageName
@@ -7114,6 +7079,41 @@ var gotoTab = gotoTable{
 		-1, // MulDiv
 		-1, // Pot
 		-1, // Factor
+	},
+	gotoRow{ // S202
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarName
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		73,  // Number
+		243, // MathExpr
+		79,  // AddSub
+		80,  // MulDiv
+		81,  // Pot
+		82,  // Factor
 	},
 	gotoRow{ // S203
 		-1, // S'
@@ -7151,39 +7151,39 @@ var gotoTab = gotoTable{
 		-1, // Factor
 	},
 	gotoRow{ // S204
-		-1, // S'
-		-1, // Package
-		-1, // PackageName
-		-1, // PackageBody
-		-1, // PackageElement
-		-1, // Import
-		-1, // ClassDef
-		-1, // StructDef
-		-1, // EnumDef
-		-1, // GenericType
-		-1, // Type
-		-1, // VarName
-		-1, // VarDecl
-		-1, // MultiVarDecl
-		-1, // StructBody
-		-1, // EnumBody
-		-1, // AttributeGroup
-		-1, // AttributeGroupBody
-		-1, // AttributeGroupElement
-		-1, // SingleAttribute
-		-1, // Attributes
-		-1, // Attribute
-		-1, // RangeAttribute
-		-1, // ExportAsAttribute
-		-1, // PrecisionAttribute
-		-1, // MessageAttribute
-		-1, // Range
-		-1, // Number
-		-1, // MathExpr
-		-1, // AddSub
-		-1, // MulDiv
-		-1, // Pot
-		-1, // Factor
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarName
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		73,  // Number
+		244, // MathExpr
+		79,  // AddSub
+		80,  // MulDiv
+		81,  // Pot
+		82,  // Factor
 	},
 	gotoRow{ // S205
 		-1, // S'
@@ -7536,109 +7536,109 @@ var gotoTab = gotoTable{
 		-1, // Factor
 	},
 	gotoRow{ // S215
-		-1,  // S'
-		-1,  // Package
-		-1,  // PackageName
-		-1,  // PackageBody
-		-1,  // PackageElement
-		-1,  // Import
-		-1,  // ClassDef
-		-1,  // StructDef
-		-1,  // EnumDef
-		-1,  // GenericType
-		-1,  // Type
-		-1,  // VarName
-		-1,  // VarDecl
-		-1,  // MultiVarDecl
-		-1,  // StructBody
-		-1,  // EnumBody
-		-1,  // AttributeGroup
-		-1,  // AttributeGroupBody
-		-1,  // AttributeGroupElement
-		-1,  // SingleAttribute
-		-1,  // Attributes
-		-1,  // Attribute
-		-1,  // RangeAttribute
-		-1,  // ExportAsAttribute
-		-1,  // PrecisionAttribute
-		-1,  // MessageAttribute
-		-1,  // Range
-		93,  // Number
-		-1,  // MathExpr
-		248, // AddSub
-		100, // MulDiv
-		101, // Pot
-		102, // Factor
+		-1, // S'
+		-1, // Package
+		-1, // PackageName
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarName
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // PrecisionAttribute
+		-1, // MessageAttribute
+		-1, // Range
+		-1, // Number
+		-1, // MathExpr
+		-1, // AddSub
+		-1, // MulDiv
+		-1, // Pot
+		-1, // Factor
 	},
 	gotoRow{ // S216
-		-1,  // S'
-		-1,  // Package
-		-1,  // PackageName
-		-1,  // PackageBody
-		-1,  // PackageElement
-		-1,  // Import
-		-1,  // ClassDef
-		-1,  // StructDef
-		-1,  // EnumDef
-		-1,  // GenericType
-		-1,  // Type
-		-1,  // VarName
-		-1,  // VarDecl
-		-1,  // MultiVarDecl
-		-1,  // StructBody
-		-1,  // EnumBody
-		-1,  // AttributeGroup
-		-1,  // AttributeGroupBody
-		-1,  // AttributeGroupElement
-		-1,  // SingleAttribute
-		-1,  // Attributes
-		-1,  // Attribute
-		-1,  // RangeAttribute
-		-1,  // ExportAsAttribute
-		-1,  // PrecisionAttribute
-		-1,  // MessageAttribute
-		-1,  // Range
-		93,  // Number
-		-1,  // MathExpr
-		249, // AddSub
-		100, // MulDiv
-		101, // Pot
-		102, // Factor
+		-1, // S'
+		-1, // Package
+		-1, // PackageName
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarName
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // PrecisionAttribute
+		-1, // MessageAttribute
+		-1, // Range
+		-1, // Number
+		-1, // MathExpr
+		-1, // AddSub
+		-1, // MulDiv
+		-1, // Pot
+		-1, // Factor
 	},
 	gotoRow{ // S217
-		-1,  // S'
-		-1,  // Package
-		-1,  // PackageName
-		-1,  // PackageBody
-		-1,  // PackageElement
-		-1,  // Import
-		-1,  // ClassDef
-		-1,  // StructDef
-		-1,  // EnumDef
-		-1,  // GenericType
-		-1,  // Type
-		-1,  // VarName
-		-1,  // VarDecl
-		-1,  // MultiVarDecl
-		-1,  // StructBody
-		-1,  // EnumBody
-		-1,  // AttributeGroup
-		-1,  // AttributeGroupBody
-		-1,  // AttributeGroupElement
-		-1,  // SingleAttribute
-		-1,  // Attributes
-		-1,  // Attribute
-		-1,  // RangeAttribute
-		-1,  // ExportAsAttribute
-		-1,  // PrecisionAttribute
-		-1,  // MessageAttribute
-		-1,  // Range
-		164, // Number
-		250, // MathExpr
-		170, // AddSub
-		171, // MulDiv
-		172, // Pot
-		173, // Factor
+		-1, // S'
+		-1, // Package
+		-1, // PackageName
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarName
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // PrecisionAttribute
+		-1, // MessageAttribute
+		-1, // Range
+		-1, // Number
+		-1, // MathExpr
+		-1, // AddSub
+		-1, // MulDiv
+		-1, // Pot
+		-1, // Factor
 	},
 	gotoRow{ // S218
 		-1,  // S'
@@ -7668,222 +7668,222 @@ var gotoTab = gotoTable{
 		-1,  // PrecisionAttribute
 		-1,  // MessageAttribute
 		-1,  // Range
+		93,  // Number
+		-1,  // MathExpr
+		251, // AddSub
+		100, // MulDiv
+		101, // Pot
+		102, // Factor
+	},
+	gotoRow{ // S219
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarName
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		93,  // Number
+		-1,  // MathExpr
+		252, // AddSub
+		100, // MulDiv
+		101, // Pot
+		102, // Factor
+	},
+	gotoRow{ // S220
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarName
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
 		164, // Number
-		251, // MathExpr
+		253, // MathExpr
 		170, // AddSub
 		171, // MulDiv
 		172, // Pot
 		173, // Factor
 	},
-	gotoRow{ // S219
-		-1, // S'
-		-1, // Package
-		-1, // PackageName
-		-1, // PackageBody
-		-1, // PackageElement
-		-1, // Import
-		-1, // ClassDef
-		-1, // StructDef
-		-1, // EnumDef
-		-1, // GenericType
-		-1, // Type
-		-1, // VarName
-		-1, // VarDecl
-		-1, // MultiVarDecl
-		-1, // StructBody
-		-1, // EnumBody
-		-1, // AttributeGroup
-		-1, // AttributeGroupBody
-		-1, // AttributeGroupElement
-		-1, // SingleAttribute
-		-1, // Attributes
-		-1, // Attribute
-		-1, // RangeAttribute
-		-1, // ExportAsAttribute
-		-1, // PrecisionAttribute
-		-1, // MessageAttribute
-		-1, // Range
-		-1, // Number
-		-1, // MathExpr
-		-1, // AddSub
-		-1, // MulDiv
-		-1, // Pot
-		-1, // Factor
-	},
-	gotoRow{ // S220
-		-1, // S'
-		-1, // Package
-		-1, // PackageName
-		-1, // PackageBody
-		-1, // PackageElement
-		-1, // Import
-		-1, // ClassDef
-		-1, // StructDef
-		-1, // EnumDef
-		-1, // GenericType
-		-1, // Type
-		-1, // VarName
-		-1, // VarDecl
-		-1, // MultiVarDecl
-		-1, // StructBody
-		-1, // EnumBody
-		-1, // AttributeGroup
-		-1, // AttributeGroupBody
-		-1, // AttributeGroupElement
-		-1, // SingleAttribute
-		-1, // Attributes
-		-1, // Attribute
-		-1, // RangeAttribute
-		-1, // ExportAsAttribute
-		-1, // PrecisionAttribute
-		-1, // MessageAttribute
-		-1, // Range
-		-1, // Number
-		-1, // MathExpr
-		-1, // AddSub
-		-1, // MulDiv
-		-1, // Pot
-		-1, // Factor
-	},
 	gotoRow{ // S221
-		-1, // S'
-		-1, // Package
-		-1, // PackageName
-		-1, // PackageBody
-		-1, // PackageElement
-		-1, // Import
-		-1, // ClassDef
-		-1, // StructDef
-		-1, // EnumDef
-		-1, // GenericType
-		-1, // Type
-		-1, // VarName
-		-1, // VarDecl
-		-1, // MultiVarDecl
-		-1, // StructBody
-		-1, // EnumBody
-		-1, // AttributeGroup
-		-1, // AttributeGroupBody
-		-1, // AttributeGroupElement
-		-1, // SingleAttribute
-		-1, // Attributes
-		-1, // Attribute
-		-1, // RangeAttribute
-		-1, // ExportAsAttribute
-		-1, // PrecisionAttribute
-		-1, // MessageAttribute
-		-1, // Range
-		-1, // Number
-		-1, // MathExpr
-		-1, // AddSub
-		-1, // MulDiv
-		-1, // Pot
-		-1, // Factor
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarName
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		164, // Number
+		254, // MathExpr
+		170, // AddSub
+		171, // MulDiv
+		172, // Pot
+		173, // Factor
 	},
 	gotoRow{ // S222
-		-1,  // S'
-		-1,  // Package
-		-1,  // PackageName
-		-1,  // PackageBody
-		-1,  // PackageElement
-		-1,  // Import
-		-1,  // ClassDef
-		-1,  // StructDef
-		-1,  // EnumDef
-		-1,  // GenericType
-		-1,  // Type
-		-1,  // VarName
-		-1,  // VarDecl
-		-1,  // MultiVarDecl
-		-1,  // StructBody
-		-1,  // EnumBody
-		-1,  // AttributeGroup
-		-1,  // AttributeGroupBody
-		-1,  // AttributeGroupElement
-		-1,  // SingleAttribute
-		-1,  // Attributes
-		-1,  // Attribute
-		-1,  // RangeAttribute
-		-1,  // ExportAsAttribute
-		-1,  // PrecisionAttribute
-		-1,  // MessageAttribute
-		-1,  // Range
-		164, // Number
-		-1,  // MathExpr
-		252, // AddSub
-		253, // MulDiv
-		172, // Pot
-		173, // Factor
+		-1, // S'
+		-1, // Package
+		-1, // PackageName
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarName
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // PrecisionAttribute
+		-1, // MessageAttribute
+		-1, // Range
+		-1, // Number
+		-1, // MathExpr
+		-1, // AddSub
+		-1, // MulDiv
+		-1, // Pot
+		-1, // Factor
 	},
 	gotoRow{ // S223
-		-1,  // S'
-		-1,  // Package
-		-1,  // PackageName
-		-1,  // PackageBody
-		-1,  // PackageElement
-		-1,  // Import
-		-1,  // ClassDef
-		-1,  // StructDef
-		-1,  // EnumDef
-		-1,  // GenericType
-		-1,  // Type
-		-1,  // VarName
-		-1,  // VarDecl
-		-1,  // MultiVarDecl
-		-1,  // StructBody
-		-1,  // EnumBody
-		-1,  // AttributeGroup
-		-1,  // AttributeGroupBody
-		-1,  // AttributeGroupElement
-		-1,  // SingleAttribute
-		-1,  // Attributes
-		-1,  // Attribute
-		-1,  // RangeAttribute
-		-1,  // ExportAsAttribute
-		-1,  // PrecisionAttribute
-		-1,  // MessageAttribute
-		-1,  // Range
-		164, // Number
-		-1,  // MathExpr
-		252, // AddSub
-		254, // MulDiv
-		172, // Pot
-		173, // Factor
+		-1, // S'
+		-1, // Package
+		-1, // PackageName
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarName
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // PrecisionAttribute
+		-1, // MessageAttribute
+		-1, // Range
+		-1, // Number
+		-1, // MathExpr
+		-1, // AddSub
+		-1, // MulDiv
+		-1, // Pot
+		-1, // Factor
 	},
 	gotoRow{ // S224
-		-1,  // S'
-		-1,  // Package
-		-1,  // PackageName
-		-1,  // PackageBody
-		-1,  // PackageElement
-		-1,  // Import
-		-1,  // ClassDef
-		-1,  // StructDef
-		-1,  // EnumDef
-		-1,  // GenericType
-		-1,  // Type
-		-1,  // VarName
-		-1,  // VarDecl
-		-1,  // MultiVarDecl
-		-1,  // StructBody
-		-1,  // EnumBody
-		-1,  // AttributeGroup
-		-1,  // AttributeGroupBody
-		-1,  // AttributeGroupElement
-		-1,  // SingleAttribute
-		-1,  // Attributes
-		-1,  // Attribute
-		-1,  // RangeAttribute
-		-1,  // ExportAsAttribute
-		-1,  // PrecisionAttribute
-		-1,  // MessageAttribute
-		-1,  // Range
-		164, // Number
-		-1,  // MathExpr
-		252, // AddSub
-		171, // MulDiv
-		255, // Pot
-		173, // Factor
+		-1, // S'
+		-1, // Package
+		-1, // PackageName
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarName
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // PrecisionAttribute
+		-1, // MessageAttribute
+		-1, // Range
+		-1, // Number
+		-1, // MathExpr
+		-1, // AddSub
+		-1, // MulDiv
+		-1, // Pot
+		-1, // Factor
 	},
 	gotoRow{ // S225
 		-1,  // S'
@@ -7915,9 +7915,9 @@ var gotoTab = gotoTable{
 		-1,  // Range
 		164, // Number
 		-1,  // MathExpr
-		252, // AddSub
-		171, // MulDiv
-		256, // Pot
+		255, // AddSub
+		256, // MulDiv
+		172, // Pot
 		173, // Factor
 	},
 	gotoRow{ // S226
@@ -7950,115 +7950,115 @@ var gotoTab = gotoTable{
 		-1,  // Range
 		164, // Number
 		-1,  // MathExpr
-		252, // AddSub
-		171, // MulDiv
+		255, // AddSub
+		257, // MulDiv
 		172, // Pot
-		257, // Factor
+		173, // Factor
 	},
 	gotoRow{ // S227
-		-1, // S'
-		-1, // Package
-		-1, // PackageName
-		-1, // PackageBody
-		-1, // PackageElement
-		-1, // Import
-		-1, // ClassDef
-		-1, // StructDef
-		-1, // EnumDef
-		-1, // GenericType
-		-1, // Type
-		-1, // VarName
-		-1, // VarDecl
-		-1, // MultiVarDecl
-		-1, // StructBody
-		-1, // EnumBody
-		-1, // AttributeGroup
-		-1, // AttributeGroupBody
-		-1, // AttributeGroupElement
-		-1, // SingleAttribute
-		-1, // Attributes
-		-1, // Attribute
-		-1, // RangeAttribute
-		-1, // ExportAsAttribute
-		-1, // PrecisionAttribute
-		-1, // MessageAttribute
-		-1, // Range
-		-1, // Number
-		-1, // MathExpr
-		-1, // AddSub
-		-1, // MulDiv
-		-1, // Pot
-		-1, // Factor
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarName
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		164, // Number
+		-1,  // MathExpr
+		255, // AddSub
+		171, // MulDiv
+		258, // Pot
+		173, // Factor
 	},
 	gotoRow{ // S228
-		-1, // S'
-		-1, // Package
-		-1, // PackageName
-		-1, // PackageBody
-		-1, // PackageElement
-		-1, // Import
-		-1, // ClassDef
-		-1, // StructDef
-		-1, // EnumDef
-		-1, // GenericType
-		-1, // Type
-		-1, // VarName
-		-1, // VarDecl
-		-1, // MultiVarDecl
-		-1, // StructBody
-		-1, // EnumBody
-		-1, // AttributeGroup
-		-1, // AttributeGroupBody
-		-1, // AttributeGroupElement
-		-1, // SingleAttribute
-		-1, // Attributes
-		-1, // Attribute
-		-1, // RangeAttribute
-		-1, // ExportAsAttribute
-		-1, // PrecisionAttribute
-		-1, // MessageAttribute
-		-1, // Range
-		-1, // Number
-		-1, // MathExpr
-		-1, // AddSub
-		-1, // MulDiv
-		-1, // Pot
-		-1, // Factor
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarName
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		164, // Number
+		-1,  // MathExpr
+		255, // AddSub
+		171, // MulDiv
+		259, // Pot
+		173, // Factor
 	},
 	gotoRow{ // S229
-		-1, // S'
-		-1, // Package
-		-1, // PackageName
-		-1, // PackageBody
-		-1, // PackageElement
-		-1, // Import
-		-1, // ClassDef
-		-1, // StructDef
-		-1, // EnumDef
-		-1, // GenericType
-		-1, // Type
-		-1, // VarName
-		-1, // VarDecl
-		-1, // MultiVarDecl
-		-1, // StructBody
-		-1, // EnumBody
-		-1, // AttributeGroup
-		-1, // AttributeGroupBody
-		-1, // AttributeGroupElement
-		-1, // SingleAttribute
-		-1, // Attributes
-		-1, // Attribute
-		-1, // RangeAttribute
-		-1, // ExportAsAttribute
-		-1, // PrecisionAttribute
-		-1, // MessageAttribute
-		-1, // Range
-		-1, // Number
-		-1, // MathExpr
-		-1, // AddSub
-		-1, // MulDiv
-		-1, // Pot
-		-1, // Factor
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarName
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		164, // Number
+		-1,  // MathExpr
+		255, // AddSub
+		171, // MulDiv
+		172, // Pot
+		260, // Factor
 	},
 	gotoRow{ // S230
 		-1, // S'
@@ -8096,39 +8096,39 @@ var gotoTab = gotoTable{
 		-1, // Factor
 	},
 	gotoRow{ // S231
-		-1,  // S'
-		-1,  // Package
-		-1,  // PackageName
-		-1,  // PackageBody
-		-1,  // PackageElement
-		-1,  // Import
-		-1,  // ClassDef
-		-1,  // StructDef
-		-1,  // EnumDef
-		261, // GenericType
-		278, // Type
-		-1,  // VarName
-		-1,  // VarDecl
-		-1,  // MultiVarDecl
-		-1,  // StructBody
-		-1,  // EnumBody
-		279, // AttributeGroup
-		-1,  // AttributeGroupBody
-		-1,  // AttributeGroupElement
-		281, // SingleAttribute
-		-1,  // Attributes
-		-1,  // Attribute
-		-1,  // RangeAttribute
-		-1,  // ExportAsAttribute
-		-1,  // PrecisionAttribute
-		-1,  // MessageAttribute
-		-1,  // Range
-		-1,  // Number
-		-1,  // MathExpr
-		-1,  // AddSub
-		-1,  // MulDiv
-		-1,  // Pot
-		-1,  // Factor
+		-1, // S'
+		-1, // Package
+		-1, // PackageName
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarName
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // PrecisionAttribute
+		-1, // MessageAttribute
+		-1, // Range
+		-1, // Number
+		-1, // MathExpr
+		-1, // AddSub
+		-1, // MulDiv
+		-1, // Pot
+		-1, // Factor
 	},
 	gotoRow{ // S232
 		-1, // S'
@@ -8201,6 +8201,41 @@ var gotoTab = gotoTable{
 		-1, // Factor
 	},
 	gotoRow{ // S234
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		264, // GenericType
+		281, // Type
+		-1,  // VarName
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		282, // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		284, // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		-1,  // Number
+		-1,  // MathExpr
+		-1,  // AddSub
+		-1,  // MulDiv
+		-1,  // Pot
+		-1,  // Factor
+	},
+	gotoRow{ // S235
 		-1, // S'
 		-1, // Package
 		-1, // PackageName
@@ -8234,41 +8269,6 @@ var gotoTab = gotoTable{
 		-1, // MulDiv
 		-1, // Pot
 		-1, // Factor
-	},
-	gotoRow{ // S235
-		-1,  // S'
-		-1,  // Package
-		-1,  // PackageName
-		-1,  // PackageBody
-		-1,  // PackageElement
-		-1,  // Import
-		-1,  // ClassDef
-		-1,  // StructDef
-		-1,  // EnumDef
-		-1,  // GenericType
-		-1,  // Type
-		-1,  // VarName
-		-1,  // VarDecl
-		-1,  // MultiVarDecl
-		283, // StructBody
-		-1,  // EnumBody
-		-1,  // AttributeGroup
-		-1,  // AttributeGroupBody
-		-1,  // AttributeGroupElement
-		-1,  // SingleAttribute
-		-1,  // Attributes
-		-1,  // Attribute
-		-1,  // RangeAttribute
-		-1,  // ExportAsAttribute
-		-1,  // PrecisionAttribute
-		-1,  // MessageAttribute
-		-1,  // Range
-		-1,  // Number
-		-1,  // MathExpr
-		-1,  // AddSub
-		-1,  // MulDiv
-		-1,  // Pot
-		-1,  // Factor
 	},
 	gotoRow{ // S236
 		-1, // S'
@@ -8306,41 +8306,6 @@ var gotoTab = gotoTable{
 		-1, // Factor
 	},
 	gotoRow{ // S237
-		-1,  // S'
-		-1,  // Package
-		-1,  // PackageName
-		-1,  // PackageBody
-		-1,  // PackageElement
-		-1,  // Import
-		-1,  // ClassDef
-		-1,  // StructDef
-		-1,  // EnumDef
-		-1,  // GenericType
-		-1,  // Type
-		-1,  // VarName
-		-1,  // VarDecl
-		-1,  // MultiVarDecl
-		284, // StructBody
-		-1,  // EnumBody
-		-1,  // AttributeGroup
-		-1,  // AttributeGroupBody
-		-1,  // AttributeGroupElement
-		-1,  // SingleAttribute
-		-1,  // Attributes
-		-1,  // Attribute
-		-1,  // RangeAttribute
-		-1,  // ExportAsAttribute
-		-1,  // PrecisionAttribute
-		-1,  // MessageAttribute
-		-1,  // Range
-		-1,  // Number
-		-1,  // MathExpr
-		-1,  // AddSub
-		-1,  // MulDiv
-		-1,  // Pot
-		-1,  // Factor
-	},
-	gotoRow{ // S238
 		-1, // S'
 		-1, // Package
 		-1, // PackageName
@@ -8374,6 +8339,41 @@ var gotoTab = gotoTable{
 		-1, // MulDiv
 		-1, // Pot
 		-1, // Factor
+	},
+	gotoRow{ // S238
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarName
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		286, // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		-1,  // Number
+		-1,  // MathExpr
+		-1,  // AddSub
+		-1,  // MulDiv
+		-1,  // Pot
+		-1,  // Factor
 	},
 	gotoRow{ // S239
 		-1, // S'
@@ -8411,39 +8411,39 @@ var gotoTab = gotoTable{
 		-1, // Factor
 	},
 	gotoRow{ // S240
-		-1, // S'
-		-1, // Package
-		-1, // PackageName
-		-1, // PackageBody
-		-1, // PackageElement
-		-1, // Import
-		-1, // ClassDef
-		-1, // StructDef
-		-1, // EnumDef
-		-1, // GenericType
-		-1, // Type
-		-1, // VarName
-		-1, // VarDecl
-		-1, // MultiVarDecl
-		-1, // StructBody
-		-1, // EnumBody
-		-1, // AttributeGroup
-		-1, // AttributeGroupBody
-		-1, // AttributeGroupElement
-		-1, // SingleAttribute
-		-1, // Attributes
-		-1, // Attribute
-		-1, // RangeAttribute
-		-1, // ExportAsAttribute
-		-1, // PrecisionAttribute
-		-1, // MessageAttribute
-		-1, // Range
-		-1, // Number
-		-1, // MathExpr
-		-1, // AddSub
-		-1, // MulDiv
-		-1, // Pot
-		-1, // Factor
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarName
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		287, // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		-1,  // Number
+		-1,  // MathExpr
+		-1,  // AddSub
+		-1,  // MulDiv
+		-1,  // Pot
+		-1,  // Factor
 	},
 	gotoRow{ // S241
 		-1, // S'
@@ -8516,109 +8516,109 @@ var gotoTab = gotoTable{
 		-1, // Factor
 	},
 	gotoRow{ // S243
-		-1,  // S'
-		-1,  // Package
-		-1,  // PackageName
-		-1,  // PackageBody
-		-1,  // PackageElement
-		-1,  // Import
-		-1,  // ClassDef
-		-1,  // StructDef
-		-1,  // EnumDef
-		-1,  // GenericType
-		-1,  // Type
-		-1,  // VarName
-		-1,  // VarDecl
-		-1,  // MultiVarDecl
-		-1,  // StructBody
-		-1,  // EnumBody
-		-1,  // AttributeGroup
-		-1,  // AttributeGroupBody
-		-1,  // AttributeGroupElement
-		-1,  // SingleAttribute
-		-1,  // Attributes
-		-1,  // Attribute
-		-1,  // RangeAttribute
-		-1,  // ExportAsAttribute
-		-1,  // PrecisionAttribute
-		-1,  // MessageAttribute
-		-1,  // Range
-		205, // Number
-		-1,  // MathExpr
-		288, // AddSub
-		289, // MulDiv
-		213, // Pot
-		214, // Factor
+		-1, // S'
+		-1, // Package
+		-1, // PackageName
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarName
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // PrecisionAttribute
+		-1, // MessageAttribute
+		-1, // Range
+		-1, // Number
+		-1, // MathExpr
+		-1, // AddSub
+		-1, // MulDiv
+		-1, // Pot
+		-1, // Factor
 	},
 	gotoRow{ // S244
-		-1,  // S'
-		-1,  // Package
-		-1,  // PackageName
-		-1,  // PackageBody
-		-1,  // PackageElement
-		-1,  // Import
-		-1,  // ClassDef
-		-1,  // StructDef
-		-1,  // EnumDef
-		-1,  // GenericType
-		-1,  // Type
-		-1,  // VarName
-		-1,  // VarDecl
-		-1,  // MultiVarDecl
-		-1,  // StructBody
-		-1,  // EnumBody
-		-1,  // AttributeGroup
-		-1,  // AttributeGroupBody
-		-1,  // AttributeGroupElement
-		-1,  // SingleAttribute
-		-1,  // Attributes
-		-1,  // Attribute
-		-1,  // RangeAttribute
-		-1,  // ExportAsAttribute
-		-1,  // PrecisionAttribute
-		-1,  // MessageAttribute
-		-1,  // Range
-		205, // Number
-		-1,  // MathExpr
-		288, // AddSub
-		290, // MulDiv
-		213, // Pot
-		214, // Factor
+		-1, // S'
+		-1, // Package
+		-1, // PackageName
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarName
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // PrecisionAttribute
+		-1, // MessageAttribute
+		-1, // Range
+		-1, // Number
+		-1, // MathExpr
+		-1, // AddSub
+		-1, // MulDiv
+		-1, // Pot
+		-1, // Factor
 	},
 	gotoRow{ // S245
-		-1,  // S'
-		-1,  // Package
-		-1,  // PackageName
-		-1,  // PackageBody
-		-1,  // PackageElement
-		-1,  // Import
-		-1,  // ClassDef
-		-1,  // StructDef
-		-1,  // EnumDef
-		-1,  // GenericType
-		-1,  // Type
-		-1,  // VarName
-		-1,  // VarDecl
-		-1,  // MultiVarDecl
-		-1,  // StructBody
-		-1,  // EnumBody
-		-1,  // AttributeGroup
-		-1,  // AttributeGroupBody
-		-1,  // AttributeGroupElement
-		-1,  // SingleAttribute
-		-1,  // Attributes
-		-1,  // Attribute
-		-1,  // RangeAttribute
-		-1,  // ExportAsAttribute
-		-1,  // PrecisionAttribute
-		-1,  // MessageAttribute
-		-1,  // Range
-		205, // Number
-		-1,  // MathExpr
-		288, // AddSub
-		212, // MulDiv
-		291, // Pot
-		214, // Factor
+		-1, // S'
+		-1, // Package
+		-1, // PackageName
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarName
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // PrecisionAttribute
+		-1, // MessageAttribute
+		-1, // Range
+		-1, // Number
+		-1, // MathExpr
+		-1, // AddSub
+		-1, // MulDiv
+		-1, // Pot
+		-1, // Factor
 	},
 	gotoRow{ // S246
 		-1,  // S'
@@ -8648,12 +8648,12 @@ var gotoTab = gotoTable{
 		-1,  // PrecisionAttribute
 		-1,  // MessageAttribute
 		-1,  // Range
-		205, // Number
+		208, // Number
 		-1,  // MathExpr
-		288, // AddSub
-		212, // MulDiv
-		292, // Pot
-		214, // Factor
+		291, // AddSub
+		292, // MulDiv
+		216, // Pot
+		217, // Factor
 	},
 	gotoRow{ // S247
 		-1,  // S'
@@ -8683,117 +8683,117 @@ var gotoTab = gotoTable{
 		-1,  // PrecisionAttribute
 		-1,  // MessageAttribute
 		-1,  // Range
-		205, // Number
+		208, // Number
 		-1,  // MathExpr
-		288, // AddSub
-		212, // MulDiv
-		213, // Pot
-		293, // Factor
+		291, // AddSub
+		293, // MulDiv
+		216, // Pot
+		217, // Factor
 	},
 	gotoRow{ // S248
-		-1, // S'
-		-1, // Package
-		-1, // PackageName
-		-1, // PackageBody
-		-1, // PackageElement
-		-1, // Import
-		-1, // ClassDef
-		-1, // StructDef
-		-1, // EnumDef
-		-1, // GenericType
-		-1, // Type
-		-1, // VarName
-		-1, // VarDecl
-		-1, // MultiVarDecl
-		-1, // StructBody
-		-1, // EnumBody
-		-1, // AttributeGroup
-		-1, // AttributeGroupBody
-		-1, // AttributeGroupElement
-		-1, // SingleAttribute
-		-1, // Attributes
-		-1, // Attribute
-		-1, // RangeAttribute
-		-1, // ExportAsAttribute
-		-1, // PrecisionAttribute
-		-1, // MessageAttribute
-		-1, // Range
-		-1, // Number
-		-1, // MathExpr
-		-1, // AddSub
-		-1, // MulDiv
-		-1, // Pot
-		-1, // Factor
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarName
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		208, // Number
+		-1,  // MathExpr
+		291, // AddSub
+		215, // MulDiv
+		294, // Pot
+		217, // Factor
 	},
 	gotoRow{ // S249
-		-1, // S'
-		-1, // Package
-		-1, // PackageName
-		-1, // PackageBody
-		-1, // PackageElement
-		-1, // Import
-		-1, // ClassDef
-		-1, // StructDef
-		-1, // EnumDef
-		-1, // GenericType
-		-1, // Type
-		-1, // VarName
-		-1, // VarDecl
-		-1, // MultiVarDecl
-		-1, // StructBody
-		-1, // EnumBody
-		-1, // AttributeGroup
-		-1, // AttributeGroupBody
-		-1, // AttributeGroupElement
-		-1, // SingleAttribute
-		-1, // Attributes
-		-1, // Attribute
-		-1, // RangeAttribute
-		-1, // ExportAsAttribute
-		-1, // PrecisionAttribute
-		-1, // MessageAttribute
-		-1, // Range
-		-1, // Number
-		-1, // MathExpr
-		-1, // AddSub
-		-1, // MulDiv
-		-1, // Pot
-		-1, // Factor
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarName
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		208, // Number
+		-1,  // MathExpr
+		291, // AddSub
+		215, // MulDiv
+		295, // Pot
+		217, // Factor
 	},
 	gotoRow{ // S250
-		-1, // S'
-		-1, // Package
-		-1, // PackageName
-		-1, // PackageBody
-		-1, // PackageElement
-		-1, // Import
-		-1, // ClassDef
-		-1, // StructDef
-		-1, // EnumDef
-		-1, // GenericType
-		-1, // Type
-		-1, // VarName
-		-1, // VarDecl
-		-1, // MultiVarDecl
-		-1, // StructBody
-		-1, // EnumBody
-		-1, // AttributeGroup
-		-1, // AttributeGroupBody
-		-1, // AttributeGroupElement
-		-1, // SingleAttribute
-		-1, // Attributes
-		-1, // Attribute
-		-1, // RangeAttribute
-		-1, // ExportAsAttribute
-		-1, // PrecisionAttribute
-		-1, // MessageAttribute
-		-1, // Range
-		-1, // Number
-		-1, // MathExpr
-		-1, // AddSub
-		-1, // MulDiv
-		-1, // Pot
-		-1, // Factor
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarName
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		208, // Number
+		-1,  // MathExpr
+		291, // AddSub
+		215, // MulDiv
+		216, // Pot
+		296, // Factor
 	},
 	gotoRow{ // S251
 		-1, // S'
@@ -9741,39 +9741,39 @@ var gotoTab = gotoTable{
 		-1, // Factor
 	},
 	gotoRow{ // S278
-		-1,  // S'
-		-1,  // Package
-		300, // PackageName
-		-1,  // PackageBody
-		-1,  // PackageElement
-		-1,  // Import
-		-1,  // ClassDef
-		-1,  // StructDef
-		-1,  // EnumDef
-		-1,  // GenericType
-		-1,  // Type
-		305, // VarName
-		-1,  // VarDecl
-		-1,  // MultiVarDecl
-		-1,  // StructBody
-		-1,  // EnumBody
-		-1,  // AttributeGroup
-		-1,  // AttributeGroupBody
-		-1,  // AttributeGroupElement
-		-1,  // SingleAttribute
-		-1,  // Attributes
-		-1,  // Attribute
-		-1,  // RangeAttribute
-		-1,  // ExportAsAttribute
-		-1,  // PrecisionAttribute
-		-1,  // MessageAttribute
-		-1,  // Range
-		-1,  // Number
-		-1,  // MathExpr
-		-1,  // AddSub
-		-1,  // MulDiv
-		-1,  // Pot
-		-1,  // Factor
+		-1, // S'
+		-1, // Package
+		-1, // PackageName
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarName
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // PrecisionAttribute
+		-1, // MessageAttribute
+		-1, // Range
+		-1, // Number
+		-1, // MathExpr
+		-1, // AddSub
+		-1, // MulDiv
+		-1, // Pot
+		-1, // Factor
 	},
 	gotoRow{ // S279
 		-1, // S'
@@ -9811,41 +9811,6 @@ var gotoTab = gotoTable{
 		-1, // Factor
 	},
 	gotoRow{ // S280
-		-1,  // S'
-		-1,  // Package
-		-1,  // PackageName
-		-1,  // PackageBody
-		-1,  // PackageElement
-		-1,  // Import
-		-1,  // ClassDef
-		-1,  // StructDef
-		-1,  // EnumDef
-		-1,  // GenericType
-		-1,  // Type
-		-1,  // VarName
-		-1,  // VarDecl
-		-1,  // MultiVarDecl
-		-1,  // StructBody
-		-1,  // EnumBody
-		-1,  // AttributeGroup
-		-1,  // AttributeGroupBody
-		-1,  // AttributeGroupElement
-		-1,  // SingleAttribute
-		-1,  // Attributes
-		307, // Attribute
-		308, // RangeAttribute
-		309, // ExportAsAttribute
-		310, // PrecisionAttribute
-		311, // MessageAttribute
-		-1,  // Range
-		-1,  // Number
-		-1,  // MathExpr
-		-1,  // AddSub
-		-1,  // MulDiv
-		-1,  // Pot
-		-1,  // Factor
-	},
-	gotoRow{ // S281
 		-1, // S'
 		-1, // Package
 		-1, // PackageName
@@ -9880,10 +9845,10 @@ var gotoTab = gotoTable{
 		-1, // Pot
 		-1, // Factor
 	},
-	gotoRow{ // S282
+	gotoRow{ // S281
 		-1,  // S'
 		-1,  // Package
-		300, // PackageName
+		303, // PackageName
 		-1,  // PackageBody
 		-1,  // PackageElement
 		-1,  // Import
@@ -9892,7 +9857,7 @@ var gotoTab = gotoTable{
 		-1,  // EnumDef
 		-1,  // GenericType
 		-1,  // Type
-		316, // VarName
+		306, // VarName
 		-1,  // VarDecl
 		-1,  // MultiVarDecl
 		-1,  // StructBody
@@ -9914,6 +9879,41 @@ var gotoTab = gotoTable{
 		-1,  // MulDiv
 		-1,  // Pot
 		-1,  // Factor
+	},
+	gotoRow{ // S282
+		-1, // S'
+		-1, // Package
+		-1, // PackageName
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarName
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // PrecisionAttribute
+		-1, // MessageAttribute
+		-1, // Range
+		-1, // Number
+		-1, // MathExpr
+		-1, // AddSub
+		-1, // MulDiv
+		-1, // Pot
+		-1, // Factor
 	},
 	gotoRow{ // S283
 		-1,  // S'
@@ -9928,20 +9928,20 @@ var gotoTab = gotoTable{
 		-1,  // GenericType
 		-1,  // Type
 		-1,  // VarName
-		233, // VarDecl
-		234, // MultiVarDecl
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
 		-1,  // StructBody
 		-1,  // EnumBody
 		-1,  // AttributeGroup
 		-1,  // AttributeGroupBody
 		-1,  // AttributeGroupElement
 		-1,  // SingleAttribute
-		231, // Attributes
-		-1,  // Attribute
-		-1,  // RangeAttribute
-		-1,  // ExportAsAttribute
-		-1,  // PrecisionAttribute
-		-1,  // MessageAttribute
+		-1,  // Attributes
+		310, // Attribute
+		311, // RangeAttribute
+		312, // ExportAsAttribute
+		313, // PrecisionAttribute
+		314, // MessageAttribute
 		-1,  // Range
 		-1,  // Number
 		-1,  // MathExpr
@@ -9951,41 +9951,6 @@ var gotoTab = gotoTable{
 		-1,  // Factor
 	},
 	gotoRow{ // S284
-		-1,  // S'
-		-1,  // Package
-		-1,  // PackageName
-		-1,  // PackageBody
-		-1,  // PackageElement
-		-1,  // Import
-		-1,  // ClassDef
-		-1,  // StructDef
-		-1,  // EnumDef
-		-1,  // GenericType
-		-1,  // Type
-		-1,  // VarName
-		233, // VarDecl
-		234, // MultiVarDecl
-		-1,  // StructBody
-		-1,  // EnumBody
-		-1,  // AttributeGroup
-		-1,  // AttributeGroupBody
-		-1,  // AttributeGroupElement
-		-1,  // SingleAttribute
-		231, // Attributes
-		-1,  // Attribute
-		-1,  // RangeAttribute
-		-1,  // ExportAsAttribute
-		-1,  // PrecisionAttribute
-		-1,  // MessageAttribute
-		-1,  // Range
-		-1,  // Number
-		-1,  // MathExpr
-		-1,  // AddSub
-		-1,  // MulDiv
-		-1,  // Pot
-		-1,  // Factor
-	},
-	gotoRow{ // S285
 		-1, // S'
 		-1, // Package
 		-1, // PackageName
@@ -10020,10 +9985,10 @@ var gotoTab = gotoTable{
 		-1, // Pot
 		-1, // Factor
 	},
-	gotoRow{ // S286
+	gotoRow{ // S285
 		-1,  // S'
 		-1,  // Package
-		-1,  // PackageName
+		303, // PackageName
 		-1,  // PackageBody
 		-1,  // PackageElement
 		-1,  // Import
@@ -10032,7 +9997,7 @@ var gotoTab = gotoTable{
 		-1,  // EnumDef
 		-1,  // GenericType
 		-1,  // Type
-		-1,  // VarName
+		319, // VarName
 		-1,  // VarDecl
 		-1,  // MultiVarDecl
 		-1,  // StructBody
@@ -10048,12 +10013,47 @@ var gotoTab = gotoTable{
 		-1,  // PrecisionAttribute
 		-1,  // MessageAttribute
 		-1,  // Range
-		164, // Number
-		319, // MathExpr
-		170, // AddSub
-		171, // MulDiv
-		172, // Pot
-		173, // Factor
+		-1,  // Number
+		-1,  // MathExpr
+		-1,  // AddSub
+		-1,  // MulDiv
+		-1,  // Pot
+		-1,  // Factor
+	},
+	gotoRow{ // S286
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarName
+		236, // VarDecl
+		237, // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		234, // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		-1,  // Number
+		-1,  // MathExpr
+		-1,  // AddSub
+		-1,  // MulDiv
+		-1,  // Pot
+		-1,  // Factor
 	},
 	gotoRow{ // S287
 		-1,  // S'
@@ -10068,27 +10068,27 @@ var gotoTab = gotoTable{
 		-1,  // GenericType
 		-1,  // Type
 		-1,  // VarName
-		-1,  // VarDecl
-		-1,  // MultiVarDecl
+		236, // VarDecl
+		237, // MultiVarDecl
 		-1,  // StructBody
 		-1,  // EnumBody
 		-1,  // AttributeGroup
 		-1,  // AttributeGroupBody
 		-1,  // AttributeGroupElement
 		-1,  // SingleAttribute
-		-1,  // Attributes
+		234, // Attributes
 		-1,  // Attribute
 		-1,  // RangeAttribute
 		-1,  // ExportAsAttribute
 		-1,  // PrecisionAttribute
 		-1,  // MessageAttribute
 		-1,  // Range
-		164, // Number
-		320, // MathExpr
-		170, // AddSub
-		171, // MulDiv
-		172, // Pot
-		173, // Factor
+		-1,  // Number
+		-1,  // MathExpr
+		-1,  // AddSub
+		-1,  // MulDiv
+		-1,  // Pot
+		-1,  // Factor
 	},
 	gotoRow{ // S288
 		-1, // S'
@@ -10126,74 +10126,74 @@ var gotoTab = gotoTable{
 		-1, // Factor
 	},
 	gotoRow{ // S289
-		-1, // S'
-		-1, // Package
-		-1, // PackageName
-		-1, // PackageBody
-		-1, // PackageElement
-		-1, // Import
-		-1, // ClassDef
-		-1, // StructDef
-		-1, // EnumDef
-		-1, // GenericType
-		-1, // Type
-		-1, // VarName
-		-1, // VarDecl
-		-1, // MultiVarDecl
-		-1, // StructBody
-		-1, // EnumBody
-		-1, // AttributeGroup
-		-1, // AttributeGroupBody
-		-1, // AttributeGroupElement
-		-1, // SingleAttribute
-		-1, // Attributes
-		-1, // Attribute
-		-1, // RangeAttribute
-		-1, // ExportAsAttribute
-		-1, // PrecisionAttribute
-		-1, // MessageAttribute
-		-1, // Range
-		-1, // Number
-		-1, // MathExpr
-		-1, // AddSub
-		-1, // MulDiv
-		-1, // Pot
-		-1, // Factor
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarName
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		164, // Number
+		322, // MathExpr
+		170, // AddSub
+		171, // MulDiv
+		172, // Pot
+		173, // Factor
 	},
 	gotoRow{ // S290
-		-1, // S'
-		-1, // Package
-		-1, // PackageName
-		-1, // PackageBody
-		-1, // PackageElement
-		-1, // Import
-		-1, // ClassDef
-		-1, // StructDef
-		-1, // EnumDef
-		-1, // GenericType
-		-1, // Type
-		-1, // VarName
-		-1, // VarDecl
-		-1, // MultiVarDecl
-		-1, // StructBody
-		-1, // EnumBody
-		-1, // AttributeGroup
-		-1, // AttributeGroupBody
-		-1, // AttributeGroupElement
-		-1, // SingleAttribute
-		-1, // Attributes
-		-1, // Attribute
-		-1, // RangeAttribute
-		-1, // ExportAsAttribute
-		-1, // PrecisionAttribute
-		-1, // MessageAttribute
-		-1, // Range
-		-1, // Number
-		-1, // MathExpr
-		-1, // AddSub
-		-1, // MulDiv
-		-1, // Pot
-		-1, // Factor
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarName
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		164, // Number
+		323, // MathExpr
+		170, // AddSub
+		171, // MulDiv
+		172, // Pot
+		173, // Factor
 	},
 	gotoRow{ // S291
 		-1, // S'
@@ -10721,39 +10721,39 @@ var gotoTab = gotoTable{
 		-1, // Factor
 	},
 	gotoRow{ // S306
-		-1,  // S'
-		-1,  // Package
-		-1,  // PackageName
-		-1,  // PackageBody
-		-1,  // PackageElement
-		-1,  // Import
-		-1,  // ClassDef
-		-1,  // StructDef
-		-1,  // EnumDef
-		-1,  // GenericType
-		-1,  // Type
-		-1,  // VarName
-		-1,  // VarDecl
-		-1,  // MultiVarDecl
-		-1,  // StructBody
-		-1,  // EnumBody
-		-1,  // AttributeGroup
-		324, // AttributeGroupBody
-		-1,  // AttributeGroupElement
-		-1,  // SingleAttribute
-		-1,  // Attributes
-		-1,  // Attribute
-		-1,  // RangeAttribute
-		-1,  // ExportAsAttribute
-		-1,  // PrecisionAttribute
-		-1,  // MessageAttribute
-		-1,  // Range
-		-1,  // Number
-		-1,  // MathExpr
-		-1,  // AddSub
-		-1,  // MulDiv
-		-1,  // Pot
-		-1,  // Factor
+		-1, // S'
+		-1, // Package
+		-1, // PackageName
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarName
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // PrecisionAttribute
+		-1, // MessageAttribute
+		-1, // Range
+		-1, // Number
+		-1, // MathExpr
+		-1, // AddSub
+		-1, // MulDiv
+		-1, // Pot
+		-1, // Factor
 	},
 	gotoRow{ // S307
 		-1, // S'
@@ -10826,39 +10826,39 @@ var gotoTab = gotoTable{
 		-1, // Factor
 	},
 	gotoRow{ // S309
-		-1, // S'
-		-1, // Package
-		-1, // PackageName
-		-1, // PackageBody
-		-1, // PackageElement
-		-1, // Import
-		-1, // ClassDef
-		-1, // StructDef
-		-1, // EnumDef
-		-1, // GenericType
-		-1, // Type
-		-1, // VarName
-		-1, // VarDecl
-		-1, // MultiVarDecl
-		-1, // StructBody
-		-1, // EnumBody
-		-1, // AttributeGroup
-		-1, // AttributeGroupBody
-		-1, // AttributeGroupElement
-		-1, // SingleAttribute
-		-1, // Attributes
-		-1, // Attribute
-		-1, // RangeAttribute
-		-1, // ExportAsAttribute
-		-1, // PrecisionAttribute
-		-1, // MessageAttribute
-		-1, // Range
-		-1, // Number
-		-1, // MathExpr
-		-1, // AddSub
-		-1, // MulDiv
-		-1, // Pot
-		-1, // Factor
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarName
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		326, // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		-1,  // Number
+		-1,  // MathExpr
+		-1,  // AddSub
+		-1,  // MulDiv
+		-1,  // Pot
+		-1,  // Factor
 	},
 	gotoRow{ // S310
 		-1, // S'
@@ -11316,9 +11316,44 @@ var gotoTab = gotoTable{
 		-1, // Factor
 	},
 	gotoRow{ // S323
+		-1, // S'
+		-1, // Package
+		-1, // PackageName
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarName
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // PrecisionAttribute
+		-1, // MessageAttribute
+		-1, // Range
+		-1, // Number
+		-1, // MathExpr
+		-1, // AddSub
+		-1, // MulDiv
+		-1, // Pot
+		-1, // Factor
+	},
+	gotoRow{ // S324
 		-1,  // S'
 		-1,  // Package
-		300, // PackageName
+		303, // PackageName
 		-1,  // PackageBody
 		-1,  // PackageElement
 		-1,  // Import
@@ -11350,77 +11385,7 @@ var gotoTab = gotoTable{
 		-1,  // Pot
 		-1,  // Factor
 	},
-	gotoRow{ // S324
-		-1, // S'
-		-1, // Package
-		-1, // PackageName
-		-1, // PackageBody
-		-1, // PackageElement
-		-1, // Import
-		-1, // ClassDef
-		-1, // StructDef
-		-1, // EnumDef
-		-1, // GenericType
-		-1, // Type
-		-1, // VarName
-		-1, // VarDecl
-		-1, // MultiVarDecl
-		-1, // StructBody
-		-1, // EnumBody
-		-1, // AttributeGroup
-		-1, // AttributeGroupBody
-		32, // AttributeGroupElement
-		-1, // SingleAttribute
-		-1, // Attributes
-		33, // Attribute
-		34, // RangeAttribute
-		35, // ExportAsAttribute
-		36, // PrecisionAttribute
-		37, // MessageAttribute
-		-1, // Range
-		-1, // Number
-		-1, // MathExpr
-		-1, // AddSub
-		-1, // MulDiv
-		-1, // Pot
-		-1, // Factor
-	},
 	gotoRow{ // S325
-		-1,  // S'
-		-1,  // Package
-		-1,  // PackageName
-		-1,  // PackageBody
-		-1,  // PackageElement
-		-1,  // Import
-		-1,  // ClassDef
-		-1,  // StructDef
-		-1,  // EnumDef
-		-1,  // GenericType
-		-1,  // Type
-		-1,  // VarName
-		-1,  // VarDecl
-		-1,  // MultiVarDecl
-		-1,  // StructBody
-		-1,  // EnumBody
-		-1,  // AttributeGroup
-		-1,  // AttributeGroupBody
-		-1,  // AttributeGroupElement
-		-1,  // SingleAttribute
-		-1,  // Attributes
-		-1,  // Attribute
-		-1,  // RangeAttribute
-		-1,  // ExportAsAttribute
-		-1,  // PrecisionAttribute
-		-1,  // MessageAttribute
-		337, // Range
-		-1,  // Number
-		-1,  // MathExpr
-		-1,  // AddSub
-		-1,  // MulDiv
-		-1,  // Pot
-		-1,  // Factor
-	},
-	gotoRow{ // S326
 		-1, // S'
 		-1, // Package
 		-1, // PackageName
@@ -11447,6 +11412,41 @@ var gotoTab = gotoTable{
 		-1, // ExportAsAttribute
 		-1, // PrecisionAttribute
 		-1, // MessageAttribute
+		-1, // Range
+		-1, // Number
+		-1, // MathExpr
+		-1, // AddSub
+		-1, // MulDiv
+		-1, // Pot
+		-1, // Factor
+	},
+	gotoRow{ // S326
+		-1, // S'
+		-1, // Package
+		-1, // PackageName
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarName
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		32, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		33, // Attribute
+		34, // RangeAttribute
+		35, // ExportAsAttribute
+		36, // PrecisionAttribute
+		37, // MessageAttribute
 		-1, // Range
 		-1, // Number
 		-1, // MathExpr
@@ -11482,13 +11482,13 @@ var gotoTab = gotoTable{
 		-1,  // ExportAsAttribute
 		-1,  // PrecisionAttribute
 		-1,  // MessageAttribute
-		-1,  // Range
-		342, // Number
-		341, // MathExpr
-		348, // AddSub
-		349, // MulDiv
-		350, // Pot
-		351, // Factor
+		338, // Range
+		-1,  // Number
+		-1,  // MathExpr
+		-1,  // AddSub
+		-1,  // MulDiv
+		-1,  // Pot
+		-1,  // Factor
 	},
 	gotoRow{ // S328
 		-1, // S'
@@ -11526,39 +11526,39 @@ var gotoTab = gotoTable{
 		-1, // Factor
 	},
 	gotoRow{ // S329
-		-1, // S'
-		-1, // Package
-		-1, // PackageName
-		-1, // PackageBody
-		-1, // PackageElement
-		-1, // Import
-		-1, // ClassDef
-		-1, // StructDef
-		-1, // EnumDef
-		-1, // GenericType
-		-1, // Type
-		-1, // VarName
-		-1, // VarDecl
-		-1, // MultiVarDecl
-		-1, // StructBody
-		-1, // EnumBody
-		-1, // AttributeGroup
-		-1, // AttributeGroupBody
-		-1, // AttributeGroupElement
-		-1, // SingleAttribute
-		-1, // Attributes
-		-1, // Attribute
-		-1, // RangeAttribute
-		-1, // ExportAsAttribute
-		-1, // PrecisionAttribute
-		-1, // MessageAttribute
-		-1, // Range
-		-1, // Number
-		-1, // MathExpr
-		-1, // AddSub
-		-1, // MulDiv
-		-1, // Pot
-		-1, // Factor
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarName
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		343, // Number
+		342, // MathExpr
+		349, // AddSub
+		350, // MulDiv
+		351, // Pot
+		352, // Factor
 	},
 	gotoRow{ // S330
 		-1, // S'
@@ -11771,41 +11771,6 @@ var gotoTab = gotoTable{
 		-1, // Factor
 	},
 	gotoRow{ // S336
-		-1,  // S'
-		-1,  // Package
-		-1,  // PackageName
-		-1,  // PackageBody
-		-1,  // PackageElement
-		-1,  // Import
-		-1,  // ClassDef
-		-1,  // StructDef
-		-1,  // EnumDef
-		-1,  // GenericType
-		-1,  // Type
-		-1,  // VarName
-		-1,  // VarDecl
-		-1,  // MultiVarDecl
-		-1,  // StructBody
-		-1,  // EnumBody
-		-1,  // AttributeGroup
-		-1,  // AttributeGroupBody
-		-1,  // AttributeGroupElement
-		-1,  // SingleAttribute
-		-1,  // Attributes
-		-1,  // Attribute
-		-1,  // RangeAttribute
-		-1,  // ExportAsAttribute
-		-1,  // PrecisionAttribute
-		-1,  // MessageAttribute
-		-1,  // Range
-		73,  // Number
-		354, // MathExpr
-		79,  // AddSub
-		80,  // MulDiv
-		81,  // Pot
-		82,  // Factor
-	},
-	gotoRow{ // S337
 		-1, // S'
 		-1, // Package
 		-1, // PackageName
@@ -11840,7 +11805,7 @@ var gotoTab = gotoTable{
 		-1, // Pot
 		-1, // Factor
 	},
-	gotoRow{ // S338
+	gotoRow{ // S337
 		-1,  // S'
 		-1,  // Package
 		-1,  // PackageName
@@ -11875,7 +11840,7 @@ var gotoTab = gotoTable{
 		81,  // Pot
 		82,  // Factor
 	},
-	gotoRow{ // S339
+	gotoRow{ // S338
 		-1, // S'
 		-1, // Package
 		-1, // PackageName
@@ -11909,6 +11874,41 @@ var gotoTab = gotoTable{
 		-1, // MulDiv
 		-1, // Pot
 		-1, // Factor
+	},
+	gotoRow{ // S339
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarName
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		73,  // Number
+		356, // MathExpr
+		79,  // AddSub
+		80,  // MulDiv
+		81,  // Pot
+		82,  // Factor
 	},
 	gotoRow{ // S340
 		-1, // S'
@@ -12331,39 +12331,39 @@ var gotoTab = gotoTable{
 		-1, // Factor
 	},
 	gotoRow{ // S352
-		-1,  // S'
-		-1,  // Package
-		-1,  // PackageName
-		-1,  // PackageBody
-		-1,  // PackageElement
-		-1,  // Import
-		-1,  // ClassDef
-		-1,  // StructDef
-		-1,  // EnumDef
-		-1,  // GenericType
-		-1,  // Type
-		-1,  // VarName
-		-1,  // VarDecl
-		-1,  // MultiVarDecl
-		-1,  // StructBody
-		-1,  // EnumBody
-		-1,  // AttributeGroup
-		-1,  // AttributeGroupBody
-		-1,  // AttributeGroupElement
-		-1,  // SingleAttribute
-		-1,  // Attributes
-		-1,  // Attribute
-		-1,  // RangeAttribute
-		-1,  // ExportAsAttribute
-		-1,  // PrecisionAttribute
-		-1,  // MessageAttribute
-		-1,  // Range
-		93,  // Number
-		-1,  // MathExpr
-		362, // AddSub
-		100, // MulDiv
-		101, // Pot
-		102, // Factor
+		-1, // S'
+		-1, // Package
+		-1, // PackageName
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarName
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // PrecisionAttribute
+		-1, // MessageAttribute
+		-1, // Range
+		-1, // Number
+		-1, // MathExpr
+		-1, // AddSub
+		-1, // MulDiv
+		-1, // Pot
+		-1, // Factor
 	},
 	gotoRow{ // S353
 		-1,  // S'
@@ -12401,39 +12401,39 @@ var gotoTab = gotoTable{
 		102, // Factor
 	},
 	gotoRow{ // S354
-		-1, // S'
-		-1, // Package
-		-1, // PackageName
-		-1, // PackageBody
-		-1, // PackageElement
-		-1, // Import
-		-1, // ClassDef
-		-1, // StructDef
-		-1, // EnumDef
-		-1, // GenericType
-		-1, // Type
-		-1, // VarName
-		-1, // VarDecl
-		-1, // MultiVarDecl
-		-1, // StructBody
-		-1, // EnumBody
-		-1, // AttributeGroup
-		-1, // AttributeGroupBody
-		-1, // AttributeGroupElement
-		-1, // SingleAttribute
-		-1, // Attributes
-		-1, // Attribute
-		-1, // RangeAttribute
-		-1, // ExportAsAttribute
-		-1, // PrecisionAttribute
-		-1, // MessageAttribute
-		-1, // Range
-		-1, // Number
-		-1, // MathExpr
-		-1, // AddSub
-		-1, // MulDiv
-		-1, // Pot
-		-1, // Factor
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarName
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		93,  // Number
+		-1,  // MathExpr
+		364, // AddSub
+		100, // MulDiv
+		101, // Pot
+		102, // Factor
 	},
 	gotoRow{ // S355
 		-1, // S'
@@ -12506,181 +12506,6 @@ var gotoTab = gotoTable{
 		-1, // Factor
 	},
 	gotoRow{ // S357
-		-1,  // S'
-		-1,  // Package
-		-1,  // PackageName
-		-1,  // PackageBody
-		-1,  // PackageElement
-		-1,  // Import
-		-1,  // ClassDef
-		-1,  // StructDef
-		-1,  // EnumDef
-		-1,  // GenericType
-		-1,  // Type
-		-1,  // VarName
-		-1,  // VarDecl
-		-1,  // MultiVarDecl
-		-1,  // StructBody
-		-1,  // EnumBody
-		-1,  // AttributeGroup
-		-1,  // AttributeGroupBody
-		-1,  // AttributeGroupElement
-		-1,  // SingleAttribute
-		-1,  // Attributes
-		-1,  // Attribute
-		-1,  // RangeAttribute
-		-1,  // ExportAsAttribute
-		-1,  // PrecisionAttribute
-		-1,  // MessageAttribute
-		-1,  // Range
-		342, // Number
-		-1,  // MathExpr
-		366, // AddSub
-		367, // MulDiv
-		350, // Pot
-		351, // Factor
-	},
-	gotoRow{ // S358
-		-1,  // S'
-		-1,  // Package
-		-1,  // PackageName
-		-1,  // PackageBody
-		-1,  // PackageElement
-		-1,  // Import
-		-1,  // ClassDef
-		-1,  // StructDef
-		-1,  // EnumDef
-		-1,  // GenericType
-		-1,  // Type
-		-1,  // VarName
-		-1,  // VarDecl
-		-1,  // MultiVarDecl
-		-1,  // StructBody
-		-1,  // EnumBody
-		-1,  // AttributeGroup
-		-1,  // AttributeGroupBody
-		-1,  // AttributeGroupElement
-		-1,  // SingleAttribute
-		-1,  // Attributes
-		-1,  // Attribute
-		-1,  // RangeAttribute
-		-1,  // ExportAsAttribute
-		-1,  // PrecisionAttribute
-		-1,  // MessageAttribute
-		-1,  // Range
-		342, // Number
-		-1,  // MathExpr
-		366, // AddSub
-		368, // MulDiv
-		350, // Pot
-		351, // Factor
-	},
-	gotoRow{ // S359
-		-1,  // S'
-		-1,  // Package
-		-1,  // PackageName
-		-1,  // PackageBody
-		-1,  // PackageElement
-		-1,  // Import
-		-1,  // ClassDef
-		-1,  // StructDef
-		-1,  // EnumDef
-		-1,  // GenericType
-		-1,  // Type
-		-1,  // VarName
-		-1,  // VarDecl
-		-1,  // MultiVarDecl
-		-1,  // StructBody
-		-1,  // EnumBody
-		-1,  // AttributeGroup
-		-1,  // AttributeGroupBody
-		-1,  // AttributeGroupElement
-		-1,  // SingleAttribute
-		-1,  // Attributes
-		-1,  // Attribute
-		-1,  // RangeAttribute
-		-1,  // ExportAsAttribute
-		-1,  // PrecisionAttribute
-		-1,  // MessageAttribute
-		-1,  // Range
-		342, // Number
-		-1,  // MathExpr
-		366, // AddSub
-		349, // MulDiv
-		369, // Pot
-		351, // Factor
-	},
-	gotoRow{ // S360
-		-1,  // S'
-		-1,  // Package
-		-1,  // PackageName
-		-1,  // PackageBody
-		-1,  // PackageElement
-		-1,  // Import
-		-1,  // ClassDef
-		-1,  // StructDef
-		-1,  // EnumDef
-		-1,  // GenericType
-		-1,  // Type
-		-1,  // VarName
-		-1,  // VarDecl
-		-1,  // MultiVarDecl
-		-1,  // StructBody
-		-1,  // EnumBody
-		-1,  // AttributeGroup
-		-1,  // AttributeGroupBody
-		-1,  // AttributeGroupElement
-		-1,  // SingleAttribute
-		-1,  // Attributes
-		-1,  // Attribute
-		-1,  // RangeAttribute
-		-1,  // ExportAsAttribute
-		-1,  // PrecisionAttribute
-		-1,  // MessageAttribute
-		-1,  // Range
-		342, // Number
-		-1,  // MathExpr
-		366, // AddSub
-		349, // MulDiv
-		370, // Pot
-		351, // Factor
-	},
-	gotoRow{ // S361
-		-1,  // S'
-		-1,  // Package
-		-1,  // PackageName
-		-1,  // PackageBody
-		-1,  // PackageElement
-		-1,  // Import
-		-1,  // ClassDef
-		-1,  // StructDef
-		-1,  // EnumDef
-		-1,  // GenericType
-		-1,  // Type
-		-1,  // VarName
-		-1,  // VarDecl
-		-1,  // MultiVarDecl
-		-1,  // StructBody
-		-1,  // EnumBody
-		-1,  // AttributeGroup
-		-1,  // AttributeGroupBody
-		-1,  // AttributeGroupElement
-		-1,  // SingleAttribute
-		-1,  // Attributes
-		-1,  // Attribute
-		-1,  // RangeAttribute
-		-1,  // ExportAsAttribute
-		-1,  // PrecisionAttribute
-		-1,  // MessageAttribute
-		-1,  // Range
-		342, // Number
-		-1,  // MathExpr
-		366, // AddSub
-		349, // MulDiv
-		350, // Pot
-		371, // Factor
-	},
-	gotoRow{ // S362
 		-1, // S'
 		-1, // Package
 		-1, // PackageName
@@ -12714,6 +12539,181 @@ var gotoTab = gotoTable{
 		-1, // MulDiv
 		-1, // Pot
 		-1, // Factor
+	},
+	gotoRow{ // S358
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarName
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		343, // Number
+		-1,  // MathExpr
+		367, // AddSub
+		368, // MulDiv
+		351, // Pot
+		352, // Factor
+	},
+	gotoRow{ // S359
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarName
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		343, // Number
+		-1,  // MathExpr
+		367, // AddSub
+		369, // MulDiv
+		351, // Pot
+		352, // Factor
+	},
+	gotoRow{ // S360
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarName
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		343, // Number
+		-1,  // MathExpr
+		367, // AddSub
+		350, // MulDiv
+		370, // Pot
+		352, // Factor
+	},
+	gotoRow{ // S361
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarName
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		343, // Number
+		-1,  // MathExpr
+		367, // AddSub
+		350, // MulDiv
+		371, // Pot
+		352, // Factor
+	},
+	gotoRow{ // S362
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarName
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		343, // Number
+		-1,  // MathExpr
+		367, // AddSub
+		350, // MulDiv
+		351, // Pot
+		372, // Factor
 	},
 	gotoRow{ // S363
 		-1, // S'
@@ -12751,39 +12751,39 @@ var gotoTab = gotoTable{
 		-1, // Factor
 	},
 	gotoRow{ // S364
-		-1,  // S'
-		-1,  // Package
-		-1,  // PackageName
-		-1,  // PackageBody
-		-1,  // PackageElement
-		-1,  // Import
-		-1,  // ClassDef
-		-1,  // StructDef
-		-1,  // EnumDef
-		-1,  // GenericType
-		-1,  // Type
-		-1,  // VarName
-		-1,  // VarDecl
-		-1,  // MultiVarDecl
-		-1,  // StructBody
-		-1,  // EnumBody
-		-1,  // AttributeGroup
-		-1,  // AttributeGroupBody
-		-1,  // AttributeGroupElement
-		-1,  // SingleAttribute
-		-1,  // Attributes
-		-1,  // Attribute
-		-1,  // RangeAttribute
-		-1,  // ExportAsAttribute
-		-1,  // PrecisionAttribute
-		-1,  // MessageAttribute
-		-1,  // Range
-		164, // Number
-		374, // MathExpr
-		170, // AddSub
-		171, // MulDiv
-		172, // Pot
-		173, // Factor
+		-1, // S'
+		-1, // Package
+		-1, // PackageName
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarName
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // PrecisionAttribute
+		-1, // MessageAttribute
+		-1, // Range
+		-1, // Number
+		-1, // MathExpr
+		-1, // AddSub
+		-1, // MulDiv
+		-1, // Pot
+		-1, // Factor
 	},
 	gotoRow{ // S365
 		-1,  // S'
@@ -12821,39 +12821,39 @@ var gotoTab = gotoTable{
 		173, // Factor
 	},
 	gotoRow{ // S366
-		-1, // S'
-		-1, // Package
-		-1, // PackageName
-		-1, // PackageBody
-		-1, // PackageElement
-		-1, // Import
-		-1, // ClassDef
-		-1, // StructDef
-		-1, // EnumDef
-		-1, // GenericType
-		-1, // Type
-		-1, // VarName
-		-1, // VarDecl
-		-1, // MultiVarDecl
-		-1, // StructBody
-		-1, // EnumBody
-		-1, // AttributeGroup
-		-1, // AttributeGroupBody
-		-1, // AttributeGroupElement
-		-1, // SingleAttribute
-		-1, // Attributes
-		-1, // Attribute
-		-1, // RangeAttribute
-		-1, // ExportAsAttribute
-		-1, // PrecisionAttribute
-		-1, // MessageAttribute
-		-1, // Range
-		-1, // Number
-		-1, // MathExpr
-		-1, // AddSub
-		-1, // MulDiv
-		-1, // Pot
-		-1, // Factor
+		-1,  // S'
+		-1,  // Package
+		-1,  // PackageName
+		-1,  // PackageBody
+		-1,  // PackageElement
+		-1,  // Import
+		-1,  // ClassDef
+		-1,  // StructDef
+		-1,  // EnumDef
+		-1,  // GenericType
+		-1,  // Type
+		-1,  // VarName
+		-1,  // VarDecl
+		-1,  // MultiVarDecl
+		-1,  // StructBody
+		-1,  // EnumBody
+		-1,  // AttributeGroup
+		-1,  // AttributeGroupBody
+		-1,  // AttributeGroupElement
+		-1,  // SingleAttribute
+		-1,  // Attributes
+		-1,  // Attribute
+		-1,  // RangeAttribute
+		-1,  // ExportAsAttribute
+		-1,  // PrecisionAttribute
+		-1,  // MessageAttribute
+		-1,  // Range
+		164, // Number
+		376, // MathExpr
+		170, // AddSub
+		171, // MulDiv
+		172, // Pot
+		173, // Factor
 	},
 	gotoRow{ // S367
 		-1, // S'
@@ -13276,6 +13276,41 @@ var gotoTab = gotoTable{
 		-1, // Factor
 	},
 	gotoRow{ // S379
+		-1, // S'
+		-1, // Package
+		-1, // PackageName
+		-1, // PackageBody
+		-1, // PackageElement
+		-1, // Import
+		-1, // ClassDef
+		-1, // StructDef
+		-1, // EnumDef
+		-1, // GenericType
+		-1, // Type
+		-1, // VarName
+		-1, // VarDecl
+		-1, // MultiVarDecl
+		-1, // StructBody
+		-1, // EnumBody
+		-1, // AttributeGroup
+		-1, // AttributeGroupBody
+		-1, // AttributeGroupElement
+		-1, // SingleAttribute
+		-1, // Attributes
+		-1, // Attribute
+		-1, // RangeAttribute
+		-1, // ExportAsAttribute
+		-1, // PrecisionAttribute
+		-1, // MessageAttribute
+		-1, // Range
+		-1, // Number
+		-1, // MathExpr
+		-1, // AddSub
+		-1, // MulDiv
+		-1, // Pot
+		-1, // Factor
+	},
+	gotoRow{ // S380
 		-1, // S'
 		-1, // Package
 		-1, // PackageName

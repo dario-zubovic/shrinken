@@ -3,3 +3,7 @@ package test.pkg1
 class Class1 {
     int variable1, variable2
 }
+
+class Class2 : test.pkg2.Class1 {
+    int variable2
+}

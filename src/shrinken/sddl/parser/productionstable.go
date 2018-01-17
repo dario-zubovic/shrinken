@@ -143,7 +143,7 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `ClassDef : Attributes "class" letters ":" letters "{" StructBody "}"	<< ast.NewDerivedClassDef(X[2], X[4], X[6], X[0]), nil >>`,
+		String: `ClassDef : Attributes "class" letters ":" VarName "{" StructBody "}"	<< ast.NewDerivedClassDef(X[2], X[4], X[6], X[0]), nil >>`,
 		Id:         "ClassDef",
 		NTType:     6,
 		Index:      12,
@@ -163,7 +163,7 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `StructDef : Attributes "struct" letters ":" letters "{" StructBody "}"	<< ast.NewDerivedStructDef(X[2], X[4], X[6], X[0]), nil >>`,
+		String: `StructDef : Attributes "struct" letters ":" VarName "{" StructBody "}"	<< ast.NewDerivedStructDef(X[2], X[4], X[6], X[0]), nil >>`,
 		Id:         "StructDef",
 		NTType:     7,
 		Index:      14,
@@ -383,23 +383,23 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `VarName : letters	<< ast.NewVariableName(X[0], nil), nil >>`,
+		String: `VarName : letters	<< ast.NewVariableName(X[0]), nil >>`,
 		Id:         "VarName",
 		NTType:     11,
 		Index:      36,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewVariableName(X[0], nil), nil
+			return ast.NewVariableName(X[0]), nil
 		},
 	},
 	ProdTabEntry{
-		String: `VarName : PackageName "." letters	<< ast.NewVariableName(X[0], X[2]), nil >>`,
+		String: `VarName : PackageName	<< ast.NewVariableNameFromPkg(X[0]), nil >>`,
 		Id:         "VarName",
 		NTType:     11,
 		Index:      37,
-		NumSymbols: 3,
+		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewVariableName(X[0], X[2]), nil
+			return ast.NewVariableNameFromPkg(X[0]), nil
 		},
 	},
 	ProdTabEntry{

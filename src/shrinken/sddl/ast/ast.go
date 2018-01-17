@@ -3,6 +3,7 @@ package ast
 import (
 	"fmt"
 	"math"
+	"strings"
 )
 
 type ASTNode interface {
@@ -35,7 +36,7 @@ type PackageElement interface {
 type StructDef struct {
 	PackageElement
 	IsClass        bool
-	Overrides      string // == "" if not overriding anything
+	Overrides      *TypeName // == "" if not overriding anything
 	Name           string
 	Body           *StructBody
 	AttributesList []Attribute
@@ -89,7 +90,7 @@ const (
 	Double
 )
 
-type VariableName struct {
+type TypeName struct {
 	Name    string
 	Package string
 }
@@ -97,13 +98,13 @@ type VariableName struct {
 type Variable struct {
 	ASTNode
 	Type           *Type
-	Name           *VariableName
+	Name           *TypeName
 	AttributesList []Attribute
 }
 
 type MultiVariable struct {
 	Type           *Type
-	Names          []*VariableName
+	Names          []*TypeName
 	AttributesList []Attribute
 }
 
@@ -164,7 +165,7 @@ func NewImport(importName interface{}, attributesList interface{}) *ImportDef {
 func NewClassDef(name interface{}, body interface{}, attributesList interface{}) *StructDef {
 	def := &StructDef{
 		IsClass:   true,
-		Overrides: "",
+		Overrides: nil,
 		Name:      toStr(name),
 		Body:      body.(*StructBody),
 	}
@@ -175,7 +176,7 @@ func NewClassDef(name interface{}, body interface{}, attributesList interface{})
 func NewDerivedClassDef(name interface{}, overrides interface{}, body interface{}, attributesList interface{}) *StructDef {
 	def := &StructDef{
 		IsClass:   true,
-		Overrides: toStr(overrides),
+		Overrides: overrides.(*TypeName),
 		Name:      toStr(name),
 		Body:      body.(*StructBody),
 	}
@@ -186,7 +187,7 @@ func NewDerivedClassDef(name interface{}, overrides interface{}, body interface{
 func NewStructDef(name interface{}, body interface{}, attributesList interface{}) *StructDef {
 	def := &StructDef{
 		IsClass:   false,
-		Overrides: "",
+		Overrides: nil,
 		Name:      toStr(name),
 		Body:      body.(*StructBody),
 	}
@@ -197,7 +198,7 @@ func NewStructDef(name interface{}, body interface{}, attributesList interface{}
 func NewDerivedStructDef(name interface{}, overrides interface{}, body interface{}, attributesList interface{}) *StructDef {
 	def := &StructDef{
 		IsClass:   false,
-		Overrides: toStr(overrides),
+		Overrides: overrides.(*TypeName),
 		Name:      toStr(name),
 		Body:      body.(*StructBody),
 	}
@@ -243,12 +244,21 @@ func NewArrayOfTypeWithSize(typeDef interface{}, size interface{}) *Type {
 	}
 }
 
-func NewVariableName(name interface{}, packageName interface{}) *VariableName {
-	varName := &VariableName{
+func NewVariableName(name interface{}) *TypeName {
+	varName := &TypeName{
 		Name: toStr(name),
 	}
-	if packageName != nil {
-		varName.Package = toStr(packageName)
+
+	return varName
+}
+
+func NewVariableNameFromPkg(n interface{}) *TypeName {
+	pieces := strings.Split(toStr(n), ".")
+	pkg := strings.Join(pieces[0:len(pieces)-1], ".")
+
+	varName := &TypeName{
+		Package: pkg,
+		Name:    pieces[len(pieces)-1],
 	}
 
 	return varName
@@ -257,7 +267,7 @@ func NewVariableName(name interface{}, packageName interface{}) *VariableName {
 func NewVariable(typeDef interface{}, name interface{}, attributesList interface{}) *Variable {
 	variable := &Variable{
 		Type: typeDef.(*Type),
-		Name: name.(*VariableName),
+		Name: name.(*TypeName),
 	}
 	variable.AttributesList = attributesList.([]Attribute)
 	return variable
@@ -266,17 +276,17 @@ func NewVariable(typeDef interface{}, name interface{}, attributesList interface
 func NewMultiVariable(typeDef interface{}, firstName interface{}, secondName interface{}, attributesList interface{}) *MultiVariable {
 	variable := &MultiVariable{
 		Type:  typeDef.(*Type),
-		Names: make([]*VariableName, 2),
+		Names: make([]*TypeName, 2),
 	}
-	variable.Names[0] = firstName.(*VariableName)
-	variable.Names[1] = secondName.(*VariableName)
+	variable.Names[0] = firstName.(*TypeName)
+	variable.Names[1] = secondName.(*TypeName)
 	variable.AttributesList = attributesList.([]Attribute)
 	return variable
 }
 
 func AddToMultiVariable(multiVariable interface{}, newName interface{}) *MultiVariable {
 	multiVar := multiVariable.(*MultiVariable)
-	multiVar.Names = append(multiVar.Names, newName.(*VariableName))
+	multiVar.Names = append(multiVar.Names, newName.(*TypeName))
 	return multiVar
 }
 
