@@ -13,7 +13,7 @@ type Visitor interface {
 	VisitEnumBody(enumBody *EnumBody)
 	VisitVariable(v *Variable)
 	VisitEnumeral(e *Enumeral)
-	VisitType(t *Type)
+	VisitVariableType(t *VariableType)
 
 	VisitAttribute(attb Attribute)
 }
@@ -46,8 +46,8 @@ func (enumBody *EnumBody) Accept(visitor Visitor) {
 	visitor.VisitEnumBody(enumBody)
 }
 
-func (t *Type) Accept(visitor Visitor) {
-	visitor.VisitType(t)
+func (t *VariableType) Accept(visitor Visitor) {
+	visitor.VisitVariableType(t)
 }
 
 func (v *Variable) Accept(visitor Visitor) {

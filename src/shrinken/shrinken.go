@@ -34,7 +34,14 @@ func main() {
 
 	if opts["print-ast"] != nil {
 		path, _ := opts.String("<path>")
-		dbgvisitor.PrintAST(path)
+
+		r, err := sddl.ParseMergeAndValidate(path)
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+
+		dbgvisitor.PrintASTs(r)
 	} else {
 		path, _ := opts.String("<path>")
 		outputPath, _ := opts.String("<output-path>")

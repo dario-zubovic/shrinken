@@ -68,6 +68,10 @@ func TestDuplicateDefinition(t *testing.T) {
 	testFileForValidatorErrors(t, "test_data/single_file/double_definition.sddl", false)
 }
 
+func TestVariableHiding(t *testing.T) {
+	testFileForValidatorErrors(t, "test_data/single_file/variable_hiding.sddl", false)
+}
+
 func TestRangeAttribute(t *testing.T) {
 	testForValidatorErrors(t, `package test
 

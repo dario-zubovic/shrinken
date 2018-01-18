@@ -14,7 +14,7 @@ import (
 //go:generate ../../../bin/gocc -a SDDL.bnf
 
 type SDDLParsed struct {
-	packages []*ast.PackageDef
+	Packages []*ast.PackageDef
 }
 
 func ParseMergeAndValidate(filename string) (*SDDLParsed, error) {
@@ -25,7 +25,7 @@ func ParseMergeAndValidate(filename string) (*SDDLParsed, error) {
 
 	Merge(parsed)
 
-	warnings, err := validator.Validate(parsed.packages)
+	warnings, err := validator.Validate(parsed.Packages)
 	if err != nil {
 		return nil, err
 	}
@@ -52,7 +52,7 @@ func ParseFileOrDirectory(filename string) (*SDDLParsed, error) {
 	}
 
 	parsed := &SDDLParsed{
-		packages: make([]*ast.PackageDef, 0),
+		Packages: make([]*ast.PackageDef, 0),
 	}
 
 	if stat.IsDir() {
@@ -79,7 +79,7 @@ func ParseDirectory(filename string) (*SDDLParsed, error) {
 	}
 
 	parsed := &SDDLParsed{
-		packages: make([]*ast.PackageDef, 0),
+		Packages: make([]*ast.PackageDef, 0),
 	}
 	return parsed, parseDirectory(file, parsed)
 }
@@ -101,7 +101,7 @@ func ParseFile(filename string) (*SDDLParsed, error) {
 	}
 
 	parsed := &SDDLParsed{
-		packages: make([]*ast.PackageDef, 0),
+		Packages: make([]*ast.PackageDef, 0),
 	}
 	return parsed, parseFile(filename, parsed)
 }
@@ -149,7 +149,7 @@ func parseFile(filename string, parsedList *SDDLParsed) error {
 		return err
 	}
 
-	parsedList.packages = append(parsedList.packages, pkg.(*ast.PackageDef))
+	parsedList.Packages = append(parsedList.Packages, pkg.(*ast.PackageDef))
 
 	return nil
 }

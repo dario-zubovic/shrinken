@@ -2,11 +2,8 @@ package dbgvisitor
 
 import (
 	"fmt"
-	"io/ioutil"
-	"os"
+	"shrinken/sddl"
 	"shrinken/sddl/ast"
-	"shrinken/sddl/lexer"
-	"shrinken/sddl/parser"
 	"strconv"
 )
 
@@ -122,7 +119,7 @@ func (v *Visitor) VisitEnumeral(e *ast.Enumeral) {
 	v.print("Enumeral:", e.Name)
 }
 
-func (v *Visitor) VisitType(t *ast.Type) {
+func (v *Visitor) VisitVariableType(t *ast.VariableType) {
 	if t.IsGeneric {
 		v.print("Type (generic):", t.GenericType.String())
 	} else if t.IsArray {
@@ -145,24 +142,13 @@ func (v *Visitor) VisitAttribute(attb ast.Attribute) {
 	v.print("Attribute:", attb.String())
 }
 
-func PrintAST(path string) {
-	file, err := ioutil.ReadFile(path)
-	if err != nil {
-		fmt.Fprintln(os.Stderr, "Error reading SDDL file!", err)
-		return
-	}
-
-	p := parser.NewParser()
-	lex := lexer.NewLexer(file)
-
-	r, err := p.Parse(lex)
-	if err != nil {
-		fmt.Fprintln(os.Stderr, "Error parsing SDDL file!", err)
-		return
-	}
-
+func PrintAST(pkg *ast.PackageDef) {
 	debugVisitor := &Visitor{}
-
-	pkg := r.(*ast.PackageDef)
 	pkg.Accept(debugVisitor)
+}
+
+func PrintASTs(pkgs *sddl.SDDLParsed) {
+	for _, pkg := range pkgs.Packages {
+		PrintAST(pkg)
+	}
 }

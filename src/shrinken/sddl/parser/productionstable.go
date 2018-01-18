@@ -143,7 +143,7 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `ClassDef : Attributes "class" letters ":" VarName "{" StructBody "}"	<< ast.NewDerivedClassDef(X[2], X[4], X[6], X[0]), nil >>`,
+		String: `ClassDef : Attributes "class" letters ":" TypeName "{" StructBody "}"	<< ast.NewDerivedClassDef(X[2], X[4], X[6], X[0]), nil >>`,
 		Id:         "ClassDef",
 		NTType:     6,
 		Index:      12,
@@ -163,7 +163,7 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `StructDef : Attributes "struct" letters ":" VarName "{" StructBody "}"	<< ast.NewDerivedStructDef(X[2], X[4], X[6], X[0]), nil >>`,
+		String: `StructDef : Attributes "struct" letters ":" TypeName "{" StructBody "}"	<< ast.NewDerivedStructDef(X[2], X[4], X[6], X[0]), nil >>`,
 		Id:         "StructDef",
 		NTType:     7,
 		Index:      14,
@@ -383,27 +383,27 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `VarName : letters	<< ast.NewVariableName(X[0]), nil >>`,
-		Id:         "VarName",
+		String: `TypeName : letters	<< ast.NewTypeName(X[0]), nil >>`,
+		Id:         "TypeName",
 		NTType:     11,
 		Index:      36,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewVariableName(X[0]), nil
+			return ast.NewTypeName(X[0]), nil
 		},
 	},
 	ProdTabEntry{
-		String: `VarName : PackageName	<< ast.NewVariableNameFromPkg(X[0]), nil >>`,
-		Id:         "VarName",
+		String: `TypeName : PackageName	<< ast.NewTypeName(X[0]), nil >>`,
+		Id:         "TypeName",
 		NTType:     11,
 		Index:      37,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewVariableNameFromPkg(X[0]), nil
+			return ast.NewTypeName(X[0]), nil
 		},
 	},
 	ProdTabEntry{
-		String: `VarDecl : Attributes Type VarName	<< ast.NewVariable(X[1], X[2], X[0]), nil >>`,
+		String: `VarDecl : Attributes Type letters	<< ast.NewVariable(X[1], X[2], X[0]), nil >>`,
 		Id:         "VarDecl",
 		NTType:     12,
 		Index:      38,
@@ -413,7 +413,7 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `MultiVarDecl : Attributes Type VarName "," VarName	<< ast.NewMultiVariable(X[1], X[2], X[4], X[0]), nil >>`,
+		String: `MultiVarDecl : Attributes Type letters "," letters	<< ast.NewMultiVariable(X[1], X[2], X[4], X[0]), nil >>`,
 		Id:         "MultiVarDecl",
 		NTType:     13,
 		Index:      39,
@@ -423,7 +423,7 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `MultiVarDecl : MultiVarDecl "," VarName	<< ast.AddToMultiVariable(X[0], X[2]), nil >>`,
+		String: `MultiVarDecl : MultiVarDecl "," letters	<< ast.AddToMultiVariable(X[0], X[2]), nil >>`,
 		Id:         "MultiVarDecl",
 		NTType:     13,
 		Index:      40,

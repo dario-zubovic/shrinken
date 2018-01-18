@@ -65,16 +65,12 @@ func (v *Validator) traversePackage(pkg *ast.PackageDef) {
 }
 
 func (v *Validator) validateTypes() error {
-	if len(v.declaredTypes) == 0 {
-		v.addWarning("Nothing declared in package " + v.packageName + ".")
-	} else {
-		// check for duplicate definitions
-		for i := 0; i < len(v.declaredTypes); i++ {
-			t := v.declaredTypes[i]
-			for n := i + 1; n < len(v.declaredTypes); n++ {
-				if v.declaredTypes[n] == t {
-					return fmt.Errorf("Package contains duplicate definition of type %v", t)
-				}
+	// check for duplicate definitions
+	for i := 0; i < len(v.declaredTypes); i++ {
+		t := v.declaredTypes[i]
+		for n := i + 1; n < len(v.declaredTypes); n++ {
+			if v.declaredTypes[n] == t {
+				return fmt.Errorf("Package contains duplicate definition of type %v", t)
 			}
 		}
 	}

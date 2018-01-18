@@ -1,0 +1,21 @@
+package test.package
+
+class Animals {
+    @ range: [0, 10]
+    int lovelyScore
+}
+
+class Dog : Animals {
+    @range: <2, 10]
+    int lovelyScore
+}
+
+class Cat : Animals {
+    @range: [7, 10]
+    int lovelyScore
+}
+
+class Shark : Animals {
+    @range: [0, 2]
+    int lovelyScore
+}

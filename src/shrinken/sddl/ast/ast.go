@@ -3,7 +3,6 @@ package ast
 import (
 	"fmt"
 	"math"
-	"strings"
 )
 
 type ASTNode interface {
@@ -33,10 +32,14 @@ type PackageElement interface {
 	ASTNode
 }
 
-type StructDef struct {
+type TypeDefinition interface {
 	PackageElement
+}
+
+type StructDef struct {
+	TypeDefinition
 	IsClass        bool
-	Overrides      *TypeName // == "" if not overriding anything
+	Overrides      string
 	Name           string
 	Body           *StructBody
 	AttributesList []Attribute
@@ -48,7 +51,7 @@ type StructBody struct {
 }
 
 type EnumDef struct {
-	PackageElement
+	TypeDefinition
 	Name           string
 	Body           *EnumBody
 	AttributesList []Attribute
@@ -59,14 +62,14 @@ type EnumBody struct {
 	Enumerals []*Enumeral
 }
 
-type Type struct {
+type VariableType struct {
 	ASTNode
 
 	IsGeneric   bool
 	GenericType GenericType
 
 	IsArray        bool
-	ArrayChildType *Type
+	ArrayChildType *VariableType
 	ArraySize      int // -1 to indicate that no size was specified
 
 	Name string
@@ -90,21 +93,16 @@ const (
 	Double
 )
 
-type TypeName struct {
-	Name    string
-	Package string
-}
-
 type Variable struct {
 	ASTNode
-	Type           *Type
-	Name           *TypeName
+	Type           *VariableType
+	Name           string
 	AttributesList []Attribute
 }
 
 type MultiVariable struct {
-	Type           *Type
-	Names          []*TypeName
+	Type           *VariableType
+	Names          []string
 	AttributesList []Attribute
 }
 
@@ -165,7 +163,7 @@ func NewImport(importName interface{}, attributesList interface{}) *ImportDef {
 func NewClassDef(name interface{}, body interface{}, attributesList interface{}) *StructDef {
 	def := &StructDef{
 		IsClass:   true,
-		Overrides: nil,
+		Overrides: "",
 		Name:      toStr(name),
 		Body:      body.(*StructBody),
 	}
@@ -176,7 +174,7 @@ func NewClassDef(name interface{}, body interface{}, attributesList interface{})
 func NewDerivedClassDef(name interface{}, overrides interface{}, body interface{}, attributesList interface{}) *StructDef {
 	def := &StructDef{
 		IsClass:   true,
-		Overrides: overrides.(*TypeName),
+		Overrides: overrides.(string),
 		Name:      toStr(name),
 		Body:      body.(*StructBody),
 	}
@@ -187,7 +185,7 @@ func NewDerivedClassDef(name interface{}, overrides interface{}, body interface{
 func NewStructDef(name interface{}, body interface{}, attributesList interface{}) *StructDef {
 	def := &StructDef{
 		IsClass:   false,
-		Overrides: nil,
+		Overrides: "",
 		Name:      toStr(name),
 		Body:      body.(*StructBody),
 	}
@@ -198,7 +196,7 @@ func NewStructDef(name interface{}, body interface{}, attributesList interface{}
 func NewDerivedStructDef(name interface{}, overrides interface{}, body interface{}, attributesList interface{}) *StructDef {
 	def := &StructDef{
 		IsClass:   false,
-		Overrides: overrides.(*TypeName),
+		Overrides: overrides.(string),
 		Name:      toStr(name),
 		Body:      body.(*StructBody),
 	}
@@ -215,59 +213,43 @@ func NewEnumDef(name interface{}, body interface{}, attributesList interface{}) 
 	return def
 }
 
-func NewGenericType(generic interface{}) *Type {
-	return &Type{
+func NewGenericType(generic interface{}) *VariableType {
+	return &VariableType{
 		IsGeneric:   true,
 		GenericType: generic.(GenericType),
 	}
 }
 
-func NewType(typeName interface{}) *Type {
-	return &Type{
+func NewType(typeName interface{}) *VariableType {
+	return &VariableType{
 		Name: toStr(typeName),
 	}
 }
 
-func NewArrayOfType(typeDef interface{}) *Type {
-	return &Type{
+func NewArrayOfType(typeDef interface{}) *VariableType {
+	return &VariableType{
 		IsArray:        true,
-		ArrayChildType: typeDef.(*Type),
+		ArrayChildType: typeDef.(*VariableType),
 		ArraySize:      -1,
 	}
 }
 
-func NewArrayOfTypeWithSize(typeDef interface{}, size interface{}) *Type {
-	return &Type{
+func NewArrayOfTypeWithSize(typeDef interface{}, size interface{}) *VariableType {
+	return &VariableType{
 		IsArray:        true,
-		ArrayChildType: typeDef.(*Type),
+		ArrayChildType: typeDef.(*VariableType),
 		ArraySize:      size.(int),
 	}
 }
 
-func NewVariableName(name interface{}) *TypeName {
-	varName := &TypeName{
-		Name: toStr(name),
-	}
-
-	return varName
-}
-
-func NewVariableNameFromPkg(n interface{}) *TypeName {
-	pieces := strings.Split(toStr(n), ".")
-	pkg := strings.Join(pieces[0:len(pieces)-1], ".")
-
-	varName := &TypeName{
-		Package: pkg,
-		Name:    pieces[len(pieces)-1],
-	}
-
-	return varName
+func NewTypeName(name interface{}) string {
+	return toStr(name)
 }
 
 func NewVariable(typeDef interface{}, name interface{}, attributesList interface{}) *Variable {
 	variable := &Variable{
-		Type: typeDef.(*Type),
-		Name: name.(*TypeName),
+		Type: typeDef.(*VariableType),
+		Name: toStr(name),
 	}
 	variable.AttributesList = attributesList.([]Attribute)
 	return variable
@@ -275,18 +257,18 @@ func NewVariable(typeDef interface{}, name interface{}, attributesList interface
 
 func NewMultiVariable(typeDef interface{}, firstName interface{}, secondName interface{}, attributesList interface{}) *MultiVariable {
 	variable := &MultiVariable{
-		Type:  typeDef.(*Type),
-		Names: make([]*TypeName, 2),
+		Type:  typeDef.(*VariableType),
+		Names: make([]string, 2),
 	}
-	variable.Names[0] = firstName.(*TypeName)
-	variable.Names[1] = secondName.(*TypeName)
+	variable.Names[0] = toStr(firstName)
+	variable.Names[1] = toStr(secondName)
 	variable.AttributesList = attributesList.([]Attribute)
 	return variable
 }
 
 func AddToMultiVariable(multiVariable interface{}, newName interface{}) *MultiVariable {
 	multiVar := multiVariable.(*MultiVariable)
-	multiVar.Names = append(multiVar.Names, newName.(*TypeName))
+	multiVar.Names = append(multiVar.Names, toStr(newName))
 	return multiVar
 }
 

@@ -61,8 +61,8 @@ func (v *validatorVisitor) VisitStructDef(s *ast.StructDef) {
 
 	v.addDeclaredType(s.Name)
 
-	if s.Overrides != nil {
-		v.addUsedTypeName(s.Overrides)
+	if s.Overrides != "" {
+		v.addUsedType(s.Overrides)
 	}
 
 	for _, attb := range s.AttributesList {
@@ -121,7 +121,7 @@ func (v *validatorVisitor) VisitEnumeral(e *ast.Enumeral) {
 
 }
 
-func (v *validatorVisitor) VisitType(t *ast.Type) {
+func (v *validatorVisitor) VisitVariableType(t *ast.VariableType) {
 	if t.IsGeneric {
 		return
 	}
@@ -160,13 +160,5 @@ func (v *validatorVisitor) addUsedType(name string) {
 		v.Validator.usedTypes = append(v.Validator.usedTypes, name)
 	} else {
 		v.Validator.usedTypes = append(v.Validator.usedTypes, v.Validator.packageName+"."+name)
-	}
-}
-
-func (v *validatorVisitor) addUsedTypeName(name *ast.TypeName) {
-	if name.Package == "" {
-		v.Validator.usedTypes = append(v.Validator.usedTypes, v.Validator.packageName+"."+name.Name)
-	} else {
-		v.Validator.usedTypes = append(v.Validator.usedTypes, name.Package+"."+name.Name)
 	}
 }
