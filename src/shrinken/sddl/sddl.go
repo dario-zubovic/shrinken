@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
+	"shrinken/sddl/analyzer"
 	"shrinken/sddl/ast"
 	"shrinken/sddl/lexer"
 	"shrinken/sddl/parser"
@@ -13,19 +14,24 @@ import (
 
 //go:generate ../../../bin/gocc -a SDDL.bnf
 
-type SDDLParsed struct {
+type SDDLTree struct {
 	Packages []*ast.PackageDef
 }
 
-func ParseMergeAndValidate(filename string) (*SDDLParsed, error) {
-	parsed, err := ParseFileOrDirectory(filename)
+func ParseMergeAnalyzeAndValidate(filename string) (*SDDLTree, error) {
+	tree, err := ParseFileOrDirectory(filename)
 	if err != nil {
 		return nil, err
 	}
 
-	Merge(parsed)
+	Merge(tree)
 
-	warnings, err := validator.Validate(parsed.Packages)
+	err = analyzer.Analyze(tree.Packages)
+	if err != nil {
+		return nil, err
+	}
+
+	warnings, err := validator.Validate(tree.Packages)
 	if err != nil {
 		return nil, err
 	}
@@ -36,10 +42,10 @@ func ParseMergeAndValidate(filename string) (*SDDLParsed, error) {
 		}
 	}
 
-	return parsed, nil
+	return tree, nil
 }
 
-func ParseFileOrDirectory(filename string) (*SDDLParsed, error) {
+func ParseFileOrDirectory(filename string) (*SDDLTree, error) {
 	file, err := os.Open(filename)
 	if err != nil {
 		return nil, err
@@ -51,7 +57,7 @@ func ParseFileOrDirectory(filename string) (*SDDLParsed, error) {
 		return nil, err
 	}
 
-	parsed := &SDDLParsed{
+	parsed := &SDDLTree{
 		Packages: make([]*ast.PackageDef, 0),
 	}
 
@@ -62,7 +68,7 @@ func ParseFileOrDirectory(filename string) (*SDDLParsed, error) {
 	return parsed, parseFile(filename, parsed)
 }
 
-func ParseDirectory(filename string) (*SDDLParsed, error) {
+func ParseDirectory(filename string) (*SDDLTree, error) {
 	file, err := os.Open(filename)
 	if err != nil {
 		return nil, err
@@ -78,13 +84,13 @@ func ParseDirectory(filename string) (*SDDLParsed, error) {
 		return nil, fmt.Errorf("ParseDirectory is only accepting directories")
 	}
 
-	parsed := &SDDLParsed{
+	parsed := &SDDLTree{
 		Packages: make([]*ast.PackageDef, 0),
 	}
 	return parsed, parseDirectory(file, parsed)
 }
 
-func ParseFile(filename string) (*SDDLParsed, error) {
+func ParseFile(filename string) (*SDDLTree, error) {
 	file, err := os.Open(filename)
 	if err != nil {
 		return nil, err
@@ -100,13 +106,13 @@ func ParseFile(filename string) (*SDDLParsed, error) {
 		return nil, fmt.Errorf("ParseFile is only accepting files")
 	}
 
-	parsed := &SDDLParsed{
+	parsed := &SDDLTree{
 		Packages: make([]*ast.PackageDef, 0),
 	}
 	return parsed, parseFile(filename, parsed)
 }
 
-func parseDirectory(file *os.File, parsedList *SDDLParsed) error {
+func parseDirectory(file *os.File, parsedList *SDDLTree) error {
 	infos, err := file.Readdir(-1)
 	if err != nil {
 		return err
@@ -135,7 +141,7 @@ func parseDirectory(file *os.File, parsedList *SDDLParsed) error {
 	return nil
 }
 
-func parseFile(filename string, parsedList *SDDLParsed) error {
+func parseFile(filename string, parsedList *SDDLTree) error {
 	file, err := ioutil.ReadFile(filename)
 	if err != nil {
 		return err

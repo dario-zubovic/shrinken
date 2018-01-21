@@ -3,6 +3,7 @@ package ast
 import (
 	"fmt"
 	"math"
+	"shrinken/sddl/token"
 )
 
 type ASTNode interface {
@@ -14,6 +15,7 @@ type PackageDef struct {
 	Name           string
 	Body           *PackageBody
 	AttributesList []Attribute
+	Position       token.Pos
 }
 
 type PackageBody struct {
@@ -26,6 +28,7 @@ type ImportDef struct {
 	ASTNode
 	ImportedName   string
 	AttributesList []Attribute
+	Position       token.Pos
 }
 
 type PackageElement interface {
@@ -38,11 +41,13 @@ type TypeDefinition interface {
 
 type StructDef struct {
 	TypeDefinition
-	IsClass        bool
-	Overrides      string
-	Name           string
-	Body           *StructBody
-	AttributesList []Attribute
+	IsClass          bool
+	Overrides        string
+	OverridesTypeDef TypeDefinition
+	Name             string
+	Body             *StructBody
+	AttributesList   []Attribute
+	Position         token.Pos
 }
 
 type StructBody struct {
@@ -55,6 +60,7 @@ type EnumDef struct {
 	Name           string
 	Body           *EnumBody
 	AttributesList []Attribute
+	Position       token.Pos
 }
 
 type EnumBody struct {
@@ -72,7 +78,8 @@ type VariableType struct {
 	ArrayChildType *VariableType
 	ArraySize      int // -1 to indicate that no size was specified
 
-	Name string
+	Name           string
+	TypeDefinition TypeDefinition
 }
 
 //go:generate stringer -type=GenericType
@@ -98,12 +105,14 @@ type Variable struct {
 	Type           *VariableType
 	Name           string
 	AttributesList []Attribute
+	Position       token.Pos
 }
 
 type MultiVariable struct {
 	Type           *VariableType
 	Names          []string
 	AttributesList []Attribute
+	Positions      []token.Pos
 }
 
 type Enumeral struct {
@@ -126,8 +135,9 @@ type Range struct {
 
 func NewPackageDef(packageName interface{}, packageBody interface{}, attributesList interface{}) *PackageDef {
 	def := &PackageDef{
-		Name: toStr(packageName),
-		Body: packageBody.(*PackageBody),
+		Name:     toStr(packageName),
+		Body:     packageBody.(*PackageBody),
+		Position: getTokenPos(packageName),
 	}
 	def.AttributesList = attributesList.([]Attribute)
 	return def
@@ -155,6 +165,7 @@ func AddToPackageBody(body interface{}, element interface{}) *PackageBody {
 func NewImport(importName interface{}, attributesList interface{}) *ImportDef {
 	def := &ImportDef{
 		ImportedName: ToStrUnquote(importName),
+		Position:     getTokenPos(importName),
 	}
 	def.AttributesList = attributesList.([]Attribute)
 	return def
@@ -166,6 +177,7 @@ func NewClassDef(name interface{}, body interface{}, attributesList interface{})
 		Overrides: "",
 		Name:      toStr(name),
 		Body:      body.(*StructBody),
+		Position:  getTokenPos(name),
 	}
 	def.AttributesList = attributesList.([]Attribute)
 	return def
@@ -177,6 +189,7 @@ func NewDerivedClassDef(name interface{}, overrides interface{}, body interface{
 		Overrides: overrides.(string),
 		Name:      toStr(name),
 		Body:      body.(*StructBody),
+		Position:  getTokenPos(name),
 	}
 	def.AttributesList = attributesList.([]Attribute)
 	return def
@@ -188,6 +201,7 @@ func NewStructDef(name interface{}, body interface{}, attributesList interface{}
 		Overrides: "",
 		Name:      toStr(name),
 		Body:      body.(*StructBody),
+		Position:  getTokenPos(name),
 	}
 	def.AttributesList = attributesList.([]Attribute)
 	return def
@@ -199,6 +213,7 @@ func NewDerivedStructDef(name interface{}, overrides interface{}, body interface
 		Overrides: overrides.(string),
 		Name:      toStr(name),
 		Body:      body.(*StructBody),
+		Position:  getTokenPos(name),
 	}
 	def.AttributesList = attributesList.([]Attribute)
 	return def
@@ -206,8 +221,9 @@ func NewDerivedStructDef(name interface{}, overrides interface{}, body interface
 
 func NewEnumDef(name interface{}, body interface{}, attributesList interface{}) *EnumDef {
 	def := &EnumDef{
-		Name: toStr(name),
-		Body: body.(*EnumBody),
+		Name:     toStr(name),
+		Body:     body.(*EnumBody),
+		Position: getTokenPos(name),
 	}
 	def.AttributesList = attributesList.([]Attribute)
 	return def
@@ -248,8 +264,9 @@ func NewTypeName(name interface{}) string {
 
 func NewVariable(typeDef interface{}, name interface{}, attributesList interface{}) *Variable {
 	variable := &Variable{
-		Type: typeDef.(*VariableType),
-		Name: toStr(name),
+		Type:     typeDef.(*VariableType),
+		Name:     toStr(name),
+		Position: getTokenPos(name),
 	}
 	variable.AttributesList = attributesList.([]Attribute)
 	return variable
@@ -257,11 +274,14 @@ func NewVariable(typeDef interface{}, name interface{}, attributesList interface
 
 func NewMultiVariable(typeDef interface{}, firstName interface{}, secondName interface{}, attributesList interface{}) *MultiVariable {
 	variable := &MultiVariable{
-		Type:  typeDef.(*VariableType),
-		Names: make([]string, 2),
+		Type:      typeDef.(*VariableType),
+		Names:     make([]string, 2),
+		Positions: make([]token.Pos, 2),
 	}
 	variable.Names[0] = toStr(firstName)
+	variable.Positions[0] = getTokenPos(firstName)
 	variable.Names[1] = toStr(secondName)
+	variable.Positions[1] = getTokenPos(secondName)
 	variable.AttributesList = attributesList.([]Attribute)
 	return variable
 }
@@ -269,6 +289,7 @@ func NewMultiVariable(typeDef interface{}, firstName interface{}, secondName int
 func AddToMultiVariable(multiVariable interface{}, newName interface{}) *MultiVariable {
 	multiVar := multiVariable.(*MultiVariable)
 	multiVar.Names = append(multiVar.Names, toStr(newName))
+	multiVar.Positions = append(multiVar.Positions, getTokenPos(newName))
 	return multiVar
 }
 
@@ -287,11 +308,12 @@ func AddToStructBody(body interface{}, variable interface{}) *StructBody {
 func AddMultiVariableToStructBody(body interface{}, multiVariable interface{}) *StructBody {
 	b := body.(*StructBody)
 	multiVar := multiVariable.(*MultiVariable)
-	for _, varName := range multiVar.Names {
+	for i, varName := range multiVar.Names {
 		b.Variables = append(b.Variables, &Variable{
 			Type:           multiVar.Type,
 			AttributesList: multiVar.AttributesList,
 			Name:           varName,
+			Position:       multiVar.Positions[i],
 		})
 	}
 	return b

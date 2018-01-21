@@ -19,6 +19,8 @@ type Validator struct {
 	warnings []string
 }
 
+// TODO: remove validator package (everything from here can be done with static semantic analyzer)
+
 func Validate(packages []*ast.PackageDef) ([]string, error) {
 	validator := &Validator{}
 

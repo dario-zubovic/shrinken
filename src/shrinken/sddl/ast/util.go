@@ -9,6 +9,10 @@ func toStr(str interface{}) string {
 	return string(str.(*token.Token).Lit)
 }
 
+func getTokenPos(tok interface{}) token.Pos {
+	return tok.(*token.Token).Pos
+}
+
 func ToStrUnquote(str interface{}) string {
 	s := toStr(str)
 	return s[1 : len(s)-1]

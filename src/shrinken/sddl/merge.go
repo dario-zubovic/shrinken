@@ -2,14 +2,14 @@ package sddl
 
 import "shrinken/sddl/ast"
 
-func Merge(parsed *SDDLParsed) {
-	if len(parsed.Packages) < 2 {
+func Merge(tree *SDDLTree) {
+	if len(tree.Packages) < 2 {
 		return
 	}
 
 	newPkgs := make([]*ast.PackageDef, 0)
 
-	for _, pkg := range parsed.Packages {
+	for _, pkg := range tree.Packages {
 		merged := false
 		for _, newPkg := range newPkgs {
 			if newPkg.Name == pkg.Name {
@@ -23,7 +23,7 @@ func Merge(parsed *SDDLParsed) {
 		}
 	}
 
-	parsed.Packages = newPkgs
+	tree.Packages = newPkgs
 }
 
 func mergePackageDefs(original, other *ast.PackageDef) {
