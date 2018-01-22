@@ -42,7 +42,7 @@ func testFileForValidatorErrors(t *testing.T, filename string, expectedToBeValid
 }
 
 func testFolderForValidatorErrors(t *testing.T, filename string, expectedToBeValid bool) {
-	_, err := ParseMergeAndValidate(filename)
+	_, err := ParseMergeAndAnalyze(filename)
 	if (err == nil) != expectedToBeValid {
 		if expectedToBeValid {
 			t.Fatal("AST is not valid!", err)

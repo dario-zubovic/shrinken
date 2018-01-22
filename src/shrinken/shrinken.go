@@ -35,7 +35,7 @@ func main() {
 	if opts["print-ast"] != nil {
 		path, _ := opts.String("<path>")
 
-		r, err := sddl.ParseMergeAndValidate(path)
+		r, err := sddl.ParseMergeAndAnalyze(path)
 		if err != nil {
 			fmt.Println(err)
 			return
@@ -47,7 +47,7 @@ func main() {
 		outputPath, _ := opts.String("<output-path>")
 		lang, _ := opts.String("<lang>")
 
-		r, err := sddl.ParseMergeAndValidate(path)
+		r, err := sddl.ParseMergeAndAnalyze(path)
 		if err != nil {
 			fmt.Println(err)
 			return

@@ -4,6 +4,6 @@ import (
 	"shrinken/sddl"
 )
 
-func Generate(parsed *sddl.SDDLParsed, targetLang string, outputPath string) {
+func Generate(parsed *sddl.SDDLTree, targetLang string, outputPath string) {
 
 }

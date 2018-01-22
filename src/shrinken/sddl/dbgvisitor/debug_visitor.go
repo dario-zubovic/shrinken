@@ -13,6 +13,17 @@ type Visitor struct {
 	level int
 }
 
+func PrintAST(pkg *ast.PackageDef) {
+	debugVisitor := &Visitor{}
+	pkg.Accept(debugVisitor)
+}
+
+func PrintASTs(pkgs *sddl.SDDLTree) {
+	for _, pkg := range pkgs.Packages {
+		PrintAST(pkg)
+	}
+}
+
 func (v *Visitor) print(s ...interface{}) {
 	str := ""
 	for i := 0; i < v.level; i++ {
@@ -140,15 +151,4 @@ func (v *Visitor) VisitVariableType(t *ast.VariableType) {
 
 func (v *Visitor) VisitAttribute(attb ast.Attribute) {
 	v.print("Attribute:", attb.String())
-}
-
-func PrintAST(pkg *ast.PackageDef) {
-	debugVisitor := &Visitor{}
-	pkg.Accept(debugVisitor)
-}
-
-func PrintASTs(pkgs *sddl.SDDLParsed) {
-	for _, pkg := range pkgs.Packages {
-		PrintAST(pkg)
-	}
 }

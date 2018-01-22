@@ -18,7 +18,7 @@ type SDDLTree struct {
 	Packages []*ast.PackageDef
 }
 
-func ParseMergeAnalyzeAndValidate(filename string) (*SDDLTree, error) {
+func ParseMergeAndAnalyze(filename string) (*SDDLTree, error) {
 	tree, err := ParseFileOrDirectory(filename)
 	if err != nil {
 		return nil, err

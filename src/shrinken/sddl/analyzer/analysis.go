@@ -101,7 +101,11 @@ func (a *StaticAnalyzer) VisitStructDef(s *ast.StructDef) {
 		}
 		chain := make([]*ast.StructDef, 1)
 		chain[0] = s
-		err = a.checkStructInheritance(parent, def, chain)
+		variableNames := make([]string, len(s.Body.Variables))
+		for i, variable := range s.Body.Variables {
+			variableNames[i] = variable.Name
+		}
+		err = a.checkStructInheritance(parent, def, chain, variableNames)
 		if err != nil {
 			a.err = err
 			return
@@ -193,7 +197,7 @@ func (a *StaticAnalyzer) VisitAttribute(attb ast.Attribute) {
 
 }
 
-func (a *StaticAnalyzer) checkStructInheritance(parent, child *definedType, chain []*ast.StructDef) error {
+func (a *StaticAnalyzer) checkStructInheritance(parent, child *definedType, chain []*ast.StructDef, variableNames []string) error {
 	// in context of checkStructInheritance parent is struct that inherits from child - don't ask why :)
 
 	parentStruct := parent.typeDef.(*ast.StructDef)
@@ -211,6 +215,16 @@ func (a *StaticAnalyzer) checkStructInheritance(parent, child *definedType, chai
 			return fmt.Errorf("Class %v cannot extend struct %v on %v", parentStruct.Name, childStruct.Name, parentStruct.Position.String())
 		}
 		return fmt.Errorf("Struct %v cannot extend class %v on %v", parentStruct.Name, childStruct.Name, parentStruct.Position.String())
+	}
+
+	// check for inherited member hiding
+	for _, variable := range childStruct.Body.Variables {
+		for _, varName := range variableNames {
+			if varName == variable.Name {
+				return fmt.Errorf("Hiding inherited members is not allowed")
+			}
+		}
+		variableNames = append(variableNames, variable.Name)
 	}
 
 	// check for circular inheritance
@@ -235,7 +249,7 @@ func (a *StaticAnalyzer) checkStructInheritance(parent, child *definedType, chai
 		return err
 	}
 
-	err = a.checkStructInheritance(child, childsChild, chain)
+	err = a.checkStructInheritance(child, childsChild, chain, variableNames)
 	if err != nil {
 		return err
 	}
