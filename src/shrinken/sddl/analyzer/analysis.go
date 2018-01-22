@@ -8,7 +8,8 @@ import (
 )
 
 // semantic analysis of parsed AST(s)
-// we're basically just linking types here
+// we're basically just linking types, type checking,
+// inheritance checking and validating attributes
 
 type StaticAnalyzer struct {
 	ast.Visitor
@@ -48,6 +49,11 @@ func (a *StaticAnalyzer) Analyze(packages []*ast.PackageDef) error {
 func (a *StaticAnalyzer) VisitPackageDef(pkg *ast.PackageDef) {
 	a.currentPkg = pkg
 
+	a.validateAttributes(pkg, pkg.AttributesList)
+	if a.err != nil {
+		return
+	}
+
 	for _, attb := range pkg.AttributesList {
 		attb.Accept(a)
 	}
@@ -71,6 +77,11 @@ func (a *StaticAnalyzer) VisitPackageBody(body *ast.PackageBody) {
 }
 
 func (a *StaticAnalyzer) VisitImportDef(i *ast.ImportDef) {
+	a.validateAttributes(i, i.AttributesList)
+	if a.err != nil {
+		return
+	}
+
 	for _, attb := range i.AttributesList {
 		attb.Accept(a)
 	}
@@ -99,6 +110,11 @@ func (a *StaticAnalyzer) VisitStructDef(s *ast.StructDef) {
 		s.OverridesTypeDef = def.typeDef
 	}
 
+	a.validateAttributes(s, s.AttributesList)
+	if a.err != nil {
+		return
+	}
+
 	for _, attb := range s.AttributesList {
 		attb.Accept(a)
 	}
@@ -107,6 +123,11 @@ func (a *StaticAnalyzer) VisitStructDef(s *ast.StructDef) {
 }
 
 func (a *StaticAnalyzer) VisitEnumDef(enum *ast.EnumDef) {
+	a.validateAttributes(enum, enum.AttributesList)
+	if a.err != nil {
+		return
+	}
+
 	for _, attb := range enum.AttributesList {
 		attb.Accept(a)
 	}
@@ -132,6 +153,14 @@ func (a *StaticAnalyzer) VisitEnumBody(enumBody *ast.EnumBody) {
 func (a *StaticAnalyzer) VisitVariable(variable *ast.Variable) {
 	a.variablePos = variable.Position
 	variable.Type.Accept(a)
+	if a.err != nil {
+		return
+	}
+
+	a.validateAttributes(variable, variable.AttributesList)
+	if a.err != nil {
+		return
+	}
 
 	for _, attb := range variable.AttributesList {
 		attb.Accept(a)
@@ -212,4 +241,14 @@ func (a *StaticAnalyzer) checkStructInheritance(parent, child *definedType, chai
 	}
 
 	return nil
+}
+
+func (a *StaticAnalyzer) validateAttributes(node ast.ASTNode, attributes []ast.Attribute) {
+	for _, attb := range attributes {
+		valid, err := attb.IsApplicable(reflect.TypeOf(node), node)
+		if !valid {
+			a.err = err
+			return
+		}
+	}
 }
