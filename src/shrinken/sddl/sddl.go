@@ -9,7 +9,6 @@ import (
 	"shrinken/sddl/ast"
 	"shrinken/sddl/lexer"
 	"shrinken/sddl/parser"
-	"shrinken/sddl/validator"
 )
 
 //go:generate ../../../bin/gocc -a SDDL.bnf
@@ -29,17 +28,6 @@ func ParseMergeAndAnalyze(filename string) (*SDDLTree, error) {
 	err = analyzer.Analyze(tree.Packages)
 	if err != nil {
 		return nil, err
-	}
-
-	warnings, err := validator.Validate(tree.Packages)
-	if err != nil {
-		return nil, err
-	}
-
-	if warnings != nil {
-		for _, warning := range warnings {
-			fmt.Println(warning)
-		}
 	}
 
 	return tree, nil

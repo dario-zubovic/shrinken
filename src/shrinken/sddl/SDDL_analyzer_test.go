@@ -2,14 +2,14 @@ package sddl
 
 import (
 	"io/ioutil"
+	"shrinken/sddl/analyzer"
 	"shrinken/sddl/ast"
 	"shrinken/sddl/lexer"
 	"shrinken/sddl/parser"
-	"shrinken/sddl/validator"
 	"testing"
 )
 
-func testForValidatorErrors(t *testing.T, SDDL string, expectedToBeValid bool) {
+func testForAnalyzerErrors(t *testing.T, SDDL string, expectedToBeValid bool) {
 	lex := lexer.NewLexer([]byte(SDDL))
 	p := parser.NewParser()
 
@@ -19,8 +19,9 @@ func testForValidatorErrors(t *testing.T, SDDL string, expectedToBeValid bool) {
 		return
 	}
 
-	v := &validator.Validator{}
-	_, err = v.ValidateSinglePackage(rootNode.(*ast.PackageDef))
+	pkgs := make([]*ast.PackageDef, 1)
+	pkgs[0] = rootNode.(*ast.PackageDef)
+	err = analyzer.Analyze(pkgs)
 
 	if (err == nil) != expectedToBeValid {
 		if expectedToBeValid {
@@ -31,17 +32,17 @@ func testForValidatorErrors(t *testing.T, SDDL string, expectedToBeValid bool) {
 	}
 }
 
-func testFileForValidatorErrors(t *testing.T, filename string, expectedToBeValid bool) {
+func testFileForAnalyzerErrors(t *testing.T, filename string, expectedToBeValid bool) {
 	b, err := ioutil.ReadFile(filename)
 	if err != nil {
 		t.Error("Couldn't load testing SDDL file!", err)
 		return
 	}
 
-	testForValidatorErrors(t, string(b), expectedToBeValid)
+	testForAnalyzerErrors(t, string(b), expectedToBeValid)
 }
 
-func testFolderForValidatorErrors(t *testing.T, filename string, expectedToBeValid bool) {
+func testFolderForAnalyzerErrors(t *testing.T, filename string, expectedToBeValid bool) {
 	_, err := ParseMergeAndAnalyze(filename)
 	if (err == nil) != expectedToBeValid {
 		if expectedToBeValid {
@@ -53,27 +54,27 @@ func testFolderForValidatorErrors(t *testing.T, filename string, expectedToBeVal
 }
 
 func TestBasic(t *testing.T) {
-	testFileForValidatorErrors(t, "test_data/single_file/basic.sddl", true)
+	testFileForAnalyzerErrors(t, "test_data/single_file/basic.sddl", true)
 }
 
 func TestUnknownType(t *testing.T) {
-	testFileForValidatorErrors(t, "test_data/single_file/unknown_type.sddl", false)
+	testFileForAnalyzerErrors(t, "test_data/single_file/unknown_type.sddl", false)
 }
 
 func TestUnknownType2(t *testing.T) {
-	testFileForValidatorErrors(t, "test_data/single_file/unknown_extended_type.sddl", false)
+	testFileForAnalyzerErrors(t, "test_data/single_file/unknown_extended_type.sddl", false)
 }
 
 func TestDuplicateDefinition(t *testing.T) {
-	testFileForValidatorErrors(t, "test_data/single_file/double_definition.sddl", false)
+	testFileForAnalyzerErrors(t, "test_data/single_file/double_definition.sddl", false)
 }
 
 func TestVariableHiding(t *testing.T) {
-	testFileForValidatorErrors(t, "test_data/single_file/variable_hiding.sddl", false)
+	testFileForAnalyzerErrors(t, "test_data/single_file/variable_hiding.sddl", false)
 }
 
 func TestRangeAttribute(t *testing.T) {
-	testForValidatorErrors(t, `package test
+	testForAnalyzerErrors(t, `package test
 
 class Test {
 	@ range: [0.14, 4] 
@@ -81,7 +82,7 @@ class Test {
 }
 `, false)
 
-	testForValidatorErrors(t, `package test
+	testForAnalyzerErrors(t, `package test
 
 class Test {
 	@ range: [0.14, 4] 
@@ -91,5 +92,5 @@ class Test {
 }
 
 func TestSameNameClasses(t *testing.T) {
-	testFolderForValidatorErrors(t, "test_data/multipkg/same_name/", true)
+	testFolderForAnalyzerErrors(t, "test_data/multipkg/same_name/", true)
 }
