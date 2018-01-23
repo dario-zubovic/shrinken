@@ -91,6 +91,22 @@ class Test {
 `, true)
 }
 
+func TestCircularInheritance(t *testing.T) {
+	testFileForAnalyzerErrors(t, "test_data/single_file/circular_inheritance.sddl", false)
+}
+
+func TestCircularInheritanceChain(t *testing.T) {
+	testFileForAnalyzerErrors(t, "test_data/single_file/circular_inheritance_chain.sddl", false)
+}
+
+func TestClassExtendingStruct(t *testing.T) {
+	testFileForAnalyzerErrors(t, "test_data/single_file/class_extending_struct.sddl", false)
+}
+
+func TestStructExtendingClass(t *testing.T) {
+	testFileForAnalyzerErrors(t, "test_data/single_file/struct_extending_class.sddl", false)
+}
+
 func TestSameNameClasses(t *testing.T) {
 	testFolderForAnalyzerErrors(t, "test_data/multipkg/same_name/", true)
 }

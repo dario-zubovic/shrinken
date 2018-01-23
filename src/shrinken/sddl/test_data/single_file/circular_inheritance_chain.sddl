@@ -1,0 +1,17 @@
+package test.package
+
+class One : Two {
+    int test
+}
+
+class Two : Three {
+    int test2
+}
+
+class Three : Four {
+
+}
+
+class Four : One {
+    
+}

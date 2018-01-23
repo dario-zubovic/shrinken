@@ -1,0 +1,9 @@
+package test.package
+
+class One : Two {
+    int test
+}
+
+class Two : One {
+    int test2
+}

@@ -1,0 +1,9 @@
+package test.package
+
+class One : Two {
+    int test
+}
+
+struct Two {
+    int test2
+}

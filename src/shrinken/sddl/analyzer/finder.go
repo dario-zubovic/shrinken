@@ -7,9 +7,6 @@ import (
 	"strings"
 )
 
-// semantic analysis of parsed AST(s)
-// we're basically just linking types here
-
 type typeFinder struct {
 	ast.Visitor
 

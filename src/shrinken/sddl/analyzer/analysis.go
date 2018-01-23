@@ -11,7 +11,7 @@ import (
 // we're basically just linking types, type checking,
 // inheritance checking and validating attributes
 
-type StaticAnalyzer struct {
+type staticAnalyzer struct {
 	ast.Visitor
 
 	currentPkg  *ast.PackageDef
@@ -22,11 +22,11 @@ type StaticAnalyzer struct {
 }
 
 func Analyze(packages []*ast.PackageDef) error {
-	analyzer := &StaticAnalyzer{}
+	analyzer := &staticAnalyzer{}
 	return analyzer.Analyze(packages)
 }
 
-func (a *StaticAnalyzer) Analyze(packages []*ast.PackageDef) error {
+func (a *staticAnalyzer) Analyze(packages []*ast.PackageDef) error {
 	// first we're letting typeFinder to go through AST of each package
 	// to make a map of all type definitions
 
@@ -46,7 +46,7 @@ func (a *StaticAnalyzer) Analyze(packages []*ast.PackageDef) error {
 	return nil
 }
 
-func (a *StaticAnalyzer) VisitPackageDef(pkg *ast.PackageDef) {
+func (a *staticAnalyzer) VisitPackageDef(pkg *ast.PackageDef) {
 	a.currentPkg = pkg
 
 	a.validateAttributes(pkg, pkg.AttributesList)
@@ -60,7 +60,7 @@ func (a *StaticAnalyzer) VisitPackageDef(pkg *ast.PackageDef) {
 	pkg.Body.Accept(a)
 }
 
-func (a *StaticAnalyzer) VisitPackageBody(body *ast.PackageBody) {
+func (a *staticAnalyzer) VisitPackageBody(body *ast.PackageBody) {
 	for _, importDef := range body.Imports {
 		importDef.Accept(a)
 		if a.err != nil {
@@ -76,7 +76,7 @@ func (a *StaticAnalyzer) VisitPackageBody(body *ast.PackageBody) {
 	}
 }
 
-func (a *StaticAnalyzer) VisitImportDef(i *ast.ImportDef) {
+func (a *staticAnalyzer) VisitImportDef(i *ast.ImportDef) {
 	a.validateAttributes(i, i.AttributesList)
 	if a.err != nil {
 		return
@@ -87,7 +87,7 @@ func (a *StaticAnalyzer) VisitImportDef(i *ast.ImportDef) {
 	}
 }
 
-func (a *StaticAnalyzer) VisitStructDef(s *ast.StructDef) {
+func (a *staticAnalyzer) VisitStructDef(s *ast.StructDef) {
 	if s.Overrides != "" {
 		def, err := a.finder.FindType(s.Overrides, a.currentPkg.Name, s.Position)
 		if err != nil {
@@ -126,7 +126,7 @@ func (a *StaticAnalyzer) VisitStructDef(s *ast.StructDef) {
 	s.Body.Accept(a)
 }
 
-func (a *StaticAnalyzer) VisitEnumDef(enum *ast.EnumDef) {
+func (a *staticAnalyzer) VisitEnumDef(enum *ast.EnumDef) {
 	a.validateAttributes(enum, enum.AttributesList)
 	if a.err != nil {
 		return
@@ -139,7 +139,7 @@ func (a *StaticAnalyzer) VisitEnumDef(enum *ast.EnumDef) {
 	enum.Body.Accept(a)
 }
 
-func (a *StaticAnalyzer) VisitStructBody(structBody *ast.StructBody) {
+func (a *staticAnalyzer) VisitStructBody(structBody *ast.StructBody) {
 	for _, variable := range structBody.Variables {
 		variable.Accept(a)
 		if a.err != nil {
@@ -148,13 +148,13 @@ func (a *StaticAnalyzer) VisitStructBody(structBody *ast.StructBody) {
 	}
 }
 
-func (a *StaticAnalyzer) VisitEnumBody(enumBody *ast.EnumBody) {
+func (a *staticAnalyzer) VisitEnumBody(enumBody *ast.EnumBody) {
 	for _, e := range enumBody.Enumerals {
 		e.Accept(a)
 	}
 }
 
-func (a *StaticAnalyzer) VisitVariable(variable *ast.Variable) {
+func (a *staticAnalyzer) VisitVariable(variable *ast.Variable) {
 	a.variablePos = variable.Position
 	variable.Type.Accept(a)
 	if a.err != nil {
@@ -171,11 +171,11 @@ func (a *StaticAnalyzer) VisitVariable(variable *ast.Variable) {
 	}
 }
 
-func (a *StaticAnalyzer) VisitEnumeral(e *ast.Enumeral) {
+func (a *staticAnalyzer) VisitEnumeral(e *ast.Enumeral) {
 
 }
 
-func (a *StaticAnalyzer) VisitVariableType(t *ast.VariableType) {
+func (a *staticAnalyzer) VisitVariableType(t *ast.VariableType) {
 	if t.IsGeneric {
 		return
 	}
@@ -193,11 +193,11 @@ func (a *StaticAnalyzer) VisitVariableType(t *ast.VariableType) {
 	t.TypeDefinition = def.typeDef
 }
 
-func (a *StaticAnalyzer) VisitAttribute(attb ast.Attribute) {
+func (a *staticAnalyzer) VisitAttribute(attb ast.Attribute) {
 
 }
 
-func (a *StaticAnalyzer) checkStructInheritance(parent, child *definedType, chain []*ast.StructDef, variableNames []string) error {
+func (a *staticAnalyzer) checkStructInheritance(parent, child *definedType, chain []*ast.StructDef, variableNames []string) error {
 	// in context of checkStructInheritance parent is struct that inherits from child - don't ask why :)
 
 	parentStruct := parent.typeDef.(*ast.StructDef)
@@ -217,6 +217,20 @@ func (a *StaticAnalyzer) checkStructInheritance(parent, child *definedType, chai
 		return fmt.Errorf("Struct %v cannot extend class %v on %v", parentStruct.Name, childStruct.Name, parentStruct.Position.String())
 	}
 
+	// check for circular inheritance
+	chainStr := ""
+	circle := false
+	for _, c := range chain {
+		chainStr += c.Name + ", "
+		if c == childStruct {
+			circle = true
+		}
+	}
+	if circle {
+		chainStr += chain[0].Name
+		return fmt.Errorf("Circular inheritance detected (%v)", chainStr)
+	}
+
 	// check for inherited member hiding
 	for _, variable := range childStruct.Body.Variables {
 		for _, varName := range variableNames {
@@ -225,15 +239,6 @@ func (a *StaticAnalyzer) checkStructInheritance(parent, child *definedType, chai
 			}
 		}
 		variableNames = append(variableNames, variable.Name)
-	}
-
-	// check for circular inheritance
-	chainStr := ""
-	for _, c := range chain {
-		chainStr += c.Name + ", "
-		if c == childStruct {
-			return fmt.Errorf("Circular inheritance detected (%v)", chainStr)
-		}
 	}
 
 	if childStruct.Overrides == "" {
@@ -257,7 +262,7 @@ func (a *StaticAnalyzer) checkStructInheritance(parent, child *definedType, chai
 	return nil
 }
 
-func (a *StaticAnalyzer) validateAttributes(node ast.ASTNode, attributes []ast.Attribute) {
+func (a *staticAnalyzer) validateAttributes(node ast.ASTNode, attributes []ast.Attribute) {
 	for _, attb := range attributes {
 		valid, err := attb.IsApplicable(reflect.TypeOf(node), node)
 		if !valid {
