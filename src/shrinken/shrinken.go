@@ -32,7 +32,7 @@ func main() {
 		return
 	}
 
-	if opts["print-ast"] != nil {
+	if opts["print-ast"].(bool) {
 		path, _ := opts.String("<path>")
 
 		r, err := sddl.ParseMergeAndAnalyze(path)

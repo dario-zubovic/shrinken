@@ -31,7 +31,11 @@ func (a *staticAnalyzer) Analyze(packages []*ast.PackageDef) error {
 	// to make a map of all type definitions
 
 	a.finder = &typeFinder{}
-	a.finder.MapTypes(packages)
+
+	err := a.finder.MapTypes(packages)
+	if err != nil {
+		return err
+	}
 
 	// next we're linking all variable types to their definitions
 	// and doing any validations that are left
@@ -212,23 +216,31 @@ func (a *staticAnalyzer) checkStructInheritance(parent, child *definedType, chai
 	// make sure that both parent and child are either class or struct
 	if parentStruct.IsClass != childStruct.IsClass {
 		if parentStruct.IsClass {
-			return fmt.Errorf("Class %v cannot extend struct %v on %v", parentStruct.Name, childStruct.Name, parentStruct.Position.String())
+			return fmt.Errorf("Class %v cannot extend struct %v in package %v on %v",
+				parentStruct.Name, childStruct.Name, a.currentPkg.Name, parentStruct.Position.String())
 		}
-		return fmt.Errorf("Struct %v cannot extend class %v on %v", parentStruct.Name, childStruct.Name, parentStruct.Position.String())
+		return fmt.Errorf("Struct %v cannot extend class %v in package %v on %v",
+			parentStruct.Name, childStruct.Name, a.currentPkg.Name, parentStruct.Position.String())
 	}
 
 	// check for circular inheritance
 	chainStr := ""
 	circle := false
+	chainType := "structs"
 	for _, c := range chain {
-		chainStr += c.Name + ", "
+		if c.IsClass {
+			chainType = "classes"
+		}
+
+		chainStr += fmt.Sprintf("%v, ", c.Name)
+
 		if c == childStruct {
 			circle = true
 		}
 	}
 	if circle {
 		chainStr += chain[0].Name
-		return fmt.Errorf("Circular inheritance detected (%v)", chainStr)
+		return fmt.Errorf("Circular inheritance detected (%v %v)", chainType, chainStr)
 	}
 
 	// check for inherited member hiding

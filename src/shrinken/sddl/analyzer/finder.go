@@ -7,6 +7,9 @@ import (
 	"strings"
 )
 
+// typeFinder uses visitor pattern to visit all nodes in ASTs and record all defined packages and types
+// that information can then used by
+
 type typeFinder struct {
 	ast.Visitor
 
@@ -23,6 +26,7 @@ type definedType struct {
 	parentPkg *ast.PackageDef
 }
 
+// call this method first to create map of defined types
 func (f *typeFinder) MapTypes(packages []*ast.PackageDef) error {
 	f.packages = make(map[string]*ast.PackageDef)
 	f.definedTypes = make(map[string]*definedType)
@@ -102,6 +106,7 @@ func (f *typeFinder) VisitStructDef(s *ast.StructDef) {
 		f.err = fmt.Errorf("%v %v redeclered on %v", structClass, fullName, s.Position.String())
 		return
 	}
+
 	f.definedTypes[fullName] = &definedType{
 		parentPkg: f.currentPackage,
 		typeDef:   s,
